@@ -1,0 +1,1874 @@
+[
+    {
+        "brand_id": "311",
+        "generic_id": "492"
+    },
+    {
+        "brand_id": "349",
+        "generic_id": "781"
+    },
+    {
+        "brand_id": "350",
+        "generic_id": "781"
+    },
+    {
+        "brand_id": "420",
+        "generic_id": "1089"
+    },
+    {
+        "brand_id": "467",
+        "generic_id": "24"
+    },
+    {
+        "brand_id": "723",
+        "generic_id": "1141"
+    },
+    {
+        "brand_id": "847",
+        "generic_id": "668"
+    },
+    {
+        "brand_id": "849",
+        "generic_id": "601"
+    },
+    {
+        "brand_id": "850",
+        "generic_id": "128"
+    },
+    {
+        "brand_id": "863",
+        "generic_id": "1230"
+    },
+    {
+        "brand_id": "911",
+        "generic_id": "34"
+    },
+    {
+        "brand_id": "941",
+        "generic_id": "41"
+    },
+    {
+        "brand_id": "1023",
+        "generic_id": "572"
+    },
+    {
+        "brand_id": "1046",
+        "generic_id": "832"
+    },
+    {
+        "brand_id": "1047",
+        "generic_id": "832"
+    },
+    {
+        "brand_id": "1064",
+        "generic_id": "51"
+    },
+    {
+        "brand_id": "1065",
+        "generic_id": "51"
+    },
+    {
+        "brand_id": "1142",
+        "generic_id": "60"
+    },
+    {
+        "brand_id": "1462",
+        "generic_id": "1388"
+    },
+    {
+        "brand_id": "1463",
+        "generic_id": "1388"
+    },
+    {
+        "brand_id": "1486",
+        "generic_id": "849"
+    },
+    {
+        "brand_id": "1740",
+        "generic_id": "17"
+    },
+    {
+        "brand_id": "1835",
+        "generic_id": "1166"
+    },
+    {
+        "brand_id": "1838",
+        "generic_id": "770"
+    },
+    {
+        "brand_id": "1887",
+        "generic_id": "106"
+    },
+    {
+        "brand_id": "1888",
+        "generic_id": "106"
+    },
+    {
+        "brand_id": "1998",
+        "generic_id": "397"
+    },
+    {
+        "brand_id": "2002",
+        "generic_id": "108"
+    },
+    {
+        "brand_id": "2438",
+        "generic_id": "148"
+    },
+    {
+        "brand_id": "2540",
+        "generic_id": "152"
+    },
+    {
+        "brand_id": "2689",
+        "generic_id": "1142"
+    },
+    {
+        "brand_id": "2690",
+        "generic_id": "1143"
+    },
+    {
+        "brand_id": "2795",
+        "generic_id": "63"
+    },
+    {
+        "brand_id": "2796",
+        "generic_id": "63"
+    },
+    {
+        "brand_id": "2797",
+        "generic_id": "63"
+    },
+    {
+        "brand_id": "2798",
+        "generic_id": "63"
+    },
+    {
+        "brand_id": "2902",
+        "generic_id": "183"
+    },
+    {
+        "brand_id": "2930",
+        "generic_id": "196"
+    },
+    {
+        "brand_id": "2931",
+        "generic_id": "199"
+    },
+    {
+        "brand_id": "2945",
+        "generic_id": "195"
+    },
+    {
+        "brand_id": "2971",
+        "generic_id": "182"
+    },
+    {
+        "brand_id": "3012",
+        "generic_id": "388"
+    },
+    {
+        "brand_id": "3014",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "3015",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "3016",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "3017",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "3018",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "3214",
+        "generic_id": "29"
+    },
+    {
+        "brand_id": "3215",
+        "generic_id": "30"
+    },
+    {
+        "brand_id": "3271",
+        "generic_id": "221"
+    },
+    {
+        "brand_id": "3272",
+        "generic_id": "222"
+    },
+    {
+        "brand_id": "3401",
+        "generic_id": "233"
+    },
+    {
+        "brand_id": "3402",
+        "generic_id": "233"
+    },
+    {
+        "brand_id": "3403",
+        "generic_id": "233"
+    },
+    {
+        "brand_id": "3407",
+        "generic_id": "235"
+    },
+    {
+        "brand_id": "3418",
+        "generic_id": "236"
+    },
+    {
+        "brand_id": "3419",
+        "generic_id": "236"
+    },
+    {
+        "brand_id": "3420",
+        "generic_id": "236"
+    },
+    {
+        "brand_id": "3573",
+        "generic_id": "258"
+    },
+    {
+        "brand_id": "3574",
+        "generic_id": "258"
+    },
+    {
+        "brand_id": "3677",
+        "generic_id": "219"
+    },
+    {
+        "brand_id": "3941",
+        "generic_id": "308"
+    },
+    {
+        "brand_id": "3942",
+        "generic_id": "308"
+    },
+    {
+        "brand_id": "3943",
+        "generic_id": "308"
+    },
+    {
+        "brand_id": "3960",
+        "generic_id": "22"
+    },
+    {
+        "brand_id": "3971",
+        "generic_id": "259"
+    },
+    {
+        "brand_id": "4014",
+        "generic_id": "1464"
+    },
+    {
+        "brand_id": "4195",
+        "generic_id": "318"
+    },
+    {
+        "brand_id": "4196",
+        "generic_id": "318"
+    },
+    {
+        "brand_id": "4197",
+        "generic_id": "318"
+    },
+    {
+        "brand_id": "4331",
+        "generic_id": "1238"
+    },
+    {
+        "brand_id": "4339",
+        "generic_id": "330"
+    },
+    {
+        "brand_id": "4340",
+        "generic_id": "330"
+    },
+    {
+        "brand_id": "4367",
+        "generic_id": "1422"
+    },
+    {
+        "brand_id": "4368",
+        "generic_id": "1422"
+    },
+    {
+        "brand_id": "4885",
+        "generic_id": "377"
+    },
+    {
+        "brand_id": "4950",
+        "generic_id": "2572"
+    },
+    {
+        "brand_id": "5005",
+        "generic_id": "405"
+    },
+    {
+        "brand_id": "5264",
+        "generic_id": "431"
+    },
+    {
+        "brand_id": "5321",
+        "generic_id": "251"
+    },
+    {
+        "brand_id": "5322",
+        "generic_id": "251"
+    },
+    {
+        "brand_id": "5381",
+        "generic_id": "976"
+    },
+    {
+        "brand_id": "5382",
+        "generic_id": "976"
+    },
+    {
+        "brand_id": "5383",
+        "generic_id": "840"
+    },
+    {
+        "brand_id": "5384",
+        "generic_id": "840"
+    },
+    {
+        "brand_id": "5465",
+        "generic_id": "1194"
+    },
+    {
+        "brand_id": "5685",
+        "generic_id": "1202"
+    },
+    {
+        "brand_id": "5686",
+        "generic_id": "1202"
+    },
+    {
+        "brand_id": "5854",
+        "generic_id": "469"
+    },
+    {
+        "brand_id": "6089",
+        "generic_id": "1376"
+    },
+    {
+        "brand_id": "6290",
+        "generic_id": "489"
+    },
+    {
+        "brand_id": "6579",
+        "generic_id": "1415"
+    },
+    {
+        "brand_id": "6581",
+        "generic_id": "1436"
+    },
+    {
+        "brand_id": "6582",
+        "generic_id": "1437"
+    },
+    {
+        "brand_id": "6583",
+        "generic_id": "1146"
+    },
+    {
+        "brand_id": "6670",
+        "generic_id": "558"
+    },
+    {
+        "brand_id": "6777",
+        "generic_id": "568"
+    },
+    {
+        "brand_id": "6972",
+        "generic_id": "577"
+    },
+    {
+        "brand_id": "7029",
+        "generic_id": "590"
+    },
+    {
+        "brand_id": "7060",
+        "generic_id": "591"
+    },
+    {
+        "brand_id": "7061",
+        "generic_id": "591"
+    },
+    {
+        "brand_id": "7217",
+        "generic_id": "596"
+    },
+    {
+        "brand_id": "7218",
+        "generic_id": "596"
+    },
+    {
+        "brand_id": "7220",
+        "generic_id": "595"
+    },
+    {
+        "brand_id": "7254",
+        "generic_id": "722"
+    },
+    {
+        "brand_id": "7255",
+        "generic_id": "722"
+    },
+    {
+        "brand_id": "7290",
+        "generic_id": "647"
+    },
+    {
+        "brand_id": "7291",
+        "generic_id": "647"
+    },
+    {
+        "brand_id": "7308",
+        "generic_id": "312"
+    },
+    {
+        "brand_id": "7310",
+        "generic_id": "312"
+    },
+    {
+        "brand_id": "7376",
+        "generic_id": "1137"
+    },
+    {
+        "brand_id": "7377",
+        "generic_id": "446"
+    },
+    {
+        "brand_id": "7420",
+        "generic_id": "955"
+    },
+    {
+        "brand_id": "7421",
+        "generic_id": "956"
+    },
+    {
+        "brand_id": "7514",
+        "generic_id": "929"
+    },
+    {
+        "brand_id": "7667",
+        "generic_id": "623"
+    },
+    {
+        "brand_id": "8125",
+        "generic_id": "1444"
+    },
+    {
+        "brand_id": "8159",
+        "generic_id": "906"
+    },
+    {
+        "brand_id": "8161",
+        "generic_id": "126"
+    },
+    {
+        "brand_id": "8289",
+        "generic_id": "200"
+    },
+    {
+        "brand_id": "8305",
+        "generic_id": "654"
+    },
+    {
+        "brand_id": "8442",
+        "generic_id": "1431"
+    },
+    {
+        "brand_id": "8443",
+        "generic_id": "1431"
+    },
+    {
+        "brand_id": "8491",
+        "generic_id": "1805"
+    },
+    {
+        "brand_id": "8573",
+        "generic_id": "841"
+    },
+    {
+        "brand_id": "8798",
+        "generic_id": "1167"
+    },
+    {
+        "brand_id": "8846",
+        "generic_id": "628"
+    },
+    {
+        "brand_id": "8847",
+        "generic_id": "628"
+    },
+    {
+        "brand_id": "8848",
+        "generic_id": "628"
+    },
+    {
+        "brand_id": "8920",
+        "generic_id": "995"
+    },
+    {
+        "brand_id": "8956",
+        "generic_id": "157"
+    },
+    {
+        "brand_id": "8957",
+        "generic_id": "157"
+    },
+    {
+        "brand_id": "8958",
+        "generic_id": "157"
+    },
+    {
+        "brand_id": "8964",
+        "generic_id": "457"
+    },
+    {
+        "brand_id": "8965",
+        "generic_id": "457"
+    },
+    {
+        "brand_id": "9269",
+        "generic_id": "1091"
+    },
+    {
+        "brand_id": "9365",
+        "generic_id": "717"
+    },
+    {
+        "brand_id": "9397",
+        "generic_id": "726"
+    },
+    {
+        "brand_id": "9436",
+        "generic_id": "1246"
+    },
+    {
+        "brand_id": "9437",
+        "generic_id": "1246"
+    },
+    {
+        "brand_id": "9438",
+        "generic_id": "1246"
+    },
+    {
+        "brand_id": "9811",
+        "generic_id": "727"
+    },
+    {
+        "brand_id": "9896",
+        "generic_id": "734"
+    },
+    {
+        "brand_id": "9899",
+        "generic_id": "733"
+    },
+    {
+        "brand_id": "10091",
+        "generic_id": "643"
+    },
+    {
+        "brand_id": "10412",
+        "generic_id": "775"
+    },
+    {
+        "brand_id": "10413",
+        "generic_id": "775"
+    },
+    {
+        "brand_id": "10702",
+        "generic_id": "757"
+    },
+    {
+        "brand_id": "10758",
+        "generic_id": "999"
+    },
+    {
+        "brand_id": "10761",
+        "generic_id": "999"
+    },
+    {
+        "brand_id": "10777",
+        "generic_id": "1307"
+    },
+    {
+        "brand_id": "10846",
+        "generic_id": "814"
+    },
+    {
+        "brand_id": "10862",
+        "generic_id": "346"
+    },
+    {
+        "brand_id": "10913",
+        "generic_id": "678"
+    },
+    {
+        "brand_id": "10914",
+        "generic_id": "678"
+    },
+    {
+        "brand_id": "10915",
+        "generic_id": "678"
+    },
+    {
+        "brand_id": "10925",
+        "generic_id": "815"
+    },
+    {
+        "brand_id": "10926",
+        "generic_id": "815"
+    },
+    {
+        "brand_id": "11017",
+        "generic_id": "20"
+    },
+    {
+        "brand_id": "11034",
+        "generic_id": "872"
+    },
+    {
+        "brand_id": "11051",
+        "generic_id": "1326"
+    },
+    {
+        "brand_id": "11056",
+        "generic_id": "1467"
+    },
+    {
+        "brand_id": "11057",
+        "generic_id": "1467"
+    },
+    {
+        "brand_id": "11100",
+        "generic_id": "538"
+    },
+    {
+        "brand_id": "11101",
+        "generic_id": "536"
+    },
+    {
+        "brand_id": "11102",
+        "generic_id": "534"
+    },
+    {
+        "brand_id": "11105",
+        "generic_id": "740"
+    },
+    {
+        "brand_id": "11107",
+        "generic_id": "740"
+    },
+    {
+        "brand_id": "11108",
+        "generic_id": "790"
+    },
+    {
+        "brand_id": "11109",
+        "generic_id": "789"
+    },
+    {
+        "brand_id": "11110",
+        "generic_id": "624"
+    },
+    {
+        "brand_id": "11111",
+        "generic_id": "624"
+    },
+    {
+        "brand_id": "11128",
+        "generic_id": "1417"
+    },
+    {
+        "brand_id": "11129",
+        "generic_id": "1417"
+    },
+    {
+        "brand_id": "11170",
+        "generic_id": "834"
+    },
+    {
+        "brand_id": "11295",
+        "generic_id": "854"
+    },
+    {
+        "brand_id": "11296",
+        "generic_id": "854"
+    },
+    {
+        "brand_id": "11427",
+        "generic_id": "756"
+    },
+    {
+        "brand_id": "11453",
+        "generic_id": "1150"
+    },
+    {
+        "brand_id": "11621",
+        "generic_id": "866"
+    },
+    {
+        "brand_id": "11622",
+        "generic_id": "866"
+    },
+    {
+        "brand_id": "11623",
+        "generic_id": "867"
+    },
+    {
+        "brand_id": "11758",
+        "generic_id": "1663"
+    },
+    {
+        "brand_id": "11759",
+        "generic_id": "1663"
+    },
+    {
+        "brand_id": "11766",
+        "generic_id": "1150"
+    },
+    {
+        "brand_id": "11778",
+        "generic_id": "436"
+    },
+    {
+        "brand_id": "11779",
+        "generic_id": "436"
+    },
+    {
+        "brand_id": "11879",
+        "generic_id": "870"
+    },
+    {
+        "brand_id": "11880",
+        "generic_id": "870"
+    },
+    {
+        "brand_id": "11907",
+        "generic_id": "570"
+    },
+    {
+        "brand_id": "11919",
+        "generic_id": "873"
+    },
+    {
+        "brand_id": "11971",
+        "generic_id": "883"
+    },
+    {
+        "brand_id": "12059",
+        "generic_id": "1280"
+    },
+    {
+        "brand_id": "12228",
+        "generic_id": "903"
+    },
+    {
+        "brand_id": "12235",
+        "generic_id": "902"
+    },
+    {
+        "brand_id": "12422",
+        "generic_id": "919"
+    },
+    {
+        "brand_id": "12423",
+        "generic_id": "918"
+    },
+    {
+        "brand_id": "12424",
+        "generic_id": "918"
+    },
+    {
+        "brand_id": "12499",
+        "generic_id": "923"
+    },
+    {
+        "brand_id": "12587",
+        "generic_id": "925"
+    },
+    {
+        "brand_id": "12604",
+        "generic_id": "1084"
+    },
+    {
+        "brand_id": "12605",
+        "generic_id": "1082"
+    },
+    {
+        "brand_id": "12628",
+        "generic_id": "135"
+    },
+    {
+        "brand_id": "12778",
+        "generic_id": "751"
+    },
+    {
+        "brand_id": "12779",
+        "generic_id": "751"
+    },
+    {
+        "brand_id": "12780",
+        "generic_id": "751"
+    },
+    {
+        "brand_id": "12781",
+        "generic_id": "751"
+    },
+    {
+        "brand_id": "12794",
+        "generic_id": "934"
+    },
+    {
+        "brand_id": "12795",
+        "generic_id": "935"
+    },
+    {
+        "brand_id": "12832",
+        "generic_id": "467"
+    },
+    {
+        "brand_id": "12833",
+        "generic_id": "467"
+    },
+    {
+        "brand_id": "12835",
+        "generic_id": "932"
+    },
+    {
+        "brand_id": "12849",
+        "generic_id": "805"
+    },
+    {
+        "brand_id": "12850",
+        "generic_id": "806"
+    },
+    {
+        "brand_id": "12905",
+        "generic_id": "709"
+    },
+    {
+        "brand_id": "12906",
+        "generic_id": "711"
+    },
+    {
+        "brand_id": "12921",
+        "generic_id": "644"
+    },
+    {
+        "brand_id": "13082",
+        "generic_id": "939"
+    },
+    {
+        "brand_id": "13195",
+        "generic_id": "954"
+    },
+    {
+        "brand_id": "13421",
+        "generic_id": "1577"
+    },
+    {
+        "brand_id": "13501",
+        "generic_id": "485"
+    },
+    {
+        "brand_id": "13508",
+        "generic_id": "694"
+    },
+    {
+        "brand_id": "13509",
+        "generic_id": "696"
+    },
+    {
+        "brand_id": "13816",
+        "generic_id": "1000"
+    },
+    {
+        "brand_id": "13912",
+        "generic_id": "1132"
+    },
+    {
+        "brand_id": "13989",
+        "generic_id": "1010"
+    },
+    {
+        "brand_id": "13990",
+        "generic_id": "1009"
+    },
+    {
+        "brand_id": "13991",
+        "generic_id": "1009"
+    },
+    {
+        "brand_id": "14222",
+        "generic_id": "1018"
+    },
+    {
+        "brand_id": "14261",
+        "generic_id": "228"
+    },
+    {
+        "brand_id": "14262",
+        "generic_id": "228"
+    },
+    {
+        "brand_id": "14407",
+        "generic_id": "911"
+    },
+    {
+        "brand_id": "14408",
+        "generic_id": "573"
+    },
+    {
+        "brand_id": "14536",
+        "generic_id": "1477"
+    },
+    {
+        "brand_id": "14696",
+        "generic_id": "155"
+    },
+    {
+        "brand_id": "14711",
+        "generic_id": "1039"
+    },
+    {
+        "brand_id": "14712",
+        "generic_id": "1039"
+    },
+    {
+        "brand_id": "14769",
+        "generic_id": "475"
+    },
+    {
+        "brand_id": "14770",
+        "generic_id": "475"
+    },
+    {
+        "brand_id": "15176",
+        "generic_id": "682"
+    },
+    {
+        "brand_id": "15281",
+        "generic_id": "882"
+    },
+    {
+        "brand_id": "15288",
+        "generic_id": "658"
+    },
+    {
+        "brand_id": "15312",
+        "generic_id": "1235"
+    },
+    {
+        "brand_id": "15313",
+        "generic_id": "1235"
+    },
+    {
+        "brand_id": "15314",
+        "generic_id": "1235"
+    },
+    {
+        "brand_id": "15333",
+        "generic_id": "1452"
+    },
+    {
+        "brand_id": "15336",
+        "generic_id": "564"
+    },
+    {
+        "brand_id": "15342",
+        "generic_id": "619"
+    },
+    {
+        "brand_id": "15421",
+        "generic_id": "1071"
+    },
+    {
+        "brand_id": "15551",
+        "generic_id": "409"
+    },
+    {
+        "brand_id": "15592",
+        "generic_id": "881"
+    },
+    {
+        "brand_id": "15593",
+        "generic_id": "898"
+    },
+    {
+        "brand_id": "15707",
+        "generic_id": "1080"
+    },
+    {
+        "brand_id": "15708",
+        "generic_id": "1080"
+    },
+    {
+        "brand_id": "15888",
+        "generic_id": "1088"
+    },
+    {
+        "brand_id": "15889",
+        "generic_id": "1088"
+    },
+    {
+        "brand_id": "15890",
+        "generic_id": "1088"
+    },
+    {
+        "brand_id": "15952",
+        "generic_id": "659"
+    },
+    {
+        "brand_id": "16205",
+        "generic_id": "650"
+    },
+    {
+        "brand_id": "16206",
+        "generic_id": "650"
+    },
+    {
+        "brand_id": "16207",
+        "generic_id": "650"
+    },
+    {
+        "brand_id": "16257",
+        "generic_id": "652"
+    },
+    {
+        "brand_id": "16259",
+        "generic_id": "997"
+    },
+    {
+        "brand_id": "16328",
+        "generic_id": "783"
+    },
+    {
+        "brand_id": "16332",
+        "generic_id": "783"
+    },
+    {
+        "brand_id": "16370",
+        "generic_id": "370"
+    },
+    {
+        "brand_id": "16371",
+        "generic_id": "370"
+    },
+    {
+        "brand_id": "16416",
+        "generic_id": "310"
+    },
+    {
+        "brand_id": "16417",
+        "generic_id": "310"
+    },
+    {
+        "brand_id": "16419",
+        "generic_id": "310"
+    },
+    {
+        "brand_id": "16453",
+        "generic_id": "412"
+    },
+    {
+        "brand_id": "16454",
+        "generic_id": "412"
+    },
+    {
+        "brand_id": "16628",
+        "generic_id": "1119"
+    },
+    {
+        "brand_id": "16629",
+        "generic_id": "1119"
+    },
+    {
+        "brand_id": "16630",
+        "generic_id": "1119"
+    },
+    {
+        "brand_id": "16864",
+        "generic_id": "611"
+    },
+    {
+        "brand_id": "16865",
+        "generic_id": "611"
+    },
+    {
+        "brand_id": "16866",
+        "generic_id": "611"
+    },
+    {
+        "brand_id": "16867",
+        "generic_id": "611"
+    },
+    {
+        "brand_id": "16947",
+        "generic_id": "1257"
+    },
+    {
+        "brand_id": "16948",
+        "generic_id": "1257"
+    },
+    {
+        "brand_id": "16949",
+        "generic_id": "1257"
+    },
+    {
+        "brand_id": "17159",
+        "generic_id": "1136"
+    },
+    {
+        "brand_id": "17388",
+        "generic_id": "1155"
+    },
+    {
+        "brand_id": "17662",
+        "generic_id": "813"
+    },
+    {
+        "brand_id": "17695",
+        "generic_id": "123"
+    },
+    {
+        "brand_id": "17821",
+        "generic_id": "990"
+    },
+    {
+        "brand_id": "17904",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17905",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17907",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17908",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17909",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17910",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17911",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "17912",
+        "generic_id": "336"
+    },
+    {
+        "brand_id": "18085",
+        "generic_id": "1363"
+    },
+    {
+        "brand_id": "18167",
+        "generic_id": "113"
+    },
+    {
+        "brand_id": "18215",
+        "generic_id": "491"
+    },
+    {
+        "brand_id": "18216",
+        "generic_id": "491"
+    },
+    {
+        "brand_id": "18217",
+        "generic_id": "491"
+    },
+    {
+        "brand_id": "18218",
+        "generic_id": "491"
+    },
+    {
+        "brand_id": "18253",
+        "generic_id": "1339"
+    },
+    {
+        "brand_id": "18389",
+        "generic_id": "1234"
+    },
+    {
+        "brand_id": "18425",
+        "generic_id": "1231"
+    },
+    {
+        "brand_id": "18426",
+        "generic_id": "1231"
+    },
+    {
+        "brand_id": "18427",
+        "generic_id": "1231"
+    },
+    {
+        "brand_id": "18428",
+        "generic_id": "1231"
+    },
+    {
+        "brand_id": "18429",
+        "generic_id": "785"
+    },
+    {
+        "brand_id": "18430",
+        "generic_id": "785"
+    },
+    {
+        "brand_id": "18593",
+        "generic_id": "799"
+    },
+    {
+        "brand_id": "18858",
+        "generic_id": "762"
+    },
+    {
+        "brand_id": "18871",
+        "generic_id": "1274"
+    },
+    {
+        "brand_id": "18872",
+        "generic_id": "1274"
+    },
+    {
+        "brand_id": "18884",
+        "generic_id": "1125"
+    },
+    {
+        "brand_id": "18900",
+        "generic_id": "247"
+    },
+    {
+        "brand_id": "19088",
+        "generic_id": "1050"
+    },
+    {
+        "brand_id": "19106",
+        "generic_id": "1243"
+    },
+    {
+        "brand_id": "19107",
+        "generic_id": "1243"
+    },
+    {
+        "brand_id": "19240",
+        "generic_id": "1251"
+    },
+    {
+        "brand_id": "19359",
+        "generic_id": "1253"
+    },
+    {
+        "brand_id": "19360",
+        "generic_id": "1253"
+    },
+    {
+        "brand_id": "19361",
+        "generic_id": "1253"
+    },
+    {
+        "brand_id": "19454",
+        "generic_id": "1252"
+    },
+    {
+        "brand_id": "19543",
+        "generic_id": "1258"
+    },
+    {
+        "brand_id": "19557",
+        "generic_id": "1105"
+    },
+    {
+        "brand_id": "19655",
+        "generic_id": "966"
+    },
+    {
+        "brand_id": "19735",
+        "generic_id": "986"
+    },
+    {
+        "brand_id": "19803",
+        "generic_id": "899"
+    },
+    {
+        "brand_id": "19804",
+        "generic_id": "900"
+    },
+    {
+        "brand_id": "19821",
+        "generic_id": "1272"
+    },
+    {
+        "brand_id": "20175",
+        "generic_id": "324"
+    },
+    {
+        "brand_id": "20176",
+        "generic_id": "324"
+    },
+    {
+        "brand_id": "20177",
+        "generic_id": "324"
+    },
+    {
+        "brand_id": "20183",
+        "generic_id": "224"
+    },
+    {
+        "brand_id": "20195",
+        "generic_id": "1278"
+    },
+    {
+        "brand_id": "20197",
+        "generic_id": "1278"
+    },
+    {
+        "brand_id": "20262",
+        "generic_id": "16"
+    },
+    {
+        "brand_id": "20336",
+        "generic_id": "1283"
+    },
+    {
+        "brand_id": "20337",
+        "generic_id": "1283"
+    },
+    {
+        "brand_id": "20338",
+        "generic_id": "1283"
+    },
+    {
+        "brand_id": "20488",
+        "generic_id": "146"
+    },
+    {
+        "brand_id": "20536",
+        "generic_id": "46"
+    },
+    {
+        "brand_id": "20653",
+        "generic_id": "239"
+    },
+    {
+        "brand_id": "20675",
+        "generic_id": "559"
+    },
+    {
+        "brand_id": "20798",
+        "generic_id": "1327"
+    },
+    {
+        "brand_id": "20855",
+        "generic_id": "501"
+    },
+    {
+        "brand_id": "20856",
+        "generic_id": "930"
+    },
+    {
+        "brand_id": "20857",
+        "generic_id": "930"
+    },
+    {
+        "brand_id": "21134",
+        "generic_id": "1361"
+    },
+    {
+        "brand_id": "21250",
+        "generic_id": "1366"
+    },
+    {
+        "brand_id": "21358",
+        "generic_id": "315"
+    },
+    {
+        "brand_id": "21359",
+        "generic_id": "315"
+    },
+    {
+        "brand_id": "21366",
+        "generic_id": "702"
+    },
+    {
+        "brand_id": "21425",
+        "generic_id": "1374"
+    },
+    {
+        "brand_id": "21426",
+        "generic_id": "1374"
+    },
+    {
+        "brand_id": "21436",
+        "generic_id": "1368"
+    },
+    {
+        "brand_id": "21499",
+        "generic_id": "1381"
+    },
+    {
+        "brand_id": "21678",
+        "generic_id": "1032"
+    },
+    {
+        "brand_id": "21679",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "21683",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "21684",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "21740",
+        "generic_id": "1397"
+    },
+    {
+        "brand_id": "21745",
+        "generic_id": "1394"
+    },
+    {
+        "brand_id": "21746",
+        "generic_id": "1394"
+    },
+    {
+        "brand_id": "21769",
+        "generic_id": "1324"
+    },
+    {
+        "brand_id": "21868",
+        "generic_id": "1412"
+    },
+    {
+        "brand_id": "21874",
+        "generic_id": "502"
+    },
+    {
+        "brand_id": "21907",
+        "generic_id": "294"
+    },
+    {
+        "brand_id": "21909",
+        "generic_id": "997"
+    },
+    {
+        "brand_id": "21910",
+        "generic_id": "791"
+    },
+    {
+        "brand_id": "21921",
+        "generic_id": "1414"
+    },
+    {
+        "brand_id": "21922",
+        "generic_id": "1414"
+    },
+    {
+        "brand_id": "22043",
+        "generic_id": "1419"
+    },
+    {
+        "brand_id": "22044",
+        "generic_id": "1398"
+    },
+    {
+        "brand_id": "22192",
+        "generic_id": "1430"
+    },
+    {
+        "brand_id": "22272",
+        "generic_id": "761"
+    },
+    {
+        "brand_id": "22273",
+        "generic_id": "761"
+    },
+    {
+        "brand_id": "22275",
+        "generic_id": "761"
+    },
+    {
+        "brand_id": "22492",
+        "generic_id": "1392"
+    },
+    {
+        "brand_id": "22692",
+        "generic_id": "677"
+    },
+    {
+        "brand_id": "22810",
+        "generic_id": "1447"
+    },
+    {
+        "brand_id": "22811",
+        "generic_id": "1447"
+    },
+    {
+        "brand_id": "22819",
+        "generic_id": "788"
+    },
+    {
+        "brand_id": "22821",
+        "generic_id": "788"
+    },
+    {
+        "brand_id": "22822",
+        "generic_id": "1448"
+    },
+    {
+        "brand_id": "22823",
+        "generic_id": "1448"
+    },
+    {
+        "brand_id": "22824",
+        "generic_id": "1448"
+    },
+    {
+        "brand_id": "22989",
+        "generic_id": "1454"
+    },
+    {
+        "brand_id": "22990",
+        "generic_id": "1454"
+    },
+    {
+        "brand_id": "22992",
+        "generic_id": "1454"
+    },
+    {
+        "brand_id": "22993",
+        "generic_id": "1454"
+    },
+    {
+        "brand_id": "23170",
+        "generic_id": "1459"
+    },
+    {
+        "brand_id": "23464",
+        "generic_id": "1469"
+    },
+    {
+        "brand_id": "23553",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23554",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23555",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23556",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23557",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23558",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "23579",
+        "generic_id": "1416"
+    },
+    {
+        "brand_id": "23580",
+        "generic_id": "1416"
+    },
+    {
+        "brand_id": "23581",
+        "generic_id": "1416"
+    },
+    {
+        "brand_id": "23582",
+        "generic_id": "1416"
+    },
+    {
+        "brand_id": "23717",
+        "generic_id": "1003"
+    },
+    {
+        "brand_id": "23775",
+        "generic_id": "225"
+    },
+    {
+        "brand_id": "23915",
+        "generic_id": "1300"
+    },
+    {
+        "brand_id": "23936",
+        "generic_id": "1372"
+    },
+    {
+        "brand_id": "23937",
+        "generic_id": "784"
+    },
+    {
+        "brand_id": "23938",
+        "generic_id": "1081"
+    },
+    {
+        "brand_id": "23952",
+        "generic_id": "1379"
+    },
+    {
+        "brand_id": "23985",
+        "generic_id": "425"
+    },
+    {
+        "brand_id": "23986",
+        "generic_id": "425"
+    },
+    {
+        "brand_id": "24125",
+        "generic_id": "1476"
+    },
+    {
+        "brand_id": "24126",
+        "generic_id": "1476"
+    },
+    {
+        "brand_id": "24129",
+        "generic_id": "1476"
+    },
+    {
+        "brand_id": "24331",
+        "generic_id": "1483"
+    },
+    {
+        "brand_id": "24342",
+        "generic_id": "639"
+    },
+    {
+        "brand_id": "24343",
+        "generic_id": "639"
+    },
+    {
+        "brand_id": "25840",
+        "generic_id": "377"
+    },
+    {
+        "brand_id": "25848",
+        "generic_id": "64"
+    },
+    {
+        "brand_id": "25849",
+        "generic_id": "64"
+    },
+    {
+        "brand_id": "25859",
+        "generic_id": "1019"
+    },
+    {
+        "brand_id": "25860",
+        "generic_id": "1088"
+    },
+    {
+        "brand_id": "25862",
+        "generic_id": "738"
+    },
+    {
+        "brand_id": "25865",
+        "generic_id": "964"
+    },
+    {
+        "brand_id": "25866",
+        "generic_id": "2358"
+    },
+    {
+        "brand_id": "25869",
+        "generic_id": "1373"
+    },
+    {
+        "brand_id": "25875",
+        "generic_id": "18"
+    },
+    {
+        "brand_id": "25876",
+        "generic_id": "232"
+    },
+    {
+        "brand_id": "25877",
+        "generic_id": "1618"
+    },
+    {
+        "brand_id": "25878",
+        "generic_id": "1663"
+    },
+    {
+        "brand_id": "25879",
+        "generic_id": "406"
+    },
+    {
+        "brand_id": "25882",
+        "generic_id": "594"
+    },
+    {
+        "brand_id": "25883",
+        "generic_id": "594"
+    },
+    {
+        "brand_id": "25884",
+        "generic_id": "638"
+    },
+    {
+        "brand_id": "25888",
+        "generic_id": "2007"
+    },
+    {
+        "brand_id": "25890",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "25891",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "25892",
+        "generic_id": "1031"
+    },
+    {
+        "brand_id": "25895",
+        "generic_id": "2360"
+    },
+    {
+        "brand_id": "25896",
+        "generic_id": "1274"
+    },
+    {
+        "brand_id": "25899",
+        "generic_id": "1454"
+    },
+    {
+        "brand_id": "25901",
+        "generic_id": "652"
+    },
+    {
+        "brand_id": "25907",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "25910",
+        "generic_id": "386"
+    },
+    {
+        "brand_id": "25924",
+        "generic_id": "1106"
+    },
+    {
+        "brand_id": "25925",
+        "generic_id": "1105"
+    },
+    {
+        "brand_id": "25931",
+        "generic_id": "2432"
+    },
+    {
+        "brand_id": "25950",
+        "generic_id": "967"
+    },
+    {
+        "brand_id": "25992",
+        "generic_id": "315"
+    },
+    {
+        "brand_id": "26162",
+        "generic_id": "303"
+    },
+    {
+        "brand_id": "26193",
+        "generic_id": "124"
+    },
+    {
+        "brand_id": "26440",
+        "generic_id": "1136"
+    },
+    {
+        "brand_id": "26441",
+        "generic_id": "1136"
+    },
+    {
+        "brand_id": "26563",
+        "generic_id": "315"
+    },
+    {
+        "brand_id": "26995",
+        "generic_id": "734"
+    },
+    {
+        "brand_id": "27057",
+        "generic_id": "796"
+    },
+    {
+        "brand_id": "27080",
+        "generic_id": "868"
+    },
+    {
+        "brand_id": "27140",
+        "generic_id": "2636"
+    },
+    {
+        "brand_id": "27261",
+        "generic_id": "1359"
+    },
+    {
+        "brand_id": "27751",
+        "generic_id": "1428"
+    },
+    {
+        "brand_id": "27752",
+        "generic_id": "1428"
+    },
+    {
+        "brand_id": "27756",
+        "generic_id": "1051"
+    },
+    {
+        "brand_id": "27758",
+        "generic_id": "1142"
+    },
+    {
+        "brand_id": "27759",
+        "generic_id": "1142"
+    },
+    {
+        "brand_id": "27849",
+        "generic_id": "2366"
+    },
+    {
+        "brand_id": "27850",
+        "generic_id": "2366"
+    },
+    {
+        "brand_id": "27851",
+        "generic_id": "2366"
+    }
+]

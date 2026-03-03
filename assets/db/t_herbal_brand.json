@@ -1,0 +1,2242 @@
+[
+    {
+        "brand_id": "1",
+        "brand_name": "Adovas",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "1",
+        "packsize": "100ml, 200ml Bott",
+        "price": "70.00,110.00",
+        "strength": null
+    },
+    {
+        "brand_id": "3",
+        "brand_name": "Amcivit",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "3",
+        "packsize": "100 ml",
+        "price": "60",
+        "strength": null
+    },
+    {
+        "brand_id": "4",
+        "brand_name": "Arubin",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "4",
+        "packsize": "30's Pack",
+        "price": "4.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "5",
+        "brand_name": "Colmint",
+        "company_id": "250",
+        "form": "Soft Gelatin Capsule",
+        "generic_id": "5",
+        "packsize": "30's Paack",
+        "price": "6.00",
+        "strength": "187mg"
+    },
+    {
+        "brand_id": "6",
+        "brand_name": "Dubarel",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "6",
+        "packsize": "100ml,200ml",
+        "price": "50.00,100.00",
+        "strength": null
+    },
+    {
+        "brand_id": "7",
+        "brand_name": "Enerton",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "7",
+        "packsize": "200ml",
+        "price": "170.00",
+        "strength": null
+    },
+    {
+        "brand_id": "8",
+        "brand_name": "Eprim",
+        "company_id": "250",
+        "form": "Soft gelatin Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "9",
+        "brand_name": "Eprim Plus",
+        "company_id": "250",
+        "form": "Soft gelatin Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "10",
+        "brand_name": "Eredex",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "10",
+        "packsize": "24's Pack",
+        "price": "30.00",
+        "strength": "5.4mg"
+    },
+    {
+        "brand_id": "11",
+        "brand_name": "Ocubil",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "11",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "160mg"
+    },
+    {
+        "brand_id": "12",
+        "brand_name": "Gelaseed",
+        "company_id": "250",
+        "form": "Soft gelatin capsule",
+        "generic_id": "12",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "13",
+        "brand_name": "Garlin",
+        "company_id": "250",
+        "form": "Soft Gelatin Capsule",
+        "generic_id": "13",
+        "packsize": "30's Pack",
+        "price": "6.00",
+        "strength": "10mg"
+    },
+    {
+        "brand_id": "14",
+        "brand_name": "Giloba 60",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's Pack",
+        "price": "10.00",
+        "strength": "60mg"
+    },
+    {
+        "brand_id": "15",
+        "brand_name": "Giloba 120",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's Pack",
+        "price": "15.00",
+        "strength": "120mg"
+    },
+    {
+        "brand_id": "16",
+        "brand_name": "Gintex",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "19",
+        "brand_name": "Jorvan",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "19",
+        "packsize": "30's",
+        "price": "8.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "20",
+        "brand_name": "Lecor",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "20",
+        "packsize": "200 ml",
+        "price": "140.00",
+        "strength": null
+    },
+    {
+        "brand_id": "21",
+        "brand_name": "Livolite",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "21",
+        "packsize": "30's Pack",
+        "price": "5.00",
+        "strength": "200mg"
+    },
+    {
+        "brand_id": "22",
+        "brand_name": "Monera",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "22",
+        "packsize": "100ml",
+        "price": "80.00",
+        "strength": null
+    },
+    {
+        "brand_id": "23",
+        "brand_name": "Navit",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's Pack",
+        "price": "8.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "24",
+        "brand_name": "Pepnor",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "24",
+        "packsize": "100ml",
+        "price": "80.00",
+        "strength": null
+    },
+    {
+        "brand_id": "25",
+        "brand_name": "Probio",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "87",
+        "packsize": "30's Pack",
+        "price": "25.00",
+        "strength": "4 billion cfu"
+    },
+    {
+        "brand_id": "26",
+        "brand_name": "Redclov",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "26",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "27",
+        "brand_name": "Revatol",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "27",
+        "packsize": "200ml",
+        "price": "130.00",
+        "strength": null
+    },
+    {
+        "brand_id": "28",
+        "brand_name": "Silybin 140",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's Pack",
+        "price": "10.00",
+        "strength": "140mg"
+    },
+    {
+        "brand_id": "29",
+        "brand_name": "Silybin 70",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's Pack",
+        "price": "6.00",
+        "strength": "70mg"
+    },
+    {
+        "brand_id": "30",
+        "brand_name": "Torel",
+        "company_id": "250",
+        "form": "Cream",
+        "generic_id": "30",
+        "packsize": "20 gm",
+        "price": "70.00",
+        "strength": null
+    },
+    {
+        "brand_id": "32",
+        "brand_name": "Fiberlax Ultra",
+        "company_id": "116",
+        "form": "Effervescent Granules",
+        "generic_id": "32",
+        "packsize": "20's Pack",
+        "price": "20.00",
+        "strength": null
+    },
+    {
+        "brand_id": "36",
+        "brand_name": "Procold 500",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "35",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "38",
+        "brand_name": "Femorose 500",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30's",
+        "price": "8.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "39",
+        "brand_name": "Protinavit",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's Pack",
+        "price": "9.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "40",
+        "brand_name": "Mestiza 40",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "37",
+        "packsize": "30's Pack",
+        "price": "8.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "42",
+        "brand_name": "Recoseng 500",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "60's Pack",
+        "price": "7.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "43",
+        "brand_name": "Livasil 70",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "70mg"
+    },
+    {
+        "brand_id": "44",
+        "brand_name": "Premelos 60",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "60mg"
+    },
+    {
+        "brand_id": "45",
+        "brand_name": "Rimodep 300",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "38",
+        "packsize": "30's Pack",
+        "price": "6.00",
+        "strength": "300mg"
+    },
+    {
+        "brand_id": "47",
+        "brand_name": "Premelos 120",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's",
+        "price": "11.00",
+        "strength": "120mg"
+    },
+    {
+        "brand_id": "48",
+        "brand_name": "Livasil 140",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's Pack",
+        "price": "11.00",
+        "strength": "140mg"
+    },
+    {
+        "brand_id": "49",
+        "brand_name": "Remocof",
+        "company_id": "116",
+        "form": "Syrup",
+        "generic_id": "1",
+        "packsize": "100ml,200ml",
+        "price": "55.00,110.00",
+        "strength": null
+    },
+    {
+        "brand_id": "51",
+        "brand_name": "Fiberlax",
+        "company_id": "116",
+        "form": "Powder",
+        "generic_id": "17",
+        "packsize": "1's Pack",
+        "price": "400.00",
+        "strength": null
+    },
+    {
+        "brand_id": "52",
+        "brand_name": "Ispergul Container",
+        "company_id": "250",
+        "form": "Powder",
+        "generic_id": "17",
+        "packsize": "120gm",
+        "price": "395.00",
+        "strength": null
+    },
+    {
+        "brand_id": "54",
+        "brand_name": "Ispergul Sachet",
+        "company_id": "250",
+        "form": "Powder",
+        "generic_id": "17",
+        "packsize": "15's Pack",
+        "price": "15.00",
+        "strength": "3.5 gm"
+    },
+    {
+        "brand_id": "58",
+        "brand_name": "Probio Sachet",
+        "company_id": "250",
+        "form": "Sachet",
+        "generic_id": "87",
+        "packsize": "15's Pack",
+        "price": "25.00",
+        "strength": "1gm"
+    },
+    {
+        "brand_id": "60",
+        "brand_name": "Reli Balm",
+        "company_id": "250",
+        "form": "Cream",
+        "generic_id": "39",
+        "packsize": "20gm",
+        "price": "200.00",
+        "strength": "80mg + 180mg + 45mg + 10mg"
+    },
+    {
+        "brand_id": "61",
+        "brand_name": "Nilagel",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "40",
+        "packsize": "30's Pack",
+        "price": "7.50",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "62",
+        "brand_name": "Uripm",
+        "company_id": "250",
+        "form": "Softgel Capsules",
+        "generic_id": "41",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "160mg + 1.7mg + 3.3mg + 33.1mg + 2mg"
+    },
+    {
+        "brand_id": "76",
+        "brand_name": "Cardi Q 50",
+        "company_id": "250",
+        "form": "Softgel capsule",
+        "generic_id": "44",
+        "packsize": "50's Pack",
+        "price": "12.00",
+        "strength": "50mg"
+    },
+    {
+        "brand_id": "77",
+        "brand_name": "Cardi Q 100",
+        "company_id": "250",
+        "form": "Softgel capsule",
+        "generic_id": "44",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "100mg"
+    },
+    {
+        "brand_id": "78",
+        "brand_name": "Flemo 40",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "45",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "79",
+        "brand_name": "Synogen",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "45",
+        "packsize": "20's Pack",
+        "price": "25.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "80",
+        "brand_name": "Femorose",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30s Pack",
+        "price": "12.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "81",
+        "brand_name": "Welgut",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "86",
+        "packsize": "20's Pack",
+        "price": "30.00",
+        "strength": "20 billion CFU"
+    },
+    {
+        "brand_id": "82",
+        "brand_name": "Gastrolax",
+        "company_id": "116",
+        "form": "Sachets",
+        "generic_id": "46",
+        "packsize": "20's Pack",
+        "price": "20.00",
+        "strength": "0.11 g + 2.6 g + 0.62 g"
+    },
+    {
+        "brand_id": "83",
+        "brand_name": "Lactocard",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "47",
+        "packsize": "20's Pack",
+        "price": "20.00",
+        "strength": "2 billion CFU"
+    },
+    {
+        "brand_id": "84",
+        "brand_name": "Luvena",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "48",
+        "packsize": "20's Pack",
+        "price": "30.00",
+        "strength": "2.3 billion CFU"
+    },
+    {
+        "brand_id": "85",
+        "brand_name": "Cran-B",
+        "company_id": "116",
+        "form": "Softgel capsule",
+        "generic_id": "49",
+        "packsize": "30's Pack",
+        "price": "14.00",
+        "strength": "300mg"
+    },
+    {
+        "brand_id": "86",
+        "brand_name": "Zerova",
+        "company_id": "116",
+        "form": "Tablet",
+        "generic_id": "50",
+        "packsize": "100's Pack",
+        "price": "3.00",
+        "strength": "30mg"
+    },
+    {
+        "brand_id": "87",
+        "brand_name": "Zerova",
+        "company_id": "116",
+        "form": "Sachets",
+        "generic_id": "50",
+        "packsize": "30's Pack",
+        "price": "4.00",
+        "strength": "30mg"
+    },
+    {
+        "brand_id": "88",
+        "brand_name": "Evit Soft 200 IU",
+        "company_id": "250",
+        "form": "Softgel Capsule",
+        "generic_id": "51",
+        "packsize": "30's Pack",
+        "price": "4.00",
+        "strength": "200IU"
+    },
+    {
+        "brand_id": "89",
+        "brand_name": "Evit Soft 400 IU",
+        "company_id": "250",
+        "form": "Softgel Capsule",
+        "generic_id": "51",
+        "packsize": "30's Pack",
+        "price": "6.00",
+        "strength": "400IU"
+    },
+    {
+        "brand_id": "90",
+        "brand_name": "DK",
+        "company_id": "250",
+        "form": "Softgel Capsule",
+        "generic_id": "52",
+        "packsize": "30's Pack",
+        "price": "6.00",
+        "strength": "400IU +  60mcg +  30mcg"
+    },
+    {
+        "brand_id": "91",
+        "brand_name": "Betaburn",
+        "company_id": "250",
+        "form": "Ointment",
+        "generic_id": "53",
+        "packsize": "25gm",
+        "price": "100.00",
+        "strength": "0.25%"
+    },
+    {
+        "brand_id": "95",
+        "brand_name": "PrimaVera",
+        "company_id": "842",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "96",
+        "brand_name": "PrimaVera",
+        "company_id": "842",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "15.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "97",
+        "brand_name": "Nutrilina",
+        "company_id": "842",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "60's Pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "98",
+        "brand_name": "Ginera",
+        "company_id": "842",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's Pack",
+        "price": "25.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "100",
+        "brand_name": "Lactohil",
+        "company_id": "842",
+        "form": "Powder",
+        "generic_id": "54",
+        "packsize": "100gm jar",
+        "price": "500.00",
+        "strength": null
+    },
+    {
+        "brand_id": "101",
+        "brand_name": "Bacilax 9",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "25",
+        "packsize": "30's Pack",
+        "price": "25.00",
+        "strength": "9 billion"
+    },
+    {
+        "brand_id": "103",
+        "brand_name": "Bolardi 250",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "56",
+        "packsize": "30's Pack",
+        "price": "10.00",
+        "strength": "250mg"
+    },
+    {
+        "brand_id": "104",
+        "brand_name": "Bolardi 500",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "56",
+        "packsize": "30's Pack",
+        "price": "16.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "105",
+        "brand_name": "Biloba",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "32's Pack",
+        "price": "6.00",
+        "strength": "60mg"
+    },
+    {
+        "brand_id": "106",
+        "brand_name": "Biogut",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "56",
+        "packsize": "20’s Pack",
+        "price": "8.00",
+        "strength": "250mg"
+    },
+    {
+        "brand_id": "107",
+        "brand_name": "Biogut",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "56",
+        "packsize": "20's Pack",
+        "price": "14.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "108",
+        "brand_name": "Devas",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "54",
+        "packsize": "100ml,200ml",
+        "price": "70.00,90.00",
+        "strength": null
+    },
+    {
+        "brand_id": "109",
+        "brand_name": "D-Flax",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "12",
+        "packsize": "30's Pack",
+        "price": "7.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "110",
+        "brand_name": "Garlicap",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "13",
+        "packsize": "50's Pack",
+        "price": "3.00",
+        "strength": "10mg"
+    },
+    {
+        "brand_id": "111",
+        "brand_name": "Ginax",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "32’s Pack",
+        "price": "7.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "112",
+        "brand_name": "Hepanor",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "32's Pack",
+        "price": "6.00",
+        "strength": "70mg"
+    },
+    {
+        "brand_id": "113",
+        "brand_name": "Hepanor",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "20's Pack",
+        "price": "9.00",
+        "strength": "140mg"
+    },
+    {
+        "brand_id": "114",
+        "brand_name": "Hepanor",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "20’s Pack",
+        "price": "20.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "115",
+        "brand_name": "Laxadil Sachet",
+        "company_id": "71",
+        "form": "Sachet",
+        "generic_id": "17",
+        "packsize": "15’s Pack",
+        "price": "7.00",
+        "strength": "3.5gm"
+    },
+    {
+        "brand_id": "116",
+        "brand_name": "Primacap",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "8",
+        "packsize": "50’s Pack",
+        "price": "6.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "117",
+        "brand_name": "Primacap",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "8",
+        "packsize": "30’s Pack",
+        "price": "10.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "118",
+        "brand_name": "Prolacto",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "87",
+        "packsize": "32’s Pack",
+        "price": "12.00",
+        "strength": null
+    },
+    {
+        "brand_id": "119",
+        "brand_name": "Spirucap",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "40’s Pack",
+        "price": "4.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "120",
+        "brand_name": "Thyvy",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "57",
+        "packsize": "100ml",
+        "price": "150.00",
+        "strength": null
+    },
+    {
+        "brand_id": "121",
+        "brand_name": "Difans",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "58",
+        "packsize": "100ml, 225ml & 450ml",
+        "price": "60.00, 90.00,130.00",
+        "strength": null
+    },
+    {
+        "brand_id": "122",
+        "brand_name": "D-Sefa",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "40",
+        "packsize": "50’s Pack",
+        "price": "7.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "123",
+        "brand_name": "Hemosaf",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "59",
+        "packsize": "100ml, 225ml, 450ml",
+        "price": "60.00,120.00,175.00",
+        "strength": null
+    },
+    {
+        "brand_id": "124",
+        "brand_name": "Madhuvas",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "60",
+        "packsize": "100ml",
+        "price": "100.00",
+        "strength": null
+    },
+    {
+        "brand_id": "125",
+        "brand_name": "Naturovit",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "61",
+        "packsize": "100ml,225ml,450ml",
+        "price": "65.00,100.00,200.00",
+        "strength": null
+    },
+    {
+        "brand_id": "126",
+        "brand_name": "Polybion-M",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "62",
+        "packsize": "30’s Pack",
+        "price": "9.00",
+        "strength": null
+    },
+    {
+        "brand_id": "127",
+        "brand_name": "Polybion-G",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "63",
+        "packsize": "30’s Pack",
+        "price": "12.00",
+        "strength": null
+    },
+    {
+        "brand_id": "128",
+        "brand_name": "Tifal",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "64",
+        "packsize": "100ml",
+        "price": "60.00",
+        "strength": null
+    },
+    {
+        "brand_id": "129",
+        "brand_name": "Zurid",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "65",
+        "packsize": "100ml, 450ml",
+        "price": "60.00,140.00",
+        "strength": null
+    },
+    {
+        "brand_id": "130",
+        "brand_name": "Laxadil EP Container",
+        "company_id": "71",
+        "form": "Powder",
+        "generic_id": "17",
+        "packsize": "120gm",
+        "price": "375.00",
+        "strength": "3.5gm/5.38gm"
+    },
+    {
+        "brand_id": "131",
+        "brand_name": "D-Alovera",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "66",
+        "packsize": "450ml",
+        "price": "250.00",
+        "strength": null
+    },
+    {
+        "brand_id": "132",
+        "brand_name": "Melbit",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "67",
+        "packsize": "40’s Pack",
+        "price": "3.00",
+        "strength": "400mg"
+    },
+    {
+        "brand_id": "133",
+        "brand_name": "Alocap",
+        "company_id": "71",
+        "form": "Soft Capsule",
+        "generic_id": "68",
+        "packsize": "50’s Pack",
+        "price": "8.00",
+        "strength": "100mg"
+    },
+    {
+        "brand_id": "134",
+        "brand_name": "Tims",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "69",
+        "packsize": "100ml,450ml",
+        "price": "60.00,150.00",
+        "strength": null
+    },
+    {
+        "brand_id": "135",
+        "brand_name": "Amlabery",
+        "company_id": "71",
+        "form": "Syrup",
+        "generic_id": "3",
+        "packsize": "450ml",
+        "price": "350.00",
+        "strength": null
+    },
+    {
+        "brand_id": "137",
+        "brand_name": "Toco Soft",
+        "company_id": "250",
+        "form": "Softgel Capsule",
+        "generic_id": "70",
+        "packsize": "30’s Pack",
+        "price": "15.00",
+        "strength": "50mg (74.5 IU) + 13.5 mg(20 IU)"
+    },
+    {
+        "brand_id": "138",
+        "brand_name": "Probio R",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "86",
+        "packsize": "30's Pack",
+        "price": "25.00",
+        "strength": "20 billion cfu"
+    },
+    {
+        "brand_id": "140",
+        "brand_name": "Bioprem",
+        "company_id": "250",
+        "form": "Soft gelatin Capsule",
+        "generic_id": "72",
+        "packsize": "30's Pack",
+        "price": "15.00",
+        "strength": "1mg"
+    },
+    {
+        "brand_id": "141",
+        "brand_name": "Bioprem",
+        "company_id": "250",
+        "form": "Soft gelatin Capsule",
+        "generic_id": "72",
+        "packsize": "30’s Pack",
+        "price": "25.00",
+        "strength": "2.50 mg"
+    },
+    {
+        "brand_id": "142",
+        "brand_name": "Prolaxan",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "73",
+        "packsize": "20's Pack",
+        "price": "40.00",
+        "strength": "10 billion"
+    },
+    {
+        "brand_id": "143",
+        "brand_name": "Imugen",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "74",
+        "packsize": "20's Pack",
+        "price": "30.00",
+        "strength": "10 billion"
+    },
+    {
+        "brand_id": "153",
+        "brand_name": "Antiscar",
+        "company_id": "250",
+        "form": "Gel",
+        "generic_id": "79",
+        "packsize": "20 gm tube",
+        "price": "300.00",
+        "strength": "100mg + 50IU + 10mg"
+    },
+    {
+        "brand_id": "154",
+        "brand_name": "Orthogen",
+        "company_id": "3",
+        "form": "Tablet",
+        "generic_id": "80",
+        "packsize": "30's Pack",
+        "price": "25.0",
+        "strength": "20mg + 750mg + 50mg & 0.75 mg."
+    },
+    {
+        "brand_id": "155",
+        "brand_name": "Caripa",
+        "company_id": "250",
+        "form": "Syrup",
+        "generic_id": "81",
+        "packsize": "1's Pack",
+        "price": "450.00",
+        "strength": "200ml"
+    },
+    {
+        "brand_id": "159",
+        "brand_name": "Goodbac-3S",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "87",
+        "packsize": "18's Pack",
+        "price": "40.00",
+        "strength": "4 billion"
+    },
+    {
+        "brand_id": "160",
+        "brand_name": "Goodbac-SB",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "56",
+        "packsize": "20's Pack",
+        "price": "15.00",
+        "strength": "5  billion"
+    },
+    {
+        "brand_id": "161",
+        "brand_name": "Joinflex-40",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "45",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "162",
+        "brand_name": "Fibosyl",
+        "company_id": "22",
+        "form": "Effervescent Powder",
+        "generic_id": "17",
+        "packsize": "130 g in container (1's Pack)\r\n 3.5 g in sachet (30's Pack)",
+        "price": "400.00, 15.00",
+        "strength": null
+    },
+    {
+        "brand_id": "163",
+        "brand_name": "Arulina-500",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "164",
+        "brand_name": "Anseng",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "165",
+        "brand_name": "Ginkgo-B",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's Pack",
+        "price": "20.00",
+        "strength": "60mg"
+    },
+    {
+        "brand_id": "166",
+        "brand_name": "Primrole",
+        "company_id": "22",
+        "form": "Softgel Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "167",
+        "brand_name": "Primrole",
+        "company_id": "22",
+        "form": "Softgel Capsule",
+        "generic_id": "8",
+        "packsize": "30's Pack",
+        "price": "15.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "168",
+        "brand_name": "Hepamarin",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's Pack",
+        "price": "11.00",
+        "strength": "140 mg"
+    },
+    {
+        "brand_id": "169",
+        "brand_name": "Felmo Plus",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "85",
+        "packsize": "30’s Pack",
+        "price": "25.00",
+        "strength": "40mg + 150mg + 120 mg"
+    },
+    {
+        "brand_id": "170",
+        "brand_name": "Maximilk",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "88",
+        "packsize": "30's Pack",
+        "price": "15.00",
+        "strength": "83.33mg + 83.33mg + 83.33mg + 83.33mg + 16.67mg + 16.67mg"
+    },
+    {
+        "brand_id": "171",
+        "brand_name": "Flemo Plus",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "85",
+        "packsize": "30’s Pack",
+        "price": "25.00",
+        "strength": "150mg +  120mg + 40mg"
+    },
+    {
+        "brand_id": "172",
+        "brand_name": "Femony",
+        "company_id": "250",
+        "form": "Capsule",
+        "generic_id": "89",
+        "packsize": "30’s Pack",
+        "price": "15.00",
+        "strength": "93.33mg + 83.33mg + 41.67mg + 41.67mg + 20.00mg"
+    },
+    {
+        "brand_id": "178",
+        "brand_name": "Spiromun",
+        "company_id": "848",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "180",
+        "brand_name": "Off Cyst",
+        "company_id": "848",
+        "form": "Capsule",
+        "generic_id": "91",
+        "packsize": "10's Pack",
+        "price": "80.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "181",
+        "brand_name": "Pearlical D",
+        "company_id": "848",
+        "form": "Capsule",
+        "generic_id": "92",
+        "packsize": "30's Pack",
+        "price": "12.00",
+        "strength": "325mg"
+    },
+    {
+        "brand_id": "182",
+        "brand_name": "Probiotica",
+        "company_id": "848",
+        "form": "Capsule",
+        "generic_id": "25",
+        "packsize": "20's Pack",
+        "price": "35.00",
+        "strength": "4 billion"
+    },
+    {
+        "brand_id": "184",
+        "brand_name": "Maxton",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "185",
+        "brand_name": "Gobison",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "120 mg"
+    },
+    {
+        "brand_id": "186",
+        "brand_name": "Sunex B",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "75",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": null
+    },
+    {
+        "brand_id": "187",
+        "brand_name": "Methicap",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's pack",
+        "price": null,
+        "strength": "140 mg"
+    },
+    {
+        "brand_id": "188",
+        "brand_name": "Paltex",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "78",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "160mg"
+    },
+    {
+        "brand_id": "189",
+        "brand_name": "Wascot",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "94",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": null
+    },
+    {
+        "brand_id": "190",
+        "brand_name": "Brogel",
+        "company_id": "846",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "206",
+        "brand_name": "Bioglo",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "15.00",
+        "strength": "1000 mcg"
+    },
+    {
+        "brand_id": "207",
+        "brand_name": "Bioglo",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "2500 mcg"
+    },
+    {
+        "brand_id": "208",
+        "brand_name": "Urican",
+        "company_id": "71",
+        "form": "Capsule",
+        "generic_id": "49",
+        "packsize": "32's pack",
+        "price": "14.00",
+        "strength": "400 mg"
+    },
+    {
+        "brand_id": "209",
+        "brand_name": "Stimugin",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "210",
+        "brand_name": "Immuna",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's pack",
+        "price": "15.50",
+        "strength": "450 mg"
+    },
+    {
+        "brand_id": "211",
+        "brand_name": "ENQ",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "44",
+        "packsize": "30's pack",
+        "price": "40.00",
+        "strength": "100 mg"
+    },
+    {
+        "brand_id": "213",
+        "brand_name": "Fertility",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "95",
+        "packsize": "42's pack",
+        "price": "34.52",
+        "strength": "25 mg"
+    },
+    {
+        "brand_id": "214",
+        "brand_name": "Protolactin",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "96",
+        "packsize": "30's pack",
+        "price": "27.00",
+        "strength": "300 mg +150 mg + 50 mg"
+    },
+    {
+        "brand_id": "215",
+        "brand_name": "Lactoforte",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "97",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "333 mg + 400 mg + 333 mg + 37.33 mg + 50 mg + 10.75 mg"
+    },
+    {
+        "brand_id": "216",
+        "brand_name": "Laxant",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "98",
+        "packsize": "30's pack",
+        "price": "21.33",
+        "strength": "50 mg + 120 mg + 30 mg + 80 mg"
+    },
+    {
+        "brand_id": "217",
+        "brand_name": "Glutalight",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "99",
+        "packsize": "30's pack",
+        "price": "40.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "218",
+        "brand_name": "CM Care",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "100",
+        "packsize": "20's pack",
+        "price": "60.50",
+        "strength": "225 mg + 112.50 mg + 75 mg + 75 mg + 37.50 mg + 25 mg + 25 mg + 25 mg + 25 mg + 25 mg"
+    },
+    {
+        "brand_id": "219",
+        "brand_name": "Ovulation Inducer",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "113",
+        "packsize": "30's pack",
+        "price": "45.67",
+        "strength": "250 mg + 200 mg + 100 mg + 75 mg + 37.50 mg + 25 mg + 25 mg + 25 mg + 22.50 mg + 2.50 mg"
+    },
+    {
+        "brand_id": "220",
+        "brand_name": "Pearlcal",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "102",
+        "packsize": "30's pack",
+        "price": "15.50",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "221",
+        "brand_name": "Myositol",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "103",
+        "packsize": "30's pack",
+        "price": "48.33",
+        "strength": "500 mg + 50 mg"
+    },
+    {
+        "brand_id": "222",
+        "brand_name": "Joint Relief Plus",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "104",
+        "packsize": "30's pack",
+        "price": "36.00",
+        "strength": "500 mg + 100 mg + 250 mg + 100 mg"
+    },
+    {
+        "brand_id": "229",
+        "brand_name": "Trumega",
+        "company_id": "250",
+        "form": "Soft Gelatin Capsule",
+        "generic_id": "71",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "1000 mg"
+    },
+    {
+        "brand_id": "230",
+        "brand_name": "Synogen Plus",
+        "company_id": "116",
+        "form": "Tablet",
+        "generic_id": "85",
+        "packsize": "30's pack",
+        "price": "30.00",
+        "strength": "150 mg+120 mg+40 mg"
+    },
+    {
+        "brand_id": "231",
+        "brand_name": "Synogen Alfa",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "106",
+        "packsize": "20's pack",
+        "price": "35.00",
+        "strength": "40 mg+100 mg"
+    },
+    {
+        "brand_id": "232",
+        "brand_name": "Goslim",
+        "company_id": "116",
+        "form": "Capsule",
+        "generic_id": "107",
+        "packsize": "30's pack",
+        "price": "30.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "233",
+        "brand_name": "Goodbac-L",
+        "company_id": "22",
+        "form": "Syrup",
+        "generic_id": "108",
+        "packsize": "70 ml bot",
+        "price": "200.00",
+        "strength": "2 Billion CFU / 5 ml"
+    },
+    {
+        "brand_id": "234",
+        "brand_name": "Cystnil",
+        "company_id": "3",
+        "form": "Tablet",
+        "generic_id": "109",
+        "packsize": "10's pack",
+        "price": "50.00",
+        "strength": "150 mg+550 mg"
+    },
+    {
+        "brand_id": "235",
+        "brand_name": "Sperm Care",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "111",
+        "packsize": "30's pack",
+        "price": "51.33",
+        "strength": "116.60 mg + 8.50 mg + 16.60 mg + 33.30 mg + 100 mg + 1666 IU + 8.50 µg + 83.30 mg + 133 IU + 50 IU + 10 mg + 166 µg + 3.30 mg"
+    },
+    {
+        "brand_id": "236",
+        "brand_name": "Pregniforte",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "101",
+        "packsize": "30's pack",
+        "price": "53.33",
+        "strength": "1100 mg + 27.60 mg + 200 µg + 3 mg + 400 IU"
+    },
+    {
+        "brand_id": "237",
+        "brand_name": "Soft Joint",
+        "company_id": "848",
+        "form": "Tablet",
+        "generic_id": "80",
+        "packsize": "10's, 30's, 50's pack",
+        "price": "30.00",
+        "strength": "20mg + 750 mg + 0.75 mg"
+    },
+    {
+        "brand_id": "238",
+        "brand_name": "Optimum Medicated Soap",
+        "company_id": "848",
+        "form": "Soap",
+        "generic_id": "112",
+        "packsize": "100gm bar.",
+        "price": "460.00",
+        "strength": "100 gm + 3 gm."
+    },
+    {
+        "brand_id": "239",
+        "brand_name": "Tocogel",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "51",
+        "packsize": "30's pack",
+        "price": "6.00",
+        "strength": "200 IU"
+    },
+    {
+        "brand_id": "240",
+        "brand_name": "Fibosyl-S",
+        "company_id": "22",
+        "form": "Effervescent Powder",
+        "generic_id": "43",
+        "packsize": "20's pack",
+        "price": "20.00",
+        "strength": "(3.5 gm+7.5 mg)/5.38 gm"
+    },
+    {
+        "brand_id": "241",
+        "brand_name": "Fibosyl-S",
+        "company_id": "22",
+        "form": "Effervescent Powder",
+        "generic_id": "43",
+        "packsize": "100 gm container",
+        "price": "400.00",
+        "strength": "(3.5 gm+7.5 mg)/5.38 gm"
+    },
+    {
+        "brand_id": "242",
+        "brand_name": "Cutin",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "1000 mcg"
+    },
+    {
+        "brand_id": "243",
+        "brand_name": "Cutin",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "2500 mcg"
+    },
+    {
+        "brand_id": "244",
+        "brand_name": "Cutin",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "40.00",
+        "strength": "5000 mcg"
+    },
+    {
+        "brand_id": "245",
+        "brand_name": "HQ-10",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "114",
+        "packsize": "30's",
+        "price": "45.00,80.00",
+        "strength": "100 mg, 200mg"
+    },
+    {
+        "brand_id": "246",
+        "brand_name": "Hyrocyst",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "91",
+        "packsize": "15's",
+        "price": "74.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "247",
+        "brand_name": "Tryception",
+        "company_id": "855",
+        "form": "Tablet",
+        "generic_id": "95",
+        "packsize": "30's",
+        "price": "52.00",
+        "strength": "50mg"
+    },
+    {
+        "brand_id": "248",
+        "brand_name": "Perfectil",
+        "company_id": "855",
+        "form": "Tablet",
+        "generic_id": "72",
+        "packsize": "30's",
+        "price": "23.00",
+        "strength": "1000mg"
+    },
+    {
+        "brand_id": "249",
+        "brand_name": "Hyorose",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30's",
+        "price": "25.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "250",
+        "brand_name": "Feepro",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "25",
+        "packsize": "30's",
+        "price": "35.00",
+        "strength": "10 billion"
+    },
+    {
+        "brand_id": "251",
+        "brand_name": "Lactomom",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "115",
+        "packsize": "30's",
+        "price": "23.00",
+        "strength": "20 mg"
+    },
+    {
+        "brand_id": "252",
+        "brand_name": "Hyogul",
+        "company_id": "855",
+        "form": "Capsule",
+        "generic_id": "119",
+        "packsize": "30'S",
+        "price": "18.00",
+        "strength": "500 mg"
+    },
+    {
+        "brand_id": "253",
+        "brand_name": "Haicamin",
+        "company_id": "855",
+        "form": "Tablet",
+        "generic_id": "117",
+        "packsize": "30's",
+        "price": "30.00",
+        "strength": null
+    },
+    {
+        "brand_id": "254",
+        "brand_name": "Lycium",
+        "company_id": "855",
+        "form": "Tablet",
+        "generic_id": "118",
+        "packsize": "30's",
+        "price": "23.00",
+        "strength": "20mg + 5mg"
+    },
+    {
+        "brand_id": "255",
+        "brand_name": "Pepelif",
+        "company_id": "22",
+        "form": "Syrup",
+        "generic_id": "81",
+        "packsize": "200 ml",
+        "price": "450.00",
+        "strength": "275mg/5ml"
+    },
+    {
+        "brand_id": "256",
+        "brand_name": "Gastoforte",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "120",
+        "packsize": "30's pack",
+        "price": "15.00",
+        "strength": "620 mg +85 mg + 45 mg + 42.50 mg + 7.50 mg"
+    },
+    {
+        "brand_id": "257",
+        "brand_name": "Bone Fuel Plus",
+        "company_id": "850",
+        "form": "Tablet",
+        "generic_id": "121",
+        "packsize": "30's pack",
+        "price": "21.33",
+        "strength": "333 mg + 134 mg + 8.50 mg + 200 IU"
+    },
+    {
+        "brand_id": "258",
+        "brand_name": "Bio-Plus",
+        "company_id": "850",
+        "form": "Capsule",
+        "generic_id": "122",
+        "packsize": "30's pack",
+        "price": "29.00",
+        "strength": "3350 mcg + 333 mg + 83 mg + 350 mcg + 166 mg"
+    },
+    {
+        "brand_id": "259",
+        "brand_name": "Retainage-A",
+        "company_id": "850",
+        "form": "Serum",
+        "generic_id": "123",
+        "packsize": "1's",
+        "price": "580.00",
+        "strength": "0.3% + 3% + 0.25%"
+    },
+    {
+        "brand_id": "260",
+        "brand_name": "Lactocalm",
+        "company_id": "850",
+        "form": "Drop",
+        "generic_id": "124",
+        "packsize": "1's pack",
+        "price": "350.00",
+        "strength": "100 mg equivalent to 3000 FCC"
+    },
+    {
+        "brand_id": "261",
+        "brand_name": "Brongel",
+        "company_id": "850",
+        "form": "Gel",
+        "generic_id": "125",
+        "packsize": "1's pack",
+        "price": "695.00",
+        "strength": "5% + 5%"
+    },
+    {
+        "brand_id": "262",
+        "brand_name": "Bron Wash",
+        "company_id": "850",
+        "form": "Facewash",
+        "generic_id": "126",
+        "packsize": "1's",
+        "price": "465.00",
+        "strength": "2%"
+    },
+    {
+        "brand_id": "263",
+        "brand_name": "Vitashine",
+        "company_id": "850",
+        "form": "Shampoo",
+        "generic_id": "127",
+        "packsize": "1's",
+        "price": "1160.00",
+        "strength": "5% + 3% + 1% + 3% + 0.25% + 1% + 3%"
+    },
+    {
+        "brand_id": "264",
+        "brand_name": "Seldan Plus",
+        "company_id": "850",
+        "form": "Shampoo",
+        "generic_id": "128",
+        "packsize": "1's pack",
+        "price": "610.00",
+        "strength": "2.25%"
+    },
+    {
+        "brand_id": "265",
+        "brand_name": "Geltar",
+        "company_id": "850",
+        "form": "Shampoo",
+        "generic_id": "112",
+        "packsize": "1's",
+        "price": "500.00",
+        "strength": "1% + 3%"
+    },
+    {
+        "brand_id": "266",
+        "brand_name": "Crack Cure",
+        "company_id": "850",
+        "form": "Cream",
+        "generic_id": "129",
+        "packsize": "1's",
+        "price": "350.00",
+        "strength": "2% + 3%"
+    },
+    {
+        "brand_id": "267",
+        "brand_name": "Dilastin",
+        "company_id": "850",
+        "form": "Gel",
+        "generic_id": "130",
+        "packsize": "1's pack",
+        "price": "580.00",
+        "strength": "4% + 10% + 5%"
+    },
+    {
+        "brand_id": "268",
+        "brand_name": "Ginsenia",
+        "company_id": "22",
+        "form": "Capsule",
+        "generic_id": "131",
+        "packsize": "30'S",
+        "price": "25.00",
+        "strength": "60 mg + 100 mg"
+    },
+    {
+        "brand_id": "269",
+        "brand_name": "Ivycof",
+        "company_id": "22",
+        "form": "Syrup",
+        "generic_id": "57",
+        "packsize": "100 ml bot",
+        "price": "150.00",
+        "strength": "(37.5 mg+50 mg)/5 ml"
+    },
+    {
+        "brand_id": "270",
+        "brand_name": "ToothPaste",
+        "company_id": "848",
+        "form": "Tooth Paste",
+        "generic_id": "133",
+        "packsize": "50,75,100,150 gm",
+        "price": null,
+        "strength": null
+    },
+    {
+        "brand_id": "271",
+        "brand_name": "Deloba",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "120 mg"
+    },
+    {
+        "brand_id": "272",
+        "brand_name": "Kohos",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "37",
+        "packsize": "30's pack",
+        "price": "10.00",
+        "strength": "40mg"
+    },
+    {
+        "brand_id": "273",
+        "brand_name": "DP Silma",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "28",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "140mg"
+    },
+    {
+        "brand_id": "274",
+        "brand_name": "Laxova",
+        "company_id": "857",
+        "form": "Sachet",
+        "generic_id": "17",
+        "packsize": "20's pack",
+        "price": "20.00",
+        "strength": null
+    },
+    {
+        "brand_id": "275",
+        "brand_name": "Laxova",
+        "company_id": "857",
+        "form": "Sachet",
+        "generic_id": "17",
+        "packsize": "130 gm",
+        "price": "480.00",
+        "strength": null
+    },
+    {
+        "brand_id": "276",
+        "brand_name": "Penaxlaid",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "16",
+        "packsize": "30's pack",
+        "price": "25.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "277",
+        "brand_name": "Spirulaid",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "23",
+        "packsize": "30's pack",
+        "price": "12.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "278",
+        "brand_name": "Tensof",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "38",
+        "packsize": "30's pack",
+        "price": "15.00",
+        "strength": "300mg"
+    },
+    {
+        "brand_id": "279",
+        "brand_name": "Canbery",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "49",
+        "packsize": "30's pack",
+        "price": "20.00",
+        "strength": "400mg"
+    },
+    {
+        "brand_id": "280",
+        "brand_name": "Senarich",
+        "company_id": "857",
+        "form": "Container",
+        "generic_id": "43",
+        "packsize": "100gm",
+        "price": "450.00",
+        "strength": null
+    },
+    {
+        "brand_id": "281",
+        "brand_name": "Lactoflow",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "88",
+        "packsize": "30's pack",
+        "price": "15.00",
+        "strength": null
+    },
+    {
+        "brand_id": "282",
+        "brand_name": "Enterogermina",
+        "company_id": "229",
+        "form": "Oral Suspension",
+        "generic_id": "132",
+        "packsize": "10's pack",
+        "price": "70.00",
+        "strength": "2 billion/5 ml"
+    },
+    {
+        "brand_id": "283",
+        "brand_name": "Senarich",
+        "company_id": "857",
+        "form": "Sachet",
+        "generic_id": "43",
+        "packsize": "20's pack",
+        "price": "22.00",
+        "strength": null
+    },
+    {
+        "brand_id": "284",
+        "brand_name": "Sotia",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "134",
+        "packsize": "30's pack",
+        "price": "6.00",
+        "strength": "400mg"
+    },
+    {
+        "brand_id": "285",
+        "brand_name": "DP Zema",
+        "company_id": "857",
+        "form": "Ointment",
+        "generic_id": "135",
+        "packsize": "10 gm tube",
+        "price": "80.00",
+        "strength": null
+    },
+    {
+        "brand_id": "286",
+        "brand_name": "Prodine",
+        "company_id": "857",
+        "form": "Capsule",
+        "generic_id": "136",
+        "packsize": "18's pack",
+        "price": "45.00",
+        "strength": "100 gm"
+    },
+    {
+        "brand_id": "287",
+        "brand_name": "X-Memory",
+        "company_id": "860",
+        "form": "Capsule",
+        "generic_id": "14",
+        "packsize": "30's pack",
+        "price": "27.00",
+        "strength": "120mg"
+    },
+    {
+        "brand_id": "288",
+        "brand_name": "Ovarice",
+        "company_id": "860",
+        "form": "Capsule",
+        "generic_id": "109",
+        "packsize": "30's pack",
+        "price": "60.00",
+        "strength": "512.50mg"
+    },
+    {
+        "brand_id": "289",
+        "brand_name": "O-Care",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "80",
+        "packsize": "30's pack",
+        "price": "32.00",
+        "strength": "820.75mg"
+    },
+    {
+        "brand_id": "290",
+        "brand_name": "Liver-Fast",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "28",
+        "packsize": "28's pack",
+        "price": "36.61",
+        "strength": "540mg"
+    },
+    {
+        "brand_id": "291",
+        "brand_name": "Gluco-CMC",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "104",
+        "packsize": "30's pack",
+        "price": "35.00",
+        "strength": "950mg"
+    },
+    {
+        "brand_id": "292",
+        "brand_name": "Allcal-Plus",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "137",
+        "packsize": "28's pack",
+        "price": "30.36",
+        "strength": "510mg"
+    },
+    {
+        "brand_id": "293",
+        "brand_name": "B-Kill",
+        "company_id": "860",
+        "form": "Capsule",
+        "generic_id": "138",
+        "packsize": "30's pack",
+        "price": "40.00",
+        "strength": "10 Billion"
+    },
+    {
+        "brand_id": "294",
+        "brand_name": "Folimas-D",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "139",
+        "packsize": "28's pack",
+        "price": "42.85",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "296",
+        "brand_name": "Neuro-Alfa",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "141",
+        "packsize": "30's pack",
+        "price": "42.00",
+        "strength": "640mg"
+    },
+    {
+        "brand_id": "297",
+        "brand_name": "Lukone",
+        "company_id": "860",
+        "form": "Body Lotion",
+        "generic_id": "68",
+        "packsize": "1's pack",
+        "price": "750.00",
+        "strength": "100ml"
+    },
+    {
+        "brand_id": "298",
+        "brand_name": "EPO-Rose",
+        "company_id": "860",
+        "form": "Capsule",
+        "generic_id": "8",
+        "packsize": "30's pack",
+        "price": "27.00",
+        "strength": "500mg"
+    },
+    {
+        "brand_id": "299",
+        "brand_name": "Pirufort",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "23",
+        "packsize": "30's pack",
+        "price": "17.00",
+        "strength": "250mg"
+    },
+    {
+        "brand_id": "300",
+        "brand_name": "Bio-X4",
+        "company_id": "860",
+        "form": "Tablet",
+        "generic_id": "72",
+        "packsize": "30's pack",
+        "price": "27.00",
+        "strength": "1000mcg"
+    },
+    {
+        "brand_id": "301",
+        "brand_name": "Hairmax",
+        "company_id": "860",
+        "form": "Shampoo",
+        "generic_id": "140",
+        "packsize": "1 Unit",
+        "price": "750.00",
+        "strength": "100ml"
+    },
+    {
+        "brand_id": "302",
+        "brand_name": "Fosibon-DK",
+        "company_id": "22",
+        "form": "Tablet",
+        "generic_id": "137",
+        "packsize": "30's pack",
+        "price": "15.00",
+        "strength": "500 mg+1000 IU +75 mcg"
+    }
+]

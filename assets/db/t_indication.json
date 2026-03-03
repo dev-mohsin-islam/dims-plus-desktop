@@ -1,0 +1,6622 @@
+[
+    {
+        "indication_id": "1",
+        "indication_name": "Tuberculosis"
+    },
+    {
+        "indication_id": "2",
+        "indication_name": "Crohn's disease"
+    },
+    {
+        "indication_id": "3",
+        "indication_name": "Ulcerative colitis"
+    },
+    {
+        "indication_id": "4",
+        "indication_name": "Inflammatory bowel disease"
+    },
+    {
+        "indication_id": "7",
+        "indication_name": "Hairy cell leukaemia"
+    },
+    {
+        "indication_id": "9",
+        "indication_name": "Chronic myeloid leukaemia"
+    },
+    {
+        "indication_id": "10",
+        "indication_name": "Follicular lymphoma"
+    },
+    {
+        "indication_id": "11",
+        "indication_name": "Cutaneous T-cell lymphoma"
+    },
+    {
+        "indication_id": "12",
+        "indication_name": "Melanoma"
+    },
+    {
+        "indication_id": "13",
+        "indication_name": "Acquired immunodeficiency syndrome (AIDS)"
+    },
+    {
+        "indication_id": "17",
+        "indication_name": "Osteoarthritis / degenerative arthritis"
+    },
+    {
+        "indication_id": "19",
+        "indication_name": "Ankylosing spondylitis"
+    },
+    {
+        "indication_id": "20",
+        "indication_name": "Post-operative pain"
+    },
+    {
+        "indication_id": "21",
+        "indication_name": "Musculoskeletal and joint pain"
+    },
+    {
+        "indication_id": "22",
+        "indication_name": "Glaucoma"
+    },
+    {
+        "indication_id": "23",
+        "indication_name": "Epilepsy"
+    },
+    {
+        "indication_id": "24",
+        "indication_name": "Idiopathic intracranial hypertension"
+    },
+    {
+        "indication_id": "25",
+        "indication_name": "Altitude sickness"
+    },
+    {
+        "indication_id": "26",
+        "indication_name": "Dialysis"
+    },
+    {
+        "indication_id": "27",
+        "indication_name": "Chronic emphysema"
+    },
+    {
+        "indication_id": "28",
+        "indication_name": "Paracetamol poisoning"
+    },
+    {
+        "indication_id": "29",
+        "indication_name": "Dry eye"
+    },
+    {
+        "indication_id": "30",
+        "indication_name": "Bronchiectasis"
+    },
+    {
+        "indication_id": "31",
+        "indication_name": "Pneumonia"
+    },
+    {
+        "indication_id": "32",
+        "indication_name": "Atelectasis"
+    },
+    {
+        "indication_id": "33",
+        "indication_name": "Cystic fibrosis"
+    },
+    {
+        "indication_id": "34",
+        "indication_name": "Prevent kidney damage"
+    },
+    {
+        "indication_id": "35",
+        "indication_name": "Pain"
+    },
+    {
+        "indication_id": "36",
+        "indication_name": "Fever"
+    },
+    {
+        "indication_id": "37",
+        "indication_name": "Headache"
+    },
+    {
+        "indication_id": "38",
+        "indication_name": "Lichen planus"
+    },
+    {
+        "indication_id": "39",
+        "indication_name": "Psoriasis"
+    },
+    {
+        "indication_id": "40",
+        "indication_name": "Congenital icthyosis"
+    },
+    {
+        "indication_id": "41",
+        "indication_name": "Darier's disease"
+    },
+    {
+        "indication_id": "42",
+        "indication_name": "Poisonings"
+    },
+    {
+        "indication_id": "43",
+        "indication_name": "Drug overdose"
+    },
+    {
+        "indication_id": "44",
+        "indication_name": "Gastrointestinal disorders"
+    },
+    {
+        "indication_id": "46",
+        "indication_name": "Varicella zoster (chickenpox)"
+    },
+    {
+        "indication_id": "47",
+        "indication_name": "Herpes zoster (shingles)"
+    },
+    {
+        "indication_id": "48",
+        "indication_name": "Genital herpes"
+    },
+    {
+        "indication_id": "49",
+        "indication_name": "Herpes simplex keratitis"
+    },
+    {
+        "indication_id": "50",
+        "indication_name": "Herpes virus infections"
+    },
+    {
+        "indication_id": "51",
+        "indication_name": "Acne"
+    },
+    {
+        "indication_id": "52",
+        "indication_name": "Keratosis pilaris"
+    },
+    {
+        "indication_id": "55",
+        "indication_name": "Paroxysmal supraventricular tachycardia"
+    },
+    {
+        "indication_id": "56",
+        "indication_name": "Supraventricular tachycardia"
+    },
+    {
+        "indication_id": "57",
+        "indication_name": "Lens opacification"
+    },
+    {
+        "indication_id": "58",
+        "indication_name": "Cardiac arrest"
+    },
+    {
+        "indication_id": "60",
+        "indication_name": "Superficial bleeding"
+    },
+    {
+        "indication_id": "61",
+        "indication_name": "Acute asthma"
+    },
+    {
+        "indication_id": "62",
+        "indication_name": "Open-angle glaucoma"
+    },
+    {
+        "indication_id": "63",
+        "indication_name": "Local or regional anesthesia"
+    },
+    {
+        "indication_id": "64",
+        "indication_name": "Capillary bleeding"
+    },
+    {
+        "indication_id": "65",
+        "indication_name": "Haemoptysis"
+    },
+    {
+        "indication_id": "66",
+        "indication_name": "Haematuria"
+    },
+    {
+        "indication_id": "67",
+        "indication_name": "Retinal hemorrhage"
+    },
+    {
+        "indication_id": "68",
+        "indication_name": "Secondary hemorrhage"
+    },
+    {
+        "indication_id": "69",
+        "indication_name": "Major depressive disorder"
+    },
+    {
+        "indication_id": "70",
+        "indication_name": "Helminthiasis"
+    },
+    {
+        "indication_id": "71",
+        "indication_name": "Echinococcosis"
+    },
+    {
+        "indication_id": "72",
+        "indication_name": "Neurocysticercosis"
+    },
+    {
+        "indication_id": "73",
+        "indication_name": "Enterobiasis"
+    },
+    {
+        "indication_id": "74",
+        "indication_name": "Ascariasis"
+    },
+    {
+        "indication_id": "75",
+        "indication_name": "Hookworm infections"
+    },
+    {
+        "indication_id": "76",
+        "indication_name": "Strongyloidiasis"
+    },
+    {
+        "indication_id": "77",
+        "indication_name": "Giardiasis"
+    },
+    {
+        "indication_id": "78",
+        "indication_name": "Filariasis"
+    },
+    {
+        "indication_id": "79",
+        "indication_name": "Osteopetrosis"
+    },
+    {
+        "indication_id": "81",
+        "indication_name": "Paget's disease of bone"
+    },
+    {
+        "indication_id": "82",
+        "indication_name": "Benign prostatic hyperplasia (BPH)"
+    },
+    {
+        "indication_id": "83",
+        "indication_name": "Hypertension"
+    },
+    {
+        "indication_id": "84",
+        "indication_name": "Gout"
+    },
+    {
+        "indication_id": "85",
+        "indication_name": "Hyperuricaemia"
+    },
+    {
+        "indication_id": "86",
+        "indication_name": "Recurrent renal stones"
+    },
+    {
+        "indication_id": "87",
+        "indication_name": "Tumor lysis syndrome"
+    },
+    {
+        "indication_id": "88",
+        "indication_name": "Renal disease"
+    },
+    {
+        "indication_id": "89",
+        "indication_name": "Heart failure"
+    },
+    {
+        "indication_id": "91",
+        "indication_name": "Uric acid nephropathy"
+    },
+    {
+        "indication_id": "92",
+        "indication_name": "Cancer therapy-induced hyperuricaemia"
+    },
+    {
+        "indication_id": "93",
+        "indication_name": "Threatened miscarriage"
+    },
+    {
+        "indication_id": "95",
+        "indication_name": "Cerebrovascular insufficiency"
+    },
+    {
+        "indication_id": "96",
+        "indication_name": "Functional rehabilitation after cerebrovascular accidents"
+    },
+    {
+        "indication_id": "97",
+        "indication_name": "Auditory Vestibular and visual disorders of ischaemic aetiology"
+    },
+    {
+        "indication_id": "104",
+        "indication_name": "Hyperhidrosis"
+    },
+    {
+        "indication_id": "105",
+        "indication_name": "Heartburn"
+    },
+    {
+        "indication_id": "106",
+        "indication_name": "Reflux oesophagitis"
+    },
+    {
+        "indication_id": "107",
+        "indication_name": "Hyperacidity"
+    },
+    {
+        "indication_id": "109",
+        "indication_name": "Constipation"
+    },
+    {
+        "indication_id": "110",
+        "indication_name": "Indigestion"
+    },
+    {
+        "indication_id": "111",
+        "indication_name": "Dyspepsia"
+    },
+    {
+        "indication_id": "112",
+        "indication_name": "Flatulence"
+    },
+    {
+        "indication_id": "113",
+        "indication_name": "Gastric Hyperacidity"
+    },
+    {
+        "indication_id": "114",
+        "indication_name": "Peptic ulcer disease"
+    },
+    {
+        "indication_id": "116",
+        "indication_name": "Gastric ulcer"
+    },
+    {
+        "indication_id": "117",
+        "indication_name": "Duodenal ulcer"
+    },
+    {
+        "indication_id": "118",
+        "indication_name": "Gastritis"
+    },
+    {
+        "indication_id": "119",
+        "indication_name": "Stomach distension"
+    },
+    {
+        "indication_id": "121",
+        "indication_name": "Dysmenorrhoea"
+    },
+    {
+        "indication_id": "122",
+        "indication_name": "Gastrointestinal tract spasm"
+    },
+    {
+        "indication_id": "125",
+        "indication_name": "Parkinson's disease"
+    },
+    {
+        "indication_id": "126",
+        "indication_name": "Influenza"
+    },
+    {
+        "indication_id": "129",
+        "indication_name": "Productive cough"
+    },
+    {
+        "indication_id": "130",
+        "indication_name": "Acute sore throat"
+    },
+    {
+        "indication_id": "131",
+        "indication_name": "Complicated and recurrent urinary tract infections"
+    },
+    {
+        "indication_id": "132",
+        "indication_name": "Severe Gram-negative infections"
+    },
+    {
+        "indication_id": "133",
+        "indication_name": "Non-tubercular mycobacterial infections"
+    },
+    {
+        "indication_id": "134",
+        "indication_name": "Bacterial septicemia"
+    },
+    {
+        "indication_id": "135",
+        "indication_name": "Infections of the respiratory tract"
+    },
+    {
+        "indication_id": "138",
+        "indication_name": "Intra-abdominal infections"
+    },
+    {
+        "indication_id": "139",
+        "indication_name": "Burns"
+    },
+    {
+        "indication_id": "140",
+        "indication_name": "Postoperative infections"
+    },
+    {
+        "indication_id": "141",
+        "indication_name": "Meningitis"
+    },
+    {
+        "indication_id": "142",
+        "indication_name": "Peritonitis"
+    },
+    {
+        "indication_id": "143",
+        "indication_name": "Neonatal sepsis"
+    },
+    {
+        "indication_id": "144",
+        "indication_name": "Congestive heart failure"
+    },
+    {
+        "indication_id": "145",
+        "indication_name": "Hepatic cirrhosis with ascites and oedema"
+    },
+    {
+        "indication_id": "146",
+        "indication_name": "Parenteral nutrition"
+    },
+    {
+        "indication_id": "147",
+        "indication_name": "Prevent nitrogen loss"
+    },
+    {
+        "indication_id": "148",
+        "indication_name": "Negative nitrogen balance"
+    },
+    {
+        "indication_id": "149",
+        "indication_name": "Nutritional therapy"
+    },
+    {
+        "indication_id": "150",
+        "indication_name": "Haemorrhage"
+    },
+    {
+        "indication_id": "151",
+        "indication_name": "Missed abortion"
+    },
+    {
+        "indication_id": "152",
+        "indication_name": "Hereditary hemorrhagic telangiectasia"
+    },
+    {
+        "indication_id": "153",
+        "indication_name": "Traumatic hyphema"
+    },
+    {
+        "indication_id": "154",
+        "indication_name": "Dental bleeding"
+    },
+    {
+        "indication_id": "155",
+        "indication_name": "Hemophilia A"
+    },
+    {
+        "indication_id": "156",
+        "indication_name": "Postoperative bleeding"
+    },
+    {
+        "indication_id": "157",
+        "indication_name": "Systemic hyperfibrinolysis"
+    },
+    {
+        "indication_id": "158",
+        "indication_name": "Asthma"
+    },
+    {
+        "indication_id": "162",
+        "indication_name": "Chronic bronchitis"
+    },
+    {
+        "indication_id": "163",
+        "indication_name": "Ventricular arrhythmias"
+    },
+    {
+        "indication_id": "164",
+        "indication_name": "Ventricular fibrillation"
+    },
+    {
+        "indication_id": "165",
+        "indication_name": "Ventricular tachycardia"
+    },
+    {
+        "indication_id": "166",
+        "indication_name": "Atrial fibrillation"
+    },
+    {
+        "indication_id": "167",
+        "indication_name": "Hypertrophic cardiomyopathy"
+    },
+    {
+        "indication_id": "168",
+        "indication_name": "Supraventricular arrhythmias"
+    },
+    {
+        "indication_id": "169",
+        "indication_name": "Depression"
+    },
+    {
+        "indication_id": "170",
+        "indication_name": "Neuropathic pain"
+    },
+    {
+        "indication_id": "171",
+        "indication_name": "Post-herpetic neuralgia"
+    },
+    {
+        "indication_id": "174",
+        "indication_name": "CAD"
+    },
+    {
+        "indication_id": "176",
+        "indication_name": "Chronic stable angina"
+    },
+    {
+        "indication_id": "177",
+        "indication_name": "Hyperlipidaemia"
+    },
+    {
+        "indication_id": "178",
+        "indication_name": "Bacterial infections"
+    },
+    {
+        "indication_id": "179",
+        "indication_name": "Pharyngitis"
+    },
+    {
+        "indication_id": "180",
+        "indication_name": "Acute otitis media"
+    },
+    {
+        "indication_id": "181",
+        "indication_name": "Acute bacterial sinusitis"
+    },
+    {
+        "indication_id": "182",
+        "indication_name": "Endocarditis"
+    },
+    {
+        "indication_id": "183",
+        "indication_name": "Anthrax"
+    },
+    {
+        "indication_id": "184",
+        "indication_name": "Chlamydial cervicitis"
+    },
+    {
+        "indication_id": "185",
+        "indication_name": "Chlamydial urethritis"
+    },
+    {
+        "indication_id": "186",
+        "indication_name": "Lyme disease"
+    },
+    {
+        "indication_id": "187",
+        "indication_name": "Dental abscess"
+    },
+    {
+        "indication_id": "188",
+        "indication_name": "Salmonellosis"
+    },
+    {
+        "indication_id": "189",
+        "indication_name": "Typhoid fever"
+    },
+    {
+        "indication_id": "191",
+        "indication_name": "Infections of the Lower Respiratory Tract"
+    },
+    {
+        "indication_id": "197",
+        "indication_name": "H. pylori infection"
+    },
+    {
+        "indication_id": "199",
+        "indication_name": "Community-acquired pneumonia"
+    },
+    {
+        "indication_id": "202",
+        "indication_name": "Severe or recurrent resp tract infections"
+    },
+    {
+        "indication_id": "203",
+        "indication_name": "Susceptible infections"
+    },
+    {
+        "indication_id": "204",
+        "indication_name": "Sinusitis"
+    },
+    {
+        "indication_id": "205",
+        "indication_name": "Otitis media"
+    },
+    {
+        "indication_id": "206",
+        "indication_name": "UTI"
+    },
+    {
+        "indication_id": "207",
+        "indication_name": "Systemic fungal infections"
+    },
+    {
+        "indication_id": "208",
+        "indication_name": "Visceral leishmaniasis"
+    },
+    {
+        "indication_id": "209",
+        "indication_name": "Primary amoebic meningoencephalitis"
+    },
+    {
+        "indication_id": "210",
+        "indication_name": "Thrush"
+    },
+    {
+        "indication_id": "211",
+        "indication_name": "Cryptococcal meningitis"
+    },
+    {
+        "indication_id": "212",
+        "indication_name": "Candidiasis"
+    },
+    {
+        "indication_id": "213",
+        "indication_name": "Aspergillosis"
+    },
+    {
+        "indication_id": "214",
+        "indication_name": "Candidal cystitis"
+    },
+    {
+        "indication_id": "215",
+        "indication_name": "Bacterial meningitis"
+    },
+    {
+        "indication_id": "216",
+        "indication_name": "Paratyphoid fever"
+    },
+    {
+        "indication_id": "217",
+        "indication_name": "Septicaemia"
+    },
+    {
+        "indication_id": "218",
+        "indication_name": "Intrapartum prophylaxis against group B streptococcal infections"
+    },
+    {
+        "indication_id": "220",
+        "indication_name": "Ovulation induction"
+    },
+    {
+        "indication_id": "222",
+        "indication_name": "Gastro-enteritis with dehydration"
+    },
+    {
+        "indication_id": "223",
+        "indication_name": "Dehydration"
+    },
+    {
+        "indication_id": "225",
+        "indication_name": "Prolonged vomiting"
+    },
+    {
+        "indication_id": "226",
+        "indication_name": "Burns with a gastric fistula"
+    },
+    {
+        "indication_id": "227",
+        "indication_name": "Pulmonary hemorrhage"
+    },
+    {
+        "indication_id": "228",
+        "indication_name": "Intestinal bleeding"
+    },
+    {
+        "indication_id": "229",
+        "indication_name": "Conjunctivitis"
+    },
+    {
+        "indication_id": "230",
+        "indication_name": "Keratitis"
+    },
+    {
+        "indication_id": "233",
+        "indication_name": "Schizophrenia"
+    },
+    {
+        "indication_id": "234",
+        "indication_name": "Bipolar disorder"
+    },
+    {
+        "indication_id": "235",
+        "indication_name": "Agitation"
+    },
+    {
+        "indication_id": "236",
+        "indication_name": "Irritability in autism"
+    },
+    {
+        "indication_id": "237",
+        "indication_name": "Malaria"
+    },
+    {
+        "indication_id": "238",
+        "indication_name": "Schistosomiasis"
+    },
+    {
+        "indication_id": "239",
+        "indication_name": "Acute uncomplicated malaria"
+    },
+    {
+        "indication_id": "241",
+        "indication_name": "Vitamin/mineral deficiency"
+    },
+    {
+        "indication_id": "243",
+        "indication_name": "Iron deficiency"
+    },
+    {
+        "indication_id": "244",
+        "indication_name": "Osteoporosis"
+    },
+    {
+        "indication_id": "245",
+        "indication_name": "Calcium and vitamin C deficiency"
+    },
+    {
+        "indication_id": "246",
+        "indication_name": "Premenstrual syndrome"
+    },
+    {
+        "indication_id": "248",
+        "indication_name": "Increased demand for Calcium and Vitamin C"
+    },
+    {
+        "indication_id": "250",
+        "indication_name": "Lactation"
+    },
+    {
+        "indication_id": "251",
+        "indication_name": "Periods of rapid growth childhood"
+    },
+    {
+        "indication_id": "254",
+        "indication_name": "Infectious disease"
+    },
+    {
+        "indication_id": "255",
+        "indication_name": "Vitamin/mineral deficiency during pregnancy and lactation"
+    },
+    {
+        "indication_id": "256",
+        "indication_name": "Iron deficiency during pregnancy and lactation"
+    },
+    {
+        "indication_id": "257",
+        "indication_name": "Sugar substitute"
+    },
+    {
+        "indication_id": "260",
+        "indication_name": "TIA"
+    },
+    {
+        "indication_id": "261",
+        "indication_name": "MI"
+    },
+    {
+        "indication_id": "262",
+        "indication_name": "Ischaemic events"
+    },
+    {
+        "indication_id": "263",
+        "indication_name": "Food supplement"
+    },
+    {
+        "indication_id": "264",
+        "indication_name": "Age-related macular degeneration (AMD)"
+    },
+    {
+        "indication_id": "265",
+        "indication_name": "Alzheimer's disease"
+    },
+    {
+        "indication_id": "266",
+        "indication_name": "Improving recovery after stroke"
+    },
+    {
+        "indication_id": "267",
+        "indication_name": "Protecting against cancer"
+    },
+    {
+        "indication_id": "268",
+        "indication_name": "Reducing cholesterol levels"
+    },
+    {
+        "indication_id": "269",
+        "indication_name": "Reducing skin damage from ultraviolet (UV) light"
+    },
+    {
+        "indication_id": "271",
+        "indication_name": "Migraine"
+    },
+    {
+        "indication_id": "272",
+        "indication_name": "Arrhythmias"
+    },
+    {
+        "indication_id": "273",
+        "indication_name": "Acute MI"
+    },
+    {
+        "indication_id": "274",
+        "indication_name": "Attention deficit hyperactivity disorder (ADHD)"
+    },
+    {
+        "indication_id": "276",
+        "indication_name": "Dyslipidemia"
+    },
+    {
+        "indication_id": "278",
+        "indication_name": "Familial hypercholesterolemia"
+    },
+    {
+        "indication_id": "279",
+        "indication_name": "Cardiovascular event prevention"
+    },
+    {
+        "indication_id": "280",
+        "indication_name": "General anaesthesia"
+    },
+    {
+        "indication_id": "281",
+        "indication_name": "Endotracheal intubation"
+    },
+    {
+        "indication_id": "282",
+        "indication_name": "Aid controlled ventilation"
+    },
+    {
+        "indication_id": "283",
+        "indication_name": "Bradycardia"
+    },
+    {
+        "indication_id": "285",
+        "indication_name": "Inflammatory eye disorders"
+    },
+    {
+        "indication_id": "286",
+        "indication_name": "Eye refraction"
+    },
+    {
+        "indication_id": "287",
+        "indication_name": "Anesthesia adjunct"
+    },
+    {
+        "indication_id": "289",
+        "indication_name": "Sunblock"
+    },
+    {
+        "indication_id": "290",
+        "indication_name": "Solar urticaria"
+    },
+    {
+        "indication_id": "291",
+        "indication_name": "Acute solar dermatitis"
+    },
+    {
+        "indication_id": "292",
+        "indication_name": "Acute lupus erythematosus"
+    },
+    {
+        "indication_id": "293",
+        "indication_name": "Herpes simplex"
+    },
+    {
+        "indication_id": "294",
+        "indication_name": "Polymorphic light eruption"
+    },
+    {
+        "indication_id": "295",
+        "indication_name": "Cutaneous albinism"
+    },
+    {
+        "indication_id": "296",
+        "indication_name": "Vitiligo"
+    },
+    {
+        "indication_id": "297",
+        "indication_name": "Drug-induced photosensitivity"
+    },
+    {
+        "indication_id": "299",
+        "indication_name": "Rosacea"
+    },
+    {
+        "indication_id": "300",
+        "indication_name": "Rosacea melasma"
+    },
+    {
+        "indication_id": "301",
+        "indication_name": "Post inflammatory hyperpigmentation"
+    },
+    {
+        "indication_id": "302",
+        "indication_name": "Allergic rhinitis"
+    },
+    {
+        "indication_id": "303",
+        "indication_name": "Allergic conjunctivitis"
+    },
+    {
+        "indication_id": "304",
+        "indication_name": "Bacterial endocarditis"
+    },
+    {
+        "indication_id": "305",
+        "indication_name": "Streptococcal pharyngitis/tonsillitis"
+    },
+    {
+        "indication_id": "306",
+        "indication_name": "Uncomplicated UTI"
+    },
+    {
+        "indication_id": "307",
+        "indication_name": "PID"
+    },
+    {
+        "indication_id": "308",
+        "indication_name": "Non-gonococcal urethritis"
+    },
+    {
+        "indication_id": "309",
+        "indication_name": "Chancroid"
+    },
+    {
+        "indication_id": "310",
+        "indication_name": "Acute salmonellosis"
+    },
+    {
+        "indication_id": "311",
+        "indication_name": "Cervicitis"
+    },
+    {
+        "indication_id": "312",
+        "indication_name": "Babesiosis"
+    },
+    {
+        "indication_id": "313",
+        "indication_name": "Chlamydial infections"
+    },
+    {
+        "indication_id": "314",
+        "indication_name": "Pelvic inflammatory disease"
+    },
+    {
+        "indication_id": "316",
+        "indication_name": "Bacterial Conjunctivitis"
+    },
+    {
+        "indication_id": "317",
+        "indication_name": "Neonatal Conjunctivitis"
+    },
+    {
+        "indication_id": "318",
+        "indication_name": "Blepharitis"
+    },
+    {
+        "indication_id": "319",
+        "indication_name": "Lower Respiratory Tract Infections"
+    },
+    {
+        "indication_id": "320",
+        "indication_name": "Cystitis"
+    },
+    {
+        "indication_id": "321",
+        "indication_name": "Gonorrhoea"
+    },
+    {
+        "indication_id": "324",
+        "indication_name": "Endometritis"
+    },
+    {
+        "indication_id": "325",
+        "indication_name": "Pelvic cellulitis"
+    },
+    {
+        "indication_id": "327",
+        "indication_name": "Minor cuts"
+    },
+    {
+        "indication_id": "328",
+        "indication_name": "Scrapes"
+    },
+    {
+        "indication_id": "330",
+        "indication_name": "Eczematoid dermatitis"
+    },
+    {
+        "indication_id": "331",
+        "indication_name": "Neurodermatitis"
+    },
+    {
+        "indication_id": "332",
+        "indication_name": "Eczema"
+    },
+    {
+        "indication_id": "333",
+        "indication_name": "Anogenital pruritus"
+    },
+    {
+        "indication_id": "334",
+        "indication_name": "Impetigo"
+    },
+    {
+        "indication_id": "336",
+        "indication_name": "Contact dermatitis"
+    },
+    {
+        "indication_id": "337",
+        "indication_name": "Bacterial ocular infections"
+    },
+    {
+        "indication_id": "338",
+        "indication_name": "Chronic muscle spasticity"
+    },
+    {
+        "indication_id": "339",
+        "indication_name": "Multiple sclerosis"
+    },
+    {
+        "indication_id": "340",
+        "indication_name": "Spasm"
+    },
+    {
+        "indication_id": "341",
+        "indication_name": "Stiffness"
+    },
+    {
+        "indication_id": "342",
+        "indication_name": "Chronic obstructive pulmonary disease (COPD)"
+    },
+    {
+        "indication_id": "344",
+        "indication_name": "X-ray imaging"
+    },
+    {
+        "indication_id": "345",
+        "indication_name": "Diagnostic procedures"
+    },
+    {
+        "indication_id": "346",
+        "indication_name": "Imaging of the GI tract"
+    },
+    {
+        "indication_id": "348",
+        "indication_name": "Inflammatory skin disorders"
+    },
+    {
+        "indication_id": "349",
+        "indication_name": "Hay fever"
+    },
+    {
+        "indication_id": "352",
+        "indication_name": "Wound cleansing"
+    },
+    {
+        "indication_id": "356",
+        "indication_name": "Seborrhoeic dermatitis"
+    },
+    {
+        "indication_id": "357",
+        "indication_name": "Group A Strep. infections"
+    },
+    {
+        "indication_id": "358",
+        "indication_name": "Neurosyphilis"
+    },
+    {
+        "indication_id": "359",
+        "indication_name": "Fusobacterium infections"
+    },
+    {
+        "indication_id": "360",
+        "indication_name": "Diphtheria"
+    },
+    {
+        "indication_id": "361",
+        "indication_name": "Erysipeloid"
+    },
+    {
+        "indication_id": "362",
+        "indication_name": "Uncomplicated pneumococcal pneumonia"
+    },
+    {
+        "indication_id": "363",
+        "indication_name": "Rat bite fever"
+    },
+    {
+        "indication_id": "364",
+        "indication_name": "Rheumatic fever"
+    },
+    {
+        "indication_id": "365",
+        "indication_name": "Syphilis"
+    },
+    {
+        "indication_id": "366",
+        "indication_name": "Streptococcal pharyngitis"
+    },
+    {
+        "indication_id": "367",
+        "indication_name": "Topical anesthesia"
+    },
+    {
+        "indication_id": "369",
+        "indication_name": "Pruritus"
+    },
+    {
+        "indication_id": "370",
+        "indication_name": "Pain and itching caused by sunburn"
+    },
+    {
+        "indication_id": "371",
+        "indication_name": "Insect bites"
+    },
+    {
+        "indication_id": "372",
+        "indication_name": "Poison ivy"
+    },
+    {
+        "indication_id": "373",
+        "indication_name": "Skin irritations"
+    },
+    {
+        "indication_id": "374",
+        "indication_name": "Sore throat"
+    },
+    {
+        "indication_id": "375",
+        "indication_name": "Sunburn"
+    },
+    {
+        "indication_id": "376",
+        "indication_name": "Teething pain"
+    },
+    {
+        "indication_id": "377",
+        "indication_name": "Vaginal or rectal irritation"
+    },
+    {
+        "indication_id": "378",
+        "indication_name": "Ingrown toenails"
+    },
+    {
+        "indication_id": "379",
+        "indication_name": "Bacterial eye infections"
+    },
+    {
+        "indication_id": "380",
+        "indication_name": "Inflammation of the Cornea"
+    },
+    {
+        "indication_id": "382",
+        "indication_name": "Fungal infections"
+    },
+    {
+        "indication_id": "383",
+        "indication_name": "Athlete's foot"
+    },
+    {
+        "indication_id": "385",
+        "indication_name": "Dyeing hair"
+    },
+    {
+        "indication_id": "386",
+        "indication_name": "Teeth whitening"
+    },
+    {
+        "indication_id": "388",
+        "indication_name": "Head lice"
+    },
+    {
+        "indication_id": "389",
+        "indication_name": "Pediculosis capitis"
+    },
+    {
+        "indication_id": "390",
+        "indication_name": "Scabies"
+    },
+    {
+        "indication_id": "391",
+        "indication_name": "Cellulitis"
+    },
+    {
+        "indication_id": "392",
+        "indication_name": "Infective endocarditis"
+    },
+    {
+        "indication_id": "394",
+        "indication_name": "Aspiration pneumonia"
+    },
+    {
+        "indication_id": "395",
+        "indication_name": "Lung abscess"
+    },
+    {
+        "indication_id": "396",
+        "indication_name": "Septic Arthritis"
+    },
+    {
+        "indication_id": "397",
+        "indication_name": "Gangrene"
+    },
+    {
+        "indication_id": "398",
+        "indication_name": "Meningococcal meningitis"
+    },
+    {
+        "indication_id": "399",
+        "indication_name": "Pneumococcal meningitis"
+    },
+    {
+        "indication_id": "400",
+        "indication_name": "Botulism"
+    },
+    {
+        "indication_id": "401",
+        "indication_name": "Infections caused by Staphylococcus (susceptible strains)"
+    },
+    {
+        "indication_id": "403",
+        "indication_name": "Pneumococcus species gonorrhoea"
+    },
+    {
+        "indication_id": "404",
+        "indication_name": "Subacute bacterial endocarditis"
+    },
+    {
+        "indication_id": "407",
+        "indication_name": "Erysipelas"
+    },
+    {
+        "indication_id": "408",
+        "indication_name": "Skin and soft tissue infections"
+    },
+    {
+        "indication_id": "410",
+        "indication_name": "Empyema"
+    },
+    {
+        "indication_id": "412",
+        "indication_name": "Pericarditis"
+    },
+    {
+        "indication_id": "413",
+        "indication_name": "Arthritis"
+    },
+    {
+        "indication_id": "415",
+        "indication_name": "rickets"
+    },
+    {
+        "indication_id": "416",
+        "indication_name": "Hypoparathyroidism"
+    },
+    {
+        "indication_id": "417",
+        "indication_name": "Latent tetany"
+    },
+    {
+        "indication_id": "418",
+        "indication_name": "Calcium deficiency"
+    },
+    {
+        "indication_id": "419",
+        "indication_name": "Increased calcium demand in pregnancy & lactation"
+    },
+    {
+        "indication_id": "420",
+        "indication_name": "Vitamin/mineral supplement"
+    },
+    {
+        "indication_id": "421",
+        "indication_name": "Cancer Prevention"
+    },
+    {
+        "indication_id": "422",
+        "indication_name": "Dementia"
+    },
+    {
+        "indication_id": "423",
+        "indication_name": "Degenerative diseases"
+    },
+    {
+        "indication_id": "425",
+        "indication_name": "Meniere's disease"
+    },
+    {
+        "indication_id": "426",
+        "indication_name": "Tinnitus"
+    },
+    {
+        "indication_id": "427",
+        "indication_name": "Vertigo"
+    },
+    {
+        "indication_id": "428",
+        "indication_name": "Dizziness"
+    },
+    {
+        "indication_id": "429",
+        "indication_name": "Drug hypersensitivity reactions"
+    },
+    {
+        "indication_id": "430",
+        "indication_name": "Perennial or seasonal allergic rhinitis"
+    },
+    {
+        "indication_id": "431",
+        "indication_name": "Serum sickness"
+    },
+    {
+        "indication_id": "432",
+        "indication_name": "Transfusion reactions"
+    },
+    {
+        "indication_id": "433",
+        "indication_name": "Severe erythema multiforme (Stevens-Johnson syndrome)"
+    },
+    {
+        "indication_id": "437",
+        "indication_name": "Acute rheumatic carditis"
+    },
+    {
+        "indication_id": "438",
+        "indication_name": "Psoriatic arthritis"
+    },
+    {
+        "indication_id": "439",
+        "indication_name": "Juvenile rheumatoid arthritis"
+    },
+    {
+        "indication_id": "440",
+        "indication_name": "Dermatomyositis"
+    },
+    {
+        "indication_id": "441",
+        "indication_name": "Polymyositis"
+    },
+    {
+        "indication_id": "443",
+        "indication_name": "Psoriatic plaques"
+    },
+    {
+        "indication_id": "444",
+        "indication_name": "Allergic and inflammatory disorders"
+    },
+    {
+        "indication_id": "445",
+        "indication_name": "Congenital adrenal hyperplasia"
+    },
+    {
+        "indication_id": "446",
+        "indication_name": "Lichen simplex"
+    },
+    {
+        "indication_id": "447",
+        "indication_name": "Prurigo nodularis"
+    },
+    {
+        "indication_id": "448",
+        "indication_name": "Plaque psoriasis"
+    },
+    {
+        "indication_id": "453",
+        "indication_name": "Jock itch"
+    },
+    {
+        "indication_id": "454",
+        "indication_name": "Ocular and ear inflammation with bacterial infection"
+    },
+    {
+        "indication_id": "456",
+        "indication_name": "Itchiness or irritation around the anus"
+    },
+    {
+        "indication_id": "457",
+        "indication_name": "Haemorrhoids (piles)"
+    },
+    {
+        "indication_id": "458",
+        "indication_name": "Scalp and non-scalp psoriasis"
+    },
+    {
+        "indication_id": "459",
+        "indication_name": "Allergic and inflammatory conditions of the eye"
+    },
+    {
+        "indication_id": "461",
+        "indication_name": "Ocular hypertension"
+    },
+    {
+        "indication_id": "462",
+        "indication_name": "Nutritional supplement"
+    },
+    {
+        "indication_id": "463",
+        "indication_name": "Bowel evacuation"
+    },
+    {
+        "indication_id": "464",
+        "indication_name": "Gastric and duodenal ulceration"
+    },
+    {
+        "indication_id": "467",
+        "indication_name": "Gas"
+    },
+    {
+        "indication_id": "468",
+        "indication_name": "Colic"
+    },
+    {
+        "indication_id": "469",
+        "indication_name": "Dysentery"
+    },
+    {
+        "indication_id": "470",
+        "indication_name": "Allergies"
+    },
+    {
+        "indication_id": "471",
+        "indication_name": "Cough"
+    },
+    {
+        "indication_id": "472",
+        "indication_name": "Bronchitis"
+    },
+    {
+        "indication_id": "473",
+        "indication_name": "Flu"
+    },
+    {
+        "indication_id": "474",
+        "indication_name": "Swine flu"
+    },
+    {
+        "indication_id": "475",
+        "indication_name": "Congestion"
+    },
+    {
+        "indication_id": "479",
+        "indication_name": "Post-menopausal osteoporosis"
+    },
+    {
+        "indication_id": "480",
+        "indication_name": "Rickets"
+    },
+    {
+        "indication_id": "481",
+        "indication_name": "Osteocalcaemia"
+    },
+    {
+        "indication_id": "482",
+        "indication_name": "Mineral supplement"
+    },
+    {
+        "indication_id": "484",
+        "indication_name": "Systemic sclerosis"
+    },
+    {
+        "indication_id": "485",
+        "indication_name": "Anxiety"
+    },
+    {
+        "indication_id": "487",
+        "indication_name": "Postoperative ocular inflammation"
+    },
+    {
+        "indication_id": "488",
+        "indication_name": "Ocular pain"
+    },
+    {
+        "indication_id": "492",
+        "indication_name": "Hypogonadism"
+    },
+    {
+        "indication_id": "493",
+        "indication_name": "Infertility"
+    },
+    {
+        "indication_id": "494",
+        "indication_name": "Acromegaly"
+    },
+    {
+        "indication_id": "495",
+        "indication_name": "Lactation suppression"
+    },
+    {
+        "indication_id": "499",
+        "indication_name": "Nasal polyposis"
+    },
+    {
+        "indication_id": "500",
+        "indication_name": "Oedema"
+    },
+    {
+        "indication_id": "501",
+        "indication_name": "Nephrotic syndrome"
+    },
+    {
+        "indication_id": "502",
+        "indication_name": "Epidural Intrathecal anesthesia"
+    },
+    {
+        "indication_id": "504",
+        "indication_name": "Epidural analgesia"
+    },
+    {
+        "indication_id": "505",
+        "indication_name": "Spinal anesthesia"
+    },
+    {
+        "indication_id": "507",
+        "indication_name": "Subarachnoid anesthesia"
+    },
+    {
+        "indication_id": "508",
+        "indication_name": "Anaesthesia"
+    },
+    {
+        "indication_id": "509",
+        "indication_name": "Opioid dependence"
+    },
+    {
+        "indication_id": "510",
+        "indication_name": "Tinea pedis (athlete's foot)"
+    },
+    {
+        "indication_id": "511",
+        "indication_name": "Tinea corporis (ringworm)"
+    },
+    {
+        "indication_id": "512",
+        "indication_name": "Tinea cruris (jock itch)"
+    },
+    {
+        "indication_id": "513",
+        "indication_name": "Tinea (pityriasis) versicolor"
+    },
+    {
+        "indication_id": "514",
+        "indication_name": "Hyperprolactinemia"
+    },
+    {
+        "indication_id": "515",
+        "indication_name": "Prolactinomas"
+    },
+    {
+        "indication_id": "516",
+        "indication_name": "Uterine fibroids"
+    },
+    {
+        "indication_id": "517",
+        "indication_name": "Cushing's disease"
+    },
+    {
+        "indication_id": "518",
+        "indication_name": "Pituitary adenomas"
+    },
+    {
+        "indication_id": "519",
+        "indication_name": "Backache"
+    },
+    {
+        "indication_id": "520",
+        "indication_name": "Toothache"
+    },
+    {
+        "indication_id": "521",
+        "indication_name": "Rheumatic pain"
+    },
+    {
+        "indication_id": "524",
+        "indication_name": "Itching"
+    },
+    {
+        "indication_id": "525",
+        "indication_name": "Rashes"
+    },
+    {
+        "indication_id": "526",
+        "indication_name": "Poison oak"
+    },
+    {
+        "indication_id": "527",
+        "indication_name": "Chickenpox"
+    },
+    {
+        "indication_id": "528",
+        "indication_name": "Stings"
+    },
+    {
+        "indication_id": "529",
+        "indication_name": "Scalp psoriasis"
+    },
+    {
+        "indication_id": "530",
+        "indication_name": "Alopecia areata"
+    },
+    {
+        "indication_id": "531",
+        "indication_name": "Hypocalcaemia"
+    },
+    {
+        "indication_id": "533",
+        "indication_name": "Renal osteodystrophy"
+    },
+    {
+        "indication_id": "535",
+        "indication_name": "Calcium and vitamin D deficiency"
+    },
+    {
+        "indication_id": "538",
+        "indication_name": "Stomach upset"
+    },
+    {
+        "indication_id": "539",
+        "indication_name": "Osteomalacia"
+    },
+    {
+        "indication_id": "542",
+        "indication_name": "Alkalinizing agent"
+    },
+    {
+        "indication_id": "543",
+        "indication_name": "Diabetic coma"
+    },
+    {
+        "indication_id": "544",
+        "indication_name": "Cholera"
+    },
+    {
+        "indication_id": "545",
+        "indication_name": "Peritoneal Dialysis "
+    },
+    {
+        "indication_id": "548",
+        "indication_name": "Magnesium sulfate overdose"
+    },
+    {
+        "indication_id": "551",
+        "indication_name": "Dietary supplements"
+    },
+    {
+        "indication_id": "553",
+        "indication_name": "Muscle aches"
+    },
+    {
+        "indication_id": "554",
+        "indication_name": "Sprains"
+    },
+    {
+        "indication_id": "555",
+        "indication_name": "Strains"
+    },
+    {
+        "indication_id": "557",
+        "indication_name": "Back pain"
+    },
+    {
+        "indication_id": "558",
+        "indication_name": "Joint pain"
+    },
+    {
+        "indication_id": "559",
+        "indication_name": "Cold"
+    },
+    {
+        "indication_id": "560",
+        "indication_name": "Catarrh"
+    },
+    {
+        "indication_id": "561",
+        "indication_name": "Stiff neck"
+    },
+    {
+        "indication_id": "562",
+        "indication_name": "Low back pain"
+    },
+    {
+        "indication_id": "564",
+        "indication_name": "Trigeminal neuralgia"
+    },
+    {
+        "indication_id": "566",
+        "indication_name": "Colorectal cancer"
+    },
+    {
+        "indication_id": "568",
+        "indication_name": "Oesophageal cancer"
+    },
+    {
+        "indication_id": "569",
+        "indication_name": "Spondylitis"
+    },
+    {
+        "indication_id": "570",
+        "indication_name": "Peripheral neuralgias: Diabetic neuropathy"
+    },
+    {
+        "indication_id": "572",
+        "indication_name": "Myocardial infarction"
+    },
+    {
+        "indication_id": "573",
+        "indication_name": "Diabetic nephropathy"
+    },
+    {
+        "indication_id": "575",
+        "indication_name": "Preparation for thyroidectomy"
+    },
+    {
+        "indication_id": "579",
+        "indication_name": "Iron deficiency anemia"
+    },
+    {
+        "indication_id": "581",
+        "indication_name": "Iron Folic acid and zinc deficiency during pregnancy and lactation"
+    },
+    {
+        "indication_id": "583",
+        "indication_name": "Ovarian carcinoma"
+    },
+    {
+        "indication_id": "585",
+        "indication_name": "Burning sansation"
+    },
+    {
+        "indication_id": "586",
+        "indication_name": "Irritation and discomfort of the eye"
+    },
+    {
+        "indication_id": "587",
+        "indication_name": "Surgical lubricant"
+    },
+    {
+        "indication_id": "588",
+        "indication_name": "Sexual lubricant"
+    },
+    {
+        "indication_id": "589",
+        "indication_name": "Left ventricular dysfunction"
+    },
+    {
+        "indication_id": "590",
+        "indication_name": "Biliary-tract infections"
+    },
+    {
+        "indication_id": "593",
+        "indication_name": "Upper and lower respiratory tract infections"
+    },
+    {
+        "indication_id": "594",
+        "indication_name": "Pharyngitis and Tonsillitis"
+    },
+    {
+        "indication_id": "595",
+        "indication_name": "Tonsillitis"
+    },
+    {
+        "indication_id": "596",
+        "indication_name": "Urinary tract infection"
+    },
+    {
+        "indication_id": "597",
+        "indication_name": "Reproductive tract infection and skin infections"
+    },
+    {
+        "indication_id": "598",
+        "indication_name": "Soft tissue infections"
+    },
+    {
+        "indication_id": "599",
+        "indication_name": "Respiratory tract infections"
+    },
+    {
+        "indication_id": "600",
+        "indication_name": "Acute Exacerbations of Chronic bronchitis"
+    },
+    {
+        "indication_id": "602",
+        "indication_name": "Nosocomial pneumonia"
+    },
+    {
+        "indication_id": "603",
+        "indication_name": "Multiple drug resistant pneumonia"
+    },
+    {
+        "indication_id": "604",
+        "indication_name": "Neutropenia"
+    },
+    {
+        "indication_id": "605",
+        "indication_name": "Gonococcal urethritis"
+    },
+    {
+        "indication_id": "610",
+        "indication_name": "Prophylaxis of surgical infections"
+    },
+    {
+        "indication_id": "611",
+        "indication_name": "Gynecological infections"
+    },
+    {
+        "indication_id": "613",
+        "indication_name": "Enteric fever"
+    },
+    {
+        "indication_id": "614",
+        "indication_name": "Febrile neutropenia"
+    },
+    {
+        "indication_id": "615",
+        "indication_name": "Melioidosis"
+    },
+    {
+        "indication_id": "616",
+        "indication_name": "Bone and Joint Infections"
+    },
+    {
+        "indication_id": "619",
+        "indication_name": "Endophthalmitis"
+    },
+    {
+        "indication_id": "621",
+        "indication_name": "Surgical Prophylaxis"
+    },
+    {
+        "indication_id": "623",
+        "indication_name": "Familial adenomatous polyposis"
+    },
+    {
+        "indication_id": "626",
+        "indication_name": "Genitourinary tract infections"
+    },
+    {
+        "indication_id": "628",
+        "indication_name": "Mouth ulcers"
+    },
+    {
+        "indication_id": "629",
+        "indication_name": "Cold sores"
+    },
+    {
+        "indication_id": "630",
+        "indication_name": "Denture sores"
+    },
+    {
+        "indication_id": "631",
+        "indication_name": "Urticaria"
+    },
+    {
+        "indication_id": "632",
+        "indication_name": "Disinfection"
+    },
+    {
+        "indication_id": "633",
+        "indication_name": "Cuts"
+    },
+    {
+        "indication_id": "634",
+        "indication_name": "Scratches"
+    },
+    {
+        "indication_id": "635",
+        "indication_name": "Blisters"
+    },
+    {
+        "indication_id": "636",
+        "indication_name": "Grazes"
+    },
+    {
+        "indication_id": "637",
+        "indication_name": "Nappy rash"
+    },
+    {
+        "indication_id": "638",
+        "indication_name": "Cracked and itchy skin"
+    },
+    {
+        "indication_id": "639",
+        "indication_name": "Cleansing and irrigating the skin or dirty wounds"
+    },
+    {
+        "indication_id": "641",
+        "indication_name": "Diarrhoea"
+    },
+    {
+        "indication_id": "645",
+        "indication_name": "Tetracycline-resistant cholera"
+    },
+    {
+        "indication_id": "647",
+        "indication_name": "Brain abscesses"
+    },
+    {
+        "indication_id": "648",
+        "indication_name": "Granuloma inguinale"
+    },
+    {
+        "indication_id": "649",
+        "indication_name": "Listeriosis"
+    },
+    {
+        "indication_id": "650",
+        "indication_name": "Gas gangrene"
+    },
+    {
+        "indication_id": "651",
+        "indication_name": "Whipple's disease"
+    },
+    {
+        "indication_id": "652",
+        "indication_name": "Gastroenteritis"
+    },
+    {
+        "indication_id": "653",
+        "indication_name": "Plague"
+    },
+    {
+        "indication_id": "654",
+        "indication_name": "Psittacosis"
+    },
+    {
+        "indication_id": "655",
+        "indication_name": "Q fever"
+    },
+    {
+        "indication_id": "656",
+        "indication_name": "Tularaemia"
+    },
+    {
+        "indication_id": "659",
+        "indication_name": "Keratitis disciformis"
+    },
+    {
+        "indication_id": "660",
+        "indication_name": "Post-herpetic keratitis"
+    },
+    {
+        "indication_id": "661",
+        "indication_name": "Allergic blepharitis"
+    },
+    {
+        "indication_id": "663",
+        "indication_name": "Iridocyclitis"
+    },
+    {
+        "indication_id": "664",
+        "indication_name": "Acute bacterial ear infections"
+    },
+    {
+        "indication_id": "665",
+        "indication_name": "Bacterial ear infections"
+    },
+    {
+        "indication_id": "666",
+        "indication_name": "Gingivitis"
+    },
+    {
+        "indication_id": "667",
+        "indication_name": "Mouth sore"
+    },
+    {
+        "indication_id": "669",
+        "indication_name": "Periodontitis"
+    },
+    {
+        "indication_id": "670",
+        "indication_name": "Pre-operative skin disinfection"
+    },
+    {
+        "indication_id": "671",
+        "indication_name": "Disinfection of the skin and hands"
+    },
+    {
+        "indication_id": "672",
+        "indication_name": "SLE"
+    },
+    {
+        "indication_id": "673",
+        "indication_name": "Amoebiasis"
+    },
+    {
+        "indication_id": "676",
+        "indication_name": "Bites"
+    },
+    {
+        "indication_id": "677",
+        "indication_name": "Insect stings"
+    },
+    {
+        "indication_id": "678",
+        "indication_name": "Disinfection of the skin"
+    },
+    {
+        "indication_id": "679",
+        "indication_name": "Minor burns"
+    },
+    {
+        "indication_id": "680",
+        "indication_name": "Sore lips"
+    },
+    {
+        "indication_id": "681",
+        "indication_name": "Minor skin infections"
+    },
+    {
+        "indication_id": "682",
+        "indication_name": "Chapped roughened hands"
+    },
+    {
+        "indication_id": "684",
+        "indication_name": "Sneezing"
+    },
+    {
+        "indication_id": "686",
+        "indication_name": "Allergic conditions"
+    },
+    {
+        "indication_id": "687",
+        "indication_name": "Anaphylactic shock"
+    },
+    {
+        "indication_id": "689",
+        "indication_name": "Delirium"
+    },
+    {
+        "indication_id": "690",
+        "indication_name": "Porphyria"
+    },
+    {
+        "indication_id": "691",
+        "indication_name": "Hiccups"
+    },
+    {
+        "indication_id": "692",
+        "indication_name": "Nausea"
+    },
+    {
+        "indication_id": "693",
+        "indication_name": "Vomiting"
+    },
+    {
+        "indication_id": "695",
+        "indication_name": "Diabetes insipidus"
+    },
+    {
+        "indication_id": "696",
+        "indication_name": "Vitamin D Deficiency"
+    },
+    {
+        "indication_id": "697",
+        "indication_name": "Pseudohypoparathyroidism"
+    },
+    {
+        "indication_id": "698",
+        "indication_name": "Familial hypophosphatemia"
+    },
+    {
+        "indication_id": "700",
+        "indication_name": "Peripheral vascular disease"
+    },
+    {
+        "indication_id": "701",
+        "indication_name": "Intermittent claudication"
+    },
+    {
+        "indication_id": "704",
+        "indication_name": "Zollinger-Ellison syndrome"
+    },
+    {
+        "indication_id": "707",
+        "indication_name": "Hyperparathyroidism"
+    },
+    {
+        "indication_id": "709",
+        "indication_name": "Parathyroid carcinoma"
+    },
+    {
+        "indication_id": "712",
+        "indication_name": "Anal fissure"
+    },
+    {
+        "indication_id": "713",
+        "indication_name": "Proctitis"
+    },
+    {
+        "indication_id": "714",
+        "indication_name": "Nausea and vomiting"
+    },
+    {
+        "indication_id": "715",
+        "indication_name": "Motion sickness"
+    },
+    {
+        "indication_id": "718",
+        "indication_name": "Vestibular disorders"
+    },
+    {
+        "indication_id": "720",
+        "indication_name": "Cat scratch disease"
+    },
+    {
+        "indication_id": "721",
+        "indication_name": "Spotted fever"
+    },
+    {
+        "indication_id": "722",
+        "indication_name": "Typhus"
+    },
+    {
+        "indication_id": "724",
+        "indication_name": "Brucellosis"
+    },
+    {
+        "indication_id": "726",
+        "indication_name": "Superficial ophthalmic infections"
+    },
+    {
+        "indication_id": "727",
+        "indication_name": "Otitis externa"
+    },
+    {
+        "indication_id": "730",
+        "indication_name": "Carcinoma"
+    },
+    {
+        "indication_id": "731",
+        "indication_name": "Small cell lung cancer"
+    },
+    {
+        "indication_id": "733",
+        "indication_name": "Germ cell tumors"
+    },
+    {
+        "indication_id": "734",
+        "indication_name": "Metastatic Testicular Tumors"
+    },
+    {
+        "indication_id": "735",
+        "indication_name": "Metastatic Ovarian Tumors"
+    },
+    {
+        "indication_id": "737",
+        "indication_name": "Panic disorder"
+    },
+    {
+        "indication_id": "740",
+        "indication_name": "Ischemic stroke"
+    },
+    {
+        "indication_id": "742",
+        "indication_name": "Head injury"
+    },
+    {
+        "indication_id": "744",
+        "indication_name": "Preserve blood specimens"
+    },
+    {
+        "indication_id": "745",
+        "indication_name": "Prevention of gout and kidney stones"
+    },
+    {
+        "indication_id": "747",
+        "indication_name": "Renal tubular acidosis"
+    },
+    {
+        "indication_id": "749",
+        "indication_name": "Leprosy"
+    },
+    {
+        "indication_id": "755",
+        "indication_name": "Bacterial vaginosis"
+    },
+    {
+        "indication_id": "756",
+        "indication_name": "Inflammation of the external ear"
+    },
+    {
+        "indication_id": "757",
+        "indication_name": "Seizures"
+    },
+    {
+        "indication_id": "758",
+        "indication_name": "Psychotic disorders"
+    },
+    {
+        "indication_id": "759",
+        "indication_name": "Herpes labialis"
+    },
+    {
+        "indication_id": "760",
+        "indication_name": "Lichen sclerosus"
+    },
+    {
+        "indication_id": "762",
+        "indication_name": "Mycosis fungoides"
+    },
+    {
+        "indication_id": "764",
+        "indication_name": "Severe inflammatory skin disorders"
+    },
+    {
+        "indication_id": "765",
+        "indication_name": "Dyskeratosis"
+    },
+    {
+        "indication_id": "766",
+        "indication_name": "Ichthyosis"
+    },
+    {
+        "indication_id": "767",
+        "indication_name": "Warts"
+    },
+    {
+        "indication_id": "768",
+        "indication_name": "Hyperkeratosis"
+    },
+    {
+        "indication_id": "770",
+        "indication_name": "Callus"
+    },
+    {
+        "indication_id": "772",
+        "indication_name": "Scaly skin disease"
+    },
+    {
+        "indication_id": "773",
+        "indication_name": "Hair loss"
+    },
+    {
+        "indication_id": "774",
+        "indication_name": "Sweating feet"
+    },
+    {
+        "indication_id": "775",
+        "indication_name": "Dermatitis"
+    },
+    {
+        "indication_id": "776",
+        "indication_name": "Female infertility"
+    },
+    {
+        "indication_id": "778",
+        "indication_name": "Amenorrhea-galactorrhea syndrome"
+    },
+    {
+        "indication_id": "779",
+        "indication_name": "Psychogenic amenorrhea"
+    },
+    {
+        "indication_id": "781",
+        "indication_name": "Cataplexy"
+    },
+    {
+        "indication_id": "782",
+        "indication_name": "Narcolepsy"
+    },
+    {
+        "indication_id": "783",
+        "indication_name": "Phobias"
+    },
+    {
+        "indication_id": "784",
+        "indication_name": "Premature ejaculation"
+    },
+    {
+        "indication_id": "785",
+        "indication_name": "Enuresis"
+    },
+    {
+        "indication_id": "786",
+        "indication_name": "Trichotillomania"
+    },
+    {
+        "indication_id": "787",
+        "indication_name": "Status epilepticus"
+    },
+    {
+        "indication_id": "788",
+        "indication_name": "Social phobia"
+    },
+    {
+        "indication_id": "790",
+        "indication_name": "Hyperekplexia"
+    },
+    {
+        "indication_id": "791",
+        "indication_name": "Parasomnia"
+    },
+    {
+        "indication_id": "793",
+        "indication_name": "Rapid eye movement behavior disorder"
+    },
+    {
+        "indication_id": "794",
+        "indication_name": "Spasticity"
+    },
+    {
+        "indication_id": "795",
+        "indication_name": "Psychosis"
+    },
+    {
+        "indication_id": "796",
+        "indication_name": "Menopausal flushing"
+    },
+    {
+        "indication_id": "797",
+        "indication_name": "Hypertensive crisis"
+    },
+    {
+        "indication_id": "798",
+        "indication_name": "Cancer pain"
+    },
+    {
+        "indication_id": "799",
+        "indication_name": "Cerebrovascular disease"
+    },
+    {
+        "indication_id": "800",
+        "indication_name": "Atherosclerosis"
+    },
+    {
+        "indication_id": "801",
+        "indication_name": "Thromboembolic disorders"
+    },
+    {
+        "indication_id": "802",
+        "indication_name": "Unstable angina"
+    },
+    {
+        "indication_id": "803",
+        "indication_name": "Stroke"
+    },
+    {
+        "indication_id": "804",
+        "indication_name": "Oropharyngeal candidiasis/Thrush"
+    },
+    {
+        "indication_id": "805",
+        "indication_name": "Vulvovaginal candidiasis"
+    },
+    {
+        "indication_id": "806",
+        "indication_name": "Fungal otitis externa"
+    },
+    {
+        "indication_id": "807",
+        "indication_name": "Skin fungal infections"
+    },
+    {
+        "indication_id": "809",
+        "indication_name": "Candida nappy rash"
+    },
+    {
+        "indication_id": "811",
+        "indication_name": "Staphylococcal infections resistant to benzylpenicillin"
+    },
+    {
+        "indication_id": "812",
+        "indication_name": "Bacterial Meningitis caused by Staphylococcus"
+    },
+    {
+        "indication_id": "813",
+        "indication_name": "Bacterial Pneumonia caused by Staphylococcus"
+    },
+    {
+        "indication_id": "815",
+        "indication_name": "Urinary Tract Infection caused by Staphylococcus Aureus"
+    },
+    {
+        "indication_id": "816",
+        "indication_name": "Psychoses in Parkinson's disease"
+    },
+    {
+        "indication_id": "818",
+        "indication_name": "Pain and joint stiffness"
+    },
+    {
+        "indication_id": "819",
+        "indication_name": "Kidney disease"
+    },
+    {
+        "indication_id": "821",
+        "indication_name": "Heart disease"
+    },
+    {
+        "indication_id": "822",
+        "indication_name": "Systemic lupus erythematosus (SLE)"
+    },
+    {
+        "indication_id": "823",
+        "indication_name": "Middle ear infections (otitis media)"
+    },
+    {
+        "indication_id": "825",
+        "indication_name": "Acute gout"
+    },
+    {
+        "indication_id": "826",
+        "indication_name": "Familial Mediterranean fever"
+    },
+    {
+        "indication_id": "828",
+        "indication_name": "Gouty arthritis"
+    },
+    {
+        "indication_id": "830",
+        "indication_name": "Gastrointestinal tract infections"
+    },
+    {
+        "indication_id": "832",
+        "indication_name": "Vaginal dryness"
+    },
+    {
+        "indication_id": "833",
+        "indication_name": "Vaginal atrophy"
+    },
+    {
+        "indication_id": "834",
+        "indication_name": "Menopausal symptoms"
+    },
+    {
+        "indication_id": "835",
+        "indication_name": "Female hypogonadism"
+    },
+    {
+        "indication_id": "836",
+        "indication_name": "Metastatic breast carcinoma"
+    },
+    {
+        "indication_id": "838",
+        "indication_name": "Ovarian failure"
+    },
+    {
+        "indication_id": "839",
+        "indication_name": "Prostate carcinoma"
+    },
+    {
+        "indication_id": "840",
+        "indication_name": "Primary ovarian failure"
+    },
+    {
+        "indication_id": "842",
+        "indication_name": "Pernicious anemia"
+    },
+    {
+        "indication_id": "844",
+        "indication_name": "Thyrotoxicosis"
+    },
+    {
+        "indication_id": "846",
+        "indication_name": "Malignancy"
+    },
+    {
+        "indication_id": "848",
+        "indication_name": "Gastric bypass surgery"
+    },
+    {
+        "indication_id": "849",
+        "indication_name": "Total or partial gastrectomy"
+    },
+    {
+        "indication_id": "850",
+        "indication_name": "Gluten enteropathy or sprue"
+    },
+    {
+        "indication_id": "851",
+        "indication_name": "Folic acid deficiency"
+    },
+    {
+        "indication_id": "852",
+        "indication_name": "Macrocytic anaemia"
+    },
+    {
+        "indication_id": "854",
+        "indication_name": "End-stage renal failure"
+    },
+    {
+        "indication_id": "855",
+        "indication_name": "Hyperhomocysteinemia"
+    },
+    {
+        "indication_id": "858",
+        "indication_name": "Cardiovascular disease"
+    },
+    {
+        "indication_id": "860",
+        "indication_name": "Artherosclerotic vascular disease"
+    },
+    {
+        "indication_id": "861",
+        "indication_name": "Neurological disorders"
+    },
+    {
+        "indication_id": "862",
+        "indication_name": "Renal disease and vitamin B12 deficiency"
+    },
+    {
+        "indication_id": "866",
+        "indication_name": "Peripheral neuropathy"
+    },
+    {
+        "indication_id": "867",
+        "indication_name": "Vitamin B deficiencies"
+    },
+    {
+        "indication_id": "868",
+        "indication_name": "Fibromyalgia"
+    },
+    {
+        "indication_id": "869",
+        "indication_name": "Muscle spasm"
+    },
+    {
+        "indication_id": "870",
+        "indication_name": "Pediatric eye examinations"
+    },
+    {
+        "indication_id": "871",
+        "indication_name": "Mydriasis"
+    },
+    {
+        "indication_id": "872",
+        "indication_name": "Cycloplegia"
+    },
+    {
+        "indication_id": "873",
+        "indication_name": "Uveitis"
+    },
+    {
+        "indication_id": "874",
+        "indication_name": "Iritis"
+    },
+    {
+        "indication_id": "875",
+        "indication_name": "Bone marrow transplantation"
+    },
+    {
+        "indication_id": "878",
+        "indication_name": "Leukemia"
+    },
+    {
+        "indication_id": "882",
+        "indication_name": "Multiple myeloma"
+    },
+    {
+        "indication_id": "884",
+        "indication_name": "Neuroblastoma"
+    },
+    {
+        "indication_id": "886",
+        "indication_name": "Organ transplantation"
+    },
+    {
+        "indication_id": "887",
+        "indication_name": "Contraception"
+    },
+    {
+        "indication_id": "888",
+        "indication_name": "Hirsutism"
+    },
+    {
+        "indication_id": "890",
+        "indication_name": "Libido"
+    },
+    {
+        "indication_id": "891",
+        "indication_name": "Hot flushes"
+    },
+    {
+        "indication_id": "895",
+        "indication_name": "Endometriosis"
+    },
+    {
+        "indication_id": "896",
+        "indication_name": "Benign breast disorders"
+    },
+    {
+        "indication_id": "897",
+        "indication_name": "Gynaecomastia"
+    },
+    {
+        "indication_id": "898",
+        "indication_name": "Hereditary angioedema"
+    },
+    {
+        "indication_id": "899",
+        "indication_name": "Menorrhagia"
+    },
+    {
+        "indication_id": "900",
+        "indication_name": "Dermatitis herpetiformis"
+    },
+    {
+        "indication_id": "902",
+        "indication_name": "Urge incontinence"
+    },
+    {
+        "indication_id": "903",
+        "indication_name": "Urinary frequency and urgency"
+    },
+    {
+        "indication_id": "904",
+        "indication_name": "Acute myeloid leukaemia"
+    },
+    {
+        "indication_id": "905",
+        "indication_name": "AIDS-related Kaposi's sarcoma"
+    },
+    {
+        "indication_id": "906",
+        "indication_name": "Chronic iron overload"
+    },
+    {
+        "indication_id": "907",
+        "indication_name": "Thalassaemia"
+    },
+    {
+        "indication_id": "908",
+        "indication_name": "Iron overload"
+    },
+    {
+        "indication_id": "909",
+        "indication_name": "Atypical pneumonia"
+    },
+    {
+        "indication_id": "910",
+        "indication_name": "Hyponatraemia"
+    },
+    {
+        "indication_id": "911",
+        "indication_name": "Aluminum overload"
+    },
+    {
+        "indication_id": "912",
+        "indication_name": "Iron poisoning"
+    },
+    {
+        "indication_id": "913",
+        "indication_name": "Runny nose"
+    },
+    {
+        "indication_id": "914",
+        "indication_name": "Hives"
+    },
+    {
+        "indication_id": "915",
+        "indication_name": "Skin rash"
+    },
+    {
+        "indication_id": "916",
+        "indication_name": "Common cold"
+    },
+    {
+        "indication_id": "919",
+        "indication_name": "Rheumatic disorders"
+    },
+    {
+        "indication_id": "920",
+        "indication_name": "Cerebral oedema"
+    },
+    {
+        "indication_id": "921",
+        "indication_name": "Shock"
+    },
+    {
+        "indication_id": "923",
+        "indication_name": "Ocular inflammation"
+    },
+    {
+        "indication_id": "924",
+        "indication_name": "Idiopathic thrombocytopenic purpura"
+    },
+    {
+        "indication_id": "925",
+        "indication_name": "Dental surgery"
+    },
+    {
+        "indication_id": "926",
+        "indication_name": "Allergic anaphylactic shock"
+    },
+    {
+        "indication_id": "928",
+        "indication_name": "Status asthmaticus"
+    },
+    {
+        "indication_id": "930",
+        "indication_name": "Otic inflammation"
+    },
+    {
+        "indication_id": "931",
+        "indication_name": "Pink eye"
+    },
+    {
+        "indication_id": "932",
+        "indication_name": "Patent ductus arteriosus"
+    },
+    {
+        "indication_id": "933",
+        "indication_name": "Oesophagitis"
+    },
+    {
+        "indication_id": "934",
+        "indication_name": "Gastro-oesophageal reflux disease (GERD)"
+    },
+    {
+        "indication_id": "935",
+        "indication_name": "Hypovolaemic shock"
+    },
+    {
+        "indication_id": "936",
+        "indication_name": "Pulmonary embolism"
+    },
+    {
+        "indication_id": "937",
+        "indication_name": "Venous thrombosis"
+    },
+    {
+        "indication_id": "938",
+        "indication_name": "Open heart surgery"
+    },
+    {
+        "indication_id": "939",
+        "indication_name": "Paralytic ileus"
+    },
+    {
+        "indication_id": "940",
+        "indication_name": "Pancreatitis"
+    },
+    {
+        "indication_id": "941",
+        "indication_name": "Burning and irritation of the eye"
+    },
+    {
+        "indication_id": "944",
+        "indication_name": "Non-productive cough"
+    },
+    {
+        "indication_id": "946",
+        "indication_name": "Parenteral Nutrition and Hydration"
+    },
+    {
+        "indication_id": "947",
+        "indication_name": "Hypoglycemia"
+    },
+    {
+        "indication_id": "948",
+        "indication_name": "Hyperkalaemia"
+    },
+    {
+        "indication_id": "951",
+        "indication_name": "Cataract surgery"
+    },
+    {
+        "indication_id": "952",
+        "indication_name": "Sympathetic nerve block"
+    },
+    {
+        "indication_id": "953",
+        "indication_name": "Peripheral nerve block"
+    },
+    {
+        "indication_id": "954",
+        "indication_name": "Perianal pain and itching"
+    },
+    {
+        "indication_id": "955",
+        "indication_name": "Jaundice"
+    },
+    {
+        "indication_id": "956",
+        "indication_name": "General weakness"
+    },
+    {
+        "indication_id": "957",
+        "indication_name": "Eclampsia"
+    },
+    {
+        "indication_id": "958",
+        "indication_name": "Pre-eclampsia"
+    },
+    {
+        "indication_id": "959",
+        "indication_name": "During pregnancy & after delivery and post surgical intervention"
+    },
+    {
+        "indication_id": "961",
+        "indication_name": "Nutrition Hydration"
+    },
+    {
+        "indication_id": "962",
+        "indication_name": "Hydration"
+    },
+    {
+        "indication_id": "963",
+        "indication_name": "Energy malnutrition"
+    },
+    {
+        "indication_id": "964",
+        "indication_name": "Cleansing of the colon"
+    },
+    {
+        "indication_id": "965",
+        "indication_name": "Chronic low back pain"
+    },
+    {
+        "indication_id": "966",
+        "indication_name": "Insomnia"
+    },
+    {
+        "indication_id": "968",
+        "indication_name": "Alcohol withdrawal syndrome"
+    },
+    {
+        "indication_id": "969",
+        "indication_name": "Inflammation"
+    },
+    {
+        "indication_id": "970",
+        "indication_name": "Renal colic"
+    },
+    {
+        "indication_id": "971",
+        "indication_name": "Miosis"
+    },
+    {
+        "indication_id": "975",
+        "indication_name": "Actinic keratosis"
+    },
+    {
+        "indication_id": "977",
+        "indication_name": "Dental pain"
+    },
+    {
+        "indication_id": "978",
+        "indication_name": "Menstrual cramps"
+    },
+    {
+        "indication_id": "979",
+        "indication_name": "Joint and muscular pains"
+    },
+    {
+        "indication_id": "981",
+        "indication_name": "Staphylococcal skin infections"
+    },
+    {
+        "indication_id": "982",
+        "indication_name": "Folliculitis"
+    },
+    {
+        "indication_id": "983",
+        "indication_name": "Boils"
+    },
+    {
+        "indication_id": "984",
+        "indication_name": "Carbuncles"
+    },
+    {
+        "indication_id": "985",
+        "indication_name": "Mastitis"
+    },
+    {
+        "indication_id": "986",
+        "indication_name": "Osteomyelitis"
+    },
+    {
+        "indication_id": "987",
+        "indication_name": "Throat infections"
+    },
+    {
+        "indication_id": "988",
+        "indication_name": "Streptococcus Septicaemia"
+    },
+    {
+        "indication_id": "989",
+        "indication_name": "Intestinal hypermotility"
+    },
+    {
+        "indication_id": "990",
+        "indication_name": "Irritable bowel syndrome (IBS)"
+    },
+    {
+        "indication_id": "991",
+        "indication_name": "Lymphatic filariasis"
+    },
+    {
+        "indication_id": "992",
+        "indication_name": "Pulmonary eosinophilia"
+    },
+    {
+        "indication_id": "993",
+        "indication_name": "Loiasis"
+    },
+    {
+        "indication_id": "994",
+        "indication_name": "Toxocariasis"
+    },
+    {
+        "indication_id": "996",
+        "indication_name": "Menopausal atrophic vaginitis"
+    },
+    {
+        "indication_id": "1000",
+        "indication_name": "Atrial fibrillation and atrial flutter"
+    },
+    {
+        "indication_id": "1001",
+        "indication_name": "Intestinal amoebiasis"
+    },
+    {
+        "indication_id": "1002",
+        "indication_name": "Atrial flutter"
+    },
+    {
+        "indication_id": "1003",
+        "indication_name": "Piles"
+    },
+    {
+        "indication_id": "1004",
+        "indication_name": "Chronic venous disease"
+    },
+    {
+        "indication_id": "1005",
+        "indication_name": "Chloasma"
+    },
+    {
+        "indication_id": "1006",
+        "indication_name": "Melasma"
+    },
+    {
+        "indication_id": "1007",
+        "indication_name": "Freckles"
+    },
+    {
+        "indication_id": "1008",
+        "indication_name": "Senile lentigines"
+    },
+    {
+        "indication_id": "1009",
+        "indication_name": "Hyperpigmentation"
+    },
+    {
+        "indication_id": "1010",
+        "indication_name": "Extrapyramidal symptoms"
+    },
+    {
+        "indication_id": "1011",
+        "indication_name": "Allergic skin conditions"
+    },
+    {
+        "indication_id": "1012",
+        "indication_name": "Thromboembolism"
+    },
+    {
+        "indication_id": "1013",
+        "indication_name": "Transient ischaemic attack"
+    },
+    {
+        "indication_id": "1014",
+        "indication_name": "Colonoscopy preparation"
+    },
+    {
+        "indication_id": "1015",
+        "indication_name": "Supraventricular and ventricular arrhythmias"
+    },
+    {
+        "indication_id": "1016",
+        "indication_name": "Cardiac stress test"
+    },
+    {
+        "indication_id": "1020",
+        "indication_name": "Fever blisters"
+    },
+    {
+        "indication_id": "1021",
+        "indication_name": "Gastroparesis"
+    },
+    {
+        "indication_id": "1022",
+        "indication_name": "Non ulcer dyspepsia"
+    },
+    {
+        "indication_id": "1023",
+        "indication_name": "Acute heart failure"
+    },
+    {
+        "indication_id": "1024",
+        "indication_name": "Hypotension"
+    },
+    {
+        "indication_id": "1025",
+        "indication_name": "Pyelonephritis"
+    },
+    {
+        "indication_id": "1026",
+        "indication_name": "Chronic idiopathic urticaria (hives)"
+    },
+    {
+        "indication_id": "1028",
+        "indication_name": "Kaposi's sarcoma"
+    },
+    {
+        "indication_id": "1030",
+        "indication_name": "Hodgkin's lymphoma"
+    },
+    {
+        "indication_id": "1031",
+        "indication_name": "Bladder carcinoma"
+    },
+    {
+        "indication_id": "1032",
+        "indication_name": "Stomach carcinoma"
+    },
+    {
+        "indication_id": "1033",
+        "indication_name": "Lung carcinoma"
+    },
+    {
+        "indication_id": "1034",
+        "indication_name": "Thyroid carcinoma"
+    },
+    {
+        "indication_id": "1035",
+        "indication_name": "Sarcoma"
+    },
+    {
+        "indication_id": "1036",
+        "indication_name": "Uncomplicated gonorrhoea"
+    },
+    {
+        "indication_id": "1037",
+        "indication_name": "Relapsing fever and louse-borne typhus"
+    },
+    {
+        "indication_id": "1038",
+        "indication_name": "Scrub typhus"
+    },
+    {
+        "indication_id": "1039",
+        "indication_name": "Hypersensitivity reactions"
+    },
+    {
+        "indication_id": "1043",
+        "indication_name": "Diabetic neuropathy"
+    },
+    {
+        "indication_id": "1044",
+        "indication_name": "Stress urinary incontinence"
+    },
+    {
+        "indication_id": "1045",
+        "indication_name": "Generalized anxiety disorder"
+    },
+    {
+        "indication_id": "1046",
+        "indication_name": "Interstitial cystitis"
+    },
+    {
+        "indication_id": "1047",
+        "indication_name": "Musculoskeletal pain"
+    },
+    {
+        "indication_id": "1048",
+        "indication_name": "Miscarriage"
+    },
+    {
+        "indication_id": "1049",
+        "indication_name": "Menstrual disorders"
+    },
+    {
+        "indication_id": "1051",
+        "indication_name": "Hormone replacement therapy"
+    },
+    {
+        "indication_id": "1055",
+        "indication_name": "Pityriasis versicolor"
+    },
+    {
+        "indication_id": "1057",
+        "indication_name": "Cutaneous candidiasis"
+    },
+    {
+        "indication_id": "1058",
+        "indication_name": "Vaginal candidiasis/Thrush"
+    },
+    {
+        "indication_id": "1066",
+        "indication_name": "Vitamin-C deficiency"
+    },
+    {
+        "indication_id": "1067",
+        "indication_name": "Pregnancy and lactation"
+    },
+    {
+        "indication_id": "1068",
+        "indication_name": "Zinc deficiency"
+    },
+    {
+        "indication_id": "1070",
+        "indication_name": "Venous thromboembolism"
+    },
+    {
+        "indication_id": "1071",
+        "indication_name": "Deep vein thrombosis "
+    },
+    {
+        "indication_id": "1073",
+        "indication_name": "Lymphoma"
+    },
+    {
+        "indication_id": "1077",
+        "indication_name": "Angioplasty"
+    },
+    {
+        "indication_id": "1078",
+        "indication_name": "Postpartum and post-abortion bleeding"
+    },
+    {
+        "indication_id": "1079",
+        "indication_name": "Third stage of labour"
+    },
+    {
+        "indication_id": "1080",
+        "indication_name": "Uterine bleeding"
+    },
+    {
+        "indication_id": "1081",
+        "indication_name": "Postpartum haemorrhage"
+    },
+    {
+        "indication_id": "1082",
+        "indication_name": "Pancreatic cancer"
+    },
+    {
+        "indication_id": "1083",
+        "indication_name": "Surgical infections"
+    },
+    {
+        "indication_id": "1085",
+        "indication_name": "Septic abortion"
+    },
+    {
+        "indication_id": "1086",
+        "indication_name": "Enteritis"
+    },
+    {
+        "indication_id": "1087",
+        "indication_name": "Pertussis"
+    },
+    {
+        "indication_id": "1088",
+        "indication_name": "Trench fever"
+    },
+    {
+        "indication_id": "1089",
+        "indication_name": "Legionnaire's disease"
+    },
+    {
+        "indication_id": "1091",
+        "indication_name": "Anaemia of chronic renal failure"
+    },
+    {
+        "indication_id": "1092",
+        "indication_name": "Anaemia due to inflammatory bowel disease"
+    },
+    {
+        "indication_id": "1093",
+        "indication_name": "Anaemia in zidovudine-treated HIV-infected patients"
+    },
+    {
+        "indication_id": "1098",
+        "indication_name": "Joint stiffness"
+    },
+    {
+        "indication_id": "1100",
+        "indication_name": "Menopausal hormone replacement therapy"
+    },
+    {
+        "indication_id": "1101",
+        "indication_name": "Oestrogen deficiency"
+    },
+    {
+        "indication_id": "1102",
+        "indication_name": "Absence seizures"
+    },
+    {
+        "indication_id": "1104",
+        "indication_name": "Testicular cancer"
+    },
+    {
+        "indication_id": "1105",
+        "indication_name": "Oral hygiene"
+    },
+    {
+        "indication_id": "1106",
+        "indication_name": "Cavities"
+    },
+    {
+        "indication_id": "1107",
+        "indication_name": "Bad breath"
+    },
+    {
+        "indication_id": "1108",
+        "indication_name": "Plaque"
+    },
+    {
+        "indication_id": "1109",
+        "indication_name": "Gum disease"
+    },
+    {
+        "indication_id": "1110",
+        "indication_name": "Teeth cleaner & brighter"
+    },
+    {
+        "indication_id": "1111",
+        "indication_name": "Kidney cancer"
+    },
+    {
+        "indication_id": "1112",
+        "indication_name": "Renal transplant"
+    },
+    {
+        "indication_id": "1113",
+        "indication_name": "Liver transplant"
+    },
+    {
+        "indication_id": "1114",
+        "indication_name": "Neuroendocrine tumors"
+    },
+    {
+        "indication_id": "1115",
+        "indication_name": "Renal cell carcinoma"
+    },
+    {
+        "indication_id": "1116",
+        "indication_name": "Astrocytoma"
+    },
+    {
+        "indication_id": "1117",
+        "indication_name": "Renal angiomyolipoma"
+    },
+    {
+        "indication_id": "1118",
+        "indication_name": "Tuberous sclerosis"
+    },
+    {
+        "indication_id": "1120",
+        "indication_name": "Homozygous familial sitosterolaemia"
+    },
+    {
+        "indication_id": "1121",
+        "indication_name": "Hypercholesterolaemia"
+    },
+    {
+        "indication_id": "1123",
+        "indication_name": "Hypertriglyceridaemia"
+    },
+    {
+        "indication_id": "1125",
+        "indication_name": "Analgesia"
+    },
+    {
+        "indication_id": "1126",
+        "indication_name": "Breakthrough pain"
+    },
+    {
+        "indication_id": "1127",
+        "indication_name": "Fungal skin infections"
+    },
+    {
+        "indication_id": "1128",
+        "indication_name": "Iron supplement"
+    },
+    {
+        "indication_id": "1130",
+        "indication_name": "Iron and folic acid deficiency in pregnancy"
+    },
+    {
+        "indication_id": "1131",
+        "indication_name": "Zinc & folic acid deficiency"
+    },
+    {
+        "indication_id": "1133",
+        "indication_name": "Itchy or watery eyes"
+    },
+    {
+        "indication_id": "1135",
+        "indication_name": "Male pattern baldness"
+    },
+    {
+        "indication_id": "1136",
+        "indication_name": "Urinary incontinence"
+    },
+    {
+        "indication_id": "1138",
+        "indication_name": "Bladder spasms"
+    },
+    {
+        "indication_id": "1139",
+        "indication_name": "Dysuria"
+    },
+    {
+        "indication_id": "1140",
+        "indication_name": "Nocturia"
+    },
+    {
+        "indication_id": "1141",
+        "indication_name": "Suprapubic pain"
+    },
+    {
+        "indication_id": "1142",
+        "indication_name": "Prostatitis"
+    },
+    {
+        "indication_id": "1143",
+        "indication_name": "Urethritis"
+    },
+    {
+        "indication_id": "1144",
+        "indication_name": "Wounds"
+    },
+    {
+        "indication_id": "1145",
+        "indication_name": "Abscesses"
+    },
+    {
+        "indication_id": "1146",
+        "indication_name": "Infected eczema"
+    },
+    {
+        "indication_id": "1147",
+        "indication_name": "Infected acne"
+    },
+    {
+        "indication_id": "1148",
+        "indication_name": "Onychomycosis"
+    },
+    {
+        "indication_id": "1149",
+        "indication_name": "Coccidioidomycosis"
+    },
+    {
+        "indication_id": "1150",
+        "indication_name": "Cryptococcosis"
+    },
+    {
+        "indication_id": "1151",
+        "indication_name": "Histoplasmosis"
+    },
+    {
+        "indication_id": "1152",
+        "indication_name": "Mucosal candidiasis"
+    },
+    {
+        "indication_id": "1153",
+        "indication_name": "Candidal balanitis"
+    },
+    {
+        "indication_id": "1154",
+        "indication_name": "Dermatophytosis"
+    },
+    {
+        "indication_id": "1155",
+        "indication_name": "Disseminated candidiasis"
+    },
+    {
+        "indication_id": "1156",
+        "indication_name": "Fungal UTIs"
+    },
+    {
+        "indication_id": "1158",
+        "indication_name": "Fungal corneal ulcers"
+    },
+    {
+        "indication_id": "1159",
+        "indication_name": "Fungal keratitis"
+    },
+    {
+        "indication_id": "1160",
+        "indication_name": "Fungal eye infections"
+    },
+    {
+        "indication_id": "1163",
+        "indication_name": "Fitting of hard contact lenses"
+    },
+    {
+        "indication_id": "1164",
+        "indication_name": "Diagnostic ophthalmic procedures"
+    },
+    {
+        "indication_id": "1165",
+        "indication_name": "Acute & chronic conjunctivitis"
+    },
+    {
+        "indication_id": "1167",
+        "indication_name": "Scleritis"
+    },
+    {
+        "indication_id": "1168",
+        "indication_name": "Episcleritis"
+    },
+    {
+        "indication_id": "1169",
+        "indication_name": "Myositis. Post-op conditions after strabotomy"
+    },
+    {
+        "indication_id": "1170",
+        "indication_name": "Cataract & glaucoma operations"
+    },
+    {
+        "indication_id": "1171",
+        "indication_name": "Carcinoma of the colon"
+    },
+    {
+        "indication_id": "1175",
+        "indication_name": "Basal cell carcinoma"
+    },
+    {
+        "indication_id": "1176",
+        "indication_name": "Bowen's disease"
+    },
+    {
+        "indication_id": "1177",
+        "indication_name": "Major depression"
+    },
+    {
+        "indication_id": "1178",
+        "indication_name": "Post-traumatic stress disorder"
+    },
+    {
+        "indication_id": "1179",
+        "indication_name": "Bulimia nervosa"
+    },
+    {
+        "indication_id": "1180",
+        "indication_name": "Body dysmorphic disorder"
+    },
+    {
+        "indication_id": "1181",
+        "indication_name": "Binge eating disorder"
+    },
+    {
+        "indication_id": "1182",
+        "indication_name": "Apathy"
+    },
+    {
+        "indication_id": "1183",
+        "indication_name": "Dysphoria"
+    },
+    {
+        "indication_id": "1184",
+        "indication_name": "Mania"
+    },
+    {
+        "indication_id": "1185",
+        "indication_name": "Behavioral disturbances"
+    },
+    {
+        "indication_id": "1186",
+        "indication_name": "Emotional disturbance"
+    },
+    {
+        "indication_id": "1187",
+        "indication_name": "Tension"
+    },
+    {
+        "indication_id": "1188",
+        "indication_name": "Fatigue"
+    },
+    {
+        "indication_id": "1190",
+        "indication_name": "Bodyache"
+    },
+    {
+        "indication_id": "1191",
+        "indication_name": "Gastric problems"
+    },
+    {
+        "indication_id": "1193",
+        "indication_name": "Pain and inflammation associated w/ musculoskeletal and joint disorders"
+    },
+    {
+        "indication_id": "1194",
+        "indication_name": "Prophylaxis of miosis during ocular surgery"
+    },
+    {
+        "indication_id": "1195",
+        "indication_name": "Nasal polyps"
+    },
+    {
+        "indication_id": "1199",
+        "indication_name": "Neural tube defect"
+    },
+    {
+        "indication_id": "1201",
+        "indication_name": "Vitamin D and Folic acid Deficiency"
+    },
+    {
+        "indication_id": "1203",
+        "indication_name": "Folic acid & zinc Deficiency"
+    },
+    {
+        "indication_id": "1204",
+        "indication_name": "Methotrexate toxicity"
+    },
+    {
+        "indication_id": "1205",
+        "indication_name": "Megaloblastic anaemia"
+    },
+    {
+        "indication_id": "1206",
+        "indication_name": "Emphysema"
+    },
+    {
+        "indication_id": "1207",
+        "indication_name": "Carbohydrate nutrient in diabetic patients"
+    },
+    {
+        "indication_id": "1208",
+        "indication_name": "Fluid replacement"
+    },
+    {
+        "indication_id": "1209",
+        "indication_name": "Caloric feeding"
+    },
+    {
+        "indication_id": "1211",
+        "indication_name": "Cirrhosis"
+    },
+    {
+        "indication_id": "1212",
+        "indication_name": "Renal impairment"
+    },
+    {
+        "indication_id": "1213",
+        "indication_name": "Cerebral/pulmonary edema"
+    },
+    {
+        "indication_id": "1214",
+        "indication_name": "Pulmonary oedema"
+    },
+    {
+        "indication_id": "1215",
+        "indication_name": "Acute renal failure"
+    },
+    {
+        "indication_id": "1216",
+        "indication_name": "Chronic renal failure"
+    },
+    {
+        "indication_id": "1217",
+        "indication_name": "Ascites"
+    },
+    {
+        "indication_id": "1218",
+        "indication_name": "Skin infections"
+    },
+    {
+        "indication_id": "1219",
+        "indication_name": "Staphylococcal infections"
+    },
+    {
+        "indication_id": "1220",
+        "indication_name": "Atopic dermatitis with secondary bacterial infections"
+    },
+    {
+        "indication_id": "1221",
+        "indication_name": "Allergic dermatitis"
+    },
+    {
+        "indication_id": "1227",
+        "indication_name": "Muscle relaxant"
+    },
+    {
+        "indication_id": "1232",
+        "indication_name": "Chronic conjunctivitis"
+    },
+    {
+        "indication_id": "1233",
+        "indication_name": "Spring catarrh"
+    },
+    {
+        "indication_id": "1235",
+        "indication_name": "Candida albicans"
+    },
+    {
+        "indication_id": "1237",
+        "indication_name": "Degenerative joint disease"
+    },
+    {
+        "indication_id": "1240",
+        "indication_name": "Dry skin"
+    },
+    {
+        "indication_id": "1241",
+        "indication_name": "Lubrication"
+    },
+    {
+        "indication_id": "1242",
+        "indication_name": "Skin care"
+    },
+    {
+        "indication_id": "1244",
+        "indication_name": "Ophthalmic surgery"
+    },
+    {
+        "indication_id": "1245",
+        "indication_name": "Red eye"
+    },
+    {
+        "indication_id": "1246",
+        "indication_name": "Eye irritation"
+    },
+    {
+        "indication_id": "1247",
+        "indication_name": "Eye allergy"
+    },
+    {
+        "indication_id": "1248",
+        "indication_name": "Watery eye"
+    },
+    {
+        "indication_id": "1249",
+        "indication_name": "Severe hypertension"
+    },
+    {
+        "indication_id": "1252",
+        "indication_name": "Chronic anal fissure"
+    },
+    {
+        "indication_id": "1253",
+        "indication_name": "Prostatic or bladder surgery"
+    },
+    {
+        "indication_id": "1254",
+        "indication_name": "Orthopedics Surgery"
+    },
+    {
+        "indication_id": "1255",
+        "indication_name": "Sialorrhea"
+    },
+    {
+        "indication_id": "1256",
+        "indication_name": "Cerebral palsy"
+    },
+    {
+        "indication_id": "1257",
+        "indication_name": "Reversal of neuromuscular blockade"
+    },
+    {
+        "indication_id": "1258",
+        "indication_name": "Superficial bacterial infections"
+    },
+    {
+        "indication_id": "1259",
+        "indication_name": "Corneal ulcer"
+    },
+    {
+        "indication_id": "1260",
+        "indication_name": "Keratoconjunctivitis"
+    },
+    {
+        "indication_id": "1262",
+        "indication_name": "Corticosteriod-responsive dermatoses"
+    },
+    {
+        "indication_id": "1263",
+        "indication_name": "Chemotherapy-induced nausea and vomiting"
+    },
+    {
+        "indication_id": "1264",
+        "indication_name": "Post-operative nausea and vomiting"
+    },
+    {
+        "indication_id": "1267",
+        "indication_name": "Cough & runny nose"
+    },
+    {
+        "indication_id": "1268",
+        "indication_name": "Water disinfection"
+    },
+    {
+        "indication_id": "1269",
+        "indication_name": "Water purification"
+    },
+    {
+        "indication_id": "1271",
+        "indication_name": "Acute psychosis"
+    },
+    {
+        "indication_id": "1272",
+        "indication_name": "Hyperactivity"
+    },
+    {
+        "indication_id": "1273",
+        "indication_name": "Aggression"
+    },
+    {
+        "indication_id": "1275",
+        "indication_name": "Tic disorders"
+    },
+    {
+        "indication_id": "1276",
+        "indication_name": "Tourette syndrome"
+    },
+    {
+        "indication_id": "1277",
+        "indication_name": "Chorea"
+    },
+    {
+        "indication_id": "1281",
+        "indication_name": "Hemofiltration"
+    },
+    {
+        "indication_id": "1282",
+        "indication_name": "Peripheral arterial embolism"
+    },
+    {
+        "indication_id": "1283",
+        "indication_name": "Mydriasis and cycloplegia for refraction"
+    },
+    {
+        "indication_id": "1284",
+        "indication_name": "Dilatation of pupil"
+    },
+    {
+        "indication_id": "1285",
+        "indication_name": "Adrenocortical insufficiency"
+    },
+    {
+        "indication_id": "1286",
+        "indication_name": "Soft tissue inflammation"
+    },
+    {
+        "indication_id": "1287",
+        "indication_name": "Joint inflammations"
+    },
+    {
+        "indication_id": "1288",
+        "indication_name": "Sweat rash"
+    },
+    {
+        "indication_id": "1289",
+        "indication_name": "Infected wounds & ulcers"
+    },
+    {
+        "indication_id": "1290",
+        "indication_name": "Anal or vulvar pruritus"
+    },
+    {
+        "indication_id": "1291",
+        "indication_name": "Pyogenic & seborrhoeic dermatitis"
+    },
+    {
+        "indication_id": "1294",
+        "indication_name": "Vitamin B12 deficiency"
+    },
+    {
+        "indication_id": "1295",
+        "indication_name": "Cyanide poisoning"
+    },
+    {
+        "indication_id": "1297",
+        "indication_name": "Porphyria cutanea tarda"
+    },
+    {
+        "indication_id": "1298",
+        "indication_name": "Myeloproliferative disorders"
+    },
+    {
+        "indication_id": "1299",
+        "indication_name": "Sickle-cell disease"
+    },
+    {
+        "indication_id": "1301",
+        "indication_name": "Essential thrombocythemia"
+    },
+    {
+        "indication_id": "1302",
+        "indication_name": "Psychoneurosis"
+    },
+    {
+        "indication_id": "1303",
+        "indication_name": "Chronic urticaria"
+    },
+    {
+        "indication_id": "1304",
+        "indication_name": "Atopic or contact dermatoses"
+    },
+    {
+        "indication_id": "1305",
+        "indication_name": "Pre- or post-operative sedation"
+    },
+    {
+        "indication_id": "1306",
+        "indication_name": "Abdominal pain"
+    },
+    {
+        "indication_id": "1307",
+        "indication_name": "Genitourinary spasm"
+    },
+    {
+        "indication_id": "1308",
+        "indication_name": "Corneal protection"
+    },
+    {
+        "indication_id": "1309",
+        "indication_name": "Hypercalcaemia of malignancy"
+    },
+    {
+        "indication_id": "1310",
+        "indication_name": "Breast cancer and bone metastases"
+    },
+    {
+        "indication_id": "1311",
+        "indication_name": "Musculoskeletal and joint disorders"
+    },
+    {
+        "indication_id": "1312",
+        "indication_name": "Soft tissue sarcoma"
+    },
+    {
+        "indication_id": "1313",
+        "indication_name": "Osteogenic sarcoma"
+    },
+    {
+        "indication_id": "1314",
+        "indication_name": "Cervical cancer"
+    },
+    {
+        "indication_id": "1316",
+        "indication_name": "Myelodysplastic disease"
+    },
+    {
+        "indication_id": "1317",
+        "indication_name": "Hypereosinophilic syndrome"
+    },
+    {
+        "indication_id": "1318",
+        "indication_name": "Mastocytosis"
+    },
+    {
+        "indication_id": "1319",
+        "indication_name": "Dermatofibrosarcoma protuberans"
+    },
+    {
+        "indication_id": "1320",
+        "indication_name": "Malignant gastrointestinal stromal tumours"
+    },
+    {
+        "indication_id": "1321",
+        "indication_name": "Nocturnal enuresis"
+    },
+    {
+        "indication_id": "1322",
+        "indication_name": "Hemicrania continua"
+    },
+    {
+        "indication_id": "1324",
+        "indication_name": "Obsessive-compulsive disorder (OCD)"
+    },
+    {
+        "indication_id": "1325",
+        "indication_name": "Agoraphobia"
+    },
+    {
+        "indication_id": "1326",
+        "indication_name": "Unipolar and bipolar depression"
+    },
+    {
+        "indication_id": "1328",
+        "indication_name": "Diabetic ketoacidosis"
+    },
+    {
+        "indication_id": "1329",
+        "indication_name": "Diabetes mellitus"
+    },
+    {
+        "indication_id": "1331",
+        "indication_name": "Iodine deficiency disorders"
+    },
+    {
+        "indication_id": "1332",
+        "indication_name": "Wound and ulcer cleansing"
+    },
+    {
+        "indication_id": "1333",
+        "indication_name": "Superficial wounds"
+    },
+    {
+        "indication_id": "1334",
+        "indication_name": "Thyroid storm"
+    },
+    {
+        "indication_id": "1335",
+        "indication_name": "Radiographic contrast medium for diagnostic procedures"
+    },
+    {
+        "indication_id": "1336",
+        "indication_name": "Cholecystography"
+    },
+    {
+        "indication_id": "1337",
+        "indication_name": "Graves' disease"
+    },
+    {
+        "indication_id": "1338",
+        "indication_name": "Cholangiography"
+    },
+    {
+        "indication_id": "1340",
+        "indication_name": "Rhinorrhoea"
+    },
+    {
+        "indication_id": "1341",
+        "indication_name": "B-vitamins and Zinc deficiencies"
+    },
+    {
+        "indication_id": "1342",
+        "indication_name": "Hyperchlorhydria"
+    },
+    {
+        "indication_id": "1343",
+        "indication_name": "Functional diarrhea"
+    },
+    {
+        "indication_id": "1344",
+        "indication_name": "Irritable or spastic colon"
+    },
+    {
+        "indication_id": "1345",
+        "indication_name": "Pylorospasm"
+    },
+    {
+        "indication_id": "1346",
+        "indication_name": "Acute nonspecific gastroenteritis"
+    },
+    {
+        "indication_id": "1347",
+        "indication_name": "Biliary dyskinesia"
+    },
+    {
+        "indication_id": "1348",
+        "indication_name": "Chronic cholelithiasis"
+    },
+    {
+        "indication_id": "1349",
+        "indication_name": "Duodenitis"
+    },
+    {
+        "indication_id": "1351",
+        "indication_name": "Percutaneous transluminal coronary angioplasty"
+    },
+    {
+        "indication_id": "1352",
+        "indication_name": "Mild diarrhea"
+    },
+    {
+        "indication_id": "1354",
+        "indication_name": "Onchocerciasis"
+    },
+    {
+        "indication_id": "1355",
+        "indication_name": "Gnathostomiasis"
+    },
+    {
+        "indication_id": "1356",
+        "indication_name": "Pain and inflammation"
+    },
+    {
+        "indication_id": "1357",
+        "indication_name": "Moderate to severe pain"
+    },
+    {
+        "indication_id": "1358",
+        "indication_name": "Postoperative eye inflammation"
+    },
+    {
+        "indication_id": "1359",
+        "indication_name": "Cystoid macular oedema"
+    },
+    {
+        "indication_id": "1360",
+        "indication_name": "Asthma prophylaxis"
+    },
+    {
+        "indication_id": "1361",
+        "indication_name": "Abrasion"
+    },
+    {
+        "indication_id": "1362",
+        "indication_name": "Surgical incisions"
+    },
+    {
+        "indication_id": "1363",
+        "indication_name": "Decubitus or stasis ulcers"
+    },
+    {
+        "indication_id": "1365",
+        "indication_name": "Hypotensive anaesthesia"
+    },
+    {
+        "indication_id": "1367",
+        "indication_name": "Hepatic encephalopathy"
+    },
+    {
+        "indication_id": "1368",
+        "indication_name": "Hypersecretory conditions"
+    },
+    {
+        "indication_id": "1369",
+        "indication_name": "Acid-related dyspepsia"
+    },
+    {
+        "indication_id": "1370",
+        "indication_name": "NSAID-induced ulcers"
+    },
+    {
+        "indication_id": "1371",
+        "indication_name": "Erosive oesophagitis"
+    },
+    {
+        "indication_id": "1373",
+        "indication_name": "Chronic Fatigue Syndrome"
+    },
+    {
+        "indication_id": "1375",
+        "indication_name": "High Cholesterol"
+    },
+    {
+        "indication_id": "1377",
+        "indication_name": "Down Syndrome"
+    },
+    {
+        "indication_id": "1378",
+        "indication_name": "Male infertility"
+    },
+    {
+        "indication_id": "1379",
+        "indication_name": "Ancylostomiasis"
+    },
+    {
+        "indication_id": "1380",
+        "indication_name": "Partial seizures"
+    },
+    {
+        "indication_id": "1381",
+        "indication_name": "Menopausal HRT"
+    },
+    {
+        "indication_id": "1382",
+        "indication_name": "Surgical anaesthesia"
+    },
+    {
+        "indication_id": "1383",
+        "indication_name": "Infiltration anaesthesia"
+    },
+    {
+        "indication_id": "1384",
+        "indication_name": "Complicated skin and skin structure infections"
+    },
+    {
+        "indication_id": "1386",
+        "indication_name": "Chronic bacterial prostatitis"
+    },
+    {
+        "indication_id": "1387",
+        "indication_name": "Hypothyroidism"
+    },
+    {
+        "indication_id": "1388",
+        "indication_name": "TSH suppression"
+    },
+    {
+        "indication_id": "1389",
+        "indication_name": "Myxoedema coma"
+    },
+    {
+        "indication_id": "1390",
+        "indication_name": "Ventricular fibrillation or ventricular tachycardia"
+    },
+    {
+        "indication_id": "1391",
+        "indication_name": "Epidural anaesthesia"
+    },
+    {
+        "indication_id": "1393",
+        "indication_name": "Regional anaesthesia"
+    },
+    {
+        "indication_id": "1394",
+        "indication_name": "Surface anaesthesia"
+    },
+    {
+        "indication_id": "1395",
+        "indication_name": "Pupil dilatation"
+    },
+    {
+        "indication_id": "1396",
+        "indication_name": "Local anaesthesia"
+    },
+    {
+        "indication_id": "1397",
+        "indication_name": "Injury of the pyramidal tract"
+    },
+    {
+        "indication_id": "1398",
+        "indication_name": "Myelopathy"
+    },
+    {
+        "indication_id": "1399",
+        "indication_name": "Encephalomyelitis"
+    },
+    {
+        "indication_id": "1400",
+        "indication_name": "Muscular hypertension"
+    },
+    {
+        "indication_id": "1403",
+        "indication_name": "Rigidity"
+    },
+    {
+        "indication_id": "1404",
+        "indication_name": "Spinal automatism and discopathy"
+    },
+    {
+        "indication_id": "1405",
+        "indication_name": "Obliterative arteriosclerosis"
+    },
+    {
+        "indication_id": "1406",
+        "indication_name": "Diabetic angiopathy"
+    },
+    {
+        "indication_id": "1407",
+        "indication_name": "Obliterative thromboangitis"
+    },
+    {
+        "indication_id": "1408",
+        "indication_name": "Raynaud's disease"
+    },
+    {
+        "indication_id": "1409",
+        "indication_name": "Diffuse scleroderma"
+    },
+    {
+        "indication_id": "1410",
+        "indication_name": "Acrocyanosis"
+    },
+    {
+        "indication_id": "1411",
+        "indication_name": "Intermittent angioneurotic dysbasia"
+    },
+    {
+        "indication_id": "1412",
+        "indication_name": "Crural ulcer"
+    },
+    {
+        "indication_id": "1413",
+        "indication_name": "Burning and pain and skin inflammations"
+    },
+    {
+        "indication_id": "1415",
+        "indication_name": "Cracked feet"
+    },
+    {
+        "indication_id": "1416",
+        "indication_name": "Infantile eczema"
+    },
+    {
+        "indication_id": "1418",
+        "indication_name": "Recurrent unipolar depression"
+    },
+    {
+        "indication_id": "1419",
+        "indication_name": "Brain tumours"
+    },
+    {
+        "indication_id": "1420",
+        "indication_name": "Hodgkin's disease"
+    },
+    {
+        "indication_id": "1421",
+        "indication_name": "Malignant melanoma"
+    },
+    {
+        "indication_id": "1424",
+        "indication_name": "Lacrimation"
+    },
+    {
+        "indication_id": "1425",
+        "indication_name": "Sedation"
+    },
+    {
+        "indication_id": "1427",
+        "indication_name": "Cyclitis"
+    },
+    {
+        "indication_id": "1428",
+        "indication_name": "Chronic idiopathic constipation"
+    },
+    {
+        "indication_id": "1430",
+        "indication_name": "Heartburn & gastritis"
+    },
+    {
+        "indication_id": "1431",
+        "indication_name": "Gastrointestinal hyperacidity"
+    },
+    {
+        "indication_id": "1432",
+        "indication_name": "Osmotic laxative"
+    },
+    {
+        "indication_id": "1434",
+        "indication_name": "Osmotic purgative"
+    },
+    {
+        "indication_id": "1435",
+        "indication_name": "Hypomagnesemia"
+    },
+    {
+        "indication_id": "1436",
+        "indication_name": "Oliguric phase of renal failure"
+    },
+    {
+        "indication_id": "1437",
+        "indication_name": "Raised intracranial pressure"
+    },
+    {
+        "indication_id": "1439",
+        "indication_name": "Renal function testing"
+    },
+    {
+        "indication_id": "1440",
+        "indication_name": "Transurethral prostatic resection"
+    },
+    {
+        "indication_id": "1443",
+        "indication_name": "Trichuriasis"
+    },
+    {
+        "indication_id": "1444",
+        "indication_name": "Trichostrongyliasis"
+    },
+    {
+        "indication_id": "1445",
+        "indication_name": "Trichinellosis"
+    },
+    {
+        "indication_id": "1446",
+        "indication_name": "Dracunculiasis"
+    },
+    {
+        "indication_id": "1449",
+        "indication_name": "Vertigo and vestibular disorders"
+    },
+    {
+        "indication_id": "1450",
+        "indication_name": "Pregnancy-associated nausea and vomiting"
+    },
+    {
+        "indication_id": "1454",
+        "indication_name": "Mild to moderate pain"
+    },
+    {
+        "indication_id": "1456",
+        "indication_name": "Disturbed biorhythms"
+    },
+    {
+        "indication_id": "1459",
+        "indication_name": "Itching and pain"
+    },
+    {
+        "indication_id": "1460",
+        "indication_name": "Anal pruritus"
+    },
+    {
+        "indication_id": "1461",
+        "indication_name": "Rheumatism Strains"
+    },
+    {
+        "indication_id": "1462",
+        "indication_name": "Tendonitis"
+    },
+    {
+        "indication_id": "1463",
+        "indication_name": "Leg cramps"
+    },
+    {
+        "indication_id": "1464",
+        "indication_name": "Cough and common cold"
+    },
+    {
+        "indication_id": "1469",
+        "indication_name": "Urothelial toxicity"
+    },
+    {
+        "indication_id": "1470",
+        "indication_name": "Polycystic ovarian syndrome"
+    },
+    {
+        "indication_id": "1471",
+        "indication_name": "Type 2 DM"
+    },
+    {
+        "indication_id": "1476",
+        "indication_name": "Uterine hemorrhage"
+    },
+    {
+        "indication_id": "1477",
+        "indication_name": "Spontaneous or elective abortion"
+    },
+    {
+        "indication_id": "1478",
+        "indication_name": "Uterine atony"
+    },
+    {
+        "indication_id": "1479",
+        "indication_name": "Second stage of labor"
+    },
+    {
+        "indication_id": "1480",
+        "indication_name": "Stevens-Johnson syndrome"
+    },
+    {
+        "indication_id": "1481",
+        "indication_name": "Erythema multiforme"
+    },
+    {
+        "indication_id": "1482",
+        "indication_name": "Vestibular neuritis"
+    },
+    {
+        "indication_id": "1483",
+        "indication_name": "Bullous dermatitis herpetiformis"
+    },
+    {
+        "indication_id": "1484",
+        "indication_name": "Herpes zoster ophthalmicus"
+    },
+    {
+        "indication_id": "1485",
+        "indication_name": "Optic neuritis"
+    },
+    {
+        "indication_id": "1486",
+        "indication_name": "Iritis and iridocyclitis"
+    },
+    {
+        "indication_id": "1487",
+        "indication_name": "Loeffler's syndrome"
+    },
+    {
+        "indication_id": "1489",
+        "indication_name": "Tuberculous meningitis"
+    },
+    {
+        "indication_id": "1490",
+        "indication_name": "Hyperactivity disorders"
+    },
+    {
+        "indication_id": "1491",
+        "indication_name": "Diabetic gastric stasis"
+    },
+    {
+        "indication_id": "1492",
+        "indication_name": "Nausea and vomiting associated w/ cancer chemotherapy or radiotherapy"
+    },
+    {
+        "indication_id": "1494",
+        "indication_name": "Cardiac arrhythmias"
+    },
+    {
+        "indication_id": "1495",
+        "indication_name": "Balantidiasis"
+    },
+    {
+        "indication_id": "1496",
+        "indication_name": "Blastocystis hominis infection"
+    },
+    {
+        "indication_id": "1497",
+        "indication_name": "Trichomoniasis"
+    },
+    {
+        "indication_id": "1499",
+        "indication_name": "Acute necrotising ulcerative gingivitis"
+    },
+    {
+        "indication_id": "1500",
+        "indication_name": "Anaerobic bacterial infections"
+    },
+    {
+        "indication_id": "1501",
+        "indication_name": "Antibiotic-associated colitis"
+    },
+    {
+        "indication_id": "1502",
+        "indication_name": "Fungating tumours"
+    },
+    {
+        "indication_id": "1503",
+        "indication_name": "Leg ulcers and pressure sores"
+    },
+    {
+        "indication_id": "1504",
+        "indication_name": "Diverticulitis"
+    },
+    {
+        "indication_id": "1505",
+        "indication_name": "Diabetic foot ulcer"
+    },
+    {
+        "indication_id": "1506",
+        "indication_name": "Meningitis and brain abscesses"
+    },
+    {
+        "indication_id": "1508",
+        "indication_name": "Bacterial and trichomonal vaginitis"
+    },
+    {
+        "indication_id": "1509",
+        "indication_name": "Vaginal trichomoniasis"
+    },
+    {
+        "indication_id": "1510",
+        "indication_name": "Vaginal leucorrhoea"
+    },
+    {
+        "indication_id": "1511",
+        "indication_name": "Bacterial or fungal vaginal infection"
+    },
+    {
+        "indication_id": "1512",
+        "indication_name": "Denture stomatitis"
+    },
+    {
+        "indication_id": "1513",
+        "indication_name": "Fungal infections of the mouth Throat and gut"
+    },
+    {
+        "indication_id": "1515",
+        "indication_name": "Angular cheilitis"
+    },
+    {
+        "indication_id": "1516",
+        "indication_name": "Dermatomycoses"
+    },
+    {
+        "indication_id": "1518",
+        "indication_name": "Intertrigo"
+    },
+    {
+        "indication_id": "1519",
+        "indication_name": "Perianal infections"
+    },
+    {
+        "indication_id": "1520",
+        "indication_name": "Stomatitis angularis"
+    },
+    {
+        "indication_id": "1521",
+        "indication_name": "Induction of anesthesia"
+    },
+    {
+        "indication_id": "1522",
+        "indication_name": "Termination of pregnancy"
+    },
+    {
+        "indication_id": "1523",
+        "indication_name": "Postcoital contraception"
+    },
+    {
+        "indication_id": "1524",
+        "indication_name": "Labour induction"
+    },
+    {
+        "indication_id": "1525",
+        "indication_name": "Cervical softening and dilatation"
+    },
+    {
+        "indication_id": "1526",
+        "indication_name": "Alopecia androgenetica"
+    },
+    {
+        "indication_id": "1530",
+        "indication_name": "Intractable cough"
+    },
+    {
+        "indication_id": "1531",
+        "indication_name": "Acute pulmonary oedema"
+    },
+    {
+        "indication_id": "1532",
+        "indication_name": "Analgesia during labour"
+    },
+    {
+        "indication_id": "1533",
+        "indication_name": "Secondary skin infections"
+    },
+    {
+        "indication_id": "1534",
+        "indication_name": "Furunculosis"
+    },
+    {
+        "indication_id": "1537",
+        "indication_name": "Hepatic transplant rejection"
+    },
+    {
+        "indication_id": "1538",
+        "indication_name": "Pain associated with MI"
+    },
+    {
+        "indication_id": "1539",
+        "indication_name": "Balanced anaesthesia"
+    },
+    {
+        "indication_id": "1540",
+        "indication_name": "Lower urinary tract infections"
+    },
+    {
+        "indication_id": "1541",
+        "indication_name": "Shigellosis"
+    },
+    {
+        "indication_id": "1542",
+        "indication_name": "Opioid overdosage"
+    },
+    {
+        "indication_id": "1543",
+        "indication_name": "Opioid-induced depression"
+    },
+    {
+        "indication_id": "1544",
+        "indication_name": "Alcohol dependence"
+    },
+    {
+        "indication_id": "1545",
+        "indication_name": "Anaemia in chemotherapy patients"
+    },
+    {
+        "indication_id": "1546",
+        "indication_name": "Conjunctival decongestant"
+    },
+    {
+        "indication_id": "1548",
+        "indication_name": "Nonspecific conjunctival irritation"
+    },
+    {
+        "indication_id": "1550",
+        "indication_name": "Irrigation of the tear ducts"
+    },
+    {
+        "indication_id": "1551",
+        "indication_name": "Osteoarthritis (degenerative arthritis)"
+    },
+    {
+        "indication_id": "1555",
+        "indication_name": "Bursitis"
+    },
+    {
+        "indication_id": "1557",
+        "indication_name": "HIV infection"
+    },
+    {
+        "indication_id": "1560",
+        "indication_name": "Otic infections"
+    },
+    {
+        "indication_id": "1561",
+        "indication_name": "Steroid-responsive inflammatory ocular conditions"
+    },
+    {
+        "indication_id": "1563",
+        "indication_name": "Myasthenia gravis"
+    },
+    {
+        "indication_id": "1566",
+        "indication_name": "Occular pain and inflammation"
+    },
+    {
+        "indication_id": "1568",
+        "indication_name": "Nicotinic acid deficiency"
+    },
+    {
+        "indication_id": "1570",
+        "indication_name": "Vitamin B and Zinc deficiencies"
+    },
+    {
+        "indication_id": "1574",
+        "indication_name": "Smoking cessation"
+    },
+    {
+        "indication_id": "1576",
+        "indication_name": "Central respiratory depression"
+    },
+    {
+        "indication_id": "1577",
+        "indication_name": "Tranquilizer overdoses"
+    },
+    {
+        "indication_id": "1579",
+        "indication_name": "Subarachnoid haemorrhage"
+    },
+    {
+        "indication_id": "1580",
+        "indication_name": "Cryptosporidiosis"
+    },
+    {
+        "indication_id": "1582",
+        "indication_name": "Skin grafting"
+    },
+    {
+        "indication_id": "1583",
+        "indication_name": "Ulcers"
+    },
+    {
+        "indication_id": "1585",
+        "indication_name": "Short-term pain relief"
+    },
+    {
+        "indication_id": "1586",
+        "indication_name": "Acute trauma"
+    },
+    {
+        "indication_id": "1587",
+        "indication_name": "Tooth extraction"
+    },
+    {
+        "indication_id": "1588",
+        "indication_name": "Wound and burn dressing"
+    },
+    {
+        "indication_id": "1589",
+        "indication_name": "Wound debribement and suturing"
+    },
+    {
+        "indication_id": "1590",
+        "indication_name": "Fracture and joint manipulation"
+    },
+    {
+        "indication_id": "1591",
+        "indication_name": "Colonoscopy"
+    },
+    {
+        "indication_id": "1595",
+        "indication_name": "Intestinal candidiasis"
+    },
+    {
+        "indication_id": "1596",
+        "indication_name": "Uncomplicated skin infections"
+    },
+    {
+        "indication_id": "1597",
+        "indication_name": "Nongonococcal cervicitis"
+    },
+    {
+        "indication_id": "1598",
+        "indication_name": "Uncomplicated cystitis"
+    },
+    {
+        "indication_id": "1599",
+        "indication_name": "Complicated UTI"
+    },
+    {
+        "indication_id": "1600",
+        "indication_name": "Traveller's diarrhea"
+    },
+    {
+        "indication_id": "1601",
+        "indication_name": "Bacterial prostatis"
+    },
+    {
+        "indication_id": "1602",
+        "indication_name": "Bacterial corneal ulcer"
+    },
+    {
+        "indication_id": "1603",
+        "indication_name": "High triglyceride"
+    },
+    {
+        "indication_id": "1608",
+        "indication_name": "Obesity"
+    },
+    {
+        "indication_id": "1612",
+        "indication_name": "Generalised tonic-clonic seizures"
+    },
+    {
+        "indication_id": "1613",
+        "indication_name": "Local occular anaesthesia"
+    },
+    {
+        "indication_id": "1614",
+        "indication_name": "Overactive bladder"
+    },
+    {
+        "indication_id": "1615",
+        "indication_name": "Resuscitation"
+    },
+    {
+        "indication_id": "1616",
+        "indication_name": "Cyanosis"
+    },
+    {
+        "indication_id": "1617",
+        "indication_name": "Severe hemorrhage"
+    },
+    {
+        "indication_id": "1618",
+        "indication_name": "Carbon monoxide poisoning"
+    },
+    {
+        "indication_id": "1619",
+        "indication_name": "Major trauma"
+    },
+    {
+        "indication_id": "1621",
+        "indication_name": "Artificially ventilated patients"
+    },
+    {
+        "indication_id": "1625",
+        "indication_name": "Visceral spasms"
+    },
+    {
+        "indication_id": "1628",
+        "indication_name": "Aural infections"
+    },
+    {
+        "indication_id": "1629",
+        "indication_name": "Superficial skin infections"
+    },
+    {
+        "indication_id": "1630",
+        "indication_name": "Abortion"
+    },
+    {
+        "indication_id": "1631",
+        "indication_name": "Facilitate lactation"
+    },
+    {
+        "indication_id": "1632",
+        "indication_name": "Pancreatic insufficiency"
+    },
+    {
+        "indication_id": "1634",
+        "indication_name": "Vitamin deficiency"
+    },
+    {
+        "indication_id": "1635",
+        "indication_name": "Mild to moderate pain and fever"
+    },
+    {
+        "indication_id": "1638",
+        "indication_name": "Secondary hyperparathyroidism"
+    },
+    {
+        "indication_id": "1639",
+        "indication_name": "Social anxiety disorder"
+    },
+    {
+        "indication_id": "1640",
+        "indication_name": "Premenstrual dysmorphic disorder"
+    },
+    {
+        "indication_id": "1643",
+        "indication_name": "IHD"
+    },
+    {
+        "indication_id": "1644",
+        "indication_name": "Pediculosis pubis"
+    },
+    {
+        "indication_id": "1646",
+        "indication_name": "Obstetric analgesia"
+    },
+    {
+        "indication_id": "1647",
+        "indication_name": "Hypnotic"
+    },
+    {
+        "indication_id": "1648",
+        "indication_name": "Preoperative sedation"
+    },
+    {
+        "indication_id": "1650",
+        "indication_name": "Spleen disorders"
+    },
+    {
+        "indication_id": "1652",
+        "indication_name": "Vincent's infection"
+    },
+    {
+        "indication_id": "1653",
+        "indication_name": "Discomfort of the eye"
+    },
+    {
+        "indication_id": "1654",
+        "indication_name": "Uveal tract inflammation"
+    },
+    {
+        "indication_id": "1655",
+        "indication_name": "Retinal photography"
+    },
+    {
+        "indication_id": "1656",
+        "indication_name": "Refractive errors"
+    },
+    {
+        "indication_id": "1657",
+        "indication_name": "Funduscopy"
+    },
+    {
+        "indication_id": "1658",
+        "indication_name": "Slit lamp examination"
+    },
+    {
+        "indication_id": "1660",
+        "indication_name": "Tonic-clonic status epilepticus"
+    },
+    {
+        "indication_id": "1661",
+        "indication_name": "Unproductive coughs"
+    },
+    {
+        "indication_id": "1662",
+        "indication_name": "Dry cough"
+    },
+    {
+        "indication_id": "1663",
+        "indication_name": "Vitamin K deficiency"
+    },
+    {
+        "indication_id": "1664",
+        "indication_name": "Over-anticoagulation"
+    },
+    {
+        "indication_id": "1665",
+        "indication_name": "Vitamin K deficiency bleeding"
+    },
+    {
+        "indication_id": "1666",
+        "indication_name": "Dry mouth"
+    },
+    {
+        "indication_id": "1667",
+        "indication_name": "Sjogren's syndrome"
+    },
+    {
+        "indication_id": "1668",
+        "indication_name": "Cortical myoclonus"
+    },
+    {
+        "indication_id": "1669",
+        "indication_name": "Cognitive enhancer"
+    },
+    {
+        "indication_id": "1671",
+        "indication_name": "Juvenile idiopathic arthritis"
+    },
+    {
+        "indication_id": "1672",
+        "indication_name": "Local pain relief"
+    },
+    {
+        "indication_id": "1673",
+        "indication_name": "Chronic or recurrent bacteriuria"
+    },
+    {
+        "indication_id": "1674",
+        "indication_name": "Anogenital warts"
+    },
+    {
+        "indication_id": "1678",
+        "indication_name": "Sepsis"
+    },
+    {
+        "indication_id": "1681",
+        "indication_name": "Acid regurgitation"
+    },
+    {
+        "indication_id": "1683",
+        "indication_name": "Electrolyte replenisher"
+    },
+    {
+        "indication_id": "1685",
+        "indication_name": "Blood loss due to trauma or burn injury"
+    },
+    {
+        "indication_id": "1688",
+        "indication_name": "Prevent kidney stone"
+    },
+    {
+        "indication_id": "1689",
+        "indication_name": "Prevent gout"
+    },
+    {
+        "indication_id": "1690",
+        "indication_name": "Acidosis"
+    },
+    {
+        "indication_id": "1692",
+        "indication_name": "Keratoconjunctivitis sicca"
+    },
+    {
+        "indication_id": "1693",
+        "indication_name": "Oral candidiasis/Thrush"
+    },
+    {
+        "indication_id": "1694",
+        "indication_name": "Wound infection"
+    },
+    {
+        "indication_id": "1695",
+        "indication_name": "Vaginitis"
+    },
+    {
+        "indication_id": "1697",
+        "indication_name": "Pre- and post-operative skin cleansing"
+    },
+    {
+        "indication_id": "1698",
+        "indication_name": "Organophosphorous poisoning"
+    },
+    {
+        "indication_id": "1699",
+        "indication_name": "Restless leg syndrome"
+    },
+    {
+        "indication_id": "1701",
+        "indication_name": "Scalp disorders"
+    },
+    {
+        "indication_id": "1702",
+        "indication_name": "Hyperkeratotic"
+    },
+    {
+        "indication_id": "1703",
+        "indication_name": "Scaling skin conditions"
+    },
+    {
+        "indication_id": "1706",
+        "indication_name": "Infantile spasms"
+    },
+    {
+        "indication_id": "1707",
+        "indication_name": "Allergic and inflammatory conditions of the ear"
+    },
+    {
+        "indication_id": "1708",
+        "indication_name": "Menstrual pain & pre-eclampsia"
+    },
+    {
+        "indication_id": "1709",
+        "indication_name": "Breast pain"
+    },
+    {
+        "indication_id": "1710",
+        "indication_name": "Severe anxiety disorders"
+    },
+    {
+        "indication_id": "1711",
+        "indication_name": "Parkinsonism"
+    },
+    {
+        "indication_id": "1712",
+        "indication_name": "Drug-induced extrapyramidal syndrome"
+    },
+    {
+        "indication_id": "1713",
+        "indication_name": "Amenorrhoea"
+    },
+    {
+        "indication_id": "1714",
+        "indication_name": "Recurrent miscarriage"
+    },
+    {
+        "indication_id": "1715",
+        "indication_name": "Adult enuresis"
+    },
+    {
+        "indication_id": "1717",
+        "indication_name": "Corneal anesthesia"
+    },
+    {
+        "indication_id": "1718",
+        "indication_name": "Phaeochromocytoma"
+    },
+    {
+        "indication_id": "1719",
+        "indication_name": "Migraine prophylaxis"
+    },
+    {
+        "indication_id": "1721",
+        "indication_name": "Essential tremor"
+    },
+    {
+        "indication_id": "1722",
+        "indication_name": "Heparin overdosage"
+    },
+    {
+        "indication_id": "1724",
+        "indication_name": "Enoxaparin or dalteparin overdosage"
+    },
+    {
+        "indication_id": "1725",
+        "indication_name": "Nasal congestion"
+    },
+    {
+        "indication_id": "1726",
+        "indication_name": "Tracheolaryngitis"
+    },
+    {
+        "indication_id": "1727",
+        "indication_name": "Worm infections"
+    },
+    {
+        "indication_id": "1728",
+        "indication_name": "Trichinosis"
+    },
+    {
+        "indication_id": "1730",
+        "indication_name": "Paralytic ileus and post-operative urinary retention"
+    },
+    {
+        "indication_id": "1731",
+        "indication_name": "Vitamin B6 deficiency"
+    },
+    {
+        "indication_id": "1734",
+        "indication_name": "Neuritis of pregnancy"
+    },
+    {
+        "indication_id": "1735",
+        "indication_name": "Fertility"
+    },
+    {
+        "indication_id": "1737",
+        "indication_name": "Malaria prophylaxis"
+    },
+    {
+        "indication_id": "1738",
+        "indication_name": "Toxoplasmosis"
+    },
+    {
+        "indication_id": "1739",
+        "indication_name": "Chloroquine-resistant falciparum malaria"
+    },
+    {
+        "indication_id": "1740",
+        "indication_name": "Nocturnal leg cramps"
+    },
+    {
+        "indication_id": "1745",
+        "indication_name": "Stress ulceration of upper GI"
+    },
+    {
+        "indication_id": "1746",
+        "indication_name": "Pain or irritation of the mouth and throat"
+    },
+    {
+        "indication_id": "1747",
+        "indication_name": "Apthous ulcer"
+    },
+    {
+        "indication_id": "1748",
+        "indication_name": "Gum sore"
+    },
+    {
+        "indication_id": "1750",
+        "indication_name": "Chronic hepatitis C"
+    },
+    {
+        "indication_id": "1751",
+        "indication_name": "Riboflavin deficiency"
+    },
+    {
+        "indication_id": "1752",
+        "indication_name": "Microcytic anaemia"
+    },
+    {
+        "indication_id": "1755",
+        "indication_name": "Premature labour"
+    },
+    {
+        "indication_id": "1759",
+        "indication_name": "Severe dementia in Alzheimer's disease"
+    },
+    {
+        "indication_id": "1762",
+        "indication_name": "Upper gastrointestinal haemorrhage"
+    },
+    {
+        "indication_id": "1764",
+        "indication_name": "Bronchopneumonia"
+    },
+    {
+        "indication_id": "1765",
+        "indication_name": "Furuncles"
+    },
+    {
+        "indication_id": "1766",
+        "indication_name": "Pyoderma"
+    },
+    {
+        "indication_id": "1767",
+        "indication_name": "Impetigo and infected dermatitis"
+    },
+    {
+        "indication_id": "1768",
+        "indication_name": "Cervicitis and salpingitis"
+    },
+    {
+        "indication_id": "1769",
+        "indication_name": "Artificial sweetener"
+    },
+    {
+        "indication_id": "1772",
+        "indication_name": "Hyperkeratotic and scaling skin conditions"
+    },
+    {
+        "indication_id": "1773",
+        "indication_name": "Keratosis"
+    },
+    {
+        "indication_id": "1774",
+        "indication_name": "Xerosis"
+    },
+    {
+        "indication_id": "1775",
+        "indication_name": "Corns"
+    },
+    {
+        "indication_id": "1777",
+        "indication_name": "Verruca"
+    },
+    {
+        "indication_id": "1778",
+        "indication_name": "Corns and Calluses"
+    },
+    {
+        "indication_id": "1779",
+        "indication_name": "Chronic atopic dermatitis"
+    },
+    {
+        "indication_id": "1781",
+        "indication_name": "Chronic asthma"
+    },
+    {
+        "indication_id": "1782",
+        "indication_name": "Hypercalcaemia"
+    },
+    {
+        "indication_id": "1784",
+        "indication_name": "Skin healthness"
+    },
+    {
+        "indication_id": "1785",
+        "indication_name": "Pain and fever"
+    },
+    {
+        "indication_id": "1786",
+        "indication_name": "Hyperphosphataemia"
+    },
+    {
+        "indication_id": "1789",
+        "indication_name": "Pulmonary arterial hypertension"
+    },
+    {
+        "indication_id": "1790",
+        "indication_name": "Severe burns"
+    },
+    {
+        "indication_id": "1791",
+        "indication_name": "Post-operative wound dressing"
+    },
+    {
+        "indication_id": "1793",
+        "indication_name": "Infantile colic"
+    },
+    {
+        "indication_id": "1794",
+        "indication_name": "Upper GI bloating"
+    },
+    {
+        "indication_id": "1795",
+        "indication_name": "Functional dyspepsia"
+    },
+    {
+        "indication_id": "1796",
+        "indication_name": "Spastic or irritable colon"
+    },
+    {
+        "indication_id": "1797",
+        "indication_name": "Urine alkalinisation"
+    },
+    {
+        "indication_id": "1798",
+        "indication_name": "Severe metabolic acidosis"
+    },
+    {
+        "indication_id": "1800",
+        "indication_name": "Haemodialysis"
+    },
+    {
+        "indication_id": "1801",
+        "indication_name": "Excessive sweating"
+    },
+    {
+        "indication_id": "1803",
+        "indication_name": "Metabolic alkalosis"
+    },
+    {
+        "indication_id": "1804",
+        "indication_name": "Diluting or dissolving drugs"
+    },
+    {
+        "indication_id": "1805",
+        "indication_name": "Pain or swelling of the cornea"
+    },
+    {
+        "indication_id": "1808",
+        "indication_name": "Allergic rhinitis accompanied by nasal congestion"
+    },
+    {
+        "indication_id": "1810",
+        "indication_name": "Dental caries"
+    },
+    {
+        "indication_id": "1811",
+        "indication_name": "Cornea transplant surgery"
+    },
+    {
+        "indication_id": "1812",
+        "indication_name": "Glaucoma surgery"
+    },
+    {
+        "indication_id": "1814",
+        "indication_name": "Posterior segment surgery"
+    },
+    {
+        "indication_id": "1815",
+        "indication_name": "Skin ulcers and wounds"
+    },
+    {
+        "indication_id": "1816",
+        "indication_name": "Root canal operation"
+    },
+    {
+        "indication_id": "1817",
+        "indication_name": "Fluid and electrolyte imbalance"
+    },
+    {
+        "indication_id": "1819",
+        "indication_name": "Leishmaniasis"
+    },
+    {
+        "indication_id": "1820",
+        "indication_name": "Anorexia nervosa"
+    },
+    {
+        "indication_id": "1821",
+        "indication_name": "Panic attack"
+    },
+    {
+        "indication_id": "1822",
+        "indication_name": "Migraine and bipolar disorder"
+    },
+    {
+        "indication_id": "1826",
+        "indication_name": "Cervicitis  and proctitis"
+    },
+    {
+        "indication_id": "1827",
+        "indication_name": "Protozoal infections"
+    },
+    {
+        "indication_id": "1829",
+        "indication_name": "Hyperaldosteronism"
+    },
+    {
+        "indication_id": "1830",
+        "indication_name": "Severe CHF"
+    },
+    {
+        "indication_id": "1831",
+        "indication_name": "Hypokalaemia"
+    },
+    {
+        "indication_id": "1833",
+        "indication_name": "Pulmonary thromboembolism"
+    },
+    {
+        "indication_id": "1834",
+        "indication_name": "Arteriovenous occlusions"
+    },
+    {
+        "indication_id": "1835",
+        "indication_name": "Chronic gastritis"
+    },
+    {
+        "indication_id": "1836",
+        "indication_name": "GI haemorrhage from stress ulceration"
+    },
+    {
+        "indication_id": "1841",
+        "indication_name": "Renal and urinary tract infections"
+    },
+    {
+        "indication_id": "1842",
+        "indication_name": "Skin and wound infections"
+    },
+    {
+        "indication_id": "1844",
+        "indication_name": "Cluster headache"
+    },
+    {
+        "indication_id": "1845",
+        "indication_name": "Gastrointestinal stromal tumor"
+    },
+    {
+        "indication_id": "1846",
+        "indication_name": "Meningioma"
+    },
+    {
+        "indication_id": "1847",
+        "indication_name": "Erectile dysfunction"
+    },
+    {
+        "indication_id": "1849",
+        "indication_name": "Stable plaque psoriasis"
+    },
+    {
+        "indication_id": "1850",
+        "indication_name": "Photoaging"
+    },
+    {
+        "indication_id": "1851",
+        "indication_name": "Irritable bowel syndrome and constipation"
+    },
+    {
+        "indication_id": "1852",
+        "indication_name": "Gram-positive infection"
+    },
+    {
+        "indication_id": "1853",
+        "indication_name": "CAPD-associated peritonitis"
+    },
+    {
+        "indication_id": "1854",
+        "indication_name": "Glioblastoma multiforme"
+    },
+    {
+        "indication_id": "1855",
+        "indication_name": "Malignant gliomas"
+    },
+    {
+        "indication_id": "1856",
+        "indication_name": "Metastatic melanoma"
+    },
+    {
+        "indication_id": "1858",
+        "indication_name": "Nail infections"
+    },
+    {
+        "indication_id": "1859",
+        "indication_name": "Cutaneous candidiasis and pityriasis versicolor"
+    },
+    {
+        "indication_id": "1860",
+        "indication_name": "Uncomplicated premature labour"
+    },
+    {
+        "indication_id": "1861",
+        "indication_name": "Testosterone replacement therapy"
+    },
+    {
+        "indication_id": "1862",
+        "indication_name": "Pleural effusions"
+    },
+    {
+        "indication_id": "1863",
+        "indication_name": "Rocky Mountain spotted fever"
+    },
+    {
+        "indication_id": "1864",
+        "indication_name": "Lymphogranuloma venereum"
+    },
+    {
+        "indication_id": "1865",
+        "indication_name": "Mycoplasma pneumoniae"
+    },
+    {
+        "indication_id": "1866",
+        "indication_name": "Trachoma"
+    },
+    {
+        "indication_id": "1869",
+        "indication_name": "Apnoea"
+    },
+    {
+        "indication_id": "1870",
+        "indication_name": "Beriberi and Wernick's encephalopathy"
+    },
+    {
+        "indication_id": "1872",
+        "indication_name": "Reduction of raised intracranial pressure"
+    },
+    {
+        "indication_id": "1875",
+        "indication_name": "Ischaemic heart disease"
+    },
+    {
+        "indication_id": "1877",
+        "indication_name": "Biliary colic"
+    },
+    {
+        "indication_id": "1878",
+        "indication_name": "Enterocolitis"
+    },
+    {
+        "indication_id": "1879",
+        "indication_name": "Cholecystitis"
+    },
+    {
+        "indication_id": "1880",
+        "indication_name": "Colonopathies"
+    },
+    {
+        "indication_id": "1881",
+        "indication_name": "Mild cystitis and spasmodic dysmenorrhoea"
+    },
+    {
+        "indication_id": "1882",
+        "indication_name": "Visceral muscle spasm"
+    },
+    {
+        "indication_id": "1884",
+        "indication_name": "Hepatic amoebiasis"
+    },
+    {
+        "indication_id": "1885",
+        "indication_name": "Nail fungal infections"
+    },
+    {
+        "indication_id": "1886",
+        "indication_name": "COPD"
+    },
+    {
+        "indication_id": "1887",
+        "indication_name": "Painful muscle spasm"
+    },
+    {
+        "indication_id": "1888",
+        "indication_name": "Eye infections"
+    },
+    {
+        "indication_id": "1889",
+        "indication_name": "Superficial dermatophyte infections and pityriasis versicolor"
+    },
+    {
+        "indication_id": "1890",
+        "indication_name": "Spasticity and muscle spasms"
+    },
+    {
+        "indication_id": "1891",
+        "indication_name": "Seizures associated w/ Lennox-gastaut syndrome"
+    },
+    {
+        "indication_id": "1892",
+        "indication_name": "Mottled hyperpigmentation"
+    },
+    {
+        "indication_id": "1893",
+        "indication_name": "Roughness and fine wrinkling of photodamaged skin"
+    },
+    {
+        "indication_id": "1895",
+        "indication_name": "Inflammatory joint disease"
+    },
+    {
+        "indication_id": "1899",
+        "indication_name": "Keratoconjunctivitis and recurrent epithelial keratitis due to herpes simplex viruses"
+    },
+    {
+        "indication_id": "1900",
+        "indication_name": "Idiopathic parkinsonism"
+    },
+    {
+        "indication_id": "1902",
+        "indication_name": "Pneumocystis jiroveci pneumonia"
+    },
+    {
+        "indication_id": "1904",
+        "indication_name": "Production of mydriasis"
+    },
+    {
+        "indication_id": "1905",
+        "indication_name": "Production of cycloplegia"
+    },
+    {
+        "indication_id": "1906",
+        "indication_name": "Emergency contraception"
+    },
+    {
+        "indication_id": "1907",
+        "indication_name": "Ichthyosis and dry skin conditions"
+    },
+    {
+        "indication_id": "1909",
+        "indication_name": "Dissolution of cholesterol-rich gallstones"
+    },
+    {
+        "indication_id": "1910",
+        "indication_name": "Primary biliary cirrhosis"
+    },
+    {
+        "indication_id": "1911",
+        "indication_name": "Prevention of gallstones"
+    },
+    {
+        "indication_id": "1912",
+        "indication_name": "CMV infections"
+    },
+    {
+        "indication_id": "1913",
+        "indication_name": "Post myocardial infarction"
+    },
+    {
+        "indication_id": "1914",
+        "indication_name": "Colitis"
+    },
+    {
+        "indication_id": "1915",
+        "indication_name": "Serious staphylococcal or other Gm+ve infections"
+    },
+    {
+        "indication_id": "1916",
+        "indication_name": "Smoking cessation aid"
+    },
+    {
+        "indication_id": "1917",
+        "indication_name": "Skeletal muscle relaxation"
+    },
+    {
+        "indication_id": "1919",
+        "indication_name": "Non-small cell lung cancer"
+    },
+    {
+        "indication_id": "1920",
+        "indication_name": "Vitamin A deficiency"
+    },
+    {
+        "indication_id": "1921",
+        "indication_name": "Night blindness"
+    },
+    {
+        "indication_id": "1922",
+        "indication_name": "Xerophthalmia"
+    },
+    {
+        "indication_id": "1923",
+        "indication_name": "Dietary supplement for infants"
+    },
+    {
+        "indication_id": "1924",
+        "indication_name": "Scurvy"
+    },
+    {
+        "indication_id": "1926",
+        "indication_name": "Rough skin"
+    },
+    {
+        "indication_id": "1927",
+        "indication_name": "Wrinkles associated with aging"
+    },
+    {
+        "indication_id": "1928",
+        "indication_name": "Vitamin E deficiency and peripheral neuropathy"
+    },
+    {
+        "indication_id": "1929",
+        "indication_name": "Macular Degeneration"
+    },
+    {
+        "indication_id": "1930",
+        "indication_name": "Candidemia"
+    },
+    {
+        "indication_id": "1931",
+        "indication_name": "Deep tissue Candida infections"
+    },
+    {
+        "indication_id": "1932",
+        "indication_name": "Invasive aspergillosis"
+    },
+    {
+        "indication_id": "1933",
+        "indication_name": "Scedosporiosis and Fusariosis"
+    },
+    {
+        "indication_id": "1938",
+        "indication_name": "Severe diarrhea"
+    },
+    {
+        "indication_id": "1939",
+        "indication_name": "Liver cirrhosis"
+    },
+    {
+        "indication_id": "1940",
+        "indication_name": "Bed sore"
+    },
+    {
+        "indication_id": "1941",
+        "indication_name": "Diaper rash"
+    },
+    {
+        "indication_id": "1945",
+        "indication_name": "Occular infection"
+    },
+    {
+        "indication_id": "1946",
+        "indication_name": "Acute agitation"
+    },
+    {
+        "indication_id": "1947",
+        "indication_name": "Bone malignancies"
+    },
+    {
+        "indication_id": "1948",
+        "indication_name": "Acute migraine attacks"
+    },
+    {
+        "indication_id": "1949",
+        "indication_name": "Influenza Virus Vaccine"
+    },
+    {
+        "indication_id": "1950",
+        "indication_name": "Acute graft rejection in renal transplantation"
+    },
+    {
+        "indication_id": "1951",
+        "indication_name": "Hypovolemia"
+    },
+    {
+        "indication_id": "1952",
+        "indication_name": "Hypoalbuminemia"
+    },
+    {
+        "indication_id": "1953",
+        "indication_name": "Adult Respiratory Distress Syndrome"
+    },
+    {
+        "indication_id": "1954",
+        "indication_name": "Nephrosis"
+    },
+    {
+        "indication_id": "1955",
+        "indication_name": "Cardiopulmonary Bypass Surgery"
+    },
+    {
+        "indication_id": "1956",
+        "indication_name": "Hemolytic Disease of the Newborn"
+    },
+    {
+        "indication_id": "1957",
+        "indication_name": "Ovarian Hyperstimulation Syndrome"
+    },
+    {
+        "indication_id": "1958",
+        "indication_name": "Hypophosphataemia"
+    },
+    {
+        "indication_id": "1959",
+        "indication_name": "Rickets or osteomalacia"
+    },
+    {
+        "indication_id": "1961",
+        "indication_name": "T-Cell Lymphoma"
+    },
+    {
+        "indication_id": "1964",
+        "indication_name": "Prevention of rejection in organ and tissue transplantation"
+    },
+    {
+        "indication_id": "1965",
+        "indication_name": "Auto-immune diseases"
+    },
+    {
+        "indication_id": "1966",
+        "indication_name": "Renal homotransplantation"
+    },
+    {
+        "indication_id": "1967",
+        "indication_name": "Urothelial bladder carcinoma"
+    },
+    {
+        "indication_id": "1968",
+        "indication_name": "Carcinoma in situ"
+    },
+    {
+        "indication_id": "1971",
+        "indication_name": "Renal cancers"
+    },
+    {
+        "indication_id": "1973",
+        "indication_name": "Breast cancers and glioblastoma multiforme of the brain"
+    },
+    {
+        "indication_id": "1974",
+        "indication_name": "Squamous cell or testicular tumours"
+    },
+    {
+        "indication_id": "1975",
+        "indication_name": "Malignant effusions"
+    },
+    {
+        "indication_id": "1977",
+        "indication_name": "Metastatic prostate cancer"
+    },
+    {
+        "indication_id": "1978",
+        "indication_name": "Calcium and magnesium deficiencies"
+    },
+    {
+        "indication_id": "1979",
+        "indication_name": "Hypocalcemic tetany"
+    },
+    {
+        "indication_id": "1981",
+        "indication_name": "In-vitro fertilization"
+    },
+    {
+        "indication_id": "1982",
+        "indication_name": "Lymphocytic leukemia"
+    },
+    {
+        "indication_id": "1983",
+        "indication_name": "Non-Hodgkin lymphoma"
+    },
+    {
+        "indication_id": "1984",
+        "indication_name": "Waldenstrm's macroglobulinemia"
+    },
+    {
+        "indication_id": "1986",
+        "indication_name": "Trophoblastic neoplasms"
+    },
+    {
+        "indication_id": "1988",
+        "indication_name": "Wound dressing for preventing excessive wound dryness and the prevention of infection in minor skin"
+    },
+    {
+        "indication_id": "1989",
+        "indication_name": "Scalds abrasions"
+    },
+    {
+        "indication_id": "1990",
+        "indication_name": "Lacerations"
+    },
+    {
+        "indication_id": "1991",
+        "indication_name": "Crush injuries"
+    },
+    {
+        "indication_id": "1992",
+        "indication_name": "Diabetic ulcers"
+    },
+    {
+        "indication_id": "1993",
+        "indication_name": "Skin Grafting"
+    },
+    {
+        "indication_id": "1995",
+        "indication_name": "Pressure sores"
+    },
+    {
+        "indication_id": "1996",
+        "indication_name": "Colostomies"
+    },
+    {
+        "indication_id": "1997",
+        "indication_name": "Surgical wounds"
+    },
+    {
+        "indication_id": "1998",
+        "indication_name": "Anovulatory infertility"
+    },
+    {
+        "indication_id": "1999",
+        "indication_name": "Adjunct to IVF procedures and other assisted conception techniques"
+    },
+    {
+        "indication_id": "2000",
+        "indication_name": "Bipolar mania"
+    },
+    {
+        "indication_id": "2001",
+        "indication_name": "Strabismus"
+    },
+    {
+        "indication_id": "2002",
+        "indication_name": "Blepharospasm"
+    },
+    {
+        "indication_id": "2003",
+        "indication_name": "Achalasia"
+    },
+    {
+        "indication_id": "2004",
+        "indication_name": "Hemophilia B or Christmas disease"
+    },
+    {
+        "indication_id": "2005",
+        "indication_name": "Oral contraceptives"
+    },
+    {
+        "indication_id": "2007",
+        "indication_name": "Chronic myelogenous leukaemia"
+    },
+    {
+        "indication_id": "2008",
+        "indication_name": "Gastric cancer"
+    },
+    {
+        "indication_id": "2014",
+        "indication_name": "Endometrium cancer"
+    },
+    {
+        "indication_id": "2016",
+        "indication_name": "Head & neck cancer"
+    },
+    {
+        "indication_id": "2017",
+        "indication_name": "Rabies"
+    },
+    {
+        "indication_id": "2018",
+        "indication_name": "Prophylaxis of clotting in extracorporeal circulation in haemodialysis or haemofiltration"
+    },
+    {
+        "indication_id": "2019",
+        "indication_name": "Prophylaxis of venous thromboembolism during surgery"
+    },
+    {
+        "indication_id": "2022",
+        "indication_name": "Tetanus"
+    },
+    {
+        "indication_id": "2026",
+        "indication_name": "Reduce the risk of getting HIV-1 infection"
+    },
+    {
+        "indication_id": "2028",
+        "indication_name": "To reduce the need for allogenic blood tranfusion"
+    },
+    {
+        "indication_id": "2029",
+        "indication_name": "Anaemia of prematurity"
+    },
+    {
+        "indication_id": "2030",
+        "indication_name": "Hemophilia"
+    },
+    {
+        "indication_id": "2033",
+        "indication_name": "Breast cancer in postmenopausal women"
+    },
+    {
+        "indication_id": "2035",
+        "indication_name": "Mucocutaneous herpes"
+    },
+    {
+        "indication_id": "2036",
+        "indication_name": "Chronic lymphocytic leukaemia"
+    },
+    {
+        "indication_id": "2037",
+        "indication_name": "Benzodiazepine-induced sedation"
+    },
+    {
+        "indication_id": "2038",
+        "indication_name": "Benzodiazepine overdose"
+    },
+    {
+        "indication_id": "2039",
+        "indication_name": "Spermatogenesis induction"
+    },
+    {
+        "indication_id": "2040",
+        "indication_name": "Corticosteriod-responsive dermatoses w/ secondary infection"
+    },
+    {
+        "indication_id": "2041",
+        "indication_name": "Ovarian stimulation"
+    },
+    {
+        "indication_id": "2042",
+        "indication_name": "Assisted reproduction"
+    },
+    {
+        "indication_id": "2043",
+        "indication_name": "Stimulate ovulation"
+    },
+    {
+        "indication_id": "2044",
+        "indication_name": "Sperm production"
+    },
+    {
+        "indication_id": "2046",
+        "indication_name": "Haemophilus influenzae  type b infection"
+    },
+    {
+        "indication_id": "2048",
+        "indication_name": "Hepatitis B virus"
+    },
+    {
+        "indication_id": "2050",
+        "indication_name": "Hypoproteinaemia"
+    },
+    {
+        "indication_id": "2051",
+        "indication_name": "Rhesus disease"
+    },
+    {
+        "indication_id": "2052",
+        "indication_name": "Nonketotic hyperosmolar coma"
+    },
+    {
+        "indication_id": "2057",
+        "indication_name": "Human Papillomavirus infection"
+    },
+    {
+        "indication_id": "2058",
+        "indication_name": "Premalignant cervical lesions and cervical cancer"
+    },
+    {
+        "indication_id": "2060",
+        "indication_name": "Cervical intraepithelial neoplasia"
+    },
+    {
+        "indication_id": "2061",
+        "indication_name": "Rotavirus diarrhea"
+    },
+    {
+        "indication_id": "2063",
+        "indication_name": "Hypodermoclysis"
+    },
+    {
+        "indication_id": "2065",
+        "indication_name": "Aid in dispersal of extravasated fluids or blood"
+    },
+    {
+        "indication_id": "2066",
+        "indication_name": "Aid in diffusion of local anesthesia in ophthalmology"
+    },
+    {
+        "indication_id": "2068",
+        "indication_name": "Water treatment"
+    },
+    {
+        "indication_id": "2071",
+        "indication_name": "Hepatitis A virus"
+    },
+    {
+        "indication_id": "2072",
+        "indication_name": "Measles"
+    },
+    {
+        "indication_id": "2073",
+        "indication_name": "Rubella"
+    },
+    {
+        "indication_id": "2074",
+        "indication_name": "Immunodeficiency"
+    },
+    {
+        "indication_id": "2075",
+        "indication_name": "Wiskott-Aldrich syndrome"
+    },
+    {
+        "indication_id": "2077",
+        "indication_name": "Relapsing multiple sclerosis"
+    },
+    {
+        "indication_id": "2078",
+        "indication_name": "Peripheral and coronary arteriography and left ventriculography"
+    },
+    {
+        "indication_id": "2079",
+        "indication_name": "Intravenous excretory urography"
+    },
+    {
+        "indication_id": "2080",
+        "indication_name": "Angiography"
+    },
+    {
+        "indication_id": "2081",
+        "indication_name": "Carcinoma of the colon or rectum"
+    },
+    {
+        "indication_id": "2083",
+        "indication_name": "Pityriasis rubra pilaris"
+    },
+    {
+        "indication_id": "2084",
+        "indication_name": "Type 1 DM"
+    },
+    {
+        "indication_id": "2085",
+        "indication_name": "Acute Lymphocytic Leukemia"
+    },
+    {
+        "indication_id": "2086",
+        "indication_name": "Reduce the risk of life-threatening infection in patients with neutropenia after cytotoxic chemother"
+    },
+    {
+        "indication_id": "2088",
+        "indication_name": "Chronic open angle glaucoma"
+    },
+    {
+        "indication_id": "2089",
+        "indication_name": "Mumps"
+    },
+    {
+        "indication_id": "2091",
+        "indication_name": "Falciparum malaria"
+    },
+    {
+        "indication_id": "2092",
+        "indication_name": "Meningococcemia"
+    },
+    {
+        "indication_id": "2093",
+        "indication_name": "Carditis"
+    },
+    {
+        "indication_id": "2094",
+        "indication_name": "Allogeneic bone marrow transplantation"
+    },
+    {
+        "indication_id": "2095",
+        "indication_name": "Breast carcinoma"
+    },
+    {
+        "indication_id": "2096",
+        "indication_name": "Endometrial carcinoma"
+    },
+    {
+        "indication_id": "2097",
+        "indication_name": "Anorexia and cachexia"
+    },
+    {
+        "indication_id": "2098",
+        "indication_name": "Retinoblastoma"
+    },
+    {
+        "indication_id": "2099",
+        "indication_name": "Polycythaemia vera"
+    },
+    {
+        "indication_id": "2100",
+        "indication_name": "Meningococcal infection"
+    },
+    {
+        "indication_id": "2101",
+        "indication_name": "Meningococcal meningitis and septicaemia"
+    },
+    {
+        "indication_id": "2103",
+        "indication_name": "In vitro fertilisation procedures"
+    },
+    {
+        "indication_id": "2105",
+        "indication_name": "Skin metastases of breast cancer"
+    },
+    {
+        "indication_id": "2106",
+        "indication_name": "Skin burns"
+    },
+    {
+        "indication_id": "2107",
+        "indication_name": "Constipation and bowel irregularity"
+    },
+    {
+        "indication_id": "2108",
+        "indication_name": "Cleansing of the colon as a preparation for colonoscopy"
+    },
+    {
+        "indication_id": "2109",
+        "indication_name": "Foods and water treatment"
+    },
+    {
+        "indication_id": "2111",
+        "indication_name": "Prevention of skin infection"
+    },
+    {
+        "indication_id": "2113",
+        "indication_name": "Vernal keratoconjunctivitis"
+    },
+    {
+        "indication_id": "2114",
+        "indication_name": "Bacterial skin infections"
+    },
+    {
+        "indication_id": "2115",
+        "indication_name": "Pyoderma gangrenosum"
+    },
+    {
+        "indication_id": "2117",
+        "indication_name": "Bell's palsy"
+    },
+    {
+        "indication_id": "2119",
+        "indication_name": "Vasculitis"
+    },
+    {
+        "indication_id": "2121",
+        "indication_name": "Kawasaki disease and dermatomyositis. sarcoidosis"
+    },
+    {
+        "indication_id": "2123",
+        "indication_name": "Phlebitis and extravasation secondary to venous cannulation"
+    },
+    {
+        "indication_id": "2124",
+        "indication_name": "Variceal haemorrhage"
+    },
+    {
+        "indication_id": "2125",
+        "indication_name": "Secretory neoplasms"
+    },
+    {
+        "indication_id": "2126",
+        "indication_name": "Following pancreatic surgery"
+    },
+    {
+        "indication_id": "2127",
+        "indication_name": "HIV-associated diarrhoea"
+    },
+    {
+        "indication_id": "2128",
+        "indication_name": "Varicella infection"
+    },
+    {
+        "indication_id": "2129",
+        "indication_name": "Severe allergic asthma"
+    },
+    {
+        "indication_id": "2131",
+        "indication_name": "Chemotherapy induced-neutropenia"
+    },
+    {
+        "indication_id": "2132",
+        "indication_name": "Bone marrow stimulation"
+    },
+    {
+        "indication_id": "2133",
+        "indication_name": "Malignant pleural mesothelioma"
+    },
+    {
+        "indication_id": "2136",
+        "indication_name": "Painful bladder syndrome"
+    },
+    {
+        "indication_id": "2137",
+        "indication_name": "Dyspareunia"
+    },
+    {
+        "indication_id": "2139",
+        "indication_name": "Fatty liver"
+    },
+    {
+        "indication_id": "2141",
+        "indication_name": "Alcoholism & drug induced hepatotoxicity"
+    },
+    {
+        "indication_id": "2142",
+        "indication_name": "Hypoprothrombinemia"
+    },
+    {
+        "indication_id": "2143",
+        "indication_name": "Bleeding or blood clotting problems"
+    },
+    {
+        "indication_id": "2144",
+        "indication_name": "Pneumococcal disease"
+    },
+    {
+        "indication_id": "2145",
+        "indication_name": "Bacteraemic pneumonia"
+    },
+    {
+        "indication_id": "2146",
+        "indication_name": "Pleural empyema"
+    },
+    {
+        "indication_id": "2147",
+        "indication_name": "Bacteraemia"
+    },
+    {
+        "indication_id": "2148",
+        "indication_name": "Pneumococcal pneumonia"
+    },
+    {
+        "indication_id": "2149",
+        "indication_name": "Hypovolaemia and shock"
+    },
+    {
+        "indication_id": "2150",
+        "indication_name": "Surgery (haemorrhagic shock)"
+    },
+    {
+        "indication_id": "2151",
+        "indication_name": "Injuries (traumatic shock)"
+    },
+    {
+        "indication_id": "2154",
+        "indication_name": "Flaking scalps"
+    },
+    {
+        "indication_id": "2156",
+        "indication_name": "Dandruff"
+    },
+    {
+        "indication_id": "2157",
+        "indication_name": "Dry Irritated eyes"
+    },
+    {
+        "indication_id": "2159",
+        "indication_name": "Inflammatory conditions of the palpebral and bulbar conjunctiva"
+    },
+    {
+        "indication_id": "2161",
+        "indication_name": "Chronic anterior uveitis and corneal injury"
+    },
+    {
+        "indication_id": "2163",
+        "indication_name": "Cervical priming"
+    },
+    {
+        "indication_id": "2164",
+        "indication_name": "Induction and augmentation of labour"
+    },
+    {
+        "indication_id": "2165",
+        "indication_name": "Pregnancy termination in the 2nd trimester"
+    },
+    {
+        "indication_id": "2166",
+        "indication_name": "Hypogonadotrophic hypogonadism"
+    },
+    {
+        "indication_id": "2167",
+        "indication_name": "Bacteraemia and meningitis"
+    },
+    {
+        "indication_id": "2168",
+        "indication_name": "Parenteral fat emulsions"
+    },
+    {
+        "indication_id": "2169",
+        "indication_name": "Prevention of typhoid"
+    },
+    {
+        "indication_id": "2171",
+        "indication_name": "Stridor"
+    },
+    {
+        "indication_id": "2172",
+        "indication_name": "Wheezing"
+    },
+    {
+        "indication_id": "2173",
+        "indication_name": "Wet ARMD"
+    },
+    {
+        "indication_id": "2174",
+        "indication_name": "Central retinal vein occlusion"
+    },
+    {
+        "indication_id": "2175",
+        "indication_name": "Diabetic macular edema"
+    },
+    {
+        "indication_id": "2176",
+        "indication_name": "Children's growth disorders"
+    },
+    {
+        "indication_id": "2177",
+        "indication_name": "Growth hormone deficiency"
+    },
+    {
+        "indication_id": "2179",
+        "indication_name": "Prader Willi syndrome"
+    },
+    {
+        "indication_id": "2180",
+        "indication_name": "Intrauterine growth retardation"
+    },
+    {
+        "indication_id": "2181",
+        "indication_name": "Severe idiopathic short stature"
+    },
+    {
+        "indication_id": "2182",
+        "indication_name": "Dietary supplements. vitamin A and D deficiencies"
+    },
+    {
+        "indication_id": "2184",
+        "indication_name": "Muscle relaxant in general anesthesia"
+    },
+    {
+        "indication_id": "2185",
+        "indication_name": "Infected burns"
+    },
+    {
+        "indication_id": "2186",
+        "indication_name": "Wound sepsis"
+    },
+    {
+        "indication_id": "2187",
+        "indication_name": "Recurrent UTI"
+    },
+    {
+        "indication_id": "2189",
+        "indication_name": "Haemorrhagic cystitis and haematuria"
+    },
+    {
+        "indication_id": "2190",
+        "indication_name": "GI haemorrhage"
+    },
+    {
+        "indication_id": "2191",
+        "indication_name": "HIV-associated wasting or cachexia"
+    },
+    {
+        "indication_id": "2192",
+        "indication_name": "Short bowel syndrome"
+    },
+    {
+        "indication_id": "2193",
+        "indication_name": "Preventing rejection of new organs following a transplant operation"
+    },
+    {
+        "indication_id": "2194",
+        "indication_name": "Chronic hepatitis B"
+    },
+    {
+        "indication_id": "2195",
+        "indication_name": "Surface Disinfection"
+    },
+    {
+        "indication_id": "2196",
+        "indication_name": "Inoperable metastatic breast cancer"
+    },
+    {
+        "indication_id": "2197",
+        "indication_name": "Delayed puberty"
+    },
+    {
+        "indication_id": "2198",
+        "indication_name": "Male hypogonadism"
+    },
+    {
+        "indication_id": "2199",
+        "indication_name": "Active immunisation against tetanus"
+    },
+    {
+        "indication_id": "2200",
+        "indication_name": "Postexposure prophylaxis of tetanus"
+    },
+    {
+        "indication_id": "2201",
+        "indication_name": "Thiamine and riboflavin deficiency"
+    },
+    {
+        "indication_id": "2202",
+        "indication_name": "Condylomata acuminata"
+    },
+    {
+        "indication_id": "2203",
+        "indication_name": "Rheumatoid Arthritis (RA)"
+    },
+    {
+        "indication_id": "2204",
+        "indication_name": "Acute promyelocytic leukaemia"
+    },
+    {
+        "indication_id": "2206",
+        "indication_name": "Prevention of measles"
+    },
+    {
+        "indication_id": "2208",
+        "indication_name": "Neovascular age-related macular degeneration"
+    },
+    {
+        "indication_id": "2210",
+        "indication_name": "Rabies prophylaxisis"
+    },
+    {
+        "indication_id": "2212",
+        "indication_name": "Yellow fever infection"
+    },
+    {
+        "indication_id": "2213",
+        "indication_name": "Influenza A and B"
+    },
+    {
+        "indication_id": "2214",
+        "indication_name": "Scaly or itchy scalps"
+    },
+    {
+        "indication_id": "2216",
+        "indication_name": "Pruritus and eczema"
+    },
+    {
+        "indication_id": "2219",
+        "indication_name": "Pruritic skin conditions"
+    },
+    {
+        "indication_id": "2220",
+        "indication_name": "Relieve pain"
+    },
+    {
+        "indication_id": "2222",
+        "indication_name": "Poison sumac"
+    },
+    {
+        "indication_id": "2225",
+        "indication_name": "Skin moisturization"
+    },
+    {
+        "indication_id": "2228",
+        "indication_name": "Erythema nodosum"
+    },
+    {
+        "indication_id": "2229",
+        "indication_name": "Iodine deficiency"
+    },
+    {
+        "indication_id": "2230",
+        "indication_name": "Radiation emergency"
+    },
+    {
+        "indication_id": "2231",
+        "indication_name": "Genital warts"
+    },
+    {
+        "indication_id": "2233",
+        "indication_name": "Protect sensitive skin"
+    },
+    {
+        "indication_id": "2234",
+        "indication_name": "Improve skin tone and texture"
+    },
+    {
+        "indication_id": "2236",
+        "indication_name": "Intestinal or oropharyngeal candidiasis"
+    },
+    {
+        "indication_id": "2237",
+        "indication_name": "Seborrheic dermatitis of the scalp"
+    },
+    {
+        "indication_id": "2238",
+        "indication_name": "Atopic eczema"
+    },
+    {
+        "indication_id": "2239",
+        "indication_name": "Behcet's syndrome"
+    },
+    {
+        "indication_id": "2240",
+        "indication_name": "Anaemia"
+    },
+    {
+        "indication_id": "2241",
+        "indication_name": "Catabolic disorders"
+    },
+    {
+        "indication_id": "2246",
+        "indication_name": "Very dry reactive skin"
+    },
+    {
+        "indication_id": "2247",
+        "indication_name": "CVD"
+    },
+    {
+        "indication_id": "2248",
+        "indication_name": "Tachycardia"
+    },
+    {
+        "indication_id": "2249",
+        "indication_name": "Cardiomyopathy"
+    },
+    {
+        "indication_id": "2250",
+        "indication_name": "TB"
+    },
+    {
+        "indication_id": "2251",
+        "indication_name": "Infections"
+    },
+    {
+        "indication_id": "2252",
+        "indication_name": "Neuropathy"
+    },
+    {
+        "indication_id": "2253",
+        "indication_name": "Neuralgia"
+    },
+    {
+        "indication_id": "2254",
+        "indication_name": "Angina"
+    },
+    {
+        "indication_id": "2255",
+        "indication_name": "Albinism"
+    },
+    {
+        "indication_id": "2256",
+        "indication_name": "Rhinitis"
+    },
+    {
+        "indication_id": "2257",
+        "indication_name": "Pregnancy"
+    },
+    {
+        "indication_id": "2258",
+        "indication_name": "Irrigation solution"
+    },
+    {
+        "indication_id": "2259",
+        "indication_name": "Renal stone"
+    },
+    {
+        "indication_id": "2261",
+        "indication_name": "Poliomyelitis"
+    },
+    {
+        "indication_id": "2262",
+        "indication_name": "Hyperthyroidism"
+    },
+    {
+        "indication_id": "2263",
+        "indication_name": "Pre-operative scrubbing & washing"
+    },
+    {
+        "indication_id": "2264",
+        "indication_name": "Acute gonorrheal urethritis"
+    },
+    {
+        "indication_id": "2265",
+        "indication_name": "Idiopathic pulmonary fibrosis"
+    }
+]

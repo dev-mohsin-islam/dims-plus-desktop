@@ -1,0 +1,2482 @@
+[
+    {
+        "therapitic_id": "1",
+        "therapitic_name": "H2 antagonists",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "2",
+        "therapitic_name": "Proton pump inhibitor",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "3",
+        "therapitic_name": "Anticholinergics(antimuscarinics)/Anti-spasmodics",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "4",
+        "therapitic_name": "Anticholinergics(others)",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "5",
+        "therapitic_name": "Anti-cholinergic & anti-psychotic combination drugs",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "6",
+        "therapitic_name": "Anti-dyspeptic/Carminatives",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "7",
+        "therapitic_name": "Prostaglandin analogues",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "8",
+        "therapitic_name": "Antacids",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "9",
+        "therapitic_name": "Ulcer protective",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "10",
+        "therapitic_name": "Anti H pylori drugs",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "11",
+        "therapitic_name": "Drugs for Aphthous ulcer",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "12",
+        "therapitic_name": "Motility stimulants/Dopamine antagonist",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "13",
+        "therapitic_name": "Chelating complex",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "14",
+        "therapitic_name": "Bulk-forming laxatives",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "15",
+        "therapitic_name": "Stool softener",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "16",
+        "therapitic_name": "Abdominal gas adsorbent preparations",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "17",
+        "therapitic_name": "Stimulant purgatives",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "18",
+        "therapitic_name": "Osmotic purgatives",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "19",
+        "therapitic_name": "Anti-motility drugs",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "20",
+        "therapitic_name": "Anti-diarrhoeal Antimicrobial drugs",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "21",
+        "therapitic_name": "Anti-diarrhoeal Antiprotozoal",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "22",
+        "therapitic_name": "Water purifying agent",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "23",
+        "therapitic_name": "Prokinetic drugs",
+        "therapitic_systemic_class_id": "22"
+    },
+    {
+        "therapitic_id": "24",
+        "therapitic_name": "Drugs for Ulcerative Colitis",
+        "therapitic_systemic_class_id": "23"
+    },
+    {
+        "therapitic_id": "25",
+        "therapitic_name": "Drugs for Irritable Bowel Syndrome",
+        "therapitic_systemic_class_id": "23"
+    },
+    {
+        "therapitic_id": "26",
+        "therapitic_name": "Phlebotonic & Vascular protecting preparations",
+        "therapitic_systemic_class_id": "24"
+    },
+    {
+        "therapitic_id": "27",
+        "therapitic_name": "Compound steroidal preparations",
+        "therapitic_systemic_class_id": "24"
+    },
+    {
+        "therapitic_id": "28",
+        "therapitic_name": "Digestive Enzyme",
+        "therapitic_systemic_class_id": "25"
+    },
+    {
+        "therapitic_id": "29",
+        "therapitic_name": "Anti-gallstones drugs: Bile Acids",
+        "therapitic_systemic_class_id": "25"
+    },
+    {
+        "therapitic_id": "30",
+        "therapitic_name": "Angiotensin-converting enzyme (ACE) inhibitors",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "31",
+        "therapitic_name": "Angiotensin-II receptor blocker",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "32",
+        "therapitic_name": "Thiazide diuretics & related drugs",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "33",
+        "therapitic_name": "Loop diuretics",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "34",
+        "therapitic_name": "Aldosterone antagonists",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "35",
+        "therapitic_name": "Potassium-sparing diuretics with other diuretics",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "36",
+        "therapitic_name": "Carbonic anhydrase inhibitor",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "37",
+        "therapitic_name": "Osmotic diuretics",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "38",
+        "therapitic_name": "Beta-adrenoceptor blocking drugs",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "39",
+        "therapitic_name": "Alpha adrenoceptor blocking drugs",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "40",
+        "therapitic_name": "Vasodilator antihypertensive drugs",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "41",
+        "therapitic_name": "Centrally acting antihypertensive drugs(central sympatholytic)",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "42",
+        "therapitic_name": "Combined antihypertensive preparations",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "43",
+        "therapitic_name": "Positive Inotropic drugs",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "44",
+        "therapitic_name": "Inotropic-sympathomimetics",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "45",
+        "therapitic_name": "Vasoconstrictor/Venotonic",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "46",
+        "therapitic_name": "Group I antiarrhythmic: Sodium channel blockers",
+        "therapitic_systemic_class_id": "28"
+    },
+    {
+        "therapitic_id": "47",
+        "therapitic_name": "Group II antiarrhythmic: Beta blockers",
+        "therapitic_systemic_class_id": "28"
+    },
+    {
+        "therapitic_id": "48",
+        "therapitic_name": "Group III antiarrhythmic: Potassium channel blockers",
+        "therapitic_systemic_class_id": "28"
+    },
+    {
+        "therapitic_id": "49",
+        "therapitic_name": "Group IV antiarrhythmic: Calcium channel blockers",
+        "therapitic_systemic_class_id": "28"
+    },
+    {
+        "therapitic_id": "50",
+        "therapitic_name": "Group V antiarrhythmic: Miscellaneous (for PSVT)",
+        "therapitic_systemic_class_id": "28"
+    },
+    {
+        "therapitic_id": "51",
+        "therapitic_name": "Nitrates: Coronary vasodilators",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "52",
+        "therapitic_name": "Calcium-channel blockers",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "53",
+        "therapitic_name": "Potassium-channel activators",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "54",
+        "therapitic_name": "Other Anti-anginal & Anti-ischaemic drugs",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "55",
+        "therapitic_name": "Cerebral vasodilator & Neurosensory oxygenator drugs",
+        "therapitic_systemic_class_id": "30"
+    },
+    {
+        "therapitic_id": "56",
+        "therapitic_name": "Peripheral Vasodilator drugs: Intermittent Claudication",
+        "therapitic_systemic_class_id": "30"
+    },
+    {
+        "therapitic_id": "57",
+        "therapitic_name": "Drugs for muscular energy metabolism",
+        "therapitic_systemic_class_id": "30"
+    },
+    {
+        "therapitic_id": "58",
+        "therapitic_name": "Parenteral anti-coagulants",
+        "therapitic_systemic_class_id": "31"
+    },
+    {
+        "therapitic_id": "59",
+        "therapitic_name": "Oral Anti-coagulants",
+        "therapitic_systemic_class_id": "31"
+    },
+    {
+        "therapitic_id": "60",
+        "therapitic_name": "Anti-platelet drugs",
+        "therapitic_systemic_class_id": "32"
+    },
+    {
+        "therapitic_id": "61",
+        "therapitic_name": "Anti-fibrinolytic drugs",
+        "therapitic_systemic_class_id": "32"
+    },
+    {
+        "therapitic_id": "62",
+        "therapitic_name": "Ezetimibe",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "63",
+        "therapitic_name": "Fibrates",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "64",
+        "therapitic_name": "Statins",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "65",
+        "therapitic_name": "Nicotinic acid group",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "66",
+        "therapitic_name": "Short-acting selective beta2-adrenoceptor stimulants",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "67",
+        "therapitic_name": "Long-acting selective beta2-adrenoceptor stimulants",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "68",
+        "therapitic_name": "Other adrenoceptor stimulants",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "69",
+        "therapitic_name": "Anticholinergic bronchodilators",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "70",
+        "therapitic_name": "Methyl xanthine derivatives",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "71",
+        "therapitic_name": "Combined bronchodilators",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "72",
+        "therapitic_name": "Respiratory corticosteroids & combinations",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "73",
+        "therapitic_name": "Mast Cell Stabilizers",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "74",
+        "therapitic_name": "Leukotriene receptor antagonists",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "75",
+        "therapitic_name": "Antihistamines anti-allergics & hypo-sensitisation",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "76",
+        "therapitic_name": "Cough suppressants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "77",
+        "therapitic_name": "Combined cough suppressants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "78",
+        "therapitic_name": "Cough expectorants & mucolytics",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "79",
+        "therapitic_name": "Combined cough expectorants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "80",
+        "therapitic_name": "Respiratory stimulants: analeptics",
+        "therapitic_systemic_class_id": "36"
+    },
+    {
+        "therapitic_id": "84",
+        "therapitic_name": "Benzodiazepine sedatives",
+        "therapitic_systemic_class_id": "37"
+    },
+    {
+        "therapitic_id": "85",
+        "therapitic_name": "Benzodiazepine hypnotics",
+        "therapitic_systemic_class_id": "37"
+    },
+    {
+        "therapitic_id": "86",
+        "therapitic_name": "Non-Benzodiazepine hypnotics",
+        "therapitic_systemic_class_id": "37"
+    },
+    {
+        "therapitic_id": "87",
+        "therapitic_name": "Barbiturates",
+        "therapitic_systemic_class_id": "37"
+    },
+    {
+        "therapitic_id": "88",
+        "therapitic_name": "Phenothiazine drugs",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "89",
+        "therapitic_name": "Phenothiazine related drugs",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "90",
+        "therapitic_name": "Butyrophenone drugs",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "91",
+        "therapitic_name": "Atypical neuroleptic drugs",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "92",
+        "therapitic_name": "Anti-manic drugs",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "93",
+        "therapitic_name": "Tricyclic & related anti-depressant drugs",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "94",
+        "therapitic_name": "SSRIs & related anti-depressant drugs",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "95",
+        "therapitic_name": "Atypical anti-depressant drugs",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "96",
+        "therapitic_name": "Serotonin-norepinephrine reuptake inhibitor (SNRI)",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "97",
+        "therapitic_name": "Combined anxiolytics & anti-depressant drugs",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "98",
+        "therapitic_name": "Primary anti-epileptic drugs",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "99",
+        "therapitic_name": "Adjunct anti-epileptic drugs",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "103",
+        "therapitic_name": "Anti-emetic drugs",
+        "therapitic_systemic_class_id": "42"
+    },
+    {
+        "therapitic_id": "104",
+        "therapitic_name": "Anti vertigo drugs",
+        "therapitic_systemic_class_id": "42"
+    },
+    {
+        "therapitic_id": "105",
+        "therapitic_name": "CNS stimulant drugs",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "106",
+        "therapitic_name": "Appetite suppressant drugs/Anti-obesity drugs",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "107",
+        "therapitic_name": "Drugs used in substance dependence",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "108",
+        "therapitic_name": "Non-Opioid Analgesics",
+        "therapitic_systemic_class_id": "44"
+    },
+    {
+        "therapitic_id": "109",
+        "therapitic_name": "Opioid analgesics",
+        "therapitic_systemic_class_id": "44"
+    },
+    {
+        "therapitic_id": "110",
+        "therapitic_name": "Topical Analgesics",
+        "therapitic_systemic_class_id": "140"
+    },
+    {
+        "therapitic_id": "111",
+        "therapitic_name": "5-HT Agonists",
+        "therapitic_systemic_class_id": "45"
+    },
+    {
+        "therapitic_id": "112",
+        "therapitic_name": "Ergot Alkaloids",
+        "therapitic_systemic_class_id": "45"
+    },
+    {
+        "therapitic_id": "113",
+        "therapitic_name": "Anti-histamine Preparations",
+        "therapitic_systemic_class_id": "46"
+    },
+    {
+        "therapitic_id": "114",
+        "therapitic_name": "Beta-blockers",
+        "therapitic_systemic_class_id": "46"
+    },
+    {
+        "therapitic_id": "115",
+        "therapitic_name": "Tricyclic Anti-depressants",
+        "therapitic_systemic_class_id": "46"
+    },
+    {
+        "therapitic_id": "116",
+        "therapitic_name": "Miscellaneous prophylactic migraine preparations",
+        "therapitic_systemic_class_id": "46"
+    },
+    {
+        "therapitic_id": "117",
+        "therapitic_name": "Benzylpenicillin & Phenoxymethyl penicillin",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "118",
+        "therapitic_name": "Long acting penicillin",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "119",
+        "therapitic_name": "Penicillinase-resistant penicillins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "120",
+        "therapitic_name": "Broad spectrum penicillins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "121",
+        "therapitic_name": "Mecillinams",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "122",
+        "therapitic_name": "First generation Cephalosporins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "123",
+        "therapitic_name": "Second generation Cephalosporins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "124",
+        "therapitic_name": "Third generation Cephalosporins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "125",
+        "therapitic_name": "Fourth generation Cephalosporins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "126",
+        "therapitic_name": "Other beta-lactam Antibiotics",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "127",
+        "therapitic_name": "Tetracycline Group of drugs",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "128",
+        "therapitic_name": "Aminoglycosides",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "129",
+        "therapitic_name": "Macrolides",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "130",
+        "therapitic_name": "Miscellaneous Antibiotics",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "131",
+        "therapitic_name": "Oxazolidinones",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "132",
+        "therapitic_name": "Sulphonamides & Trimethoprim",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "133",
+        "therapitic_name": "4-Quinolone preparations",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "134",
+        "therapitic_name": "Anti-Tubercular Antibiotics",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "135",
+        "therapitic_name": "Anti-Tubercular Chemotherapeutics",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "136",
+        "therapitic_name": "Combined anti- Tubercular Preparations",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "137",
+        "therapitic_name": "Anti-Leprotic drugs",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "138",
+        "therapitic_name": "Respiratory viral infections (Influenza)",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "139",
+        "therapitic_name": "Hepatic viral infections (Hepatitis B)",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "140",
+        "therapitic_name": "Hepatic viral infections (Hepatitis C)",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "141",
+        "therapitic_name": "Herpes simplex & Varicella-zoster virus infections",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "142",
+        "therapitic_name": "Drugs for HIV / Anti-retroviral drugs",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "143",
+        "therapitic_name": "Drugs for subcutaneous and systemic mycoses",
+        "therapitic_systemic_class_id": "49"
+    },
+    {
+        "therapitic_id": "144",
+        "therapitic_name": "Drugs for cutaneous mycoses",
+        "therapitic_systemic_class_id": "49"
+    },
+    {
+        "therapitic_id": "145",
+        "therapitic_name": "Amoebicides",
+        "therapitic_systemic_class_id": "50"
+    },
+    {
+        "therapitic_id": "146",
+        "therapitic_name": "Anti-malarial drugs",
+        "therapitic_systemic_class_id": "50"
+    },
+    {
+        "therapitic_id": "147",
+        "therapitic_name": "Leishmaniacides",
+        "therapitic_systemic_class_id": "50"
+    },
+    {
+        "therapitic_id": "148",
+        "therapitic_name": "Other Anti-protozoals",
+        "therapitic_systemic_class_id": "50"
+    },
+    {
+        "therapitic_id": "149",
+        "therapitic_name": "Anti-helminthic",
+        "therapitic_systemic_class_id": "51"
+    },
+    {
+        "therapitic_id": "150",
+        "therapitic_name": "Drugs for Infertility",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "151",
+        "therapitic_name": "Drugs for Growth failure",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "152",
+        "therapitic_name": "Drugs for Milk suppression",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "153",
+        "therapitic_name": "Drugs for menopausal symptoms: Hormone replacement therapy",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "154",
+        "therapitic_name": "Hormone preparations for other uses",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "155",
+        "therapitic_name": "Thyroid drugs & hormones",
+        "therapitic_systemic_class_id": "53"
+    },
+    {
+        "therapitic_id": "156",
+        "therapitic_name": "Anti-thyroid drugs",
+        "therapitic_systemic_class_id": "53"
+    },
+    {
+        "therapitic_id": "157",
+        "therapitic_name": "Short Acting Insulin",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "158",
+        "therapitic_name": "Medium Acting Insulin",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "159",
+        "therapitic_name": "Long Acting Insulin",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "160",
+        "therapitic_name": "Sulfonylureas",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "161",
+        "therapitic_name": "Biguanides",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "162",
+        "therapitic_name": "Alpha-Glucosidase inhibitor",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "163",
+        "therapitic_name": "Meglitinide Analogues",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "164",
+        "therapitic_name": "Thiazolidinedione Group",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "165",
+        "therapitic_name": "Combination Oral hypoglycemic preparations",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "166",
+        "therapitic_name": "Aldose reductase inhibitor",
+        "therapitic_systemic_class_id": "56"
+    },
+    {
+        "therapitic_id": "167",
+        "therapitic_name": "Glucocorticoids",
+        "therapitic_systemic_class_id": "57"
+    },
+    {
+        "therapitic_id": "168",
+        "therapitic_name": "Male Sex hormones (Androgens)",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "169",
+        "therapitic_name": "Female Sex hormones",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "170",
+        "therapitic_name": "Anabolic steroid (Androgens)",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "171",
+        "therapitic_name": "Oral Contraceptive preparations",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "172",
+        "therapitic_name": "Hormonal Implants",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "173",
+        "therapitic_name": "Emergency Contraceptive Pill",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "174",
+        "therapitic_name": "Drugs affecting (inhibiting) gonadotrophin",
+        "therapitic_systemic_class_id": "59"
+    },
+    {
+        "therapitic_id": "175",
+        "therapitic_name": "Non-steroidal Anti-inflammatory Drugs (NSAIDs)",
+        "therapitic_systemic_class_id": "60"
+    },
+    {
+        "therapitic_id": "176",
+        "therapitic_name": "Drugs used for Rheumatoid Arthritis",
+        "therapitic_systemic_class_id": "60"
+    },
+    {
+        "therapitic_id": "177",
+        "therapitic_name": "Drugs used in Gout",
+        "therapitic_systemic_class_id": "60"
+    },
+    {
+        "therapitic_id": "178",
+        "therapitic_name": "Drugs used in Myasthenia Gravis",
+        "therapitic_systemic_class_id": "61"
+    },
+    {
+        "therapitic_id": "179",
+        "therapitic_name": "Drugs used in Cerebral Palsy",
+        "therapitic_systemic_class_id": "61"
+    },
+    {
+        "therapitic_id": "180",
+        "therapitic_name": "Centrally acting Skeletal Muscle Relaxants",
+        "therapitic_systemic_class_id": "61"
+    },
+    {
+        "therapitic_id": "181",
+        "therapitic_name": "Locally acting Skeletal Muscle Relaxants",
+        "therapitic_systemic_class_id": "61"
+    },
+    {
+        "therapitic_id": "182",
+        "therapitic_name": "Enzymes",
+        "therapitic_systemic_class_id": "62"
+    },
+    {
+        "therapitic_id": "183",
+        "therapitic_name": "Sedating Anti-histamines (1st Generation)",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "184",
+        "therapitic_name": "Non - sedating Anti-histamines (2nd Generation)",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "185",
+        "therapitic_name": "Anti-histamine & decongestant",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "187",
+        "therapitic_name": "Immunosuppressant",
+        "therapitic_systemic_class_id": "138"
+    },
+    {
+        "therapitic_id": "188",
+        "therapitic_name": "General (Inhalation) anesthetics",
+        "therapitic_systemic_class_id": "63"
+    },
+    {
+        "therapitic_id": "189",
+        "therapitic_name": "General (Intravenous) anesthetics",
+        "therapitic_systemic_class_id": "63"
+    },
+    {
+        "therapitic_id": "190",
+        "therapitic_name": "Depolarizing muscle relaxants",
+        "therapitic_systemic_class_id": "64"
+    },
+    {
+        "therapitic_id": "191",
+        "therapitic_name": "Non Depolarizing muscle relaxants",
+        "therapitic_systemic_class_id": "64"
+    },
+    {
+        "therapitic_id": "192",
+        "therapitic_name": "Central Depolarizing muscle relaxants",
+        "therapitic_systemic_class_id": "64"
+    },
+    {
+        "therapitic_id": "193",
+        "therapitic_name": "Opioid Analgesics",
+        "therapitic_systemic_class_id": "65"
+    },
+    {
+        "therapitic_id": "194",
+        "therapitic_name": "Non opioid analgesics",
+        "therapitic_systemic_class_id": "65"
+    },
+    {
+        "therapitic_id": "195",
+        "therapitic_name": "Anti-cholinesterases",
+        "therapitic_systemic_class_id": "66"
+    },
+    {
+        "therapitic_id": "196",
+        "therapitic_name": "Benzodiazepine antagonist",
+        "therapitic_systemic_class_id": "66"
+    },
+    {
+        "therapitic_id": "201",
+        "therapitic_name": "Topical Anti-histamines",
+        "therapitic_systemic_class_id": "68"
+    },
+    {
+        "therapitic_id": "202",
+        "therapitic_name": "Local Anti-pruritic",
+        "therapitic_systemic_class_id": "68"
+    },
+    {
+        "therapitic_id": "203",
+        "therapitic_name": "Topical Local Anesthetics",
+        "therapitic_systemic_class_id": "68"
+    },
+    {
+        "therapitic_id": "204",
+        "therapitic_name": "Topical Anti-biotic preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "205",
+        "therapitic_name": "Topical Anti-viral preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "206",
+        "therapitic_name": "Topical Anti-fungal preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "207",
+        "therapitic_name": "Other Antifungal preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "208",
+        "therapitic_name": "Parasiticidal preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "209",
+        "therapitic_name": "Anti-infective & Anesthetic combined preparations",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "210",
+        "therapitic_name": "Betamethasone & Combined preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "211",
+        "therapitic_name": "Clobetasol/Clobetasone & Combined Preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "212",
+        "therapitic_name": "Fluocinolone & Combined Preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "213",
+        "therapitic_name": "Hydrocortisone & Combined preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "214",
+        "therapitic_name": "Triamcinolone & Combined preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "215",
+        "therapitic_name": "Topical Vitamin D & related preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "216",
+        "therapitic_name": "Topical Retinoid & related preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "217",
+        "therapitic_name": "Oral Retinoid preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "218",
+        "therapitic_name": "Coal-tar preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "219",
+        "therapitic_name": "Dithranol & combined preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "220",
+        "therapitic_name": "Emollients & combined preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "221",
+        "therapitic_name": "Combined preparations",
+        "therapitic_systemic_class_id": "72"
+    },
+    {
+        "therapitic_id": "222",
+        "therapitic_name": "Topical antibiotics for Acne",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "223",
+        "therapitic_name": "Benzoyl peroxide, Azelaic acid preparations",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "224",
+        "therapitic_name": "Topical retinoid and related preparations",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "225",
+        "therapitic_name": "Topical antibiotic & retinoid preparations",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "226",
+        "therapitic_name": "Oral retinoids for Acne",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "227",
+        "therapitic_name": "Oral Hormonal preparations for Acne",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "228",
+        "therapitic_name": "Topical urea preparations",
+        "therapitic_systemic_class_id": "74"
+    },
+    {
+        "therapitic_id": "229",
+        "therapitic_name": "Hydroquinone Preparations",
+        "therapitic_systemic_class_id": "75"
+    },
+    {
+        "therapitic_id": "230",
+        "therapitic_name": "Methoxsalen preparations",
+        "therapitic_systemic_class_id": "76"
+    },
+    {
+        "therapitic_id": "231",
+        "therapitic_name": "Sunblock Preparation",
+        "therapitic_systemic_class_id": "77"
+    },
+    {
+        "therapitic_id": "232",
+        "therapitic_name": "Medicated Shampoos",
+        "therapitic_systemic_class_id": "78"
+    },
+    {
+        "therapitic_id": "233",
+        "therapitic_name": "Chlorhexidine & Chloroxylenol preparations",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "234",
+        "therapitic_name": "Iodine compounds (Anti-septic Preparations)",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "235",
+        "therapitic_name": "Crystal violet/ Gentian violet preparations",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "237",
+        "therapitic_name": "Vitamin-A preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "238",
+        "therapitic_name": "Vitamin-D preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "239",
+        "therapitic_name": "Vitamin-B preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "240",
+        "therapitic_name": "Vitamin-C Preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "241",
+        "therapitic_name": "Vitamin-E Preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "242",
+        "therapitic_name": "Vitamin-K Preparations",
+        "therapitic_systemic_class_id": "80"
+    },
+    {
+        "therapitic_id": "243",
+        "therapitic_name": "Specific combined vitamin preparations",
+        "therapitic_systemic_class_id": "81"
+    },
+    {
+        "therapitic_id": "244",
+        "therapitic_name": "Anti-oxidant Multivitamin preparations",
+        "therapitic_systemic_class_id": "81"
+    },
+    {
+        "therapitic_id": "245",
+        "therapitic_name": "Nonspecific multivitamin preparations",
+        "therapitic_systemic_class_id": "81"
+    },
+    {
+        "therapitic_id": "246",
+        "therapitic_name": "Specific mineral preparations",
+        "therapitic_systemic_class_id": "82"
+    },
+    {
+        "therapitic_id": "247",
+        "therapitic_name": "Specific mineral & vitamin combined preparations",
+        "therapitic_systemic_class_id": "82"
+    },
+    {
+        "therapitic_id": "251",
+        "therapitic_name": "Multi-vitamin & Multi-mineral preparations",
+        "therapitic_systemic_class_id": "83"
+    },
+    {
+        "therapitic_id": "253",
+        "therapitic_name": "Oral nutritional preparations",
+        "therapitic_systemic_class_id": "84"
+    },
+    {
+        "therapitic_id": "254",
+        "therapitic_name": "Parenteral Nutritional preparations",
+        "therapitic_systemic_class_id": "84"
+    },
+    {
+        "therapitic_id": "255",
+        "therapitic_name": "Oral electrolytes preparations",
+        "therapitic_systemic_class_id": "85"
+    },
+    {
+        "therapitic_id": "256",
+        "therapitic_name": "Plasma expanders",
+        "therapitic_systemic_class_id": "85"
+    },
+    {
+        "therapitic_id": "257",
+        "therapitic_name": "Intravenous fluid preparations",
+        "therapitic_systemic_class_id": "85"
+    },
+    {
+        "therapitic_id": "258",
+        "therapitic_name": "Oral Iron preparations",
+        "therapitic_systemic_class_id": "86"
+    },
+    {
+        "therapitic_id": "259",
+        "therapitic_name": "Parenteral Iron Preparations",
+        "therapitic_systemic_class_id": "86"
+    },
+    {
+        "therapitic_id": "261",
+        "therapitic_name": "Iron & Vitamin Combined preparations",
+        "therapitic_systemic_class_id": "86"
+    },
+    {
+        "therapitic_id": "262",
+        "therapitic_name": "Iron Vitamin & Mineral Combined preparation",
+        "therapitic_systemic_class_id": "86"
+    },
+    {
+        "therapitic_id": "263",
+        "therapitic_name": "Drugs for Megaloblastic Anemia",
+        "therapitic_systemic_class_id": "87"
+    },
+    {
+        "therapitic_id": "264",
+        "therapitic_name": "Drugs for Haemolytic Hypoplastic & Renal Anemia",
+        "therapitic_systemic_class_id": "88"
+    },
+    {
+        "therapitic_id": "265",
+        "therapitic_name": "Hormone in bone formation by stimulation",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "266",
+        "therapitic_name": "Hormone in bone formation by Inhibiting bone resorption",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "267",
+        "therapitic_name": "Vitamin in bone formation",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "268",
+        "therapitic_name": "Minerals in bone formation",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "269",
+        "therapitic_name": "Bisphosphonate preparations",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "270",
+        "therapitic_name": "Combined preparations: Inhibiting bone resorption",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "271",
+        "therapitic_name": "Other preparations: Inhibiting bone resorption",
+        "therapitic_systemic_class_id": "89"
+    },
+    {
+        "therapitic_id": "272",
+        "therapitic_name": "Stimulation of Cartilage formation",
+        "therapitic_systemic_class_id": "90"
+    },
+    {
+        "therapitic_id": "273",
+        "therapitic_name": "Drugs for Osteoarthritis",
+        "therapitic_systemic_class_id": "91"
+    },
+    {
+        "therapitic_id": "274",
+        "therapitic_name": "Systemic Urinary Anti- infective",
+        "therapitic_systemic_class_id": "92"
+    },
+    {
+        "therapitic_id": "276",
+        "therapitic_name": "Irrigation Solution used in Urological Surgery",
+        "therapitic_systemic_class_id": "92"
+    },
+    {
+        "therapitic_id": "277",
+        "therapitic_name": "BPH/Urinary retention/Urinary incontinence",
+        "therapitic_systemic_class_id": "93"
+    },
+    {
+        "therapitic_id": "278",
+        "therapitic_name": "Prevention of repeated kidney stone formation",
+        "therapitic_systemic_class_id": "94"
+    },
+    {
+        "therapitic_id": "279",
+        "therapitic_name": "Drugs acting on the Uterus",
+        "therapitic_systemic_class_id": "95"
+    },
+    {
+        "therapitic_id": "280",
+        "therapitic_name": "Drugs used in Vaginal and Vulval conditions",
+        "therapitic_systemic_class_id": "95"
+    },
+    {
+        "therapitic_id": "281",
+        "therapitic_name": "Drugs for Erectile Dysfunction",
+        "therapitic_systemic_class_id": "95"
+    },
+    {
+        "therapitic_id": "282",
+        "therapitic_name": "Haemodialysis solutions",
+        "therapitic_systemic_class_id": "96"
+    },
+    {
+        "therapitic_id": "283",
+        "therapitic_name": "Ophthalmic Anti-bacterial products",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "284",
+        "therapitic_name": "Ophthalmic Anti-fungal Products",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "285",
+        "therapitic_name": "Ophthalmic Anti-viral Products",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "286",
+        "therapitic_name": "Ophthalmic Steroid preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "287",
+        "therapitic_name": "Ophthalmic Steroid- antibiotic combined preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "288",
+        "therapitic_name": "Ophthalmic Non-Steroid drugs",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "289",
+        "therapitic_name": "Ophthalmic Non-Steroid Combined preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "290",
+        "therapitic_name": "Mydriatic and Cycloplegic agents",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "291",
+        "therapitic_name": "Drugs for miotics and glaucoma",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "292",
+        "therapitic_name": "Drugs for Dry eyes",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "293",
+        "therapitic_name": "Antioxidant vitamins & minerals for eye",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "294",
+        "therapitic_name": "Drugs for lens opacification",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "295",
+        "therapitic_name": "Drugs for Age-Related Macular Degeneration (AMD)",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "296",
+        "therapitic_name": "Ocular perioperative drugs",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "297",
+        "therapitic_name": "Preparations for Ophthalmic diagnosis",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "298",
+        "therapitic_name": "Aural Anti-bacterial preparations",
+        "therapitic_systemic_class_id": "97"
+    },
+    {
+        "therapitic_id": "299",
+        "therapitic_name": "Aural Anti-fungal preparations",
+        "therapitic_systemic_class_id": "97"
+    },
+    {
+        "therapitic_id": "300",
+        "therapitic_name": "Nasal Anti-histamine preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "301",
+        "therapitic_name": "Nasal Anti-cholinergic (Anti- muscarinic) Preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "302",
+        "therapitic_name": "Mast Cell Stabiliser",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "304",
+        "therapitic_name": "Nasal Steroid Preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "305",
+        "therapitic_name": "Antidote preparations",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "306",
+        "therapitic_name": "Anaphylaxis",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "307",
+        "therapitic_name": "Direct Renin Inhibitors",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "313",
+        "therapitic_name": "Other ophthalmic  preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "314",
+        "therapitic_name": "Vaccines & Immunoglobulin",
+        "therapitic_systemic_class_id": "138"
+    },
+    {
+        "therapitic_id": "315",
+        "therapitic_name": "Antihaemophilic factor",
+        "therapitic_systemic_class_id": "32"
+    },
+    {
+        "therapitic_id": "316",
+        "therapitic_name": "Anti-oxidant Multivitamin Multimineral preparations",
+        "therapitic_systemic_class_id": "81"
+    },
+    {
+        "therapitic_id": "317",
+        "therapitic_name": "Aural Steroid & Steroid/Antibiotic combined preparations",
+        "therapitic_systemic_class_id": "97"
+    },
+    {
+        "therapitic_id": "319",
+        "therapitic_name": "Edothelin receptor antagonist/other anti-hypertensive",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "320",
+        "therapitic_name": "Anti – Parkinson drugs",
+        "therapitic_systemic_class_id": "41"
+    },
+    {
+        "therapitic_id": "321",
+        "therapitic_name": "Regional anesthesia",
+        "therapitic_systemic_class_id": "67"
+    },
+    {
+        "therapitic_id": "322",
+        "therapitic_name": "Miscellaneous sedatives & hypnotics",
+        "therapitic_systemic_class_id": "37"
+    },
+    {
+        "therapitic_id": "323",
+        "therapitic_name": "Peritoneal dialysis solution",
+        "therapitic_systemic_class_id": "96"
+    },
+    {
+        "therapitic_id": "325",
+        "therapitic_name": "Oral preparations",
+        "therapitic_systemic_class_id": "99"
+    },
+    {
+        "therapitic_id": "326",
+        "therapitic_name": "Dressing products for wounds/burns/ulcers",
+        "therapitic_systemic_class_id": "126"
+    },
+    {
+        "therapitic_id": "328",
+        "therapitic_name": "Ophthalmic Steroid- anti allergic combined preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "329",
+        "therapitic_name": "Bile acid sequestrants",
+        "therapitic_systemic_class_id": "25"
+    },
+    {
+        "therapitic_id": "330",
+        "therapitic_name": "Calcium Regulator",
+        "therapitic_systemic_class_id": "52"
+    },
+    {
+        "therapitic_id": "331",
+        "therapitic_name": "Urinary Alkalinizing Agents",
+        "therapitic_systemic_class_id": "92"
+    },
+    {
+        "therapitic_id": "332",
+        "therapitic_name": "Drugs affecting the immune response",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "334",
+        "therapitic_name": "Other Topical corticosteroids",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "335",
+        "therapitic_name": "Enema & bowel cleansing solution",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "336",
+        "therapitic_name": "Antidementia drugs",
+        "therapitic_systemic_class_id": "41"
+    },
+    {
+        "therapitic_id": "337",
+        "therapitic_name": "Fluticasone & combined preparations topical",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "339",
+        "therapitic_name": "Drugs used in tremor, tics & related disorders",
+        "therapitic_systemic_class_id": "41"
+    },
+    {
+        "therapitic_id": "341",
+        "therapitic_name": "Contrast medium for diagnostic procedures",
+        "therapitic_systemic_class_id": "18"
+    },
+    {
+        "therapitic_id": "342",
+        "therapitic_name": "Nasal non-steroid Preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "343",
+        "therapitic_name": "Combined preparation for constipation",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "344",
+        "therapitic_name": "Other laxative preparations",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "345",
+        "therapitic_name": "Antacid with laxative action",
+        "therapitic_systemic_class_id": "20"
+    },
+    {
+        "therapitic_id": "346",
+        "therapitic_name": "Anti – Alzheimer drugs",
+        "therapitic_systemic_class_id": "41"
+    },
+    {
+        "therapitic_id": "347",
+        "therapitic_name": "Other scalp preparations",
+        "therapitic_systemic_class_id": "78"
+    },
+    {
+        "therapitic_id": "348",
+        "therapitic_name": "Miscellaneous Drug preparations",
+        "therapitic_systemic_class_id": "18"
+    },
+    {
+        "therapitic_id": "349",
+        "therapitic_name": "Growth hormone antagonist",
+        "therapitic_systemic_class_id": "59"
+    },
+    {
+        "therapitic_id": "350",
+        "therapitic_name": "Other lipid regulating drugs",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "351",
+        "therapitic_name": "Combined analgesics",
+        "therapitic_systemic_class_id": "44"
+    },
+    {
+        "therapitic_id": "352",
+        "therapitic_name": "Hematopoietic drug",
+        "therapitic_systemic_class_id": "31"
+    },
+    {
+        "therapitic_id": "353",
+        "therapitic_name": "Other genito-urinary preparations",
+        "therapitic_systemic_class_id": "96"
+    },
+    {
+        "therapitic_id": "354",
+        "therapitic_name": "Cholagogues, Cholelitholytics & Hepatic Protectors",
+        "therapitic_systemic_class_id": "25"
+    },
+    {
+        "therapitic_id": "355",
+        "therapitic_name": "Haemostatic drugs",
+        "therapitic_systemic_class_id": "32"
+    },
+    {
+        "therapitic_id": "356",
+        "therapitic_name": "Drugs affecting exocrine secretions",
+        "therapitic_systemic_class_id": "25"
+    },
+    {
+        "therapitic_id": "357",
+        "therapitic_name": "Other drugs for migraine",
+        "therapitic_systemic_class_id": "45"
+    },
+    {
+        "therapitic_id": "358",
+        "therapitic_name": "Topical salicylic preparations",
+        "therapitic_systemic_class_id": "72"
+    },
+    {
+        "therapitic_id": "359",
+        "therapitic_name": "Drugs for reduction of serum phosphorus in patients with ESRD",
+        "therapitic_systemic_class_id": "96"
+    },
+    {
+        "therapitic_id": "360",
+        "therapitic_name": "Other drugs used for peptic ulcer disease",
+        "therapitic_systemic_class_id": "19"
+    },
+    {
+        "therapitic_id": "361",
+        "therapitic_name": "Drugs for corneal oedema",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "362",
+        "therapitic_name": "Fibrinolytics (Thrombolytics)",
+        "therapitic_systemic_class_id": "31"
+    },
+    {
+        "therapitic_id": "363",
+        "therapitic_name": "Anabolic steroid",
+        "therapitic_systemic_class_id": "90"
+    },
+    {
+        "therapitic_id": "364",
+        "therapitic_name": "Theophylline & related drugs",
+        "therapitic_systemic_class_id": "34"
+    },
+    {
+        "therapitic_id": "365",
+        "therapitic_name": "Drugs for cytomegalovirus",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "366",
+        "therapitic_name": "Zinc & Combined preparations",
+        "therapitic_systemic_class_id": "71"
+    },
+    {
+        "therapitic_id": "367",
+        "therapitic_name": "Drugs used in diaper rash",
+        "therapitic_systemic_class_id": "69"
+    },
+    {
+        "therapitic_id": "369",
+        "therapitic_name": "Drugs used in meniere’s diseases",
+        "therapitic_systemic_class_id": "42"
+    },
+    {
+        "therapitic_id": "370",
+        "therapitic_name": "Angiotensin-converting enzyme (ACE) inhibitor",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "371",
+        "therapitic_name": "Angiotensin-II receptor blocker",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "372",
+        "therapitic_name": "Statins",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "373",
+        "therapitic_name": "Angiotensin-II receptor blocker",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "374",
+        "therapitic_name": "Proton Pump Inhibitor",
+        "therapitic_systemic_class_id": "127"
+    },
+    {
+        "therapitic_id": "376",
+        "therapitic_name": "H2 receptor antagonist",
+        "therapitic_systemic_class_id": "127"
+    },
+    {
+        "therapitic_id": "377",
+        "therapitic_name": "Antacids",
+        "therapitic_systemic_class_id": "127"
+    },
+    {
+        "therapitic_id": "378",
+        "therapitic_name": "Antacids",
+        "therapitic_systemic_class_id": "128"
+    },
+    {
+        "therapitic_id": "379",
+        "therapitic_name": "Antacids",
+        "therapitic_systemic_class_id": "129"
+    },
+    {
+        "therapitic_id": "380",
+        "therapitic_name": "H2 receptor antagonist",
+        "therapitic_systemic_class_id": "129"
+    },
+    {
+        "therapitic_id": "381",
+        "therapitic_name": "H2 receptor antagonist",
+        "therapitic_systemic_class_id": "130"
+    },
+    {
+        "therapitic_id": "382",
+        "therapitic_name": "Proton Pump Inhibitor",
+        "therapitic_systemic_class_id": "128"
+    },
+    {
+        "therapitic_id": "383",
+        "therapitic_name": "Proton Pump Inhibitor",
+        "therapitic_systemic_class_id": "129"
+    },
+    {
+        "therapitic_id": "384",
+        "therapitic_name": "Proton Pump Inhibitor",
+        "therapitic_systemic_class_id": "130"
+    },
+    {
+        "therapitic_id": "385",
+        "therapitic_name": "Anti-dyspeptic/Carminatives",
+        "therapitic_systemic_class_id": "129"
+    },
+    {
+        "therapitic_id": "386",
+        "therapitic_name": "Motility Stimulants",
+        "therapitic_systemic_class_id": "129"
+    },
+    {
+        "therapitic_id": "387",
+        "therapitic_name": "Calcium-channel blockers",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "388",
+        "therapitic_name": "Cerebral vasodilator & Neurosensory oxygenator drugs",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "389",
+        "therapitic_name": "Anti-platelet drugs",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "390",
+        "therapitic_name": "Anti-coagulants",
+        "therapitic_systemic_class_id": "136"
+    },
+    {
+        "therapitic_id": "391",
+        "therapitic_name": "Thiazide diuretics & related drugs",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "392",
+        "therapitic_name": "Loop diuretics",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "393",
+        "therapitic_name": "Potassium-sparing diuretics",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "394",
+        "therapitic_name": "Dipeptidyl Peptidase-4 (DPP-4) inhibitor",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "395",
+        "therapitic_name": "Glucagon-like peptide-1 (GLP-1) receptor agonists",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "397",
+        "therapitic_name": "Local & Surface anesthesia",
+        "therapitic_systemic_class_id": "67"
+    },
+    {
+        "therapitic_id": "398",
+        "therapitic_name": "Topical anti-inflammatory preparations",
+        "therapitic_systemic_class_id": "62"
+    },
+    {
+        "therapitic_id": "399",
+        "therapitic_name": "Pulmonary surfactants",
+        "therapitic_systemic_class_id": "36"
+    },
+    {
+        "therapitic_id": "402",
+        "therapitic_name": "Angiotensin-II receptor blocker",
+        "therapitic_systemic_class_id": "139"
+    },
+    {
+        "therapitic_id": "403",
+        "therapitic_name": "Calcium-channel blockers",
+        "therapitic_systemic_class_id": "139"
+    },
+    {
+        "therapitic_id": "404",
+        "therapitic_name": "Statins",
+        "therapitic_systemic_class_id": "139"
+    },
+    {
+        "therapitic_id": "405",
+        "therapitic_name": "Osmotic diuretics",
+        "therapitic_systemic_class_id": "139"
+    },
+    {
+        "therapitic_id": "406",
+        "therapitic_name": "Adjunct anti-epileptic drugs",
+        "therapitic_systemic_class_id": "56"
+    },
+    {
+        "therapitic_id": "408",
+        "therapitic_name": "Anti-emetic drugs",
+        "therapitic_systemic_class_id": "22"
+    },
+    {
+        "therapitic_id": "411",
+        "therapitic_name": "Calcium-channel blockers",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "412",
+        "therapitic_name": "Corticosteroid",
+        "therapitic_systemic_class_id": "91"
+    },
+    {
+        "therapitic_id": "413",
+        "therapitic_name": "Corticosteroid",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "416",
+        "therapitic_name": "Combination Insulin",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "417",
+        "therapitic_name": "Sodium-glucose co-transporter 2 (SGLT2) inhibitor",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "418",
+        "therapitic_name": "Piperidinyl-benzisoxazole derivative",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "419",
+        "therapitic_name": "Anti-diarrhoeal Enzyme",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "421",
+        "therapitic_name": "Drugs used in Ano-rectal region",
+        "therapitic_systemic_class_id": "95"
+    },
+    {
+        "therapitic_id": "422",
+        "therapitic_name": "Non-steroidal Anti-inflammatory Drugs (NSAIDs)",
+        "therapitic_systemic_class_id": "44"
+    },
+    {
+        "therapitic_id": "423",
+        "therapitic_name": "Rapid Acting Insulin",
+        "therapitic_systemic_class_id": "54"
+    },
+    {
+        "therapitic_id": "424",
+        "therapitic_name": "Anti-diarrhoeal",
+        "therapitic_systemic_class_id": "21"
+    },
+    {
+        "therapitic_id": "425",
+        "therapitic_name": "Ophthalmic Anti-allergic preparations",
+        "therapitic_systemic_class_id": "15"
+    },
+    {
+        "therapitic_id": "426",
+        "therapitic_name": "Anti neoplastic preparations",
+        "therapitic_systemic_class_id": "72"
+    },
+    {
+        "therapitic_id": "427",
+        "therapitic_name": "Nasal Decongestant",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "428",
+        "therapitic_name": "Quaternary Ammonium preparations",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "430",
+        "therapitic_name": "Gonadotropin-releasing hormone (GnRH) antagonist",
+        "therapitic_systemic_class_id": "58"
+    },
+    {
+        "therapitic_id": "431",
+        "therapitic_name": "Bleaching and Disinfectants",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "432",
+        "therapitic_name": "Emollients & Skin Protectives",
+        "therapitic_systemic_class_id": "141"
+    },
+    {
+        "therapitic_id": "433",
+        "therapitic_name": "Alpha and Beta-adrenergic blockers",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "434",
+        "therapitic_name": "Disease-modifying antirheumatic drugs (DMARDs)",
+        "therapitic_systemic_class_id": "60"
+    },
+    {
+        "therapitic_id": "435",
+        "therapitic_name": "Beclomethasone & Combined Preparations",
+        "therapitic_systemic_class_id": "70"
+    },
+    {
+        "therapitic_id": "436",
+        "therapitic_name": "Mineralocorticoid",
+        "therapitic_systemic_class_id": "57"
+    },
+    {
+        "therapitic_id": "437",
+        "therapitic_name": "Beta blockers & Alpha blockers",
+        "therapitic_systemic_class_id": "26"
+    },
+    {
+        "therapitic_id": "438",
+        "therapitic_name": "Beta-adrenoceptor blocking drugs",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "439",
+        "therapitic_name": "Anti-anginal & lipid lowering drugs",
+        "therapitic_systemic_class_id": "29"
+    },
+    {
+        "therapitic_id": "440",
+        "therapitic_name": "Anxiolytic drugs",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "441",
+        "therapitic_name": "Immunomodulators",
+        "therapitic_systemic_class_id": "138"
+    },
+    {
+        "therapitic_id": "443",
+        "therapitic_name": "Mood stabilizers",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "445",
+        "therapitic_name": "Calcium channel modifying agents",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "446",
+        "therapitic_name": "Gamma-aminobutyric Acid (GABA) Augmenting Agents",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "447",
+        "therapitic_name": "Sodium Channel Agents",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "448",
+        "therapitic_name": "Others",
+        "therapitic_systemic_class_id": "40"
+    },
+    {
+        "therapitic_id": "449",
+        "therapitic_name": "Sedative Antihistamines",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "450",
+        "therapitic_name": "Non-sedative Antihistamines",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "451",
+        "therapitic_name": "Pulmonary Antihypertensive",
+        "therapitic_systemic_class_id": "36"
+    },
+    {
+        "therapitic_id": "452",
+        "therapitic_name": "Alkylating agents",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "453",
+        "therapitic_name": "Platinum compounds",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "454",
+        "therapitic_name": "Antimetabolites",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "455",
+        "therapitic_name": "Microtubule damaging agents",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "456",
+        "therapitic_name": "Topoisomerase-2 inhibitor",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "457",
+        "therapitic_name": "Topoisomerase-1 inhibitor",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "458",
+        "therapitic_name": "Antibiotics",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "459",
+        "therapitic_name": "Miscellaneous",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "460",
+        "therapitic_name": "Glucocorticoids",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "461",
+        "therapitic_name": "Estrogens",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "462",
+        "therapitic_name": "Selective estrogen receptor modulators",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "463",
+        "therapitic_name": "Selective estrogen receptor down-regulators",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "464",
+        "therapitic_name": "Aromatase inhibitors",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "465",
+        "therapitic_name": "Antiandrogen",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "466",
+        "therapitic_name": "5-α reductase inhibitor",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "467",
+        "therapitic_name": "GnRH analogues",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "468",
+        "therapitic_name": "Progestins",
+        "therapitic_systemic_class_id": "143"
+    },
+    {
+        "therapitic_id": "469",
+        "therapitic_name": "Tyrosine protein kinase inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "470",
+        "therapitic_name": "EGF receptor inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "471",
+        "therapitic_name": "Angiogenesis inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "472",
+        "therapitic_name": "Proteasome inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "473",
+        "therapitic_name": "Monoclonal antibody",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "474",
+        "therapitic_name": "Immune Checkpoint inhibitors",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "475",
+        "therapitic_name": "Adoptive cell therapy",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "476",
+        "therapitic_name": "Monoclonal antibodies",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "477",
+        "therapitic_name": "Therapeutic Vaccines",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "478",
+        "therapitic_name": "Therapeutic Antibodies",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "479",
+        "therapitic_name": "Cytokines",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "480",
+        "therapitic_name": "Immunomodulator",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "481",
+        "therapitic_name": "Cytotoxic Immunosuppressant",
+        "therapitic_systemic_class_id": "145"
+    },
+    {
+        "therapitic_id": "482",
+        "therapitic_name": "Treatment Adjuncts",
+        "therapitic_systemic_class_id": "146"
+    },
+    {
+        "therapitic_id": "483",
+        "therapitic_name": "Nasal Anti-biotic Preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "484",
+        "therapitic_name": "CDK Inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "485",
+        "therapitic_name": "PARP inhibitor",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "486",
+        "therapitic_name": "Central Monoamine-Depleting Agents",
+        "therapitic_systemic_class_id": "41"
+    },
+    {
+        "therapitic_id": "487",
+        "therapitic_name": "Potassium Channel Blockers",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "488",
+        "therapitic_name": "Dopamine and norepinephrine reuptake inhibitor (DNRI)",
+        "therapitic_systemic_class_id": "39"
+    },
+    {
+        "therapitic_id": "489",
+        "therapitic_name": "Allergen Immunotherapy",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "490",
+        "therapitic_name": "Anti-pyretic & Decongestant combination",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "491",
+        "therapitic_name": "Analgesic & Decongestant Combination",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "492",
+        "therapitic_name": "Analgesic & Decongestant & Expectorant Combination",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "493",
+        "therapitic_name": "Analgesic + Expectorant Combos",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "494",
+        "therapitic_name": "Pleuromutilin",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "495",
+        "therapitic_name": "Histone Deacetylase Inhibitor",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "496",
+        "therapitic_name": "Hedgehog (Hh) pathway inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "497",
+        "therapitic_name": "Combined cough supprassants & expectorants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "498",
+        "therapitic_name": "Antihistamine & Decongestant",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "499",
+        "therapitic_name": "Combined Antihistamine & Cough Suppressants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "500",
+        "therapitic_name": "Combined Antihistamine & Cough Expectorants",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "501",
+        "therapitic_name": "Anti-pyretic & Antihistamine & Decongestant combination",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "502",
+        "therapitic_name": "‎PI3-Kinase inhibitor",
+        "therapitic_systemic_class_id": "142"
+    },
+    {
+        "therapitic_id": "503",
+        "therapitic_name": "Phosphodiesterase (PDE)-4 inhibitor",
+        "therapitic_systemic_class_id": "137"
+    },
+    {
+        "therapitic_id": "504",
+        "therapitic_name": "VMAT2 Inhibitors",
+        "therapitic_systemic_class_id": "38"
+    },
+    {
+        "therapitic_id": "505",
+        "therapitic_name": "Combined cough supprassants & decongestant",
+        "therapitic_systemic_class_id": "35"
+    },
+    {
+        "therapitic_id": "506",
+        "therapitic_name": "PI3K inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "507",
+        "therapitic_name": "IDH2 inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "508",
+        "therapitic_name": "BRAF kinase inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "509",
+        "therapitic_name": "FGFR Inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "510",
+        "therapitic_name": "IDH1 inhibitor",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "511",
+        "therapitic_name": "Potassium Binders",
+        "therapitic_systemic_class_id": "147"
+    },
+    {
+        "therapitic_id": "512",
+        "therapitic_name": "Histamine 3 (H3) receptor antagonist",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "513",
+        "therapitic_name": "Selective inhibitor of nuclear export (SINE)",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "514",
+        "therapitic_name": "Sphingosine 1-Phosphate Receptor Modulators",
+        "therapitic_systemic_class_id": "43"
+    },
+    {
+        "therapitic_id": "515",
+        "therapitic_name": "Variola Virus Infection",
+        "therapitic_systemic_class_id": "48"
+    },
+    {
+        "therapitic_id": "516",
+        "therapitic_name": "Other Cephalosporins",
+        "therapitic_systemic_class_id": "47"
+    },
+    {
+        "therapitic_id": "517",
+        "therapitic_name": "Combined Lipid Regulating Drugs",
+        "therapitic_systemic_class_id": "33"
+    },
+    {
+        "therapitic_id": "518",
+        "therapitic_name": "Peripheral Vasodilator Drugs",
+        "therapitic_systemic_class_id": "30"
+    },
+    {
+        "therapitic_id": "519",
+        "therapitic_name": "Beta1-Beta2 Adrenergic Agonists",
+        "therapitic_systemic_class_id": "148"
+    },
+    {
+        "therapitic_id": "520",
+        "therapitic_name": "Alpha and Beta-adrenergic agonists",
+        "therapitic_systemic_class_id": "149"
+    },
+    {
+        "therapitic_id": "521",
+        "therapitic_name": "Alpha1 Agonists",
+        "therapitic_systemic_class_id": "149"
+    },
+    {
+        "therapitic_id": "522",
+        "therapitic_name": "Oral anesthesia",
+        "therapitic_systemic_class_id": "67"
+    },
+    {
+        "therapitic_id": "523",
+        "therapitic_name": "Inhaled anesthesia",
+        "therapitic_systemic_class_id": "67"
+    },
+    {
+        "therapitic_id": "524",
+        "therapitic_name": "Other Preparations",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "525",
+        "therapitic_name": "Topical antiperspirants",
+        "therapitic_systemic_class_id": "150"
+    },
+    {
+        "therapitic_id": "526",
+        "therapitic_name": "Topical alcohol preparations",
+        "therapitic_systemic_class_id": "79"
+    },
+    {
+        "therapitic_id": "527",
+        "therapitic_name": "5-HT Agonist Nasal Preparations",
+        "therapitic_systemic_class_id": "98"
+    },
+    {
+        "therapitic_id": "528",
+        "therapitic_name": "Topical Androgen Receptor Inhibitor",
+        "therapitic_systemic_class_id": "73"
+    },
+    {
+        "therapitic_id": "529",
+        "therapitic_name": "Other Ear Preparations",
+        "therapitic_systemic_class_id": "97"
+    },
+    {
+        "therapitic_id": "530",
+        "therapitic_name": "Gastrointestinal",
+        "therapitic_systemic_class_id": "1"
+    },
+    {
+        "therapitic_id": "531",
+        "therapitic_name": "Janus Associated Kinase (JAK) inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "532",
+        "therapitic_name": "Stimulator of soluble guanylate cyclase",
+        "therapitic_systemic_class_id": "27"
+    },
+    {
+        "therapitic_id": "533",
+        "therapitic_name": "Aldosterone antagonists",
+        "therapitic_systemic_class_id": "152"
+    },
+    {
+        "therapitic_id": "535",
+        "therapitic_name": "B-Cell Lymphoma Inhibitors",
+        "therapitic_systemic_class_id": "144"
+    },
+    {
+        "therapitic_id": "536",
+        "therapitic_name": "Other Aural Preparations",
+        "therapitic_systemic_class_id": "97"
+    },
+    {
+        "therapitic_id": "537",
+        "therapitic_name": "Sodium-glucose co-transporter 1 (SGLT1) inhibitor",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "538",
+        "therapitic_name": "Methylxanthines",
+        "therapitic_systemic_class_id": "154"
+    },
+    {
+        "therapitic_id": "539",
+        "therapitic_name": "Tetrahydrotriazine (Glimin)",
+        "therapitic_systemic_class_id": "55"
+    },
+    {
+        "therapitic_id": "540",
+        "therapitic_name": "Janus Associated Kinase (JAK) inhibitors",
+        "therapitic_systemic_class_id": "76"
+    },
+    {
+        "therapitic_id": "542",
+        "therapitic_name": "Parathyroid Hormone Analogs",
+        "therapitic_systemic_class_id": "53"
+    }
+]

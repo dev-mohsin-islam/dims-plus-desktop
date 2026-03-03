@@ -1,0 +1,707 @@
+[
+    {
+        "systemic_id": 1,
+        "systemic_name": "Gastrointestinal system drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 2,
+        "systemic_name": "Cardiovascular system drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 3,
+        "systemic_name": "Respiratory system drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 4,
+        "systemic_name": "Central nervous system drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 5,
+        "systemic_name": "Antimicrobial drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 6,
+        "systemic_name": "Endocrine & Metabolic System drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 7,
+        "systemic_name": "Musculo-Skeletal System",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 8,
+        "systemic_name": "Allergy & Immune System",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 9,
+        "systemic_name": "Anesthetics & Neuromuscular blocking drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 10,
+        "systemic_name": "Drugs acting on Skin",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 11,
+        "systemic_name": "Drugs for Vitamin Mineral & Nutritional deficiency disorders",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 12,
+        "systemic_name": "Drugs for Anemia & other blood disorders",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 13,
+        "systemic_name": "Drugs for Bone Formation & Bone Disorders",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 14,
+        "systemic_name": "Genito-urinary system drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 15,
+        "systemic_name": "Eye preparations",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 16,
+        "systemic_name": "E.N.T preparations",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 17,
+        "systemic_name": "Carcinochemotherapeutic & Cytotoxic immunosuppressants",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 18,
+        "systemic_name": "Miscellaneous Drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 19,
+        "systemic_name": "Drugs for Peptic ulcer",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 20,
+        "systemic_name": "Drugs for Constipation",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 21,
+        "systemic_name": "Drugs for Diarrhea",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 22,
+        "systemic_name": "Drugs for Emetics",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 23,
+        "systemic_name": "Drugs for chronic inflammatory disease(Anti-inflammatory)",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 24,
+        "systemic_name": "Local preparation for anal and rectal disorder",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 25,
+        "systemic_name": "Drug affecting intestinal secretions",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 26,
+        "systemic_name": "Drugs for hypertension(Anti-hypertensive)",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 27,
+        "systemic_name": "Drugs for congestive heart failure (CHF)",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 28,
+        "systemic_name": "Drugs for arrhythmias(Anti-arrhythmic)",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 29,
+        "systemic_name": "Drugs for angina & ischaemic heart diseases(Anti-ischaemic)",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 30,
+        "systemic_name": "Drugs for peripheral and cerebral vasodilatation & neurosensory oxygenator",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 31,
+        "systemic_name": "Anti-coagulants",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 32,
+        "systemic_name": "Antiplatelet & anti-fibrinolytic/haemostatic drugs",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 33,
+        "systemic_name": "Drugs for lipid regulation",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 34,
+        "systemic_name": "Drugs for asthma & copd",
+        "systemic_parent_id": 3
+    },
+    {
+        "systemic_id": 35,
+        "systemic_name": "Drugs for cough & cold",
+        "systemic_parent_id": 3
+    },
+    {
+        "systemic_id": 36,
+        "systemic_name": "Respiratory stimulants & pulmonary surfactants",
+        "systemic_parent_id": 3
+    },
+    {
+        "systemic_id": 37,
+        "systemic_name": "Drugs for Sedation & Hypnosis",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 38,
+        "systemic_name": "Drugs for psychosis(Anti-psychotic)",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 39,
+        "systemic_name": "Drugs for depression & anxiety",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 40,
+        "systemic_name": "Anticonvulsants",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 41,
+        "systemic_name": "Drugs for neurodegenerative diseases",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 42,
+        "systemic_name": "Drugs for nausea vomiting & vertigo",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 43,
+        "systemic_name": "Drugs for other CNS diseases",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 44,
+        "systemic_name": "Analgesics & Anti-pyretic",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 45,
+        "systemic_name": "Drugs for Acute Migraine Attack",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 46,
+        "systemic_name": "Prophylactics of Migraine",
+        "systemic_parent_id": 4
+    },
+    {
+        "systemic_id": 47,
+        "systemic_name": "Drugs for bacterial infections(Anti-bacterial)",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 48,
+        "systemic_name": "Drugs for viral infections(Anti-viral)",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 49,
+        "systemic_name": "Drugs for fungal infections(Anti-fungal)",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 50,
+        "systemic_name": "Drugs for protozoal infections(Anti-protozoal)",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 51,
+        "systemic_name": "Drugs for helminthiasis(Anti-helminthic)",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 52,
+        "systemic_name": "Hypothalamic & Pituitary hormones & Anti oestrogens",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 53,
+        "systemic_name": "Thyroid hormones & Anti Thyroid drugs",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 54,
+        "systemic_name": "Anti-diabetic (Parenteral hypoglycemic drugs)",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 55,
+        "systemic_name": "Anti-diabetic (Oral hypoglycemic drugs)",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 56,
+        "systemic_name": "Drugs for Diabetic Peripheral Neuropathy",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 57,
+        "systemic_name": "Corticosteroid hormones",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 58,
+        "systemic_name": "Gonadal hormones (sex hormones) and their antagonists",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 59,
+        "systemic_name": "Other hormonal drugs",
+        "systemic_parent_id": 6
+    },
+    {
+        "systemic_id": 60,
+        "systemic_name": "Drugs for Inflammation and Rheumatic Diseases(Anti-inflammatory & Anti-rheumatic)",
+        "systemic_parent_id": 7
+    },
+    {
+        "systemic_id": 61,
+        "systemic_name": "Drugs for Neuromuscular Disorders",
+        "systemic_parent_id": 7
+    },
+    {
+        "systemic_id": 62,
+        "systemic_name": "Drugs for Soft- tissue Inflammation",
+        "systemic_parent_id": 7
+    },
+    {
+        "systemic_id": 63,
+        "systemic_name": "Drugs for general anesthesia",
+        "systemic_parent_id": 9
+    },
+    {
+        "systemic_id": 64,
+        "systemic_name": "Neuromuscular blocking drugs (muscle relaxants)",
+        "systemic_parent_id": 9
+    },
+    {
+        "systemic_id": 65,
+        "systemic_name": "Drugs for post-operative pain",
+        "systemic_parent_id": 9
+    },
+    {
+        "systemic_id": 66,
+        "systemic_name": "Drugs for anesthesia recovery",
+        "systemic_parent_id": 9
+    },
+    {
+        "systemic_id": 67,
+        "systemic_name": "Local anesthetics & Regional anesthetics",
+        "systemic_parent_id": 9
+    },
+    {
+        "systemic_id": 68,
+        "systemic_name": "Topical Antihistamines Anti-pruritic & Local anesthetics",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 69,
+        "systemic_name": "Topical Anti-infective Drugs",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 70,
+        "systemic_name": "Topical corticosteroids & combined preparations",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 71,
+        "systemic_name": "Anti-eczema & Anti-psoriasis preparations",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 72,
+        "systemic_name": "Preparations for Warts & Calluses",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 73,
+        "systemic_name": "Drugs for Acne & Rosacea",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 74,
+        "systemic_name": "Drugs for Ichthyosis & Scaly skin",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 75,
+        "systemic_name": "Drugs for hyperpigmentation",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 76,
+        "systemic_name": "Drugs for Vitiligo",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 77,
+        "systemic_name": "Protection of skin from solar radiation",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 78,
+        "systemic_name": "Shampoos & Other scalp preparations / anti-dandruff preparations",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 79,
+        "systemic_name": "Anti-septics & Skin disinfectants",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 80,
+        "systemic_name": "Specific Vitamin Preparations",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 81,
+        "systemic_name": "Combined vitamin preparations",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 82,
+        "systemic_name": "Mineral preparations",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 83,
+        "systemic_name": "Multi-vitamin & Multi-mineral combined preparations",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 84,
+        "systemic_name": "Nutritional & Energy supplement preparations",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 85,
+        "systemic_name": "Water & electrolytes replacement & plasma substitutes",
+        "systemic_parent_id": 11
+    },
+    {
+        "systemic_id": 86,
+        "systemic_name": "Drugs for Iron Deficiency Anemia",
+        "systemic_parent_id": 12
+    },
+    {
+        "systemic_id": 87,
+        "systemic_name": "Drugs for macrocytic Anemia",
+        "systemic_parent_id": 12
+    },
+    {
+        "systemic_id": 88,
+        "systemic_name": "Drugs for Other Anemia",
+        "systemic_parent_id": 12
+    },
+    {
+        "systemic_id": 89,
+        "systemic_name": "Drugs used in bone formation",
+        "systemic_parent_id": 13
+    },
+    {
+        "systemic_id": 90,
+        "systemic_name": "Drugs used in cartilage formation",
+        "systemic_parent_id": 13
+    },
+    {
+        "systemic_id": 91,
+        "systemic_name": "Drugs used in inflammatory diseases of bones & joints",
+        "systemic_parent_id": 13
+    },
+    {
+        "systemic_id": 92,
+        "systemic_name": "Urinary anti-infective",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 93,
+        "systemic_name": "Drugs for Prostate Enlargement",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 94,
+        "systemic_name": "Anti-kidney stone preparations",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 95,
+        "systemic_name": "Drugs used in genital problems",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 96,
+        "systemic_name": "Other genito-urinary preparations",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 97,
+        "systemic_name": "Aural preparations",
+        "systemic_parent_id": 16
+    },
+    {
+        "systemic_id": 98,
+        "systemic_name": "Nasal preparations",
+        "systemic_parent_id": 16
+    },
+    {
+        "systemic_id": 99,
+        "systemic_name": "Mouth & Throat preparations",
+        "systemic_parent_id": 16
+    },
+    {
+        "systemic_id": 105,
+        "systemic_name": "Antidote preparations",
+        "systemic_parent_id": 43
+    },
+    {
+        "systemic_id": 110,
+        "systemic_name": "Other drugs used for peptic ulcer disease",
+        "systemic_parent_id": 19
+    },
+    {
+        "systemic_id": 111,
+        "systemic_name": "Enema & bowel cleansing solution",
+        "systemic_parent_id": 20
+    },
+    {
+        "systemic_id": 112,
+        "systemic_name": "Combined preparation for constipation",
+        "systemic_parent_id": 20
+    },
+    {
+        "systemic_id": 113,
+        "systemic_name": "Other laxative preparations",
+        "systemic_parent_id": 20
+    },
+    {
+        "systemic_id": 114,
+        "systemic_name": "Antacid with laxative action",
+        "systemic_parent_id": 20
+    },
+    {
+        "systemic_id": 115,
+        "systemic_name": "Bile acid sequestrants",
+        "systemic_parent_id": 25
+    },
+    {
+        "systemic_id": 116,
+        "systemic_name": "Cholagogues, Cholelitholytics & Hepatic Protectors",
+        "systemic_parent_id": 25
+    },
+    {
+        "systemic_id": 117,
+        "systemic_name": "Drugs affecting exocrine secretions",
+        "systemic_parent_id": 25
+    },
+    {
+        "systemic_id": 118,
+        "systemic_name": "Direct Renin Inhibitors",
+        "systemic_parent_id": 26
+    },
+    {
+        "systemic_id": 119,
+        "systemic_name": "Edothelin receptor antagonist/other anti-hypertensive",
+        "systemic_parent_id": 26
+    },
+    {
+        "systemic_id": 120,
+        "systemic_name": "Thiazide & related diuretics",
+        "systemic_parent_id": 26
+    },
+    {
+        "systemic_id": 121,
+        "systemic_name": "Combined preparations of Anti-anginal & lipid lowering drugs",
+        "systemic_parent_id": 29
+    },
+    {
+        "systemic_id": 122,
+        "systemic_name": "Hematopoietic drug",
+        "systemic_parent_id": 31
+    },
+    {
+        "systemic_id": 123,
+        "systemic_name": "Fibrinolytics (Thrombolytics)",
+        "systemic_parent_id": 31
+    },
+    {
+        "systemic_id": 124,
+        "systemic_name": "Antihaemophilic factor",
+        "systemic_parent_id": 32
+    },
+    {
+        "systemic_id": 125,
+        "systemic_name": "Haemostatic drugs",
+        "systemic_parent_id": 32
+    },
+    {
+        "systemic_id": 126,
+        "systemic_name": "Dressing products",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 127,
+        "systemic_name": "Drugs for GERD",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 128,
+        "systemic_name": "Drugs for Esophagitis",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 129,
+        "systemic_name": "Drugs for Dyspepsia",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 130,
+        "systemic_name": "Drugs for Zollinger-Ellison Syndrome",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 133,
+        "systemic_name": "Cerebrovascular System Drugs",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 136,
+        "systemic_name": "Drugs for Ischemic Stroke",
+        "systemic_parent_id": 133
+    },
+    {
+        "systemic_id": 137,
+        "systemic_name": "Drugs used in Allergic disorders",
+        "systemic_parent_id": 8
+    },
+    {
+        "systemic_id": 138,
+        "systemic_name": "Vaccines, Anti-sera & immunological drugs",
+        "systemic_parent_id": 8
+    },
+    {
+        "systemic_id": 139,
+        "systemic_name": "Drugs for Hemorrhagic Stroke",
+        "systemic_parent_id": 133
+    },
+    {
+        "systemic_id": 140,
+        "systemic_name": "Analgesics drugs (Topical)",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 141,
+        "systemic_name": "Drugs for Dry Skin",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 142,
+        "systemic_name": "Cytotoxic Chemotherapy",
+        "systemic_parent_id": 17
+    },
+    {
+        "systemic_id": 143,
+        "systemic_name": "Hormonal Chemotherapy",
+        "systemic_parent_id": 17
+    },
+    {
+        "systemic_id": 144,
+        "systemic_name": "Targeted Cancer Therapy",
+        "systemic_parent_id": 17
+    },
+    {
+        "systemic_id": 145,
+        "systemic_name": "Immunological Chemotherapy",
+        "systemic_parent_id": 17
+    },
+    {
+        "systemic_id": 146,
+        "systemic_name": "Supportive Care Therapy",
+        "systemic_parent_id": 17
+    },
+    {
+        "systemic_id": 147,
+        "systemic_name": "Chelating agent",
+        "systemic_parent_id": 1
+    },
+    {
+        "systemic_id": 148,
+        "systemic_name": "Drugs for Cardiogenic Shock/Arrest",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 149,
+        "systemic_name": "Drugs for Hypotension",
+        "systemic_parent_id": 2
+    },
+    {
+        "systemic_id": 150,
+        "systemic_name": "Drugs for hyperhidrosis",
+        "systemic_parent_id": 10
+    },
+    {
+        "systemic_id": 151,
+        "systemic_name": "Vaccines & Immunoglobulin",
+        "systemic_parent_id": 0
+    },
+    {
+        "systemic_id": 152,
+        "systemic_name": "Drugs used in CKD",
+        "systemic_parent_id": 14
+    },
+    {
+        "systemic_id": 153,
+        "systemic_name": "Demo",
+        "systemic_parent_id": 5
+    },
+    {
+        "systemic_id": 154,
+        "systemic_name": "Respiratory stimulant",
+        "systemic_parent_id": 3
+    }
+]

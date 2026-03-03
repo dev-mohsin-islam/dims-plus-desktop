@@ -1,0 +1,107 @@
+[
+    {
+        "pregnancy_description": "FDA has not yet classified the drug into a specified pregnancy category.",
+        "pregnancy_id": "0",
+        "pregnancy_name": "Not Classified"
+    },
+    {
+        "pregnancy_description": "Adequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).",
+        "pregnancy_id": "1",
+        "pregnancy_name": "A"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.",
+        "pregnancy_id": "2",
+        "pregnancy_name": "B"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks",
+        "pregnancy_id": "3",
+        "pregnancy_name": "C"
+    },
+    {
+        "pregnancy_description": "There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.",
+        "pregnancy_id": "4",
+        "pregnancy_name": "D"
+    },
+    {
+        "pregnancy_description": "Studies in animals or humans have demonstrated fetal abnormalities and/or there is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience, and the risks involved in use of the drug in pregnant women clearly outweigh potential benefits.",
+        "pregnancy_id": "5",
+        "pregnancy_name": "X"
+    },
+    {
+        "pregnancy_description": "Adequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).\n\nAnimal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.\n\n",
+        "pregnancy_id": "6",
+        "pregnancy_name": "A+B"
+    },
+    {
+        "pregnancy_description": "Adequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).\n\nAnimal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks",
+        "pregnancy_id": "9",
+        "pregnancy_name": "A+C"
+    },
+    {
+        "pregnancy_description": "Adequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).\n\nThere is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.",
+        "pregnancy_id": "10",
+        "pregnancy_name": "A+D"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.\n\nAdequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).    ",
+        "pregnancy_id": "12",
+        "pregnancy_name": "B+A"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.\n\nAnimal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks\n    ",
+        "pregnancy_id": "13",
+        "pregnancy_name": "B+C"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.\n\nThere is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.    ",
+        "pregnancy_id": "14",
+        "pregnancy_name": "B+D"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nAdequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).\n\n    ",
+        "pregnancy_id": "15",
+        "pregnancy_name": "C+A"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nAnimal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.    ",
+        "pregnancy_id": "16",
+        "pregnancy_name": "C+B"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nThere is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n    ",
+        "pregnancy_id": "17",
+        "pregnancy_name": "C+D"
+    },
+    {
+        "pregnancy_description": "There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nAdequate and well-controlled human studies have failed to demonstrate a risk to the fetus in the first trimester of pregnancy (and there is no evidence of risk in later trimesters).    ",
+        "pregnancy_id": "18",
+        "pregnancy_name": "D+A"
+    },
+    {
+        "pregnancy_description": "There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nAnimal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.    ",
+        "pregnancy_id": "19",
+        "pregnancy_name": "D+B"
+    },
+    {
+        "pregnancy_description": "There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nAnimal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.    ",
+        "pregnancy_id": "20",
+        "pregnancy_name": "D+C"
+    },
+    {
+        "pregnancy_description": "Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nStudies in animals or humans have demonstrated fetal abnormalities and/or there is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience, and the risks involved in use of the drug in pregnant women clearly outweigh potential benefits.    ",
+        "pregnancy_id": "21",
+        "pregnancy_name": "C+X"
+    },
+    {
+        "pregnancy_description": "There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n\nStudies in animals or humans have demonstrated fetal abnormalities and/or there is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience, and the risks involved in use of the drug in pregnant women clearly outweigh potential benefits.\n    ",
+        "pregnancy_id": "22",
+        "pregnancy_name": "D+X"
+    },
+    {
+        "pregnancy_description": "Studies in animals or humans have demonstrated fetal abnormalities and/or there is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience, and the risks involved in use of the drug in pregnant women clearly outweigh potential benefits.\n\nThere is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.    ",
+        "pregnancy_id": "23",
+        "pregnancy_name": "X+D"
+    }
+]
