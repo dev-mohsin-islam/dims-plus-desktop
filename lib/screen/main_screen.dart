@@ -6,6 +6,7 @@ import '../controller/data_get_and_sync_ctrl.dart';
 import '../controller/drug_brand_ctrl.dart';
 import '../controller/generic_ctrl.dart';
 import '../controller/company_ctrl.dart';
+import '../controller/theme_ctrl.dart';
 import 'brands_screen.dart';
 import 'companies_screen.dart';
 import 'drug_class_screen.dart';
@@ -21,8 +22,10 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final DataGetAndSyncCtrl _dataGetAndSyncCtrl = Get.put(DataGetAndSyncCtrl());
   Widget? _currentBody;
   String _activeNav = '';
+  final ThemeCtrl _themeCtrl = Get.put(ThemeCtrl()); // Find existing controller
 
   void _navigateTo(Widget screen, String label) {
     setState(() {
@@ -39,22 +42,43 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _dataGetAndSyncCtrl.initialCall();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.bgDark,
-      body: Column(
-        children: [
-          _TopAppBar(
-            activeNav: _activeNav,
-            onNavigate: _navigateTo,
-            onHome: _goHome,
-          ),
-          _SearchBarArea(onNavigate: _navigateTo),
-          Expanded(
-            child: _currentBody ?? const _WelcomeView(),
-          ),
-        ],
-      ),
+      backgroundColor: _themeCtrl.bgColor, // Dynamic background
+      body: Obx(() {
+        final theme = _themeCtrl.currentTheme;
+        final accentColor = theme.accent;
+        final fontSizeScale = _themeCtrl.fontSizeScale;
+
+        return Column(
+          children: [
+            _TopAppBar(
+              activeNav: _activeNav,
+              onNavigate: _navigateTo,
+              onHome: _goHome,
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+            ),
+            _SearchBarArea(
+              onNavigate: _navigateTo,
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+            ),
+            Expanded(
+              child: _currentBody ?? _WelcomeView(
+                theme: theme,
+                fontSizeScale: fontSizeScale,
+              ),
+            ),
+          ],
+        );
+      }),
     );
   }
 }
@@ -65,11 +89,15 @@ class _TopAppBar extends StatelessWidget {
   final String activeNav;
   final Function(Widget, String) onNavigate;
   final VoidCallback onHome;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
 
   const _TopAppBar({
     required this.activeNav,
     required this.onNavigate,
     required this.onHome,
+    required this.theme,
+    required this.fontSizeScale,
   });
 
   @override
@@ -77,10 +105,14 @@ class _TopAppBar extends StatelessWidget {
     return Container(
       height: 58,
       decoration: BoxDecoration(
-        color: AppTheme.surface,
-        border: Border(bottom: BorderSide(color: AppTheme.divider, width: 1)),
+        color: theme.surface,
+        border: Border(bottom: BorderSide(color: theme.divider, width: 1)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.25), blurRadius: 12, offset: const Offset(0, 3)),
+          BoxShadow(
+            color: theme.isDark ? Colors.black.withOpacity(0.25) : Colors.black.withOpacity(0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
         ],
       ),
       child: Row(
@@ -99,13 +131,24 @@ class _TopAppBar extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [AppTheme.accent, AppTheme.accentDim]),
+                        gradient: LinearGradient(
+                          colors: [theme.accent, theme.accent.withOpacity(0.7)],
+                        ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: const Icon(Icons.medication_rounded, color: Colors.white, size: 18),
                     ),
                     const SizedBox(width: 10),
-                    Text('DIMS', style: AppTheme.logo),
+                    Text(
+                      'DIMS',
+                      style: TextStyle(
+                        fontFamily: 'Courier',
+                        fontSize: 16 * fontSizeScale,
+                        fontWeight: FontWeight.w700,
+                        color: theme.textPrimary,
+                        letterSpacing: 2.5,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -114,13 +157,20 @@ class _TopAppBar extends StatelessWidget {
 
           const SizedBox(width: 20),
 
-          _MedicinesMenu(activeNav: activeNav, onNavigate: onNavigate),
+          _MedicinesMenu(
+            activeNav: activeNav,
+            onNavigate: onNavigate,
+            theme: theme,
+            fontSizeScale: fontSizeScale,
+          ),
           const SizedBox(width: 4),
           _NavButton(
             label: 'Drug Class',
             icon: Icons.category_outlined,
             isActive: activeNav == 'Drug Class',
             onTap: () => onNavigate(const DrugClassScreen(), 'Drug Class'),
+            theme: theme,
+            fontSizeScale: fontSizeScale,
           ),
           const SizedBox(width: 4),
           _NavButton(
@@ -128,6 +178,8 @@ class _TopAppBar extends StatelessWidget {
             icon: Icons.health_and_safety_outlined,
             isActive: activeNav == 'Indication',
             onTap: () => onNavigate(const IndicationScreen(), 'Indication'),
+            theme: theme,
+            fontSizeScale: fontSizeScale,
           ),
 
           const Spacer(),
@@ -145,23 +197,29 @@ class _TopAppBar extends StatelessWidget {
                       'Syncing',
                       'Data sync started…',
                       snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: AppTheme.accent.withOpacity(0.9),
-                      colorText: Colors.white,
+                      backgroundColor: theme.accent.withOpacity(0.9),
+                      colorText: theme.isDark ? Colors.white : theme.textPrimary,
                       duration: const Duration(seconds: 2),
                     );
                   },
+                  theme: theme,
+                  fontSizeScale: fontSizeScale,
                 ),
                 const SizedBox(width: 8),
                 _IconAction(
                   icon: Icons.person_outline_rounded,
                   tooltip: 'Profile',
-                  onTap: () => _showProfileDialog(context),
+                  onTap: () => _showProfileDialog(context, theme, fontSizeScale),
+                  theme: theme,
+                  fontSizeScale: fontSizeScale,
                 ),
                 const SizedBox(width: 8),
                 _IconAction(
                   icon: Icons.settings_outlined,
                   tooltip: 'Settings',
                   onTap: () => onNavigate(const SettingsScreen(), 'Settings'),
+                  theme: theme,
+                  fontSizeScale: fontSizeScale,
                 ),
               ],
             ),
@@ -171,43 +229,66 @@ class _TopAppBar extends StatelessWidget {
     );
   }
 
-  void _showProfileDialog(BuildContext context) {
+  void _showProfileDialog(BuildContext context, ThemeDefinition theme, double fontSizeScale) {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        backgroundColor: AppTheme.surfaceElevated,
+        backgroundColor: theme.surfaceElevated,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: AppTheme.divider),
+          side: BorderSide(color: theme.divider),
         ),
         title: Row(children: [
-          const Icon(Icons.person_rounded, color: AppTheme.accent),
+          Icon(Icons.person_rounded, color: theme.accent),
           const SizedBox(width: 10),
-          Text('Profile', style: AppTheme.headingSmall),
+          Text(
+            'Profile',
+            style: TextStyle(
+              fontSize: 14 * fontSizeScale,
+              fontWeight: FontWeight.w600,
+              color: theme.textPrimary,
+            ),
+          ),
         ]),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 72,
-              height: 72,
+              width: 72 * fontSizeScale,
+              height: 72 * fontSizeScale,
               decoration: BoxDecoration(
-                color: AppTheme.accent.withOpacity(0.15),
+                color: theme.accent.withOpacity(0.15),
                 shape: BoxShape.circle,
-                border: Border.all(color: AppTheme.accent.withOpacity(0.4), width: 2),
+                border: Border.all(color: theme.accent.withOpacity(0.4), width: 2),
               ),
-              child: const Icon(Icons.person_rounded, size: 36, color: AppTheme.accent),
+              child: Icon(Icons.person_rounded, size: 36 * fontSizeScale, color: theme.accent),
             ),
             const SizedBox(height: 16),
-            Text('Doctor / User', style: AppTheme.headingSmall),
+            Text(
+              'Doctor / User',
+              style: TextStyle(
+                fontSize: 14 * fontSizeScale,
+                fontWeight: FontWeight.w600,
+                color: theme.textPrimary,
+              ),
+            ),
             const SizedBox(height: 4),
-            Text('DIMS Desktop v1.0', style: AppTheme.bodySecondary),
+            Text(
+              'DIMS Desktop v1.0',
+              style: TextStyle(
+                fontSize: 13 * fontSizeScale,
+                color: theme.textSecondary,
+              ),
+            ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close', style: TextStyle(color: AppTheme.accent)),
+            child: Text(
+              'Close',
+              style: TextStyle(color: theme.accent),
+            ),
           ),
         ],
       ),
@@ -218,60 +299,95 @@ class _TopAppBar extends StatelessWidget {
 class _MedicinesMenu extends StatelessWidget {
   final String activeNav;
   final Function(Widget, String) onNavigate;
-  const _MedicinesMenu({required this.activeNav, required this.onNavigate});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _MedicinesMenu({
+    required this.activeNav,
+    required this.onNavigate,
+    required this.theme,
+    required this.fontSizeScale,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isActive = ['Generics', 'Brands', 'Companies'].contains(activeNav);
+
     return PopupMenuButton<String>(
       tooltip: '',
       offset: const Offset(0, 46),
-      color: AppTheme.surfaceElevated,
+      color: theme.surfaceElevated,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(color: AppTheme.divider),
+        side: BorderSide(color: theme.divider),
       ),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
-          color: isActive ? AppTheme.accent.withOpacity(0.15) : Colors.transparent,
+          color: isActive ? theme.accent.withOpacity(0.15) : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: isActive ? AppTheme.accent.withOpacity(0.5) : Colors.transparent),
+          border: Border.all(
+            color: isActive ? theme.accent.withOpacity(0.5) : Colors.transparent,
+          ),
         ),
         child: Row(
           children: [
-            Icon(Icons.medication_outlined, size: 16, color: isActive ? AppTheme.accent : AppTheme.textSecondary),
+            Icon(
+              Icons.medication_outlined,
+              size: 16 * fontSizeScale,
+              color: isActive ? theme.accent : theme.textSecondary,
+            ),
             const SizedBox(width: 6),
-            Text('Medicines', style: AppTheme.navLabel.copyWith(color: isActive ? AppTheme.accent : AppTheme.textSecondary)),
+            Text(
+              'Medicines',
+              style: TextStyle(
+                fontSize: 13 * fontSizeScale,
+                fontWeight: FontWeight.w500,
+                color: isActive ? theme.accent : theme.textSecondary,
+              ),
+            ),
             const SizedBox(width: 4),
-            Icon(Icons.keyboard_arrow_down_rounded, size: 16, color: isActive ? AppTheme.accent : AppTheme.textSecondary),
+            Icon(
+              Icons.keyboard_arrow_down_rounded,
+              size: 16 * fontSizeScale,
+              color: isActive ? theme.accent : theme.textSecondary,
+            ),
           ],
         ),
       ),
       itemBuilder: (_) => [
-        _menuItem(Icons.science_outlined, 'Generics'),
-        _menuItem(Icons.local_pharmacy_outlined, 'Brands'),
-        _menuItem(Icons.business_outlined, 'Companies'),
+        _menuItem(Icons.science_outlined, 'Generics', theme, fontSizeScale),
+        _menuItem(Icons.local_pharmacy_outlined, 'Brands', theme, fontSizeScale),
+        _menuItem(Icons.business_outlined, 'Companies', theme, fontSizeScale),
       ],
       onSelected: (val) {
         switch (val) {
           case 'Generics':  onNavigate(const GenericsScreen(), 'Generics'); break;
-          case 'Brands':    onNavigate(const BrandsScreen(), 'Brands');     break;
+          case 'Brands':    onNavigate(BrandsScreen(), 'Brands'); break;
           case 'Companies': onNavigate(const CompaniesScreen(), 'Companies'); break;
         }
       },
     );
   }
 
-  PopupMenuItem<String> _menuItem(IconData icon, String label) => PopupMenuItem(
-    value: label,
-    height: 44,
-    child: Row(children: [
-      Icon(icon, size: 16, color: AppTheme.textSecondary),
-      const SizedBox(width: 10),
-      Text(label, style: AppTheme.navLabel.copyWith(color: AppTheme.textPrimary)),
-    ]),
-  );
+  PopupMenuItem<String> _menuItem(IconData icon, String label, ThemeDefinition theme, double fontSizeScale) {
+    return PopupMenuItem(
+      value: label,
+      height: 44,
+      child: Row(children: [
+        Icon(icon, size: 16 * fontSizeScale, color: theme.textSecondary),
+        const SizedBox(width: 10),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 13 * fontSizeScale,
+            fontWeight: FontWeight.w500,
+            color: theme.textPrimary,
+          ),
+        ),
+      ]),
+    );
+  }
 }
 
 class _NavButton extends StatefulWidget {
@@ -279,13 +395,25 @@ class _NavButton extends StatefulWidget {
   final IconData icon;
   final bool isActive;
   final VoidCallback onTap;
-  const _NavButton({required this.label, required this.icon, required this.isActive, required this.onTap});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _NavButton({
+    required this.label,
+    required this.icon,
+    required this.isActive,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
   State<_NavButton> createState() => _NavButtonState();
 }
 
 class _NavButtonState extends State<_NavButton> {
   bool _hover = false;
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -299,19 +427,29 @@ class _NavButtonState extends State<_NavButton> {
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
             color: widget.isActive
-                ? AppTheme.accent.withOpacity(0.15)
-                : _hover ? AppTheme.surfaceHighlight : Colors.transparent,
+                ? widget.theme.accent.withOpacity(0.15)
+                : _hover ? widget.theme.surfaceHighlight : Colors.transparent,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: widget.isActive ? AppTheme.accent.withOpacity(0.5) : Colors.transparent),
+            border: Border.all(
+              color: widget.isActive ? widget.theme.accent.withOpacity(0.5) : Colors.transparent,
+            ),
           ),
           child: Row(
             children: [
-              Icon(widget.icon, size: 16,
-                  color: widget.isActive ? AppTheme.accent : AppTheme.textSecondary),
+              Icon(
+                widget.icon,
+                size: 16 * widget.fontSizeScale,
+                color: widget.isActive ? widget.theme.accent : widget.theme.textSecondary,
+              ),
               const SizedBox(width: 6),
-              Text(widget.label,
-                  style: AppTheme.navLabel.copyWith(
-                      color: widget.isActive ? AppTheme.accent : AppTheme.textSecondary)),
+              Text(
+                widget.label,
+                style: TextStyle(
+                  fontSize: 13 * widget.fontSizeScale,
+                  fontWeight: FontWeight.w500,
+                  color: widget.isActive ? widget.theme.accent : widget.theme.textSecondary,
+                ),
+              ),
             ],
           ),
         ),
@@ -324,13 +462,24 @@ class _IconAction extends StatefulWidget {
   final IconData icon;
   final String tooltip;
   final VoidCallback onTap;
-  const _IconAction({required this.icon, required this.tooltip, required this.onTap});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _IconAction({
+    required this.icon,
+    required this.tooltip,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
   State<_IconAction> createState() => _IconActionState();
 }
 
 class _IconActionState extends State<_IconAction> {
   bool _hover = false;
+
   @override
   Widget build(BuildContext context) {
     return Tooltip(
@@ -343,15 +492,18 @@ class _IconActionState extends State<_IconAction> {
           onTap: widget.onTap,
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 120),
-            width: 34,
-            height: 34,
+            width: 34 * widget.fontSizeScale,
+            height: 34 * widget.fontSizeScale,
             decoration: BoxDecoration(
-              color: _hover ? AppTheme.surfaceHighlight : AppTheme.surfaceElevated,
+              color: _hover ? widget.theme.surfaceHighlight : widget.theme.surfaceElevated,
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: AppTheme.divider),
+              border: Border.all(color: widget.theme.divider),
             ),
-            child: Icon(widget.icon, size: 16,
-                color: _hover ? AppTheme.accent : AppTheme.textSecondary),
+            child: Icon(
+              widget.icon,
+              size: 16 * widget.fontSizeScale,
+              color: _hover ? widget.theme.accent : widget.theme.textSecondary,
+            ),
           ),
         ),
       ),
@@ -363,17 +515,28 @@ class _IconActionState extends State<_IconAction> {
 
 class _SearchBarArea extends StatelessWidget {
   final Function(Widget, String) onNavigate;
-  const _SearchBarArea({required this.onNavigate});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _SearchBarArea({
+    required this.onNavigate,
+    required this.theme,
+    required this.fontSizeScale,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       decoration: BoxDecoration(
-        color: AppTheme.bgDark,
-        border: Border(bottom: BorderSide(color: AppTheme.divider.withOpacity(0.5))),
+        color: theme.bg,
+        border: Border(bottom: BorderSide(color: theme.divider.withOpacity(0.5))),
       ),
-      child: GlobalSearchBar(onNavigate: onNavigate),
+      child: GlobalSearchBar(
+        onNavigate: onNavigate,
+        accentColor: theme.accent,
+        fontSizeScale: fontSizeScale,
+      ),
     );
   }
 }
@@ -381,54 +544,99 @@ class _SearchBarArea extends StatelessWidget {
 // ─── WELCOME VIEW ─────────────────────────────────────────────────────────────
 
 class _WelcomeView extends StatelessWidget {
-  const _WelcomeView();
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _WelcomeView({
+    required this.theme,
+    required this.fontSizeScale,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final brandCtrl = Get.put(DrugBrandCtrl());
+    final genericCtrl = Get.put(GenericCtrl());
+    final companyCtrl = Get.put(CompanyCtrl());
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 80,
-            height: 80,
+            width: 80 * fontSizeScale,
+            height: 80 * fontSizeScale,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppTheme.accent, AppTheme.accentDim],
+                colors: [theme.accent, theme.accent.withOpacity(0.7)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20 * fontSizeScale),
               boxShadow: [
-                BoxShadow(color: AppTheme.accent.withOpacity(0.3), blurRadius: 24, spreadRadius: 4),
+                BoxShadow(
+                  color: theme.accent.withOpacity(0.3),
+                  blurRadius: 24,
+                  spreadRadius: 4,
+                ),
               ],
             ),
-            child: const Icon(Icons.medication_rounded, color: Colors.white, size: 40),
+            child: Icon(
+              Icons.medication_rounded,
+              color: Colors.white,
+              size: 40 * fontSizeScale,
+            ),
           ),
           const SizedBox(height: 24),
-          Text('Drug Information Management System', style: AppTheme.headingLarge),
+          Text(
+            'Drug Information Management System',
+            style: TextStyle(
+              fontSize: 24 * fontSizeScale,
+              fontWeight: FontWeight.w700,
+              color: theme.textPrimary,
+              letterSpacing: -0.5,
+            ),
+          ),
           const SizedBox(height: 8),
           Text(
             'Search for medicines above, or use the navigation bar to browse.',
-            style: AppTheme.bodySecondary,
+            style: TextStyle(
+              fontSize: 13 * fontSizeScale,
+              color: theme.textSecondary,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
           Obx(() {
-            final brandCtrl = Get.find<DrugBrandCtrl>();
-            final genericCtrl = Get.find<GenericCtrl>();
-            final companyCtrl = Get.find<CompanyCtrl>();
+
+
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _StatCard(Icons.science_outlined, 'Generics',
-                    genericCtrl.genericList.length.toString(), AppTheme.accent),
+                _StatCard(
+                  Icons.science_outlined,
+                  'Generics',
+                  genericCtrl.genericList.length.toString(),
+                  theme.accent,
+                  theme,
+                  fontSizeScale,
+                ),
                 const SizedBox(width: 16),
-                _StatCard(Icons.local_pharmacy_outlined, 'Brands',
-                    brandCtrl.drugBrandList.length.toString(), AppTheme.accentGreen),
+                _StatCard(
+                  Icons.local_pharmacy_outlined,
+                  'Brands',
+                  brandCtrl.drugBrandList.length.toString(),
+                  AppTheme.accentGreen,
+                  theme,
+                  fontSizeScale,
+                ),
                 const SizedBox(width: 16),
-                _StatCard(Icons.business_outlined, 'Companies',
-                    companyCtrl.companyList.length.toString(), AppTheme.accentAmber),
+                _StatCard(
+                  Icons.business_outlined,
+                  'Companies',
+                  companyCtrl.companyList.length.toString(),
+                  AppTheme.accentAmber,
+                  theme,
+                  fontSizeScale,
+                ),
               ],
             );
           }),
@@ -443,25 +651,48 @@ class _StatCard extends StatelessWidget {
   final String label;
   final String count;
   final Color color;
-  const _StatCard(this.icon, this.label, this.count, this.color);
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _StatCard(
+      this.icon,
+      this.label,
+      this.count,
+      this.color,
+      this.theme,
+      this.fontSizeScale,
+      );
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 100,
+      width: 150 * fontSizeScale,
+      height: 100 * fontSizeScale,
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: theme.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.divider),
+        border: Border.all(color: theme.divider),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, color: color, size: 26),
+          Icon(icon, color: color, size: 26 * fontSizeScale),
           const SizedBox(height: 8),
-          Text(count, style: AppTheme.headingMedium.copyWith(color: color)),
-          Text(label, style: AppTheme.bodySecondary.copyWith(fontSize: 11)),
+          Text(
+            count,
+            style: TextStyle(
+              fontSize: 18 * fontSizeScale,
+              fontWeight: FontWeight.w700,
+              color: color,
+            ),
+          ),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 11 * fontSizeScale,
+              color: theme.textSecondary,
+            ),
+          ),
         ],
       ),
     );

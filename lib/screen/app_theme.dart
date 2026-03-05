@@ -1,94 +1,227 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Colors
-  static const Color bgDark = Color(0xFF0F1117);
-  static const Color surface = Color(0xFF171B26);
-  static const Color surfaceElevated = Color(0xFF1E2333);
-  static const Color surfaceHighlight = Color(0xFF252B3D);
-  static const Color divider = Color(0xFF2A3047);
-  static const Color accent = Color(0xFF4F8EF7);
-  static const Color accentDim = Color(0xFF2563EB);
-  static const Color accentGreen = Color(0xFF34D399);
-  static const Color accentAmber = Color(0xFFFBBF24);
-  static const Color accentRed = Color(0xFFF87171);
-  static const Color textPrimary = Color(0xFFE2E8F0);
-  static const Color textSecondary = Color(0xFF8B97B0);
-  static const Color textMuted = Color(0xFF4A5568);
+  // Dark Theme Colors
+  static const Color darkBg = Color(0xFF0F1117);
+  static const Color darkSurface = Color(0xFF171B26);
+  static const Color darkSurfaceElevated = Color(0xFF1E2333);
+  static const Color darkSurfaceHighlight = Color(0xFF252B3D);
+  static const Color darkDivider = Color(0xFF2A3047);
+  static const Color darkTextPrimary = Color(0xFFE2E8F0);
+  static const Color darkTextSecondary = Color(0xFF8B97B0);
+  static const Color darkTextMuted = Color(0xFF4A5568);
 
-  // Text Styles
-  static const TextStyle logo = TextStyle(
-    fontFamily: 'Courier',
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    color: textPrimary,
-    letterSpacing: 2.5,
-  );
+  // Light Theme Colors
+  static const Color lightBg = Color(0xFFF8FAFC);
+  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightSurfaceElevated = Color(0xFFF1F5F9);
+  static const Color lightSurfaceHighlight = Color(0xFFE2E8F0);
+  static const Color lightDivider = Color(0xFFCBD5E1);
+  static const Color lightTextPrimary = Color(0xFF0F172A);
+  static const Color lightTextSecondary = Color(0xFF475569);
+  static const Color lightTextMuted = Color(0xFF94A3B8);
 
-  static const TextStyle navLabel = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.w500,
-    color: textSecondary,
-  );
+  // Accent Colors (same for both themes)
+  static const Color accentBlue = Color(0xFF3B82F6);
+  static const Color accentGreen = Color(0xFF10B981);
+  static const Color accentPurple = Color(0xFF8B5CF6);
+  static const Color accentAmber = Color(0xFFF59E0B);
+  static const Color accentRose = Color(0xFFEC4899);
+  static const Color accentSlate = Color(0xFF64748B);
+  static const Color accentRed = Color(0xFFEF4444);
 
-  static const TextStyle headingLarge = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w700,
-    color: textPrimary,
-    letterSpacing: -0.5,
-  );
-
-  static const TextStyle headingMedium = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w700,
-    color: textPrimary,
-    letterSpacing: -0.3,
-  );
-
-  static const TextStyle headingSmall = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-    color: textPrimary,
-  );
-
-  static const TextStyle bodyPrimary = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.w400,
-    color: textPrimary,
-  );
-
-  static const TextStyle bodySecondary = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.w400,
-    color: textSecondary,
-  );
-
-  static const TextStyle label = TextStyle(
-    fontSize: 11,
-    fontWeight: FontWeight.w600,
-    color: textSecondary,
-    letterSpacing: 0.8,
-  );
-
-  static const TextStyle chip = TextStyle(
-    fontSize: 11,
-    fontWeight: FontWeight.w500,
-    color: textPrimary,
-  );
-
-  // ThemeData
-  static ThemeData get theme => ThemeData(
-    brightness: Brightness.dark,
-    scaffoldBackgroundColor: bgDark,
-    colorScheme: const ColorScheme.dark(
-      primary: accent,
-      surface: surface,
+  // Theme definitions
+  static const Map<String, ThemeDefinition> themes = {
+    'Dark Blue': ThemeDefinition(
+      name: 'Dark Blue',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentBlue,
     ),
-    fontFamily: 'SF Pro Display',
-    scrollbarTheme: ScrollbarThemeData(
-      thumbColor: WidgetStateProperty.all(divider),
-      thickness: WidgetStateProperty.all(4),
-      radius: const Radius.circular(4),
+    'Dark Green': ThemeDefinition(
+      name: 'Dark Green',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentGreen,
     ),
-  );
+    'Dark Purple': ThemeDefinition(
+      name: 'Dark Purple',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentPurple,
+    ),
+    'Dark Amber': ThemeDefinition(
+      name: 'Dark Amber',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentAmber,
+    ),
+    'Dark Rose': ThemeDefinition(
+      name: 'Dark Rose',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentRose,
+    ),
+    'Slate': ThemeDefinition(
+      name: 'Slate',
+      isDark: true,
+      bg: darkBg,
+      surface: darkSurface,
+      surfaceElevated: darkSurfaceElevated,
+      surfaceHighlight: darkSurfaceHighlight,
+      divider: darkDivider,
+      textPrimary: darkTextPrimary,
+      textSecondary: darkTextSecondary,
+      textMuted: darkTextMuted,
+      accent: accentSlate,
+    ),
+    // Light Themes
+    'Light Blue': ThemeDefinition(
+      name: 'Light Blue',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentBlue,
+    ),
+    'Light Green': ThemeDefinition(
+      name: 'Light Green',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentGreen,
+    ),
+    'Light Purple': ThemeDefinition(
+      name: 'Light Purple',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentPurple,
+    ),
+    'Light Amber': ThemeDefinition(
+      name: 'Light Amber',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentAmber,
+    ),
+    'Light Rose': ThemeDefinition(
+      name: 'Light Rose',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentRose,
+    ),
+    'Light Slate': ThemeDefinition(
+      name: 'Light Slate',
+      isDark: false,
+      bg: lightBg,
+      surface: lightSurface,
+      surfaceElevated: lightSurfaceElevated,
+      surfaceHighlight: lightSurfaceHighlight,
+      divider: lightDivider,
+      textPrimary: lightTextPrimary,
+      textSecondary: lightTextSecondary,
+      textMuted: lightTextMuted,
+      accent: accentSlate,
+    ),
+  };
+}
+
+class ThemeDefinition {
+  final String name;
+  final bool isDark;
+  final Color bg;
+  final Color surface;
+  final Color surfaceElevated;
+  final Color surfaceHighlight;
+  final Color divider;
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color textMuted;
+  final Color accent;
+
+  const ThemeDefinition({
+    required this.name,
+    required this.isDark,
+    required this.bg,
+    required this.surface,
+    required this.surfaceElevated,
+    required this.surfaceHighlight,
+    required this.divider,
+    required this.textPrimary,
+    required this.textSecondary,
+    required this.textMuted,
+    required this.accent,
+  });
+
+  // Helper to get dimmed accent
+  Color get accentDim => accent.withOpacity(0.7);
+
+  // Helper to get accent with opacity
+  Color accentWithOpacity(double opacity) => accent.withOpacity(opacity);
 }

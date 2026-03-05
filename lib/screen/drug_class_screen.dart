@@ -7,12 +7,23 @@ import '../../controller/therapeutic_generic_index_ctrl.dart';
 import '../../controller/generic_ctrl.dart';
 import '../../controller/drug_brand_ctrl.dart';
 import '../../controller/company_ctrl.dart';
+import '../../controller/theme_ctrl.dart';
 import '../../models/systemic_class/systemic_class_model.dart';
 import '../../models/therapeutic_class/therapeutic_class_model.dart';
 import '../../models/generic/generic_details_model.dart';
 import '../../models/brand/drug_brand_model.dart';
 import 'app_theme.dart';
 import 'brand_detail_screen.dart';
+
+// Extension for firstWhereOrNull
+extension IterableExtensions<T> on Iterable<T> {
+  T? firstWhereOrNull(bool Function(T) test) {
+    for (var element in this) {
+      if (test(element)) return element;
+    }
+    return null;
+  }
+}
 
 class DrugClassScreen extends StatefulWidget {
   const DrugClassScreen({Key? key}) : super(key: key);
@@ -23,284 +34,474 @@ class DrugClassScreen extends StatefulWidget {
 class _DrugClassScreenState extends State<DrugClassScreen> {
   final SystemicClassCtrl _sysCtrl = Get.find<SystemicClassCtrl>();
   final TherapeuticClassCtrl _therapCtrl = Get.find<TherapeuticClassCtrl>();
-  final TextEditingController _searchCtrl = TextEditingController();
-  String _searchQuery = '';
+  final ThemeCtrl _themeCtrl = Get.put(ThemeCtrl());
+  final TextEditingController _treeSearch = TextEditingController();
+  String _treeQuery = '';
 
+  String? _selectedSystemicId;
   TherapeuticClassModel? _selectedTherapeutic;
   GenericDetailsModel? _selectedGeneric;
 
   @override
+  void initState() {
+    super.initState();
+    print('🔍 DrugClassScreen initState - Checking controllers:');
+    print('  - SystemicClassCtrl: ${_sysCtrl.runtimeType}');
+    print('  - TherapeuticClassCtrl: ${_therapCtrl.runtimeType}');
+    print('  - SystemicClassList length: ${_sysCtrl.systemicClassList.length}');
+    print('  - TherapeuticClassList length: ${_therapCtrl.therapeuticClassList.length}');
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _debugCheckData();
+    });
+  }
+
+  void _debugCheckData() {
+    print('\n🔍 DEBUG DATA CHECK:');
+    final genericCtrl = Get.put(GenericCtrl());
+    print('GenericCtrl.genericList length: ${genericCtrl.genericList.length}');
+
+    if (genericCtrl.genericList.isNotEmpty) {
+      print('\nSample of first 10 generics:');
+      for (int i = 0; i < genericCtrl.genericList.length && i < 10; i++) {
+        final g = genericCtrl.genericList[i];
+        print('  - ID: ${g.generic_id}, Name: ${g.generic_name}');
+      }
+    } else {
+      print('⚠️ GenericCtrl.genericList is EMPTY!');
+    }
+
+    final tgiCtrl = Get.find<TherapeuticGenIndCtrl>();
+    print('\nTherapeuticGenIndCtrl check:');
+    if (_selectedTherapeutic != null) {
+      final ids = tgiCtrl.getGenericIdsByTherapeuticClass(_selectedTherapeutic!.id);
+      print('  - Generic IDs for selected therapeutic: $ids');
+    }
+  }
+
+  @override
   void dispose() {
-    _searchCtrl.dispose();
+    _treeSearch.dispose();
     super.dispose();
   }
 
+  void _onSystemicTap(SystemicClassModel s) {
+    print('🔍 TAPPED Systemic Class: ${s.id} - ${s.name}');
+    setState(() {
+      _selectedSystemicId = s.id?.toString();
+      _selectedTherapeutic = null;
+      _selectedGeneric = null;
+    });
+    print('  → _selectedSystemicId set to: $_selectedSystemicId');
+  }
+
+  void _onTherapeuticTap(TherapeuticClassModel t) {
+    print('🔍 TAPPED Therapeutic Class: ${t.id} - ${t.name}');
+    setState(() {
+      _selectedTherapeutic = t;
+      _selectedGeneric = null;
+    });
+    print('  → _selectedTherapeutic set to: ${t.id} - ${t.name}');
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final tgiCtrl = Get.find<TherapeuticGenIndCtrl>();
+      final genericCtrl = Get.put(GenericCtrl());
+
+      final ids = tgiCtrl.getGenericIdsByTherapeuticClass(t.id);
+      print('  → Generic IDs from TGI: $ids');
+
+      if (ids.isNotEmpty) {
+        final stringIds = ids.map((id) => id.toString()).toList();
+        final generics = genericCtrl.genericList
+            .where((g) => stringIds.contains(g.generic_id.toString()))
+            .toList();
+        print('  → Found ${generics.length} generics in GenericCtrl');
+      }
+    });
+  }
+
+  void _onGenericTap(GenericDetailsModel g) {
+    print('🔍 TAPPED Generic: ${g.generic_id} - ${g.generic_name}');
+    setState(() => _selectedGeneric = g);
+    print('  → _selectedGeneric set to: ${g.generic_id} - ${g.generic_name}');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        // ── Left: Drug class tree ──────────────────────────────────────────
-        Container(
-          width: 280,
-          decoration: const BoxDecoration(
-            color: AppTheme.surface,
-            border: Border(right: BorderSide(color: AppTheme.divider)),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _PanelHeader(title: 'Drug Classes', icon: Icons.category_outlined),
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: SearchInput(
-                  controller: _searchCtrl,
-                  hint: 'Search drug classes...',
-                  onChanged: (q) => setState(() => _searchQuery = q.toLowerCase().trim()),
+    return Obx(() {
+      final theme = _themeCtrl.currentTheme;
+      final fontSizeScale = _themeCtrl.fontSizeScale;
+      final accentColor = theme.accent;
+
+      print('🔍 REBUILD DrugClassScreen - Selected: Systemic: $_selectedSystemicId, Therapeutic: ${_selectedTherapeutic?.id}, Generic: ${_selectedGeneric?.generic_id}');
+
+      return Row(
+        children: [
+          // ── Panel 1: Systemic Class tree ──────────────────────────────────
+          Container(
+            width: 280,
+            decoration: BoxDecoration(
+              color: theme.surface,
+              border: Border(right: BorderSide(color: theme.divider)),
+            ),
+            child: Column(
+              children: [
+                _PanelHeader(
+                  title: 'Drug Classes',
+                  icon: Icons.category_outlined,
+                  theme: theme,
+                  fontSizeScale: fontSizeScale,
                 ),
-              ),
-              Expanded(
-                child: Obx(() {
-                  final therapeutics = _therapCtrl.therapeuticClassList;
-                  final systemics = _sysCtrl.systemicClassList;
+                Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: SearchInput(
+                    controller: _treeSearch,
+                    hint: 'Search drug classes...',
+                    onChanged: (q) => setState(() => _treeQuery = q.toLowerCase().trim()),
+                    fontSizeScale: fontSizeScale,
+                    accentColor: accentColor,
+                  ),
+                ),
+                Expanded(
+                  child: Obx(() {
+                    print('🔍 PANEL 1 - Building with ${_sysCtrl.systemicClassList.length} systemics and ${_therapCtrl.therapeuticClassList.length} therapeutics');
 
-                  if (therapeutics.isEmpty && systemics.isEmpty) {
-                    return const Center(
-                      child: Text('No drug classes loaded',
-                          style: TextStyle(color: AppTheme.textMuted, fontSize: 12)),
-                    );
-                  }
+                    final systemics = _sysCtrl.systemicClassList;
+                    final therapeutics = _therapCtrl.therapeuticClassList;
 
-                  // Group therapeutics by systemic_class_id (int or String)
-                  final Map<String, List<TherapeuticClassModel>> grouped = {};
-                  for (final t in therapeutics) {
-                    final key = t.systemic_class_id?.toString() ?? '0';
-                    grouped.putIfAbsent(key, () => []).add(t);
-                  }
+                    if (systemics.isEmpty && therapeutics.isEmpty) {
+                      print('⚠️ PANEL 1 - No data loaded');
+                      return Center(
+                        child: Text(
+                          'No data loaded',
+                          style: TextStyle(
+                            fontSize: 13 * fontSizeScale,
+                            color: theme.textMuted,
+                          ),
+                        ),
+                      );
+                    }
 
-                  // Root systemics: parent_id is null or 0
-                  final roots = systemics
-                      .where((s) =>
-                          s.parent_id == null ||
-                          s.parent_id == 0 ||
-                          s.parent_id.toString() == '0')
-                      .toList();
+                    final Map<String, int> tCount = {};
+                    for (final t in therapeutics) {
+                      final k = t.systemic_class_id?.toString() ?? '';
+                      if (k.isNotEmpty) {
+                        tCount[k] = (tCount[k] ?? 0) + 1;
+                      }
+                    }
 
-                  // If no systemic roots, show therapeutics directly
-                  if (roots.isEmpty) {
-                    final allTherapeutics = _searchQuery.isEmpty
-                        ? therapeutics
-                        : therapeutics
-                            .where((t) =>
-                                t.name.toLowerCase().contains(_searchQuery))
-                            .toList();
+                    final roots = systemics
+                        .where((s) =>
+                    s.parent_id == null ||
+                        s.parent_id == 0 ||
+                        s.parent_id.toString() == '0')
+                        .toList();
+
+                    if (roots.isEmpty) {
+                      print('⚠️ PANEL 1 - No root nodes, showing flat therapeutics');
+                      final list = _treeQuery.isEmpty
+                          ? therapeutics
+                          : therapeutics
+                          .where((t) => t.name.toLowerCase().contains(_treeQuery))
+                          .toList();
+                      return ListView.builder(
+                        itemCount: list.length,
+                        itemBuilder: (_, i) => _TherapeuticFlatItem(
+                          therapeutic: list[i],
+                          isSelected: _selectedTherapeutic?.id?.toString() == list[i].id?.toString(),
+                          onTap: () => _onTherapeuticTap(list[i]),
+                          theme: theme,
+                          fontSizeScale: fontSizeScale,
+                        ),
+                      );
+                    }
+
                     return ListView.builder(
-                      itemCount: allTherapeutics.length,
-                      itemBuilder: (_, i) => _TherapeuticItem(
-                        therapeutic: allTherapeutics[i],
-                        isSelected: _selectedTherapeutic?.id == allTherapeutics[i].id,
-                        onTap: () => setState(() {
-                          _selectedTherapeutic = allTherapeutics[i];
-                          _selectedGeneric = null;
-                        }),
+                      itemCount: roots.length,
+                      itemBuilder: (_, i) => _SystemicNode(
+                        systemic: roots[i],
+                        allSystemics: systemics,
+                        therapeuticCount: tCount,
+                        searchQuery: _treeQuery,
+                        selectedId: _selectedSystemicId,
+                        onTap: _onSystemicTap,
+                        theme: theme,
+                        fontSizeScale: fontSizeScale,
                       ),
                     );
-                  }
+                  }),
+                ),
+              ],
+            ),
+          ),
 
-                  return ListView.builder(
-                    itemCount: roots.length,
-                    itemBuilder: (_, i) => _SystemicClassNode(
-                      systemic: roots[i],
-                      allSystemic: systemics,
-                      therapeuticsGrouped: grouped,
-                      searchQuery: _searchQuery,
-                      onTherapeuticTap: (t) => setState(() {
-                        _selectedTherapeutic = t;
-                        _selectedGeneric = null;
-                      }),
-                      selectedTherapeuticId: _selectedTherapeutic?.id?.toString(),
-                    ),
-                  );
-                }),
+          // ── Panel 2: Therapeutic classes ──────────────────────────────────
+          if (_selectedSystemicId != null)
+            Container(
+              width: 260,
+              decoration: BoxDecoration(
+                color: theme.surface,
+                border: Border(right: BorderSide(color: theme.divider)),
               ),
-            ],
-          ),
-        ),
-
-        // ── Middle: Generics for selected therapeutic class ────────────────
-        if (_selectedTherapeutic != null)
-          Container(
-            width: 260,
-            decoration: const BoxDecoration(
-              color: AppTheme.surface,
-              border: Border(right: BorderSide(color: AppTheme.divider)),
+              child: _TherapeuticPanel(
+                systemicId: _selectedSystemicId!,
+                selectedId: _selectedTherapeutic?.id?.toString(),
+                onTap: _onTherapeuticTap,
+                theme: theme,
+                fontSizeScale: fontSizeScale,
+              ),
             ),
-            child: _GenericsForTherapeutic(
-              therapeutic: _selectedTherapeutic!,
-              onGenericTap: (g) => setState(() => _selectedGeneric = g),
-              selectedGenericId: _selectedGeneric?.generic_id?.toString(),
+
+          // ── Panel 3: Generics ─────────────────────────────────────────────
+          if (_selectedTherapeutic != null)
+            Container(
+              width: 260,
+              decoration: BoxDecoration(
+                color: theme.surface,
+                border: Border(right: BorderSide(color: theme.divider)),
+              ),
+              child: _GenericsPanel(
+                therapeutic: _selectedTherapeutic!,
+                selectedGenericId: _selectedGeneric?.generic_id?.toString(),
+                onTap: _onGenericTap,
+                theme: theme,
+                fontSizeScale: fontSizeScale,
+              ),
+            ),
+
+          // ── Panel 4: Brands + detail ──────────────────────────────────────
+          Expanded(
+            child: _selectedGeneric != null
+                ? _BrandsPanel(
+              generic: _selectedGeneric!,
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+            )
+                : _selectedTherapeutic != null
+                ? _EmptyHint(
+              icon: Icons.science_outlined,
+              message: 'Select a generic to view brands',
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+            )
+                : _selectedSystemicId != null
+                ? _EmptyHint(
+              icon: Icons.device_hub_outlined,
+              message: 'Select a therapeutic class',
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+            )
+                : _EmptyHint(
+              icon: Icons.category_outlined,
+              message: 'Select a drug class to begin',
+              theme: theme,
+              fontSizeScale: fontSizeScale,
             ),
           ),
-
-        // ── Right: Brands for selected generic ────────────────────────────
-        Expanded(
-          child: _selectedGeneric != null
-              ? _BrandsForGenericPanel(generic: _selectedGeneric!)
-              : _selectedTherapeutic != null
-                  ? const _EmptyHint(
-                      icon: Icons.science_outlined,
-                      message: 'Select a generic to view brands',
-                    )
-                  : const _EmptyHint(
-                      icon: Icons.category_outlined,
-                      message: 'Select a drug class from the list',
-                    ),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 }
 
-// ─── Systemic class tree node (recursive) ────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════════
+// Panel 1 — Recursive Systemic Node
+// ══════════════════════════════════════════════════════════════════════════════
 
-class _SystemicClassNode extends StatefulWidget {
+class _SystemicNode extends StatefulWidget {
   final SystemicClassModel systemic;
-  final List<SystemicClassModel> allSystemic;
-  final Map<String, List<TherapeuticClassModel>> therapeuticsGrouped;
+  final List<SystemicClassModel> allSystemics;
+  final Map<String, int> therapeuticCount;
   final String searchQuery;
-  final Function(TherapeuticClassModel) onTherapeuticTap;
-  final String? selectedTherapeuticId;
+  final String? selectedId;
+  final Function(SystemicClassModel) onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
 
-  const _SystemicClassNode({
+  const _SystemicNode({
     required this.systemic,
-    required this.allSystemic,
-    required this.therapeuticsGrouped,
+    required this.allSystemics,
+    required this.therapeuticCount,
     required this.searchQuery,
-    required this.onTherapeuticTap,
-    this.selectedTherapeuticId,
+    required this.onTap,
+    this.selectedId,
+    required this.theme,
+    required this.fontSizeScale,
   });
 
   @override
-  State<_SystemicClassNode> createState() => _SystemicClassNodeState();
+  State<_SystemicNode> createState() => _SystemicNodeState();
 }
 
-class _SystemicClassNodeState extends State<_SystemicClassNode> {
+class _SystemicNodeState extends State<_SystemicNode> {
   bool _expanded = false;
+
+  bool get _isSelected => widget.selectedId == widget.systemic.id?.toString();
+
+  @override
+  void initState() {
+    super.initState();
+    print('🔍 _SystemicNode init: ${widget.systemic.name} (ID: ${widget.systemic.id})');
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Child systemic classes
-    final children = widget.allSystemic
-        .where((s) =>
-            s.parent_id != null &&
-            s.parent_id.toString() == widget.systemic.id?.toString())
+    final myId = widget.systemic.id?.toString() ?? '';
+
+    final children = widget.allSystemics
+        .where((s) => s.parent_id != null && s.parent_id.toString() == myId)
         .toList();
+    final hasChildren = children.isNotEmpty;
+    final tCount = widget.therapeuticCount[myId] ?? 0;
 
-    // Therapeutic classes belonging to this systemic class
-    final therapeutics =
-        widget.therapeuticsGrouped[widget.systemic.id?.toString() ?? ''] ?? [];
-    final filteredTherapeutics = widget.searchQuery.isEmpty
-        ? therapeutics
-        : therapeutics
-            .where((t) => t.name.toLowerCase().contains(widget.searchQuery))
-            .toList();
-
-    final hasContent = children.isNotEmpty || filteredTherapeutics.isNotEmpty;
-    if (!hasContent && widget.searchQuery.isNotEmpty) return const SizedBox.shrink();
-
-    // Auto-expand when searching
-    if (widget.searchQuery.isNotEmpty && !_expanded && filteredTherapeutics.isNotEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) setState(() => _expanded = true);
-      });
+    if (widget.searchQuery.isNotEmpty) {
+      final nameMatch = widget.systemic.name.toLowerCase().contains(widget.searchQuery);
+      final childMatch = children.any((c) => c.name.toLowerCase().contains(widget.searchQuery));
+      if (!nameMatch && !childMatch) return const SizedBox.shrink();
+      if (!_expanded && childMatch) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) setState(() => _expanded = true);
+        });
+      }
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        GestureDetector(
-          onTap: () => setState(() => _expanded = !_expanded),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-            decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: AppTheme.divider.withOpacity(0.4))),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  _expanded
-                      ? Icons.keyboard_arrow_down_rounded
-                      : Icons.keyboard_arrow_right_rounded,
-                  size: 16,
-                  color: AppTheme.textMuted,
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              widget.onTap(widget.systemic);
+              if (hasChildren) setState(() => _expanded = !_expanded);
+            },
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 120),
+              decoration: BoxDecoration(
+                color: _isSelected ? widget.theme.accent.withOpacity(0.12) : Colors.transparent,
+                border: Border(
+                  bottom: BorderSide(color: widget.theme.divider.withOpacity(0.4)),
+                  left: BorderSide(
+                      color: _isSelected ? widget.theme.accent : Colors.transparent,
+                      width: 3),
                 ),
-                const SizedBox(width: 6),
-                Container(
-                  width: 6,
-                  height: 6,
-                  decoration: const BoxDecoration(
-                    color: AppTheme.accent,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    widget.systemic.name,
-                    style: AppTheme.bodyPrimary.copyWith(fontWeight: FontWeight.w600),
-                  ),
-                ),
-                if (filteredTherapeutics.isNotEmpty)
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
-                    decoration: BoxDecoration(
-                      color: AppTheme.accent.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(8),
+              ),
+              padding: EdgeInsets.symmetric(
+                horizontal: 12 * widget.fontSizeScale,
+                vertical: 10 * widget.fontSizeScale,
+              ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 18 * widget.fontSizeScale,
+                    child: hasChildren
+                        ? Icon(
+                      _expanded
+                          ? Icons.keyboard_arrow_down_rounded
+                          : Icons.keyboard_arrow_right_rounded,
+                      size: 16 * widget.fontSizeScale,
+                      color: _isSelected ? widget.theme.accent : widget.theme.textMuted,
+                    )
+                        : Center(
+                      child: Container(
+                        width: 5 * widget.fontSizeScale,
+                        height: 5 * widget.fontSizeScale,
+                        decoration: BoxDecoration(
+                          color: _isSelected ? widget.theme.accent : widget.theme.textMuted,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
                     ),
-                    child: Text('${filteredTherapeutics.length}',
-                        style: AppTheme.label.copyWith(color: AppTheme.accent)),
                   ),
-              ],
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      widget.systemic.name,
+                      style: TextStyle(
+                        fontSize: 13 * widget.fontSizeScale,
+                        fontWeight: _isSelected ? FontWeight.w600 : FontWeight.w400,
+                        color: _isSelected ? widget.theme.accent : widget.theme.textPrimary,
+                      ),
+                    ),
+                  ),
+                  if (tCount > 0)
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6 * widget.fontSizeScale,
+                        vertical: 1 * widget.fontSizeScale,
+                      ),
+                      decoration: BoxDecoration(
+                        color: widget.theme.accent.withOpacity(0.12),
+                        borderRadius: BorderRadius.circular(8 * widget.fontSizeScale),
+                      ),
+                      child: Text(
+                        '$tCount',
+                        style: TextStyle(
+                          fontSize: 11 * widget.fontSizeScale,
+                          fontWeight: FontWeight.w600,
+                          color: widget.theme.accent,
+                          letterSpacing: 0.8,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
         ),
-        if (_expanded) ...[
-          // Recursive child systemic classes
-          ...children.map((child) => Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: _SystemicClassNode(
-                  systemic: child,
-                  allSystemic: widget.allSystemic,
-                  therapeuticsGrouped: widget.therapeuticsGrouped,
-                  searchQuery: widget.searchQuery,
-                  onTherapeuticTap: widget.onTherapeuticTap,
-                  selectedTherapeuticId: widget.selectedTherapeuticId,
-                ),
-              )),
-          // Therapeutic class items
-          ...filteredTherapeutics.map((t) => _TherapeuticItem(
-                therapeutic: t,
-                isSelected:
-                    widget.selectedTherapeuticId == t.id?.toString(),
-                onTap: () => widget.onTherapeuticTap(t),
-              )),
-        ],
+        if (_expanded && hasChildren)
+          Padding(
+            padding: EdgeInsets.only(left: 14 * widget.fontSizeScale),
+            child: Column(
+              children: children.map((child) => _SystemicNode(
+                systemic: child,
+                allSystemics: widget.allSystemics,
+                therapeuticCount: widget.therapeuticCount,
+                searchQuery: widget.searchQuery,
+                selectedId: widget.selectedId,
+                onTap: widget.onTap,
+                theme: widget.theme,
+                fontSizeScale: widget.fontSizeScale,
+              )).toList(),
+            ),
+          ),
       ],
     );
   }
 }
 
-class _TherapeuticItem extends StatefulWidget {
+// ══════════════════════════════════════════════════════════════════════════════
+// Therapeutic Flat Item (when no systemic hierarchy)
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _TherapeuticFlatItem extends StatefulWidget {
   final TherapeuticClassModel therapeutic;
   final bool isSelected;
   final VoidCallback onTap;
-  const _TherapeuticItem(
-      {required this.therapeutic, required this.isSelected, required this.onTap});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _TherapeuticFlatItem({
+    required this.therapeutic,
+    required this.isSelected,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
-  State<_TherapeuticItem> createState() => _TherapeuticItemState();
+  State<_TherapeuticFlatItem> createState() => _TherapeuticFlatItemState();
 }
 
-class _TherapeuticItemState extends State<_TherapeuticItem> {
+class _TherapeuticFlatItemState extends State<_TherapeuticFlatItem> {
   bool _hover = false;
+
+  @override
+  void initState() {
+    super.initState();
+    print('🔍 _TherapeuticFlatItem init: ${widget.therapeutic.name}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -312,33 +513,19 @@ class _TherapeuticItemState extends State<_TherapeuticItem> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 120),
           color: widget.isSelected
-              ? AppTheme.accent.withOpacity(0.12)
-              : _hover ? AppTheme.surfaceHighlight : Colors.transparent,
-          padding: const EdgeInsets.only(left: 36, right: 14, top: 9, bottom: 9),
-          child: Row(
-            children: [
-              Container(
-                width: 4,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: widget.isSelected ? AppTheme.accent : AppTheme.textMuted,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  widget.therapeutic.name,
-                  style: AppTheme.bodySecondary.copyWith(
-                    color: widget.isSelected
-                        ? AppTheme.accent
-                        : AppTheme.textSecondary,
-                    fontWeight:
-                        widget.isSelected ? FontWeight.w500 : FontWeight.w400,
-                  ),
-                ),
-              ),
-            ],
+              ? widget.theme.accent.withOpacity(0.12)
+              : _hover ? widget.theme.surfaceHighlight : Colors.transparent,
+          padding: EdgeInsets.symmetric(
+            horizontal: 16 * widget.fontSizeScale,
+            vertical: 10 * widget.fontSizeScale,
+          ),
+          child: Text(
+            widget.therapeutic.name,
+            style: TextStyle(
+              fontSize: 13 * widget.fontSizeScale,
+              color: widget.isSelected ? widget.theme.accent : widget.theme.textSecondary,
+              fontWeight: widget.isSelected ? FontWeight.w500 : FontWeight.w400,
+            ),
           ),
         ),
       ),
@@ -346,94 +533,693 @@ class _TherapeuticItemState extends State<_TherapeuticItem> {
   }
 }
 
-// ─── Generics panel ───────────────────────────────────────────────────────────
-// KEY FIX: therapeutic.id is int, generic_id is String or int — compare as String
+// ══════════════════════════════════════════════════════════════════════════════
+// Panel 2 — Therapeutic Classes
+// ══════════════════════════════════════════════════════════════════════════════
 
-class _GenericsForTherapeutic extends StatelessWidget {
-  final TherapeuticClassModel therapeutic;
-  final Function(GenericDetailsModel) onGenericTap;
-  final String? selectedGenericId;
-  const _GenericsForTherapeutic({
-    required this.therapeutic,
-    required this.onGenericTap,
-    this.selectedGenericId,
+class _TherapeuticPanel extends StatefulWidget {
+  final String systemicId;
+  final String? selectedId;
+  final Function(TherapeuticClassModel) onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _TherapeuticPanel({
+    required this.systemicId,
+    required this.onTap,
+    this.selectedId,
+    required this.theme,
+    required this.fontSizeScale,
   });
 
   @override
+  State<_TherapeuticPanel> createState() => _TherapeuticPanelState();
+}
+
+class _TherapeuticPanelState extends State<_TherapeuticPanel> {
+  final TextEditingController _search = TextEditingController();
+  String _q = '';
+
+  @override
+  void initState() {
+    super.initState();
+    print('🔍 PANEL 2 init - systemicId: ${widget.systemicId}');
+  }
+
+  @override
+  void didUpdateWidget(_TherapeuticPanel oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.systemicId != widget.systemicId) {
+      setState(() {
+        _q = '';
+        _search.clear();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final tgiCtrl = Get.find<TherapeuticGenIndCtrl>();
-    final genericCtrl = Get.find<GenericCtrl>();
+    final therapCtrl = Get.find<TherapeuticClassCtrl>();
+    final sysCtrl = Get.find<SystemicClassCtrl>();
 
-    // therapeutic.id is int — pass directly
-    final rawIds = tgiCtrl.getGenericIdsByTherapeuticClass(therapeutic.id);
-    final genericIds = rawIds.map((e) => e.toString()).toSet().toList();
+    return Obx(() {
+      final systemic = sysCtrl.systemicClassList
+          .firstWhereOrNull((s) => s.id?.toString() == widget.systemicId);
 
-    final generics = genericCtrl.genericList
-        .where((g) => genericIds.contains(g.generic_id.toString()))
-        .toList();
+      final all = therapCtrl.therapeuticClassList
+          .where((t) => t.systemic_class_id?.toString() == widget.systemicId)
+          .toList();
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: AppTheme.divider))),
-          child: Row(
-            children: [
-              const Icon(Icons.science_outlined, size: 14, color: AppTheme.accentGreen),
+      final displayed = _q.isEmpty
+          ? all
+          : all.where((t) => t.name.toLowerCase().contains(_q)).toList();
+
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 14 * widget.fontSizeScale,
+              vertical: 12 * widget.fontSizeScale,
+            ),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: widget.theme.divider)),
+            ),
+            child: Row(children: [
+              Icon(
+                Icons.device_hub_outlined,
+                size: 14 * widget.fontSizeScale,
+                color: widget.theme.accent,
+              ),
               const SizedBox(width: 8),
               Expanded(
-                child: Text(therapeutic.name,
-                    style: AppTheme.headingSmall, overflow: TextOverflow.ellipsis),
+                child: Text(
+                  systemic?.name ?? 'Therapeutic Classes',
+                  style: TextStyle(
+                    fontSize: 14 * widget.fontSizeScale,
+                    fontWeight: FontWeight.w600,
+                    color: widget.theme.textPrimary,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-            ],
+            ]),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Text('${generics.length} generics', style: AppTheme.label),
-        ),
-        if (generics.isEmpty)
-          const Expanded(
-            child: Center(
-              child: Text('No generics in this class',
-                  style: TextStyle(color: AppTheme.textMuted, fontSize: 12)),
+          Padding(
+            padding: EdgeInsets.all(10 * widget.fontSizeScale),
+            child: SearchInput(
+              controller: _search,
+              hint: 'Search therapeutic...',
+              onChanged: (q) => setState(() => _q = q.toLowerCase().trim()),
+              fontSizeScale: widget.fontSizeScale,
+              accentColor: widget.theme.accent,
             ),
-          )
-        else
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 14 * widget.fontSizeScale,
+              vertical: 2 * widget.fontSizeScale,
+            ),
+            child: Text(
+              '${displayed.length} classes',
+              style: TextStyle(
+                fontSize: 11 * widget.fontSizeScale,
+                fontWeight: FontWeight.w600,
+                color: widget.theme.textSecondary,
+                letterSpacing: 0.8,
+              ),
+            ),
+          ),
           Expanded(
-            child: ListView.builder(
-              itemCount: generics.length,
+            child: displayed.isEmpty
+                ? Center(
+              child: Text(
+                'No therapeutic classes',
+                style: TextStyle(
+                  fontSize: 13 * widget.fontSizeScale,
+                  color: widget.theme.textMuted,
+                ),
+              ),
+            )
+                : ListView.builder(
+              itemCount: displayed.length,
               itemBuilder: (_, i) {
-                final g = generics[i];
-                return _GenericRowItem(
-                  generic: g,
-                  isSelected: selectedGenericId == g.generic_id.toString(),
-                  onTap: () => onGenericTap(g),
+                final t = displayed[i];
+                return _ListItem(
+                  label: t.name,
+                  isSelected: widget.selectedId == t.id?.toString(),
+                  color: AppTheme.accentGreen,
+                  onTap: () => widget.onTap(t),
+                  theme: widget.theme,
+                  fontSizeScale: widget.fontSizeScale,
                 );
               },
             ),
           ),
+        ],
+      );
+    });
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Panel 3 — Generics
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _GenericsPanel extends StatefulWidget {
+  final TherapeuticClassModel therapeutic;
+  final String? selectedGenericId;
+  final Function(GenericDetailsModel) onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _GenericsPanel({
+    required this.therapeutic,
+    required this.onTap,
+    this.selectedGenericId,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
+  @override
+  State<_GenericsPanel> createState() => _GenericsPanelState();
+}
+
+class _GenericsPanelState extends State<_GenericsPanel> {
+  final TextEditingController _search = TextEditingController();
+  String _q = '';
+  List<GenericDetailsModel> _generics = [];
+  bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    print('🔍 PANEL 3 init - therapeutic: ${widget.therapeutic.id} - ${widget.therapeutic.name}');
+    _loadGenerics();
+  }
+
+  @override
+  void didUpdateWidget(_GenericsPanel oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.therapeutic.id != widget.therapeutic.id) {
+      print('🔍 PANEL 3 - therapeutic changed from ${oldWidget.therapeutic.id} to ${widget.therapeutic.id}');
+      setState(() {
+        _q = '';
+        _search.clear();
+        _generics = [];
+      });
+      _loadGenerics();
+    }
+  }
+
+  Future<void> _loadGenerics() async {
+    if (_isLoading) return;
+
+    setState(() => _isLoading = true);
+
+    try {
+      final tgiCtrl = Get.find<TherapeuticGenIndCtrl>();
+      final genericCtrl = Get.put(GenericCtrl());
+
+      print('\n🔍 PANEL 3 - Loading generics for therapeutic: ${widget.therapeutic.id}');
+      print('  → GenericCtrl total items: ${genericCtrl.genericList.length}');
+
+      final rawIds = tgiCtrl.getGenericIdsByTherapeuticClass(widget.therapeutic.id);
+      print('  → getGenericIdsByTherapeuticClass returned: $rawIds');
+
+      if (rawIds.isEmpty) {
+        print('  ⚠️ No generic IDs found for this therapeutic');
+        setState(() {
+          _generics = [];
+          _isLoading = false;
+        });
+        return;
+      }
+
+      final ids = rawIds.map((e) => e.toString()).toList();
+      print('  → Looking for generics with IDs: $ids');
+
+      List<GenericDetailsModel> foundGenerics = [];
+
+      if (genericCtrl.filteredGenericList.isNotEmpty) {
+        print('  → Using filteredGenericList (${genericCtrl.filteredGenericList.length} items)');
+        foundGenerics = genericCtrl.filteredGenericList
+            .where((g) => ids.contains(g.generic_id.toString()))
+            .toList();
+      } else if (genericCtrl.genericList.isNotEmpty) {
+        print('  → Using genericList (${genericCtrl.genericList.length} items)');
+        foundGenerics = genericCtrl.genericList
+            .where((g) => ids.contains(g.generic_id.toString()))
+            .toList();
+      }
+
+      print('  → Found ${foundGenerics.length} generics');
+
+      if (foundGenerics.isEmpty) {
+        print('  ⚠️ No generics found with the given IDs');
+        print('  → Sample of available generic IDs:');
+        for (int i = 0; i < genericCtrl.genericList.length && i < 5; i++) {
+          final g = genericCtrl.genericList[i];
+          print('      ID: ${g.generic_id}, Name: ${g.generic_name}');
+        }
+      } else {
+        print('  → Generic names found:');
+        for (var g in foundGenerics) {
+          print('      - ${g.generic_name}');
+        }
+      }
+
+      if (mounted) {
+        setState(() {
+          _generics = foundGenerics;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      print('  ❌ Error loading generics: $e');
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final displayed = _q.isEmpty
+        ? _generics
+        : _generics
+        .where((g) => g.generic_name.toLowerCase().contains(_q))
+        .toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 14 * widget.fontSizeScale,
+            vertical: 12 * widget.fontSizeScale,
+          ),
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: widget.theme.divider)),
+          ),
+          child: Row(children: [
+            Icon(
+              Icons.science_outlined,
+              size: 14 * widget.fontSizeScale,
+              color: AppTheme.accentGreen,
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                widget.therapeutic.name,
+                style: TextStyle(
+                  fontSize: 14 * widget.fontSizeScale,
+                  fontWeight: FontWeight.w600,
+                  color: widget.theme.textPrimary,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.bug_report,
+                size: 16 * widget.fontSizeScale,
+                color: widget.theme.textMuted,
+              ),
+              onPressed: _loadGenerics,
+              tooltip: 'Reload generics',
+            ),
+          ]),
+        ),
+        Padding(
+          padding: EdgeInsets.all(10 * widget.fontSizeScale),
+          child: SearchInput(
+            controller: _search,
+            hint: 'Search generics...',
+            onChanged: (q) => setState(() => _q = q.toLowerCase().trim()),
+            fontSizeScale: widget.fontSizeScale,
+            accentColor: widget.theme.accent,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 14 * widget.fontSizeScale,
+            vertical: 2 * widget.fontSizeScale,
+          ),
+          child: Text(
+            '${displayed.length} generics',
+            style: TextStyle(
+              fontSize: 11 * widget.fontSizeScale,
+              fontWeight: FontWeight.w600,
+              color: widget.theme.textSecondary,
+              letterSpacing: 0.8,
+            ),
+          ),
+        ),
+        Expanded(
+          child: _isLoading
+              ? Center(child: CircularProgressIndicator(color: widget.theme.accent))
+              : displayed.isEmpty
+              ? Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'No generics found',
+                  style: TextStyle(
+                    fontSize: 13 * widget.fontSizeScale,
+                    color: widget.theme.textMuted,
+                  ),
+                ),
+                SizedBox(height: 8 * widget.fontSizeScale),
+                TextButton.icon(
+                  onPressed: _loadGenerics,
+                  icon: Icon(
+                    Icons.refresh,
+                    size: 16 * widget.fontSizeScale,
+                    color: widget.theme.accent,
+                  ),
+                  label: Text(
+                    'Retry',
+                    style: TextStyle(
+                      fontSize: 13 * widget.fontSizeScale,
+                      color: widget.theme.accent,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+              : ListView.builder(
+            itemCount: displayed.length,
+            itemBuilder: (_, i) {
+              final g = displayed[i];
+              return _ListItem(
+                label: g.generic_name,
+                isSelected: widget.selectedGenericId == g.generic_id.toString(),
+                color: AppTheme.accentAmber,
+                onTap: () => widget.onTap(g),
+                theme: widget.theme,
+                fontSizeScale: widget.fontSizeScale,
+              );
+            },
+          ),
+        ),
       ],
     );
   }
 }
 
-class _GenericRowItem extends StatefulWidget {
+// ══════════════════════════════════════════════════════════════════════════════
+// Panel 4 — Brand list + Brand Detail
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _BrandsPanel extends StatefulWidget {
   final GenericDetailsModel generic;
-  final bool isSelected;
-  final VoidCallback onTap;
-  const _GenericRowItem(
-      {required this.generic, required this.isSelected, required this.onTap});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _BrandsPanel({
+    required this.generic,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
-  State<_GenericRowItem> createState() => _GenericRowItemState();
+  State<_BrandsPanel> createState() => _BrandsPanelState();
 }
 
-class _GenericRowItemState extends State<_GenericRowItem> {
-  bool _hover = false;
+class _BrandsPanelState extends State<_BrandsPanel> {
+  final TextEditingController _search = TextEditingController();
+  String _q = '';
+  String? _filterCompanyId;
+  DrugBrandModel? _selectedBrand;
+
+  @override
+  void initState() {
+    super.initState();
+    print('🔍 PANEL 4 init - generic: ${widget.generic.generic_id} - ${widget.generic.generic_name}');
+  }
+
+  @override
+  void didUpdateWidget(_BrandsPanel old) {
+    super.didUpdateWidget(old);
+    if (old.generic.generic_id?.toString() != widget.generic.generic_id?.toString()) {
+      print('🔍 PANEL 4 - generic changed from ${old.generic.generic_id} to ${widget.generic.generic_id}');
+      setState(() {
+        _selectedBrand = null;
+        _filterCompanyId = null;
+        _q = '';
+        _search.clear();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final brandCtrl = Get.put(DrugBrandCtrl());
+    final companyCtrl = Get.put(CompanyCtrl());
+    final themeCtrl = Get.put(ThemeCtrl());
+
+    return Obx(() {
+      print('🔍 PANEL 4 building for generic: ${widget.generic.generic_id} - ${widget.generic.generic_name}');
+
+      final allBrands = brandCtrl.getBrandsByGeneric(widget.generic.generic_id);
+      print('  → getBrandsByGeneric returned ${allBrands.length} brands');
+
+      final companyIds = allBrands
+          .map((b) => b.company_id.toString())
+          .toSet()
+          .toList()
+        ..sort();
+
+      if (_filterCompanyId != null && !companyIds.contains(_filterCompanyId)) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) setState(() => _filterCompanyId = null);
+        });
+      }
+
+      var displayed = allBrands;
+      if (_q.isNotEmpty) {
+        displayed = displayed
+            .where((b) =>
+        b.brand_name.toLowerCase().contains(_q) ||
+            (b.strength?.toLowerCase().contains(_q) ?? false) ||
+            (b.form?.toLowerCase().contains(_q) ?? false))
+            .toList();
+      }
+      if (_filterCompanyId != null) {
+        displayed = displayed
+            .where((b) => b.company_id.toString() == _filterCompanyId)
+            .toList();
+      }
+
+      return Container(
+        color: widget.theme.bg,
+        child: Row(
+          children: [
+            // Brand list sidebar
+            Container(
+              width: 300,
+              color: widget.theme.surface,
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14 * widget.fontSizeScale,
+                      vertical: 12 * widget.fontSizeScale,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: widget.theme.divider)),
+                    ),
+                    child: Row(children: [
+                      Icon(
+                        Icons.local_pharmacy_outlined,
+                        size: 14 * widget.fontSizeScale,
+                        color: AppTheme.accentAmber,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          widget.generic.generic_name,
+                          style: TextStyle(
+                            fontSize: 14 * widget.fontSizeScale,
+                            fontWeight: FontWeight.w600,
+                            color: widget.theme.textPrimary,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ]),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10 * widget.fontSizeScale),
+                    child: Column(children: [
+                      SearchInput(
+                        controller: _search,
+                        hint: 'Search brands...',
+                        onChanged: (q) => setState(() => _q = q.toLowerCase().trim()),
+                        fontSizeScale: widget.fontSizeScale,
+                        accentColor: widget.theme.accent,
+                      ),
+                      SizedBox(height: 8 * widget.fontSizeScale),
+                      if (companyIds.isNotEmpty)
+                        _CompanyDropdown(
+                          companyIds: companyIds,
+                          selectedId: _filterCompanyId,
+                          onChanged: (id) => setState(() => _filterCompanyId = id),
+                          theme: widget.theme,
+                          fontSizeScale: widget.fontSizeScale,
+                        ),
+                    ]),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14 * widget.fontSizeScale,
+                      vertical: 2 * widget.fontSizeScale,
+                    ),
+                    child: Row(children: [
+                      Text(
+                        '${displayed.length} / ${allBrands.length} brands',
+                        style: TextStyle(
+                          fontSize: 11 * widget.fontSizeScale,
+                          fontWeight: FontWeight.w600,
+                          color: widget.theme.textSecondary,
+                          letterSpacing: 0.8,
+                        ),
+                      ),
+                      const Spacer(),
+                      if (_filterCompanyId != null || _q.isNotEmpty)
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _filterCompanyId = null;
+                                _q = '';
+                                _search.clear();
+                              });
+                            },
+                            child: Text(
+                              'Clear',
+                              style: TextStyle(
+                                fontSize: 11 * widget.fontSizeScale,
+                                fontWeight: FontWeight.w600,
+                                color: widget.theme.accent,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
+                          ),
+                        ),
+                    ]),
+                  ),
+                  Expanded(
+                    child: displayed.isEmpty
+                        ? Center(
+                      child: Text(
+                        'No brands found',
+                        style: TextStyle(
+                          fontSize: 13 * widget.fontSizeScale,
+                          color: widget.theme.textMuted,
+                        ),
+                      ),
+                    )
+                        : ListView.builder(
+                      itemCount: displayed.length,
+                      itemBuilder: (_, i) {
+                        final b = displayed[i];
+                        final co = companyCtrl.getCompanyById(b.company_id);
+                        return _BrandListItem(
+                          brand: b,
+                          companyName: co?.company_name,
+                          isSelected: _selectedBrand?.brand_id == b.brand_id,
+                          onTap: () => setState(() => _selectedBrand = b),
+                          theme: widget.theme,
+                          fontSizeScale: widget.fontSizeScale,
+                          showPrice: themeCtrl.showPriceInList.value,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Brand detail
+            Expanded(
+              child: _selectedBrand != null
+                  ? BrandDetailView(
+                brand: _selectedBrand!,
+                onBrandSwitch: (b) => setState(() => _selectedBrand = b),
+                accentColor: widget.theme.accent,
+                fontSizeScale: widget.fontSizeScale,
+              )
+                  : _EmptyHint(
+                icon: Icons.local_pharmacy_outlined,
+                message: 'Select a brand to view details',
+                theme: widget.theme,
+                fontSizeScale: widget.fontSizeScale,
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Brand List Item
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _BrandListItem extends StatefulWidget {
+  final DrugBrandModel brand;
+  final String? companyName;
+  final bool isSelected;
+  final VoidCallback onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+  final bool showPrice;
+
+  const _BrandListItem({
+    required this.brand,
+    this.companyName,
+    required this.isSelected,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+    required this.showPrice,
+  });
+
+  @override
+  State<_BrandListItem> createState() => _BrandListItemState();
+}
+
+class _BrandListItemState extends State<_BrandListItem> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final b = widget.brand;
+
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => _hover = true),
@@ -442,257 +1228,85 @@ class _GenericRowItemState extends State<_GenericRowItem> {
         onTap: widget.onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 120),
-          color: widget.isSelected
-              ? AppTheme.accentGreen.withOpacity(0.1)
-              : _hover ? AppTheme.surfaceHighlight : Colors.transparent,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Row(
-            children: [
-              Container(
-                width: 6,
-                height: 6,
-                decoration: BoxDecoration(
-                  color: widget.isSelected ? AppTheme.accentGreen : AppTheme.textMuted,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  widget.generic.generic_name,
-                  style: AppTheme.bodySecondary.copyWith(
-                    color: widget.isSelected
-                        ? AppTheme.accentGreen
-                        : AppTheme.textSecondary,
-                    fontWeight:
-                        widget.isSelected ? FontWeight.w500 : FontWeight.w400,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ─── Brands panel ─────────────────────────────────────────────────────────────
-
-class _BrandsForGenericPanel extends StatefulWidget {
-  final GenericDetailsModel generic;
-  const _BrandsForGenericPanel({required this.generic});
-  @override
-  State<_BrandsForGenericPanel> createState() => _BrandsForGenericPanelState();
-}
-
-class _BrandsForGenericPanelState extends State<_BrandsForGenericPanel> {
-  final TextEditingController _searchCtrl = TextEditingController();
-  String _searchQuery = '';
-  String? _filterCompanyId;
-  DrugBrandModel? _selectedBrand;
-
-  @override
-  void didUpdateWidget(_BrandsForGenericPanel old) {
-    super.didUpdateWidget(old);
-    if (old.generic.generic_id != widget.generic.generic_id) {
-      _selectedBrand = null;
-      _filterCompanyId = null;
-      _searchQuery = '';
-      _searchCtrl.clear();
-    }
-  }
-
-  @override
-  void dispose() {
-    _searchCtrl.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final brandCtrl = Get.find<DrugBrandCtrl>();
-    final companyCtrl = Get.find<CompanyCtrl>();
-
-    // KEY FIX: compare as String to avoid type mismatch
-    final allBrands = brandCtrl.drugBrandList
-        .where((b) => b.generic_id.toString() == widget.generic.generic_id.toString())
-        .toList();
-
-    var displayed = allBrands;
-    if (_searchQuery.isNotEmpty) {
-      displayed = displayed
-          .where((b) =>
-              b.brand_name.toLowerCase().contains(_searchQuery) ||
-              (b.strength?.toLowerCase().contains(_searchQuery) ?? false) ||
-              (b.form?.toLowerCase().contains(_searchQuery) ?? false))
-          .toList();
-    }
-    if (_filterCompanyId != null) {
-      displayed = displayed.where((b) => b.company_id == _filterCompanyId).toList();
-    }
-
-    final companyIds = allBrands.map((b) => b.company_id).toSet().toList();
-
-    // Safety reset
-    if (_filterCompanyId != null && !companyIds.contains(_filterCompanyId)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) setState(() => _filterCompanyId = null);
-      });
-    }
-
-    return Container(
-      color: AppTheme.bgDark,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-            decoration: const BoxDecoration(
-              color: AppTheme.surface,
-              border: Border(bottom: BorderSide(color: AppTheme.divider)),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.science_outlined, size: 16, color: AppTheme.accentGreen),
-                const SizedBox(width: 8),
-                Expanded(
-                    child: Text(widget.generic.generic_name,
-                        style: AppTheme.headingSmall)),
-                Text('${displayed.length} brands', style: AppTheme.label),
-              ],
-            ),
-          ),
-          // Search + filter
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              children: [
-                Expanded(
-                  child: SearchInput(
-                    controller: _searchCtrl,
-                    hint: 'Search brands...',
-                    onChanged: (q) =>
-                        setState(() => _searchQuery = q.toLowerCase().trim()),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                SizedBox(
-                  width: 200,
-                  child: _SafeCompanyDropdown(
-                    companyIds: companyIds,
-                    selectedId: _filterCompanyId,
-                    onChanged: (id) => setState(() => _filterCompanyId = id),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // Brand cards + detail split view
-          Expanded(
-            child: Row(
-              children: [
-                // Brand list
-                SizedBox(
-                  width: 300,
-                  child: displayed.isEmpty
-                      ? const Center(
-                          child: Text('No brands found',
-                              style: TextStyle(
-                                  color: AppTheme.textMuted, fontSize: 12)))
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          itemCount: displayed.length,
-                          itemBuilder: (_, i) {
-                            final b = displayed[i];
-                            final company = companyCtrl.getCompanyById(b.company_id);
-                            return _BrandCard(
-                              brand: b,
-                              companyName: company?.company_name,
-                              isSelected: _selectedBrand?.brand_id == b.brand_id,
-                              onTap: () => setState(() => _selectedBrand = b),
-                            );
-                          },
-                        ),
-                ),
-                // Detail view
-                Expanded(
-                  child: _selectedBrand != null
-                      ? BrandDetailView(brand: _selectedBrand!)
-                      : const _EmptyHint(
-                          icon: Icons.local_pharmacy_outlined,
-                          message: 'Select a brand to view details',
-                        ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _BrandCard extends StatefulWidget {
-  final DrugBrandModel brand;
-  final String? companyName;
-  final bool isSelected;
-  final VoidCallback onTap;
-  const _BrandCard(
-      {required this.brand, this.companyName, required this.isSelected, required this.onTap});
-  @override
-  State<_BrandCard> createState() => _BrandCardState();
-}
-
-class _BrandCardState extends State<_BrandCard> {
-  bool _hover = false;
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hover = true),
-      onExit: (_) => setState(() => _hover = false),
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 120),
-          margin: const EdgeInsets.only(bottom: 6),
           decoration: BoxDecoration(
             color: widget.isSelected
-                ? AppTheme.accent.withOpacity(0.1)
-                : _hover ? AppTheme.surfaceHighlight : AppTheme.surface,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: widget.isSelected
-                  ? AppTheme.accent.withOpacity(0.5)
-                  : AppTheme.divider,
+                ? widget.theme.accent.withOpacity(0.12)
+                : _hover ? widget.theme.surfaceHighlight : Colors.transparent,
+            border: Border(
+              bottom: BorderSide(color: widget.theme.divider.withOpacity(0.4)),
+              left: BorderSide(
+                  color: widget.isSelected ? widget.theme.accent : Colors.transparent,
+                  width: 3),
             ),
           ),
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          padding: EdgeInsets.symmetric(
+            horizontal: 14 * widget.fontSizeScale,
+            vertical: 10 * widget.fontSizeScale,
+          ),
+          child: Row(
             children: [
-              Text(widget.brand.brand_name,
-                  style: AppTheme.bodyPrimary.copyWith(fontWeight: FontWeight.w600)),
-              const SizedBox(height: 4),
-              Row(children: [
-                if (widget.brand.strength != null) ...[
-                  _MiniChip(widget.brand.strength!, AppTheme.accent),
-                  const SizedBox(width: 6),
-                ],
-                if (widget.brand.form != null)
-                  _MiniChip(widget.brand.form!, AppTheme.accentGreen),
-                const Spacer(),
-                if (widget.brand.price != null)
-                  Text('৳${widget.brand.price}',
-                      style: AppTheme.bodySecondary.copyWith(fontSize: 11)),
-              ]),
-              if (widget.companyName != null) ...[
-                const SizedBox(height: 3),
-                Text(widget.companyName!,
-                    style: AppTheme.bodySecondary.copyWith(fontSize: 10),
-                    overflow: TextOverflow.ellipsis),
-              ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      b.brand_name,
+                      style: TextStyle(
+                        fontSize: 13 * widget.fontSizeScale,
+                        fontWeight: FontWeight.w600,
+                        color: widget.theme.textPrimary,
+                      ),
+                    ),
+                    SizedBox(height: 4 * widget.fontSizeScale),
+                    Wrap(spacing: 5, runSpacing: 4, children: [
+                      if (b.strength != null && b.strength!.isNotEmpty)
+                        _MiniChip(
+                          b.strength!,
+                          widget.theme.accent,
+                          fontSizeScale: widget.fontSizeScale,
+                        ),
+                      if (b.form != null && b.form!.isNotEmpty)
+                        _MiniChip(
+                          b.form!,
+                          AppTheme.accentGreen,
+                          fontSizeScale: widget.fontSizeScale,
+                        ),
+                    ]),
+                    if (widget.companyName != null && widget.companyName!.isNotEmpty) ...[
+                      SizedBox(height: 3 * widget.fontSizeScale),
+                      Text(
+                        widget.companyName!,
+                        style: TextStyle(
+                          fontSize: 11 * widget.fontSizeScale,
+                          color: widget.theme.textSecondary,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              if (b.price != null && widget.showPrice)
+                Container(
+                  margin: EdgeInsets.only(left: 8 * widget.fontSizeScale),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 7 * widget.fontSizeScale,
+                    vertical: 3 * widget.fontSizeScale,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppTheme.accentGreen.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(6 * widget.fontSizeScale),
+                    border: Border.all(color: AppTheme.accentGreen.withOpacity(0.3)),
+                  ),
+                  child: Text(
+                    '৳${b.price}',
+                    style: TextStyle(
+                      fontSize: 11 * widget.fontSizeScale,
+                      fontWeight: FontWeight.w700,
+                      color: AppTheme.accentGreen,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
@@ -701,77 +1315,85 @@ class _BrandCardState extends State<_BrandCard> {
   }
 }
 
-class _MiniChip extends StatelessWidget {
-  final String label;
-  final Color color;
-  const _MiniChip(this.label, this.color);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Text(label, style: AppTheme.chip.copyWith(color: color, fontSize: 10)),
-    );
-  }
-}
+// ══════════════════════════════════════════════════════════════════════════════
+// Company Dropdown
+// ══════════════════════════════════════════════════════════════════════════════
 
-// ─── Safe Company Dropdown ────────────────────────────────────────────────────
-
-class _SafeCompanyDropdown extends StatelessWidget {
-  final List<int> companyIds;
+class _CompanyDropdown extends StatelessWidget {
+  final List<String> companyIds;
   final String? selectedId;
   final Function(String?) onChanged;
-  const _SafeCompanyDropdown(
-      {required this.companyIds, this.selectedId, required this.onChanged});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _CompanyDropdown({
+    required this.companyIds,
+    this.selectedId,
+    required this.onChanged,
+    required this.theme,
+    required this.fontSizeScale,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final companyCtrl = Get.find<CompanyCtrl>();
-    final safeSelected =
-        (selectedId != null && companyIds.contains(selectedId)) ? selectedId : null;
+    final ctrl = Get.put(CompanyCtrl());
+    final safe = (selectedId != null && companyIds.contains(selectedId)) ? selectedId : null;
 
     return Container(
-      height: 38,
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      height: 36 * fontSizeScale,
+      padding: EdgeInsets.symmetric(horizontal: 10 * fontSizeScale),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppTheme.divider),
+        color: theme.bg,
+        borderRadius: BorderRadius.circular(8 * fontSizeScale),
+        border: Border.all(color: theme.divider),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String?>(
-          value: selectedId,
+          value: safe,
           hint: Text(
-            'Company',
-            style: AppTheme.bodySecondary.copyWith(fontSize: 12),
+            'All Companies',
+            style: TextStyle(
+              fontSize: 12 * fontSizeScale,
+              color: theme.textSecondary,
+            ),
           ),
           isExpanded: true,
-          dropdownColor: AppTheme.surfaceElevated,
-          icon: const Icon(
+          dropdownColor: theme.surfaceElevated,
+          icon: Icon(
             Icons.keyboard_arrow_down_rounded,
-            size: 16,
-            color: AppTheme.textSecondary,
+            size: 14 * fontSizeScale,
+            color: theme.textSecondary,
           ),
-          style: AppTheme.bodyPrimary.copyWith(fontSize: 12),
+          style: TextStyle(
+            fontSize: 12 * fontSizeScale,
+            color: theme.textPrimary,
+          ),
           items: [
-            const DropdownMenuItem<String?>(
+            DropdownMenuItem<String?>(
               value: null,
-              child: Text('All Companies'),
+              child: Text(
+                'All Companies',
+                style: TextStyle(
+                  fontSize: 12 * fontSizeScale,
+                  color: theme.textPrimary,
+                ),
+              ),
             ),
             ...companyIds.map((id) {
-              final c = companyCtrl.getCompanyById(id);
-
+              final c = ctrl.getCompanyById(int.tryParse(id) ?? 0);
+              final companyName = c?.company_name ?? 'Company $id';
               return DropdownMenuItem<String?>(
-                value: id.toString(), // ✅ convert int to String
+                value: id,
                 child: Text(
-                  c?.company_name ?? id.toString(), // ✅ safe null handling
+                  companyName,
+                  style: TextStyle(
+                    fontSize: 12 * fontSizeScale,
+                    color: theme.textPrimary,
+                  ),
                   overflow: TextOverflow.ellipsis,
                 ),
               );
-            }).toList(),
+            }),
           ],
           onChanged: onChanged,
         ),
@@ -780,43 +1402,206 @@ class _SafeCompanyDropdown extends StatelessWidget {
   }
 }
 
-// ─── Shared helpers ───────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════════
+// Shared List Item (for panels 2 & 3)
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _ListItem extends StatefulWidget {
+  final String label;
+  final bool isSelected;
+  final Color color;
+  final VoidCallback onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _ListItem({
+    required this.label,
+    required this.isSelected,
+    required this.color,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
+  @override
+  State<_ListItem> createState() => _ListItemState();
+}
+
+class _ListItemState extends State<_ListItem> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _hover = true),
+      onExit: (_) => setState(() => _hover = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 120),
+          decoration: BoxDecoration(
+            color: widget.isSelected
+                ? widget.color.withOpacity(0.1)
+                : _hover ? widget.theme.surfaceHighlight : Colors.transparent,
+            border: Border(
+              bottom: BorderSide(color: widget.theme.divider.withOpacity(0.4)),
+              left: BorderSide(
+                  color: widget.isSelected ? widget.color : Colors.transparent,
+                  width: 3),
+            ),
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 14 * widget.fontSizeScale,
+            vertical: 10 * widget.fontSizeScale,
+          ),
+          child: Row(children: [
+            Container(
+              width: 5 * widget.fontSizeScale,
+              height: 5 * widget.fontSizeScale,
+              decoration: BoxDecoration(
+                color: widget.isSelected ? widget.color : widget.theme.textMuted,
+                shape: BoxShape.circle,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                widget.label,
+                style: TextStyle(
+                  fontSize: 13 * widget.fontSizeScale,
+                  color: widget.isSelected ? widget.color : widget.theme.textSecondary,
+                  fontWeight: widget.isSelected ? FontWeight.w500 : FontWeight.w400,
+                ),
+              ),
+            ),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Mini Chip
+// ══════════════════════════════════════════════════════════════════════════════
+
+class _MiniChip extends StatelessWidget {
+  final String label;
+  final Color color;
+  final double fontSizeScale;
+
+  const _MiniChip(this.label, this.color, {required this.fontSizeScale});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 7 * fontSizeScale,
+        vertical: 2 * fontSizeScale,
+      ),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(5 * fontSizeScale),
+        border: Border.all(color: color.withOpacity(0.2)),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 11 * fontSizeScale,
+          fontWeight: FontWeight.w500,
+          color: color,
+        ),
+      ),
+    );
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Empty Hint
+// ══════════════════════════════════════════════════════════════════════════════
 
 class _EmptyHint extends StatelessWidget {
   final IconData icon;
   final String message;
-  const _EmptyHint({required this.icon, required this.message});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _EmptyHint({
+    required this.icon,
+    required this.message,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, color: AppTheme.textMuted, size: 44),
-          const SizedBox(height: 12),
-          Text(message,
-              style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+          Icon(
+            icon,
+            color: theme.textMuted,
+            size: 48 * fontSizeScale,
+          ),
+          SizedBox(height: 14 * fontSizeScale),
+          Text(
+            message,
+            style: TextStyle(
+              fontSize: 14 * fontSizeScale,
+              color: theme.textSecondary,
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
+// ══════════════════════════════════════════════════════════════════════════════
+// Panel Header
+// ══════════════════════════════════════════════════════════════════════════════
+
 class _PanelHeader extends StatelessWidget {
   final String title;
   final IconData icon;
-  const _PanelHeader({required this.title, required this.icon});
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+
+  const _PanelHeader({
+    required this.title,
+    required this.icon,
+    required this.theme,
+    required this.fontSizeScale,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: AppTheme.divider))),
+      padding: EdgeInsets.symmetric(
+        horizontal: 16 * fontSizeScale,
+        vertical: 14 * fontSizeScale,
+      ),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: theme.divider)),
+      ),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: AppTheme.accent),
+          Icon(
+            icon,
+            size: 16 * fontSizeScale,
+            color: theme.accent,
+          ),
           const SizedBox(width: 8),
-          Text(title, style: AppTheme.headingSmall),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 14 * fontSizeScale,
+              fontWeight: FontWeight.w600,
+              color: theme.textPrimary,
+            ),
+          ),
         ],
       ),
     );

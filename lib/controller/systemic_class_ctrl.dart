@@ -22,7 +22,7 @@ class SystemicClassCtrl extends GetxController {
   final sharedPref = SharedPref();
   final getApiCallCtrl = GetApiCallCtrl();
 
-  Future<void>getAllTherapeuticFromBox()async{
+  Future<void>getAllSystemicFromBox()async{
     try{
       systemicClassList..clear()..addAll(boxSystemicClass.values);
       print("systemicClassList.length");

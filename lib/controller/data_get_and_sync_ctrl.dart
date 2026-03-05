@@ -224,7 +224,7 @@ class DataGetAndSyncCtrl extends GetxController{
           }
         }
 
-        _systemicClassCtrl.getAllTherapeuticFromBox();
+        _systemicClassCtrl.getAllSystemicFromBox();
       }
     }catch(e){
       _logger.e(e);
@@ -260,6 +260,7 @@ class DataGetAndSyncCtrl extends GetxController{
       _ctrlIndication.getAllIndicationFromBox();
       _ctrlTherapeuticClass.getAllTherapeuticFromBox();
       _ctrlPregnancy.getAllPregnancyFromBox();
+      _systemicClassCtrl.getAllSystemicFromBox();
     }catch(e){
       _logger.e(e);
     }
@@ -296,7 +297,8 @@ class DataGetAndSyncCtrl extends GetxController{
     await _ctrlIndicationGenIndex.boxIndGenIndex.clear();
     await _systemicClassCtrl.boxSystemicClass.clear();
   }
-  Future initialCall() async {
+  Future initialCall()async {
+    print("not called");
     // await boxClear();
     // await insertFromJson();
     try{
@@ -309,6 +311,5 @@ class DataGetAndSyncCtrl extends GetxController{
   @override
   void onInit() {
     super.onInit();
-    initialCall();
   }
 }

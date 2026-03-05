@@ -31,7 +31,9 @@ class GenericCtrl extends GetxController {
 
       // Initialize filtered list with all generics
       filteredGenericList.value = genericList;
+      print("genericList.length");
       print(genericList.length);
+      print(boxGeneric.length);
     } catch(e) {
       _logger.e(e);
     } finally {
