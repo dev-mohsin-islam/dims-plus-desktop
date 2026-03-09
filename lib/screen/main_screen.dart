@@ -1,7 +1,10 @@
 import 'package:dims_desktop/screen/search_bar_widget.dart';
 import 'package:dims_desktop/screen/settings_screen.dart';
+import 'package:dims_desktop/screen/bookmark_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controller/auth_ctrl.dart';
+import '../controller/favourite_ctrl.dart';
 import '../controller/data_get_and_sync_ctrl.dart';
 import '../controller/drug_brand_ctrl.dart';
 import '../controller/generic_ctrl.dart';
@@ -74,6 +77,7 @@ class _MainScreenState extends State<MainScreen> {
               child: _currentBody ?? _WelcomeView(
                 theme: theme,
                 fontSizeScale: fontSizeScale,
+                onNavigate: _navigateTo,
               ),
             ),
           ],
@@ -128,15 +132,17 @@ class _TopAppBar extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      width: 32,
-                      height: 32,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [theme.accent, theme.accent.withOpacity(0.7)],
-                        ),
-                        borderRadius: BorderRadius.circular(8),
+                      width: 42,
+                      height: 42,
+                      // decoration: BoxDecoration(
+                      //   gradient: LinearGradient(
+                      //     colors: [theme.accent, theme.accent.withOpacity(0.7)],
+                      //   ),
+                      //   borderRadius: BorderRadius.circular(8),
+                      // ),
+                      child: Image.asset(
+                        'assets/images/dims_plus_logo.png',
                       ),
-                      child: const Icon(Icons.medication_rounded, color: Colors.white, size: 18),
                     ),
                     const SizedBox(width: 10),
                     Text(
@@ -284,6 +290,16 @@ class _TopAppBar extends StatelessWidget {
         ),
         actions: [
           TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Get.find<AuthCtrl>().logout();
+            },
+            child: Text(
+              'Logout',
+              style: TextStyle(color: AppTheme.accentRed, fontWeight: FontWeight.bold),
+            ),
+          ),
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Close',
@@ -311,7 +327,7 @@ class _MedicinesMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isActive = ['Generics', 'Brands', 'Companies'].contains(activeNav);
+    final isActive = ['Generics', 'Brands', 'Bookmarks', 'Companies'].contains(activeNav);
 
     return PopupMenuButton<String>(
       tooltip: '',
@@ -358,12 +374,14 @@ class _MedicinesMenu extends StatelessWidget {
       itemBuilder: (_) => [
         _menuItem(Icons.science_outlined, 'Generics', theme, fontSizeScale),
         _menuItem(Icons.local_pharmacy_outlined, 'Brands', theme, fontSizeScale),
+        _menuItem(Icons.bookmark_outline_rounded, 'Bookmarks', theme, fontSizeScale),
         _menuItem(Icons.business_outlined, 'Companies', theme, fontSizeScale),
       ],
       onSelected: (val) {
         switch (val) {
           case 'Generics':  onNavigate(const GenericsScreen(), 'Generics'); break;
           case 'Brands':    onNavigate(BrandsScreen(), 'Brands'); break;
+          case 'Bookmarks': onNavigate(const BookmarkScreen(), 'Bookmarks'); break;
           case 'Companies': onNavigate(const CompaniesScreen(), 'Companies'); break;
         }
       },
@@ -546,10 +564,12 @@ class _SearchBarArea extends StatelessWidget {
 class _WelcomeView extends StatelessWidget {
   final ThemeDefinition theme;
   final double fontSizeScale;
+  final Function(Widget, String) onNavigate;
 
   const _WelcomeView({
     required this.theme,
     required this.fontSizeScale,
+    required this.onNavigate,
   });
 
   @override
@@ -566,23 +586,21 @@ class _WelcomeView extends StatelessWidget {
             height: 80 * fontSizeScale,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.accent, theme.accent.withOpacity(0.7)],
+                colors: [theme.accent, theme.accent.withOpacity(0.2)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20 * fontSizeScale),
               boxShadow: [
                 BoxShadow(
-                  color: theme.accent.withOpacity(0.3),
+                  color: theme.accent.withOpacity(0.1),
                   blurRadius: 24,
                   spreadRadius: 4,
                 ),
               ],
             ),
-            child: Icon(
-              Icons.medication_rounded,
-              color: Colors.white,
-              size: 40 * fontSizeScale,
+            child: Image.asset(
+              'assets/images/dims_plus_logo.png',
             ),
           ),
           const SizedBox(height: 24),
@@ -606,7 +624,7 @@ class _WelcomeView extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           Obx(() {
-
+            final favCtrl = Get.put(FavouriteCtrl());
 
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -630,10 +648,20 @@ class _WelcomeView extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
                 _StatCard(
+                  Icons.bookmark_rounded,
+                  'Bookmarks',
+                  favCtrl.favourites.length.toString(),
+                  AppTheme.accentAmber,
+                  theme,
+                  fontSizeScale,
+                  onTap: () => onNavigate(const BookmarkScreen(), 'Bookmarks'),
+                ),
+                const SizedBox(width: 16),
+                _StatCard(
                   Icons.business_outlined,
                   'Companies',
                   companyCtrl.companyList.length.toString(),
-                  AppTheme.accentAmber,
+                  theme.textSecondary,
                   theme,
                   fontSizeScale,
                 ),
@@ -653,6 +681,7 @@ class _StatCard extends StatelessWidget {
   final Color color;
   final ThemeDefinition theme;
   final double fontSizeScale;
+  final VoidCallback? onTap;
 
   const _StatCard(
       this.icon,
@@ -660,40 +689,47 @@ class _StatCard extends StatelessWidget {
       this.count,
       this.color,
       this.theme,
-      this.fontSizeScale,
-      );
+      this.fontSizeScale, {
+        this.onTap,
+      });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 150 * fontSizeScale,
-      height: 100 * fontSizeScale,
-      decoration: BoxDecoration(
-        color: theme.surface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: theme.divider),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color, size: 26 * fontSizeScale),
-          const SizedBox(height: 8),
-          Text(
-            count,
-            style: TextStyle(
-              fontSize: 18 * fontSizeScale,
-              fontWeight: FontWeight.w700,
-              color: color,
-            ),
+    return MouseRegion(
+      cursor: onTap != null ? SystemMouseCursors.click : SystemMouseCursors.basic,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: 150 * fontSizeScale,
+          height: 100 * fontSizeScale,
+          decoration: BoxDecoration(
+            color: theme.surface,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: theme.divider),
           ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 11 * fontSizeScale,
-              color: theme.textSecondary,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, color: color, size: 26 * fontSizeScale),
+              const SizedBox(height: 8),
+              Text(
+                count,
+                style: TextStyle(
+                  fontSize: 18 * fontSizeScale,
+                  fontWeight: FontWeight.w700,
+                  color: color,
+                ),
+              ),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 11 * fontSizeScale,
+                  color: theme.textSecondary,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

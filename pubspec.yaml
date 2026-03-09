@@ -99,6 +99,18 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
 
+msix_config:
+  display_name: DIMS Plus
+  publisher_display_name: ITmedicus
+  identity_name: ITmedicus.DIMSPlus
+  msix_version: 1.0.0.0
+#  logo_path: ./assets/images/navana_icon.png
+  certificate_path: ./assets/certs\dimsPlus.pfx
+  publisher: "CN=DE46CFD4-5F86-484A-A4D4-0A7C261D1501"
+  #  publisher_url: "https://itmedicus.com/navana/downloads/1.1/navana_rx_desktop_final_version.msix"
+  certificate_password: itmedicus
+  store: true
+  publisher_id: 98af85af-9dd3-44fd-9e69-dd28a4aeefb3
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -111,6 +123,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/db/
+    - assets/images/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

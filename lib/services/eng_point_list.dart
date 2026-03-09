@@ -11,4 +11,6 @@ abstract class EngPoint{
   static const String PregnancyCategory = 'pregnancy';
   static const String SystemicClass = 'system';
   static const String Getkey = 'getkey';
+  static const String Registration = 'registration';
+  static const String Login = 'registration/skip';
 }

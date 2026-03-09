@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/generic_ctrl.dart';
 import '../../controller/theme_ctrl.dart';
+import '../../controller/favourite_ctrl.dart';
 import '../../models/generic/generic_details_model.dart';
 import 'app_theme.dart';
 import 'brand_detail_screen.dart';
@@ -166,18 +167,43 @@ class _GenericsScreenState extends State<GenericsScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            generic.generic_name,
-                            style: TextStyle(
-                              fontSize: 24 * fontSizeScale,
-                              fontWeight: FontWeight.w700,
-                              color: theme.textPrimary,
-                              letterSpacing: -0.5,
-                            ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  generic.generic_name,
+                                  style: TextStyle(
+                                    fontSize: 24 * fontSizeScale,
+                                    fontWeight: FontWeight.w700,
+                                    color: theme.textPrimary,
+                                    letterSpacing: -0.5,
+                                  ),
+                                ),
+                              ),
+                              // Bookmark Button
+                              GetBuilder<FavouriteCtrl>(
+                                init: Get.put(FavouriteCtrl()),
+                                builder: (favCtrl) {
+                                  final isFav = favCtrl.isFavourite(generic.generic_id, 'generic');
+                                  return IconButton(
+                                    onPressed: () => favCtrl.toggleFavourite(generic.generic_id, 'generic'),
+                                    icon: Icon(
+                                      isFav ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded,
+                                      color: isFav ? AppTheme.accentAmber : theme.textMuted,
+                                      size: 24 * fontSizeScale,
+                                    ),
+                                    padding: EdgeInsets.zero,
+                                    constraints: const BoxConstraints(),
+                                    tooltip: isFav ? 'Remove from Bookmarks' : 'Add to Bookmarks',
+                                  );
+                                },
+                              ),
+                            ],
                           ),
                           if (generic.pregnancy_category_id != null)
                             Padding(
-                              padding: const EdgeInsets.only(top: 4),
+                              padding: const EdgeInsets.only(top: 8),
                               child: _PregnancyBadge(
                                 categoryId: generic.pregnancy_category_id!,
                                 theme: theme,

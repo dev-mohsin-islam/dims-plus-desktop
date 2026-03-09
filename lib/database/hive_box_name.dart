@@ -9,4 +9,5 @@ abstract class BoxName{
   static const String Indication = 'Indication';
   static const String PregnancyCategory = 'PregnancyCategory';
   static const String SystemicClass = 'SystemicClass';
+  static const String Favourite = 'favourite_box';
 }

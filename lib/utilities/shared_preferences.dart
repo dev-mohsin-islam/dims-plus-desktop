@@ -12,8 +12,31 @@ class SharedPref{
   final String therapeuticPref = 'therapeuticPref';
   final String therapeuticGenIndPref = 'therapeuticGenIndPref';
   final String pregnancyPref = 'pregnancyPref';
+  final String loginStatusPref = 'isLoggedIn';
+  final String userPhonePref = 'userPhone';
 
-  Future<void>storeLastSyncDateString(String key, String date)async{
+  Future<void> setLoginStatus(bool status) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(loginStatusPref, status);
+  }
+
+  Future<bool> getLoginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(loginStatusPref) ?? false;
+  }
+
+  Future<void> setUserPhone(String phone) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString(userPhonePref, phone);
+  }
+
+  Future<String?> getUserPhone() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(userPhonePref);
+  }
+
+  Future<void> storeLastSyncDateString(String key, String date)async{
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(key, date);
   }

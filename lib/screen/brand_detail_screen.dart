@@ -6,6 +6,7 @@ import '../../controller/company_ctrl.dart';
 import '../../controller/generic_ctrl.dart';
 import '../../controller/pregnancy_cat_ctrl.dart';
 import '../../controller/theme_ctrl.dart';
+import '../../controller/favourite_ctrl.dart';
 import '../../models/brand/drug_brand_model.dart';
 import '../../models/generic/generic_details_model.dart';
 import 'app_theme.dart';
@@ -152,14 +153,36 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              _current.brand_name,
-                              style: TextStyle(
-                                fontSize: 24 * _fontSizeScale,
-                                fontWeight: FontWeight.w700,
-                                color: _theme.textPrimary,
-                                letterSpacing: -0.5,
-                              ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    _current.brand_name,
+                                    style: TextStyle(
+                                      fontSize: 24 * _fontSizeScale,
+                                      fontWeight: FontWeight.w700,
+                                      color: _theme.textPrimary,
+                                      letterSpacing: -0.5,
+                                    ),
+                                  ),
+                                ),
+                                // Bookmark Button
+                                GetBuilder<FavouriteCtrl>(
+                                  init: Get.put(FavouriteCtrl()),
+                                  builder: (favCtrl) {
+                                    final isFav = favCtrl.isFavourite(_current.brand_id, 'brand');
+                                    return IconButton(
+                                      onPressed: () => favCtrl.toggleFavourite(_current.brand_id, 'brand'),
+                                      icon: Icon(
+                                        isFav ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded,
+                                        color: isFav ? AppTheme.accentAmber : _theme.textMuted,
+                                        size: 24 * _fontSizeScale,
+                                      ),
+                                      tooltip: isFav ? 'Remove from Bookmarks' : 'Add to Bookmarks',
+                                    );
+                                  },
+                                ),
+                              ],
                             ),
                             SizedBox(height: 8 * _fontSizeScale),
                             Wrap(spacing: 8, runSpacing: 6, children: [

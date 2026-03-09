@@ -10,6 +10,7 @@ import '../models/pregnancy_category/pregnancy_category_model.dart';
 import '../models/systemic_class/systemic_class_model.dart';
 import '../models/therapeutic__generic_index/therapeutic_class_generic_index_model.dart';
 import '../models/therapeutic_class/therapeutic_class_model.dart';
+import '../models/favourite/favourite_model.dart';
 
 class AdapterRegister {
   Future<void> registerAdapters() async {
@@ -23,6 +24,7 @@ class AdapterRegister {
       _safeRegister(SystemicClassModelAdapter(), 6);
       _safeRegister(TherapeuticClassGenericIndexModelAdapter(), 7);
       _safeRegister(TherapeuticClassModelAdapter(), 8);
+      _safeRegister(FavouriteModelAdapter(), 10);
     } catch (e, stack) {
       if (kDebugMode) {
         print("❌ Adapter registration failed: $e");

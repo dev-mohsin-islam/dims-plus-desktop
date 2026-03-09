@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'controller/theme_ctrl.dart';
+import 'controller/auth_ctrl.dart';
+import 'screen/login_screen.dart';
 import 'screen/main_screen.dart';
 import 'screen/app_theme.dart';
 
@@ -40,11 +42,12 @@ class DimsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize ThemeCtrl before app starts
+    // Initialize Controllers before app starts
     Get.put(ThemeCtrl());
+    Get.put(AuthCtrl());
 
     return Obx(() {
-      final themeCtrl = Get.put(ThemeCtrl());
+      final themeCtrl = Get.find<ThemeCtrl>();
       final theme = themeCtrl.currentTheme;
 
       return GetMaterialApp(
@@ -70,41 +73,6 @@ class DimsApp extends StatelessWidget {
             thickness: WidgetStateProperty.all(4),
             radius: const Radius.circular(4),
           ),
-          textTheme: TextTheme(
-            displayLarge: TextStyle(
-              fontSize: 24 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w700,
-              color: theme.textPrimary,
-              letterSpacing: -0.5,
-            ),
-            displayMedium: TextStyle(
-              fontSize: 18 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w700,
-              color: theme.textPrimary,
-              letterSpacing: -0.3,
-            ),
-            displaySmall: TextStyle(
-              fontSize: 14 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w600,
-              color: theme.textPrimary,
-            ),
-            bodyLarge: TextStyle(
-              fontSize: 13 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w400,
-              color: theme.textPrimary,
-            ),
-            bodyMedium: TextStyle(
-              fontSize: 13 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w400,
-              color: theme.textSecondary,
-            ),
-            labelSmall: TextStyle(
-              fontSize: 11 * themeCtrl.fontSizeScale,
-              fontWeight: FontWeight.w600,
-              color: theme.textSecondary,
-              letterSpacing: 0.8,
-            ),
-          ),
         ),
         home: const _AppRoot(),
       );
@@ -117,6 +85,9 @@ class _AppRoot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MainScreen();
+    final authCtrl = Get.find<AuthCtrl>();
+    return Obx(() => authCtrl.isLoggedIn.value 
+        ? const MainScreen() 
+        : const LoginScreen());
   }
 }

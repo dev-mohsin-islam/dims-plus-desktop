@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app_theme.dart';
 import '../controller/theme_ctrl.dart';
+import 'about_screen.dart';
+import 'ai_demo_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -110,24 +112,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   'Appearance',
                   true,
                   theme: theme,
+                  onTap: () {}, // Already on appearance
                 ),
                 _SideItem(
                   Icons.text_fields_rounded,
                   'Display',
                   false,
                   theme: theme,
+                  onTap: () {},
                 ),
                 _SideItem(
                   Icons.sync_rounded,
                   'Sync',
                   false,
                   theme: theme,
+                  onTap: () {},
+                ),
+                _SideItem(
+                  Icons.auto_awesome_rounded,
+                  'AI Features',
+                  false,
+                  theme: theme,
+                  onTap: () => Get.to(() => const AiDemoScreen()),
                 ),
                 _SideItem(
                   Icons.info_outline_rounded,
                   'About',
                   false,
                   theme: theme,
+                  onTap: () => Get.to(() => const AboutScreen()),
                 ),
               ],
             ),
@@ -275,6 +288,73 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   _SectionHeader('Display', theme: theme),
                   const SizedBox(height: 16),
 
+                  // AI Promo Card
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [theme.accent, theme.accent.withOpacity(0.7)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 20),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'AI Clinical Assistant',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: const Text('BETA', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                              const Text(
+                                'Experience the future of drug indices with AI-powered interaction checks, clinical smart search, and patient guide generation.',
+                                style: TextStyle(color: Colors.white, fontSize: 13, height: 1.4),
+                              ),
+                              const SizedBox(height: 20),
+                              ElevatedButton(
+                                onPressed: () => Get.to(() => const AiDemoScreen()),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: theme.accent,
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                ),
+                                child: const Text('Explore AI Features', style: TextStyle(fontWeight: FontWeight.bold)),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 40),
+                        Icon(Icons.psychology_rounded, size: 80, color: Colors.white.withOpacity(0.2)),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 24),
+
                   // Font size
                   Text('Font Size', style: TextStyle(
                     fontSize: 14,
@@ -393,6 +473,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         _AboutRow('Build', 'Flutter Desktop', theme: theme),
                         _AboutRow('Database', 'Hive (Local)', theme: theme),
                         _AboutRow('State Management', 'GetX', theme: theme),
+                        const SizedBox(height: 16),
+                        OutlinedButton(
+                          onPressed: () => Get.to(() => const AboutScreen()),
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(color: theme.accent),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          child: Text(
+                            'View More Details',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: theme.accent,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -465,43 +563,51 @@ class _SideItem extends StatelessWidget {
   final String label;
   final bool isActive;
   final ThemeDefinition theme;
+  final VoidCallback onTap;
 
   const _SideItem(
       this.icon,
       this.label,
       this.isActive, {
         required this.theme,
+        required this.onTap,
       });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        color: isActive ? theme.accent.withOpacity(0.1) : Colors.transparent,
-        border: Border(
-          left: BorderSide(
-            color: isActive ? theme.accent : Colors.transparent,
-            width: 3,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          decoration: BoxDecoration(
+            color: isActive ? theme.accent.withOpacity(0.1) : Colors.transparent,
+            border: Border(
+              left: BorderSide(
+                color: isActive ? theme.accent : Colors.transparent,
+                width: 3,
+              ),
+            ),
           ),
+          child: Row(children: [
+            Icon(
+              icon,
+              size: 15,
+              color: isActive ? theme.accent : theme.textSecondary,
+            ),
+            const SizedBox(width: 10),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                color: isActive ? theme.accent : theme.textSecondary,
+                fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+              ),
+            ),
+          ]),
         ),
       ),
-      child: Row(children: [
-        Icon(
-          icon,
-          size: 15,
-          color: isActive ? theme.accent : theme.textSecondary,
-        ),
-        const SizedBox(width: 10),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            color: isActive ? theme.accent : theme.textSecondary,
-            fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-          ),
-        ),
-      ]),
     );
   }
 }
