@@ -9,7 +9,7 @@ class ThemeCtrl extends GetxController {
   var selectedFontSize = 'Medium'.obs;
   var showStrengthInSearch = true.obs;
   var showPriceInList = true.obs;
-  var expandGenericByDefault = false.obs;
+  var expandGenericByDefault = true.obs;
 
   // SharedPreferences keys
   static const String _themeKey = 'selected_theme';
@@ -38,7 +38,7 @@ class ThemeCtrl extends GetxController {
       // Load boolean settings
       showStrengthInSearch.value = prefs.getBool(_strengthKey) ?? true;
       showPriceInList.value = prefs.getBool(_priceKey) ?? true;
-      expandGenericByDefault.value = prefs.getBool(_expandKey) ?? false;
+      expandGenericByDefault.value = prefs.getBool(_expandKey) ?? true;
 
       print('✅ Settings loaded from SharedPreferences');
     } catch (e) {

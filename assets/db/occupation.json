@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Doctor"
+    },
+    {
+        "id": 2,
+        "name": "Pharmaceutical professional"
+    },
+    {
+        "id": 3,
+        "name": "SACMO"
+    },
+    {
+        "id": 4,
+        "name": "Nurse"
+    },
+    {
+        "id": 5,
+        "name": "Medical student"
+    },
+    {
+        "id": 6,
+        "name": "Nursing Student"
+    },
+    {
+        "id": 7,
+        "name": "MATS Student"
+    },
+    {
+        "id": 8,
+        "name": "Other"
+    }
+]

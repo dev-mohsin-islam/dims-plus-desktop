@@ -15,6 +15,7 @@ import 'companies_screen.dart';
 import 'drug_class_screen.dart';
 import 'generics_screen.dart';
 import 'indication_screen.dart';
+import 'profile_screen.dart';
 import 'app_theme.dart';
 
 class MainScreen extends StatefulWidget {
@@ -236,6 +237,8 @@ class _TopAppBar extends StatelessWidget {
   }
 
   void _showProfileDialog(BuildContext context, ThemeDefinition theme, double fontSizeScale) {
+    final authCtrl = Get.find<AuthCtrl>();
+    
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -248,7 +251,7 @@ class _TopAppBar extends StatelessWidget {
           Icon(Icons.person_rounded, color: theme.accent),
           const SizedBox(width: 10),
           Text(
-            'Profile',
+            'Account',
             style: TextStyle(
               fontSize: 14 * fontSizeScale,
               fontWeight: FontWeight.w600,
@@ -270,29 +273,39 @@ class _TopAppBar extends StatelessWidget {
               child: Icon(Icons.person_rounded, size: 36 * fontSizeScale, color: theme.accent),
             ),
             const SizedBox(height: 16),
-            Text(
-              'Doctor / User',
+            Obx(() => Text(
+              authCtrl.userName.value.isEmpty ? 'User Profile' : authCtrl.userName.value,
               style: TextStyle(
                 fontSize: 14 * fontSizeScale,
                 fontWeight: FontWeight.w600,
                 color: theme.textPrimary,
               ),
-            ),
+            )),
             const SizedBox(height: 4),
-            Text(
-              'DIMS Desktop v1.0',
+            Obx(() => Text(
+              authCtrl.userOccupation.value.isEmpty ? 'Member' : authCtrl.userOccupation.value,
               style: TextStyle(
                 fontSize: 13 * fontSizeScale,
                 color: theme.textSecondary,
               ),
-            ),
+            )),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Get.find<AuthCtrl>().logout();
+              onNavigate(const ProfileScreen(), 'Profile');
+            },
+            child: Text(
+              'View Profile',
+              style: TextStyle(color: theme.accent, fontWeight: FontWeight.bold),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              authCtrl.logout();
             },
             child: Text(
               'Logout',
@@ -303,7 +316,7 @@ class _TopAppBar extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Close',
-              style: TextStyle(color: theme.accent),
+              style: TextStyle(color: theme.textSecondary),
             ),
           ),
         ],
@@ -545,7 +558,8 @@ class _SearchBarArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
+
       decoration: BoxDecoration(
         color: theme.bg,
         border: Border(bottom: BorderSide(color: theme.divider.withOpacity(0.5))),

@@ -1,6 +1,9 @@
 
+import 'dart:convert';
+
 import 'package:dims_desktop/models/systemic_class/systemic_class_model.dart';
 import 'package:dims_desktop/models/therapeutic_class/therapeutic_class_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
 
@@ -32,19 +35,41 @@ class SystemicClassCtrl extends GetxController {
     }
   }
 
+  Future<void>systemicClassInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_systemic.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          SystemicClassModel data = SystemicClassModel(
+            id: item['systemic_id'],
+            name: item['systemic_name'],
+            parent_id: item['systemic_parent_id'],
+          );
+          if(!boxSystemicClass.values.where((e) => e.id == data.id).isNotEmpty){
+            boxSystemicClass.add(data);
+          }
+        }
+
+        getAllSystemicFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
 
   /////////////////
   ///API Call
   /////////////
-  Future<void> getTherapeuticClassApi() async {
+  Future<void> getSystemicClassApi() async {
     try {
       SharedPreferences pref = await SharedPreferences.getInstance();
       await pref.clear();
 
-      final String baseUrl = "${EngPoint.BASEURL}${EngPoint.TherapeuticClass}";
+      final String baseUrl = "${EngPoint.BASEURL}${EngPoint.SystemicClass}";
       String token = sharedPref.pToken;
-      String lastSyncDate = await sharedPref.getLastSyncDate(sharedPref.therapeuticPref);
-      int currentPage = await sharedPref.getLastSyncPage("page${sharedPref.therapeuticPref}");
+      String lastSyncDate = await sharedPref.getLastSyncDate(sharedPref.systemPref);
+      int currentPage = await sharedPref.getLastSyncPage("page${sharedPref.systemPref}");
       int limit = 155;
 
       // Get API key with try-catch
@@ -177,8 +202,8 @@ class SystemicClassCtrl extends GetxController {
 
               // Store the progress with try-catch
               try {
-                // await sharedPref.storeLastSyncDateInt("page${sharedPref.therapticPref}", page);
-                // await sharedPref.storeLastSyncDateString(sharedPref.therapticPref, lastSyncDate);
+                // await sharedPref.storeLastSyncDateInt("page${sharedPref.systemPref}", page);
+                // await sharedPref.storeLastSyncDateString(sharedPref.systemPref, lastSyncDate);
               } catch (e) {
                 _logger.e("Error storing sync progress: $e");
               }

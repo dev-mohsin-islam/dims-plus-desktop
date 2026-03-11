@@ -28,10 +28,10 @@ class BrandsScreen extends StatefulWidget {
 }
 
 class _BrandsScreenState extends State<BrandsScreen> {
-  late final DrugBrandCtrl _brandCtrl;
-  late final CompanyCtrl _companyCtrl;
-  late final ThemeCtrl _themeCtrl;
-  late final GenericCtrl _genericCtrl;
+  final DrugBrandCtrl _brandCtrl = Get.find<DrugBrandCtrl>();
+  final CompanyCtrl _companyCtrl = Get.find<CompanyCtrl>();
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+  final GenericCtrl _genericCtrl = Get.find<GenericCtrl>();
 
   int? _genericId;
   final TextEditingController _searchCtrl = TextEditingController();
@@ -39,21 +39,12 @@ class _BrandsScreenState extends State<BrandsScreen> {
   int? _filterCompanyId;
   DrugBrandModel? _selectedBrand;
 
-  // Selection mode for sharing
   bool _isSelectionMode = false;
   final Set<int> _selectedBrandIds = {};
 
   @override
   void initState() {
     super.initState();
-
-    // Initialize controllers with unique tags
-    final tag = 'brands_screen_${widget.initialGenericId ?? 'all'}';
-    _brandCtrl = Get.put(DrugBrandCtrl(), tag: tag);
-    _companyCtrl = Get.put(CompanyCtrl(), tag: tag);
-    _themeCtrl = Get.put(ThemeCtrl(), tag: tag);
-    _genericCtrl = Get.put(GenericCtrl(), tag: tag);
-
     _genericId = widget.initialGenericId;
   }
 
@@ -73,16 +64,10 @@ class _BrandsScreenState extends State<BrandsScreen> {
 
   @override
   void dispose() {
-    final tag = 'brands_screen_${widget.initialGenericId ?? 'all'}';
-    Get.delete<DrugBrandCtrl>(tag: tag);
-    Get.delete<CompanyCtrl>(tag: tag);
-    Get.delete<ThemeCtrl>(tag: tag);
-
     _searchCtrl.dispose();
     super.dispose();
   }
 
-  // Get all brands or filtered by generic
   List<DrugBrandModel> _getAllBrands() {
     if (_genericId != null) {
       return _brandCtrl.getBrandsByGeneric(_genericId!);
@@ -91,11 +76,11 @@ class _BrandsScreenState extends State<BrandsScreen> {
     }
   }
 
-  List<DrugBrandModel> _getFilteredBrands() {
-    var brands = _getAllBrands();
+  List<DrugBrandModel> _getFilteredBrands(List<DrugBrandModel> brands) {
+    var result = brands;
 
     if (_searchQuery.isNotEmpty) {
-      brands = brands.where((b) =>
+      result = result.where((b) =>
       b.brand_name.toLowerCase().contains(_searchQuery) ||
           (b.strength?.toLowerCase().contains(_searchQuery) ?? false) ||
           (b.form?.toLowerCase().contains(_searchQuery) ?? false)
@@ -103,14 +88,13 @@ class _BrandsScreenState extends State<BrandsScreen> {
     }
 
     if (_filterCompanyId != null) {
-      brands = brands.where((b) => b.company_id == _filterCompanyId).toList();
+      result = result.where((b) => b.company_id == _filterCompanyId).toList();
     }
 
-    return brands;
+    return result;
   }
 
-  List<int> _getUniqueCompanyIds() {
-    final brands = _getAllBrands();
+  List<int> _getUniqueCompanyIds(List<DrugBrandModel> brands) {
     return brands.map((b) => b.company_id).toSet().toList()..sort();
   }
 
@@ -125,131 +109,128 @@ class _BrandsScreenState extends State<BrandsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      final theme = _themeCtrl.currentTheme;
-      final fontSizeScale = _themeCtrl.fontSizeScale;
-      final accentColor = theme.accent;
+    final theme = _themeCtrl.currentTheme;
+    final fontSizeScale = _themeCtrl.fontSizeScale;
+    final accentColor = theme.accent;
 
-      final displayedBrands = _getFilteredBrands();
-      final companyIds = _getUniqueCompanyIds();
-      final totalBrands = _getAllBrands().length;
-
-      if (_filterCompanyId != null && !companyIds.contains(_filterCompanyId)) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (mounted) setState(() => _filterCompanyId = null);
-        });
-      }
-
-      return Container(
-        width: widget.isInDialog ? 600 * fontSizeScale : double.infinity,
-        height: widget.isInDialog ? 500 * fontSizeScale : double.infinity,
-        color: theme.surface,
-        child: Column(
-          children: [
-            // Header
-            Container(
-              padding: EdgeInsets.all(16 * fontSizeScale),
-              decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: theme.divider)),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.local_pharmacy_outlined,
-                    size: 18 * fontSizeScale,
-                    color: AppTheme.accentAmber,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          _getHeaderTitle(),
-                          style: TextStyle(
-                            fontSize: 14 * fontSizeScale,
-                            fontWeight: FontWeight.w600,
-                            color: theme.textPrimary,
-                          ),
+    return Container(
+      width: widget.isInDialog ? 600 * fontSizeScale : double.infinity,
+      height: widget.isInDialog ? 500 * fontSizeScale : double.infinity,
+      color: theme.surface,
+      child: Column(
+        children: [
+          // Header
+          Container(
+            padding: EdgeInsets.all(16 * fontSizeScale),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: theme.divider)),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.local_pharmacy_outlined,
+                  size: 18 * fontSizeScale,
+                  color: AppTheme.accentAmber,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _getHeaderTitle(),
+                        style: TextStyle(
+                          fontSize: 14 * fontSizeScale,
+                          fontWeight: FontWeight.w600,
+                          color: theme.textPrimary,
                         ),
-                        if (_genericId == null)
-                          Text(
-                            '$totalBrands total brands',
-                            style: TextStyle(
-                              fontSize: 11 * fontSizeScale,
-                              color: theme.textSecondary,
-                            ),
+                      ),
+                      if (_genericId == null)
+                        Obx(() => Text(
+                          '${_brandCtrl.drugBrandList.length} total brands',
+                          style: TextStyle(
+                            fontSize: 11 * fontSizeScale,
+                            color: theme.textSecondary,
                           ),
-                      ],
-                    ),
+                        )),
+                    ],
                   ),
-                  // Multi-select toggle
+                ),
+                IconButton(
+                  icon: Icon(
+                    _isSelectionMode ? Icons.check_circle : Icons.ios_share_rounded,
+                    size: 20 * fontSizeScale,
+                    color: _isSelectionMode ? AppTheme.accentGreen : theme.accent,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _isSelectionMode = !_isSelectionMode;
+                      if (!_isSelectionMode) _selectedBrandIds.clear();
+                    });
+                  },
+                  tooltip: _isSelectionMode ? 'Done Selecting' : 'Select to Share',
+                ),
+                if (widget.isInDialog)
                   IconButton(
                     icon: Icon(
-                      _isSelectionMode ? Icons.check_circle : Icons.ios_share_rounded,
+                      Icons.close,
                       size: 20 * fontSizeScale,
-                      color: _isSelectionMode ? AppTheme.accentGreen : theme.accent,
+                      color: theme.textSecondary,
                     ),
-                    onPressed: () {
-                      setState(() {
-                        _isSelectionMode = !_isSelectionMode;
-                        if (!_isSelectionMode) _selectedBrandIds.clear();
-                      });
-                    },
-                    tooltip: _isSelectionMode ? 'Done Selecting' : 'Select to Share',
+                    onPressed: () => Navigator.pop(context),
+                    tooltip: 'Close',
                   ),
-                  if (widget.isInDialog)
-                    IconButton(
-                      icon: Icon(
-                        Icons.close,
-                        size: 20 * fontSizeScale,
-                        color: theme.textSecondary,
-                      ),
-                      onPressed: () => Navigator.pop(context),
-                      tooltip: 'Close',
-                    ),
-                ],
-              ),
+              ],
             ),
+          ),
 
-            // Search and filters
-            Padding(
-              padding: EdgeInsets.all(12 * fontSizeScale),
-              child: Column(
-                children: [
-                  SearchInput(
-                    controller: _searchCtrl,
-                    hint: 'Search brands by name, strength or form...',
+          // Search and filters
+          Padding(
+            padding: EdgeInsets.all(12 * fontSizeScale),
+            child: Column(
+              children: [
+                SearchInput(
+                  controller: _searchCtrl,
+                  hint: 'Search brands by name, strength or form...',
+                  onChanged: (value) {
+                    setState(() {
+                      _searchQuery = value.toLowerCase().trim();
+                    });
+                  },
+                  fontSizeScale: fontSizeScale,
+                  accentColor: accentColor,
+                ),
+                SizedBox(height: 8 * fontSizeScale),
+                Obx(() {
+                  final allBrands = _getAllBrands();
+                  final companyIds = _getUniqueCompanyIds(allBrands);
+                  if (companyIds.isEmpty) return const SizedBox.shrink();
+                  
+                  return _CompanyDropdown(
+                    companyIds: companyIds,
+                    selectedId: _filterCompanyId,
                     onChanged: (value) {
                       setState(() {
-                        _searchQuery = value.toLowerCase().trim();
+                        _filterCompanyId = value;
                       });
                     },
+                    theme: theme,
                     fontSizeScale: fontSizeScale,
-                    accentColor: accentColor,
-                  ),
-                  SizedBox(height: 8 * fontSizeScale),
-                  if (companyIds.isNotEmpty)
-                    _CompanyDropdown(
-                      companyIds: companyIds,
-                      selectedId: _filterCompanyId,
-                      onChanged: (value) {
-                        setState(() {
-                          _filterCompanyId = value;
-                        });
-                      },
-                      theme: theme,
-                      fontSizeScale: fontSizeScale,
-                      companyCtrl: _companyCtrl,
-                    ),
-                ],
-              ),
+                    companyCtrl: _companyCtrl,
+                  );
+                }),
+              ],
             ),
+          ),
 
-            // Results count and clear button
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16 * fontSizeScale, vertical: 4 * fontSizeScale),
-              child: Row(
+          // Results count
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16 * fontSizeScale, vertical: 4 * fontSizeScale),
+            child: Obx(() {
+              final allBrands = _getAllBrands();
+              final displayedBrands = _getFilteredBrands(allBrands);
+              
+              return Row(
                 children: [
                   Text(
                     '${displayedBrands.length} brands',
@@ -284,108 +265,113 @@ class _BrandsScreenState extends State<BrandsScreen> {
                       ),
                     ),
                 ],
-              ),
-            ),
+              );
+            }),
+          ),
 
-            // Brand list
-            Expanded(
-              child: Stack(
+          // Brand list
+          Expanded(
+            child: Obx(() {
+              final allBrands = _getAllBrands();
+              final displayedBrands = _getFilteredBrands(allBrands);
+
+              return Stack(
                 children: [
                   displayedBrands.isEmpty
                       ? Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.local_pharmacy_outlined,
-                          size: 48 * fontSizeScale,
-                          color: theme.textMuted,
-                        ),
-                        SizedBox(height: 12 * fontSizeScale),
-                        Text(
-                          'No brands found',
-                          style: TextStyle(
-                            fontSize: 13 * fontSizeScale,
-                            color: theme.textSecondary,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.local_pharmacy_outlined,
+                                size: 48 * fontSizeScale,
+                                color: theme.textMuted,
+                              ),
+                              SizedBox(height: 12 * fontSizeScale),
+                              Text(
+                                'No brands found',
+                                style: TextStyle(
+                                  fontSize: 13 * fontSizeScale,
+                                  color: theme.textSecondary,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                  )
+                        )
                       : ListView.builder(
-                    itemCount: displayedBrands.length,
-                    itemBuilder: (context, index) {
-                      final brand = displayedBrands[index];
-                      final company = _companyCtrl.getCompanyById(brand.company_id);
-                      final isSelected = _selectedBrand?.brand_id == brand.brand_id;
-                      final isSelectedInMode = _selectedBrandIds.contains(brand.brand_id);
+                          itemCount: displayedBrands.length,
+                          itemBuilder: (context, index) {
+                            final brand = displayedBrands[index];
+                            final company = _companyCtrl.getCompanyById(brand.company_id);
+                            final isSelected = _selectedBrand?.brand_id == brand.brand_id;
+                            final isSelectedInMode = _selectedBrandIds.contains(brand.brand_id);
 
-                      return _BrandListItem(
-                        brand: brand,
-                        companyName: company?.company_name,
-                        isSelected: isSelected,
-                        isSelectedInMode: isSelectedInMode,
-                        isSelectionMode: _isSelectionMode,
-                        onSelectChanged: (value) {
-                          setState(() {
-                            if (value == true) {
-                              _selectedBrandIds.add(brand.brand_id);
-                            } else {
-                              _selectedBrandIds.remove(brand.brand_id);
-                            }
-                          });
-                        },
-                        onTap: () {
-                          setState(() {
-                            _selectedBrand = brand;
-                          });
-                          if (!widget.isInDialog) {
-                            showDialog(context: context, builder: (context){
-                              return AlertDialog(
-                                title: Row(
-                                  children: [
-                                    Text(
-                                      'Brand Details',
-                                      style: TextStyle(
-                                        fontSize: 14 * fontSizeScale,
-                                        fontWeight: FontWeight.w600,
-                                        color: theme.textPrimary,
-                                      ),
-                                    ),
-                                    Spacer(),
-                                    IconButton(
-                                      icon: Icon(
-                                        Icons.close,
-                                        size: 20 * fontSizeScale,
-                                        color: theme.textSecondary,
-                                      ),
-                                      onPressed: () => Navigator.pop(context),
-                                      tooltip: 'Close',
-                                    ),
-                                  ],
-                                ),
-                                content: SizedBox(
-                                  width: 800,
-                                  child: BrandDetailView(
-                                    brand: brand,
-                                    accentColor: accentColor,
-                                    fontSizeScale: fontSizeScale,
-                                  ),
-                                ),
-                              );
-                            });
-                              } else {
-                            Navigator.pop(context, brand);
-                          }
-                        },
-                        theme: theme,
-                        fontSizeScale: fontSizeScale,
-                        showPrice: _themeCtrl.showPriceInList.value,
-                      );
-                    },
-                  ),
-                  
-                  // Share Button (Floating over the list)
+                            return _BrandListItem(
+                              brand: brand,
+                              companyName: company?.company_name,
+                              isSelected: isSelected,
+                              isSelectedInMode: isSelectedInMode,
+                              isSelectionMode: _isSelectionMode,
+                              onSelectChanged: (value) {
+                                setState(() {
+                                  if (value == true) {
+                                    _selectedBrandIds.add(brand.brand_id);
+                                  } else {
+                                    _selectedBrandIds.remove(brand.brand_id);
+                                  }
+                                });
+                              },
+                              onTap: () {
+                                setState(() {
+                                  _selectedBrand = brand;
+                                });
+                                if (!widget.isInDialog) {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Row(
+                                            children: [
+                                              Text(
+                                                'Brand Details',
+                                                style: TextStyle(
+                                                  fontSize: 14 * fontSizeScale,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: theme.textPrimary,
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              IconButton(
+                                                icon: Icon(
+                                                  Icons.close,
+                                                  size: 20 * fontSizeScale,
+                                                  color: theme.textSecondary,
+                                                ),
+                                                onPressed: () => Navigator.pop(context),
+                                                tooltip: 'Close',
+                                              ),
+                                            ],
+                                          ),
+                                          content: SizedBox(
+                                            width: 800,
+                                            child: BrandDetailView(
+                                              brand: brand,
+                                              accentColor: accentColor,
+                                              fontSizeScale: fontSizeScale,
+                                            ),
+                                          ),
+                                        );
+                                      });
+                                } else {
+                                  Navigator.pop(context, brand);
+                                }
+                              },
+                              theme: theme,
+                              fontSizeScale: fontSizeScale,
+                              showPrice: _themeCtrl.showPriceInList.value,
+                            );
+                          },
+                        ),
                   if (_isSelectionMode && _selectedBrandIds.isNotEmpty)
                     Positioned(
                       bottom: 20 * fontSizeScale,
@@ -398,12 +384,12 @@ class _BrandsScreenState extends State<BrandsScreen> {
                       ),
                     ),
                 ],
-              ),
-            ),
-          ],
-        ),
-      );
-    });
+              );
+            }),
+          ),
+        ],
+      ),
+    );
   }
 
   void _openShareDialog(List<DrugBrandModel> displayedBrands) {
@@ -614,7 +600,7 @@ class _BrandListItem extends StatefulWidget {
   final DrugBrandModel brand;
   final String? companyName;
   final bool isSelected;
-  final bool isSelectedInMode; // Selection mode for sharing
+  final bool isSelectedInMode;
   final bool isSelectionMode;
   final Function(bool?)? onSelectChanged;
   final VoidCallback onTap;
@@ -826,7 +812,6 @@ class _CompanyDropdown extends StatelessWidget {
             ),
             ...companyIds.map((id) {
               final company = companyCtrl.getCompanyById(id);
-              // Use company name if available, otherwise show a placeholder
               final companyName = company?.company_name;
 
               return DropdownMenuItem<int?>(

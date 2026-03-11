@@ -6,7 +6,6 @@ import '../../controller/theme_ctrl.dart';
 import '../../controller/favourite_ctrl.dart';
 import '../../models/generic/generic_details_model.dart';
 import 'app_theme.dart';
-import 'brand_detail_screen.dart';
 import 'brands_screen.dart';
 
 class GenericsScreen extends StatefulWidget {
@@ -16,8 +15,9 @@ class GenericsScreen extends StatefulWidget {
 }
 
 class _GenericsScreenState extends State<GenericsScreen> {
-  final GenericCtrl _ctrl = Get.put(GenericCtrl());
-  final ThemeCtrl _themeCtrl = Get.put(ThemeCtrl());
+  final GenericCtrl _ctrl = Get.find<GenericCtrl>();
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+  final FavouriteCtrl _favCtrl = Get.put(FavouriteCtrl());
   final TextEditingController _searchCtrl = TextEditingController();
 
   GenericDetailsModel? _selectedGeneric;
@@ -36,101 +36,119 @@ class _GenericsScreenState extends State<GenericsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      final theme = _themeCtrl.currentTheme;
-      final fontSizeScale = _themeCtrl.fontSizeScale;
-      final accentColor = theme.accent;
+    final theme = _themeCtrl.currentTheme;
+    final fontSizeScale = _themeCtrl.fontSizeScale;
+    final accentColor = theme.accent;
 
-      return Row(
-        children: [
-          // Left: List panel
-          Container(
-            width: 360,
-            decoration: BoxDecoration(
-              color: theme.surface,
-              border: Border(right: BorderSide(color: theme.divider)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _PanelHeader(
-                  title: 'Generics',
-                  icon: Icons.science_outlined,
+    return Row(
+      children: [
+        // Left: List panel
+        Container(
+          width: 360,
+          decoration: BoxDecoration(
+            color: theme.surface,
+            border: Border(right: BorderSide(color: theme.divider)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _PanelHeader(
+                title: 'Generics',
+                icon: Icons.science_outlined,
+                theme: theme,
+                fontSizeScale: fontSizeScale,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: SearchInput(
+                  controller: _searchCtrl,
+                  hint: 'Search generics...',
+                  onChanged: _ctrl.searchGenerics,
+                  fontSizeScale: fontSizeScale,
+                  accentColor: accentColor,
+                ),
+              ),
+              Obx(() => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                child: Text(
+                  '${_ctrl.filteredGenericList.length} results',
+                  style: TextStyle(
+                    fontSize: 11 * fontSizeScale,
+                    fontWeight: FontWeight.w600,
+                    color: theme.textSecondary,
+                    letterSpacing: 0.8,
+                  ),
+                ),
+              )),
+              Expanded(
+                child: Obx(() => ListView.builder(
+                  itemCount: _ctrl.filteredGenericList.length,
+                  itemBuilder: (_, i) {
+                    final g = _ctrl.filteredGenericList[i];
+                    return _GenericListItem(
+                      generic: g,
+                      isSelected: _selectedGeneric?.generic_id == g.generic_id,
+                      onTap: () => _onGenericTap(g),
+                      theme: theme,
+                      fontSizeScale: fontSizeScale,
+                    );
+                  },
+                )),
+              ),
+            ],
+          ),
+        ),
+
+        // Right: Detail panel
+        Expanded(
+          child: _selectedGeneric != null
+              ? _GenericDetailPanel(
+                  generic: _selectedGeneric!,
                   theme: theme,
                   fontSizeScale: fontSizeScale,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: SearchInput(
-                    controller: _searchCtrl,
-                    hint: 'Search generics...',
-                    onChanged: _ctrl.searchGenerics,
-                    fontSizeScale: fontSizeScale,
-                    accentColor: accentColor,
+                  favCtrl: _favCtrl,
+                )
+              : Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.science_outlined,
+                        color: theme.textMuted,
+                        size: 48 * fontSizeScale,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Select a generic to view details',
+                        style: TextStyle(
+                          fontSize: 13 * fontSizeScale,
+                          color: theme.textSecondary,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Obx(() => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                  child: Text(
-                    '${_ctrl.filteredGenericList.length} results',
-                    style: TextStyle(
-                      fontSize: 11 * fontSizeScale,
-                      fontWeight: FontWeight.w600,
-                      color: theme.textSecondary,
-                      letterSpacing: 0.8,
-                    ),
-                  ),
-                )),
-                Expanded(
-                  child: Obx(() => ListView.builder(
-                    itemCount: _ctrl.filteredGenericList.length,
-                    itemBuilder: (_, i) {
-                      final g = _ctrl.filteredGenericList[i];
-                      return _GenericListItem(
-                        generic: g,
-                        isSelected: _selectedGeneric?.generic_id == g.generic_id,
-                        onTap: () => _onGenericTap(g),
-                        theme: theme,
-                        fontSizeScale: fontSizeScale,
-                      );
-                    },
-                  )),
-                ),
-              ],
-            ),
-          ),
-
-          // Right: Detail panel
-          Expanded(
-            child: _selectedGeneric != null
-                ? _buildGenericDetail(_selectedGeneric!, theme, fontSizeScale)
-                : Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.science_outlined,
-                    color: theme.textMuted,
-                    size: 48 * fontSizeScale,
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    'Select a generic to view details',
-                    style: TextStyle(
-                      fontSize: 13 * fontSizeScale,
-                      color: theme.textSecondary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      );
-    });
+        ),
+      ],
+    );
   }
+}
 
-  Widget _buildGenericDetail(GenericDetailsModel generic, ThemeDefinition theme, double fontSizeScale) {
+class _GenericDetailPanel extends StatelessWidget {
+  final GenericDetailsModel generic;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+  final FavouriteCtrl favCtrl;
+
+  const _GenericDetailPanel({
+    required this.generic,
+    required this.theme,
+    required this.fontSizeScale,
+    required this.favCtrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.all(24 * fontSizeScale),
       child: Column(
@@ -182,23 +200,20 @@ class _GenericsScreenState extends State<GenericsScreen> {
                                 ),
                               ),
                               // Bookmark Button
-                              GetBuilder<FavouriteCtrl>(
-                                init: Get.put(FavouriteCtrl()),
-                                builder: (favCtrl) {
-                                  final isFav = favCtrl.isFavourite(generic.generic_id, 'generic');
-                                  return IconButton(
-                                    onPressed: () => favCtrl.toggleFavourite(generic.generic_id, 'generic'),
-                                    icon: Icon(
-                                      isFav ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded,
-                                      color: isFav ? AppTheme.accentAmber : theme.textMuted,
-                                      size: 24 * fontSizeScale,
-                                    ),
-                                    padding: EdgeInsets.zero,
-                                    constraints: const BoxConstraints(),
-                                    tooltip: isFav ? 'Remove from Bookmarks' : 'Add to Bookmarks',
-                                  );
-                                },
-                              ),
+                              Obx(() {
+                                final isFav = favCtrl.isFavourite(generic.generic_id, 'generic');
+                                return IconButton(
+                                  onPressed: () => favCtrl.toggleFavourite(generic.generic_id, 'generic'),
+                                  icon: Icon(
+                                    isFav ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded,
+                                    color: isFav ? AppTheme.accentAmber : theme.textMuted,
+                                    size: 24 * fontSizeScale,
+                                  ),
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(),
+                                  tooltip: isFav ? 'Remove from Bookmarks' : 'Add to Bookmarks',
+                                );
+                              }),
                             ],
                           ),
                           if (generic.pregnancy_category_id != null)
@@ -270,95 +285,18 @@ class _GenericsScreenState extends State<GenericsScreen> {
           SizedBox(height: 24 * fontSizeScale),
 
           // Generic details sections
-          _buildInfoSection(
-            'Indication',
-            generic.indication,
-            Icons.info_outline,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Dose',
-            generic.dose,
-            Icons.medication_outlined,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Adult Dose',
-            generic.adult_dose,
-            Icons.person_outline,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Child Dose',
-            generic.child_dose,
-            Icons.child_care_outlined,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Renal Dose',
-            generic.renal_dose,
-            Icons.water_drop_outlined,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Administration',
-            generic.administration,
-            Icons.route_outlined,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Side Effects',
-            generic.side_effect,
-            Icons.warning_amber_outlined,
-            theme,
-            fontSizeScale,
-            color: AppTheme.accentAmber,
-          ),
-          _buildInfoSection(
-            'Contraindications',
-            generic.contra_indication,
-            Icons.block_outlined,
-            theme,
-            fontSizeScale,
-            color: AppTheme.accentRed,
-          ),
-          _buildInfoSection(
-            'Precautions',
-            generic.precaution,
-            Icons.shield_outlined,
-            theme,
-            fontSizeScale,
-            color: AppTheme.accentAmber,
-          ),
-          _buildInfoSection(
-            'Mode of Action',
-            generic.mode_of_action,
-            Icons.biotech_outlined,
-            theme,
-            fontSizeScale,
-          ),
-          _buildInfoSection(
-            'Interactions',
-            generic.interaction,
-            Icons.compare_arrows_outlined,
-            theme,
-            fontSizeScale,
-            color: AppTheme.accentRed,
-          ),
-          _buildInfoSection(
-            'Pregnancy Note',
-            generic.pregnancy_category_note,
-            Icons.pregnant_woman_outlined,
-            theme,
-            fontSizeScale,
-            color: AppTheme.accentAmber,
-          ),
+          _buildInfoSection('Indication', generic.indication, Icons.info_outline, theme, fontSizeScale),
+          _buildInfoSection('Dose', generic.dose, Icons.medication_outlined, theme, fontSizeScale),
+          _buildInfoSection('Adult Dose', generic.adult_dose, Icons.person_outline, theme, fontSizeScale),
+          _buildInfoSection('Child Dose', generic.child_dose, Icons.child_care_outlined, theme, fontSizeScale),
+          _buildInfoSection('Renal Dose', generic.renal_dose, Icons.water_drop_outlined, theme, fontSizeScale),
+          _buildInfoSection('Administration', generic.administration, Icons.route_outlined, theme, fontSizeScale),
+          _buildInfoSection('Side Effects', generic.side_effect, Icons.warning_amber_outlined, theme, fontSizeScale, color: AppTheme.accentAmber),
+          _buildInfoSection('Contraindications', generic.contra_indication, Icons.block_outlined, theme, fontSizeScale, color: AppTheme.accentRed),
+          _buildInfoSection('Precautions', generic.precaution, Icons.shield_outlined, theme, fontSizeScale, color: AppTheme.accentAmber),
+          _buildInfoSection('Mode of Action', generic.mode_of_action, Icons.biotech_outlined, theme, fontSizeScale),
+          _buildInfoSection('Interactions', generic.interaction, Icons.compare_arrows_outlined, theme, fontSizeScale, color: AppTheme.accentRed),
+          _buildInfoSection('Pregnancy Note', generic.pregnancy_category_note, Icons.pregnant_woman_outlined, theme, fontSizeScale, color: AppTheme.accentAmber),
         ],
       ),
     );

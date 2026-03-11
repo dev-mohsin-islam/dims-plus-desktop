@@ -12,7 +12,6 @@ import '../models/favourite/favourite_model.dart';
 import '../models/brand/drug_brand_model.dart';
 import 'app_theme.dart';
 import 'brand_detail_screen.dart';
-import 'generics_screen.dart';
 import 'search_input.dart';
 
 class BookmarkScreen extends StatefulWidget {
@@ -23,6 +22,11 @@ class BookmarkScreen extends StatefulWidget {
 }
 
 class _BookmarkScreenState extends State<BookmarkScreen> {
+  final FavouriteCtrl _favCtrl = Get.find<FavouriteCtrl>();
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+  final DrugBrandCtrl _brandCtrl = Get.find<DrugBrandCtrl>();
+  final GenericCtrl _genericCtrl = Get.find<GenericCtrl>();
+
   String _selectedFilter = 'All'; 
   final TextEditingController _searchCtrl = TextEditingController();
   String _searchQuery = '';
@@ -36,97 +40,97 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
     super.dispose();
   }
 
+  List<FavouriteModel> _getFilteredBookmarks(List<FavouriteModel> all) {
+    var result = all;
+    if (_selectedFilter != 'All') {
+      result = result.where((f) => f.category == _selectedFilter.toLowerCase()).toList();
+    }
+
+    if (_searchQuery.isNotEmpty) {
+      result = result.where((f) {
+        if (f.category == 'brand') {
+          final b = _brandCtrl.drugBrandList.firstWhereOrNull((brand) => brand.brand_id == f.targetId);
+          return b?.brand_name.toLowerCase().contains(_searchQuery) ?? false;
+        } else {
+          final g = _genericCtrl.genericList.firstWhereOrNull((gen) => gen.generic_id == f.targetId);
+          return g?.generic_name.toLowerCase().contains(_searchQuery) ?? false;
+        }
+      }).toList();
+    }
+    return result;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final favCtrl = Get.find<FavouriteCtrl>();
-    final themeCtrl = Get.find<ThemeCtrl>();
-    final brandCtrl = Get.find<DrugBrandCtrl>();
-    final genericCtrl = Get.find<GenericCtrl>();
+    final theme = _themeCtrl.currentTheme;
+    final scale = _themeCtrl.fontSizeScale;
 
-    return Obx(() {
-      final theme = themeCtrl.currentTheme;
-      final scale = themeCtrl.fontSizeScale;
-      
-      var bookmarks = favCtrl.favourites;
-      if (_selectedFilter != 'All') {
-        bookmarks = bookmarks.where((f) => f.category == _selectedFilter.toLowerCase()).toList().obs;
-      }
-
-      if (_searchQuery.isNotEmpty) {
-        bookmarks = bookmarks.where((f) {
-          if (f.category == 'brand') {
-            final b = brandCtrl.drugBrandList.firstWhereOrNull((brand) => brand.brand_id == f.targetId);
-            return b?.brand_name.toLowerCase().contains(_searchQuery) ?? false;
-          } else {
-            final g = genericCtrl.genericList.firstWhereOrNull((gen) => gen.generic_id == f.targetId);
-            return g?.generic_name.toLowerCase().contains(_searchQuery) ?? false;
-          }
-        }).toList().obs;
-      }
-
-      return Container(
-        color: theme.bg,
-        child: Column(
-          children: [
-            // Header
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: theme.surface,
-                border: Border(bottom: BorderSide(color: theme.divider)),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.bookmark_rounded, color: AppTheme.accentAmber, size: 20 * scale),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Bookmarked Medicines',
-                        style: TextStyle(fontSize: 18 * scale, fontWeight: FontWeight.w700, color: theme.textPrimary),
-                      ),
-                      const Spacer(),
-                      IconButton(
-                        icon: Icon(
-                          _isSelectionMode ? Icons.check_circle : Icons.ios_share_rounded,
-                          color: _isSelectionMode ? AppTheme.accentGreen : theme.accent,
-                          size: 20 * scale,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _isSelectionMode = !_isSelectionMode;
-                            if (!_isSelectionMode) _selectedFavKeys.clear();
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: SearchInput(
-                          controller: _searchCtrl,
-                          hint: 'Search in bookmarks...',
-                          onChanged: (v) => setState(() => _searchQuery = v.toLowerCase().trim()),
-                          fontSizeScale: scale,
-                          accentColor: theme.accent,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      _filterChip('All', theme, scale),
-                      const SizedBox(width: 8),
-                      _filterChip('Brand', theme, scale),
-                      const SizedBox(width: 8),
-                      _filterChip('Generic', theme, scale),
-                    ],
-                  ),
-                ],
-              ),
+    return Container(
+      color: theme.bg,
+      child: Column(
+        children: [
+          // Header
+          Container(
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: theme.surface,
+              border: Border(bottom: BorderSide(color: theme.divider)),
             ),
-            
-            Expanded(
-              child: Stack(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.bookmark_rounded, color: AppTheme.accentAmber, size: 20 * scale),
+                    const SizedBox(width: 12),
+                    Text(
+                      'Bookmarked Medicines',
+                      style: TextStyle(fontSize: 18 * scale, fontWeight: FontWeight.w700, color: theme.textPrimary),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      icon: Icon(
+                        _isSelectionMode ? Icons.check_circle : Icons.ios_share_rounded,
+                        color: _isSelectionMode ? AppTheme.accentGreen : theme.accent,
+                        size: 20 * scale,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isSelectionMode = !_isSelectionMode;
+                          if (!_isSelectionMode) _selectedFavKeys.clear();
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SearchInput(
+                        controller: _searchCtrl,
+                        hint: 'Search in bookmarks...',
+                        onChanged: (v) => setState(() => _searchQuery = v.toLowerCase().trim()),
+                        fontSizeScale: scale,
+                        accentColor: theme.accent,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    _filterChip('All', theme, scale),
+                    const SizedBox(width: 8),
+                    _filterChip('Brand', theme, scale),
+                    const SizedBox(width: 8),
+                    _filterChip('Generic', theme, scale),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          
+          Expanded(
+            child: Obx(() {
+              final bookmarks = _getFilteredBookmarks(_favCtrl.favourites);
+              
+              return Stack(
                 children: [
                   bookmarks.isEmpty
                       ? _buildEmptyState(theme, scale)
@@ -137,7 +141,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           itemBuilder: (context, index) {
                             final fav = bookmarks[index];
                             final isSelected = _selectedFavKeys.contains(fav.uniqueKey);
-                            return _buildBookmarkTile(context, fav, brandCtrl, genericCtrl, theme, scale, isSelected);
+                            return _buildBookmarkTile(context, fav, theme, scale, isSelected);
                           },
                         ),
                   
@@ -147,18 +151,18 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                       right: 24,
                       child: FloatingActionButton.extended(
                         backgroundColor: AppTheme.accentGreen,
-                        onPressed: () => _openShareDialog(bookmarks, brandCtrl, genericCtrl, theme, scale),
+                        onPressed: () => _openShareDialog(bookmarks, theme, scale),
                         label: Text('Share ${_selectedFavKeys.length} Items'),
                         icon: const Icon(Icons.share_rounded),
                       ),
                     ),
                 ],
-              ),
-            ),
-          ],
-        ),
-      );
-    });
+              );
+            }),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _filterChip(String label, ThemeDefinition theme, double scale) {
@@ -186,8 +190,6 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
   Widget _buildBookmarkTile(
     BuildContext context,
     FavouriteModel fav,
-    DrugBrandCtrl brandCtrl,
-    GenericCtrl genericCtrl,
     ThemeDefinition theme,
     double scale,
     bool isSelected,
@@ -199,14 +201,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
     dynamic targetData;
 
     if (fav.category == 'brand') {
-      targetData = brandCtrl.drugBrandList.firstWhereOrNull((b) => b.brand_id == fav.targetId);
+      targetData = _brandCtrl.drugBrandList.firstWhereOrNull((b) => b.brand_id == fav.targetId);
       if (targetData != null) {
         name = targetData.brand_name;
         subtitle = "Brand · ${targetData.strength ?? ''} ${targetData.form ?? ''}";
         icon = Icons.local_pharmacy_rounded;
       }
     } else if (fav.category == 'generic') {
-      targetData = genericCtrl.genericList.firstWhereOrNull((g) => g.generic_id == fav.targetId);
+      targetData = _genericCtrl.genericList.firstWhereOrNull((g) => g.generic_id == fav.targetId);
       if (targetData != null) {
         name = targetData.generic_name;
         subtitle = "Generic Molecule";
@@ -273,7 +275,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   ),
                   if (!_isSelectionMode)
                     IconButton(
-                      onPressed: () => Get.find<FavouriteCtrl>().toggleFavourite(fav.targetId, fav.category),
+                      onPressed: () => _favCtrl.toggleFavourite(fav.targetId, fav.category),
                       icon: const Icon(Icons.bookmark_rounded, color: AppTheme.accentAmber),
                     ),
                 ],
@@ -327,7 +329,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
           TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
           ElevatedButton(
             onPressed: () {
-              Get.find<FavouriteCtrl>().updateNote(fav.targetId, fav.category, noteCtrl.text);
+              _favCtrl.updateNote(fav.targetId, fav.category, noteCtrl.text);
               Navigator.pop(context);
             },
             child: const Text('Save Note'),
@@ -421,14 +423,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
     );
   }
 
-  void _openShareDialog(List<FavouriteModel> bookmarks, DrugBrandCtrl brandCtrl, GenericCtrl genericCtrl, ThemeDefinition theme, double scale) {
+  void _openShareDialog(List<FavouriteModel> bookmarks, ThemeDefinition theme, double scale) {
     final selectedFavs = bookmarks.where((f) => _selectedFavKeys.contains(f.uniqueKey)).toList();
     showDialog(
       context: context,
       builder: (context) => _BookmarkShareDialog(
         selectedFavs: selectedFavs,
-        brandCtrl: brandCtrl,
-        genericCtrl: genericCtrl,
+        brandCtrl: _brandCtrl,
+        genericCtrl: _genericCtrl,
         theme: theme,
         scale: scale,
       ),

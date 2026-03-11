@@ -1,4 +1,7 @@
 
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
 import '../database/hive_box_get.dart';
@@ -24,6 +27,28 @@ class PregnancyCatCtrl extends GetxController {
       pregnancyCategoryList..clear()..addAll(boxPregnancyCategory.values);
       print("pregnancyCategoryList.length");
       print(pregnancyCategoryList.length);
+    }catch(e){
+      _logger.e(e);
+    }
+  }
+  Future<void>pregnancyCatInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_pregnancy_category.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          PregnancyCategoryModel data = PregnancyCategoryModel(
+            id: int.parse(item['pregnancy_id'].toString()),
+            name: item['pregnancy_name'],
+            description: item['pregnancy_description'],
+          );
+
+          if(!boxPregnancyCategory.values.where((e) => e.id == data.id).isNotEmpty){
+            boxPregnancyCategory.add(data);
+          }
+        }
+        getAllPregnancyFromBox();
+      }
     }catch(e){
       _logger.e(e);
     }

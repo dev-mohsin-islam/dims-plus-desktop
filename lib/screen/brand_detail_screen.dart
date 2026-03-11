@@ -116,13 +116,13 @@ class _BrandDetailViewState extends State<BrandDetailView> {
       color: _theme.bg,
       child: SingleChildScrollView(
         controller: _scrollController,
-        padding: EdgeInsets.all(24 * _fontSizeScale),
+        padding: EdgeInsets.all(6 * _fontSizeScale),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Brand header card
             Container(
-              padding: EdgeInsets.all(20 * _fontSizeScale),
+              padding: EdgeInsets.all(6 * _fontSizeScale),
               decoration: BoxDecoration(
                 color: _theme.surface,
                 borderRadius: BorderRadius.circular(14 * _fontSizeScale),
@@ -135,8 +135,8 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 52 * _fontSizeScale,
-                        height: 52 * _fontSizeScale,
+                        width: 35 * _fontSizeScale,
+                        height: 35 * _fontSizeScale,
                         decoration: BoxDecoration(
                           color: _accentColor.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(14 * _fontSizeScale),
@@ -148,7 +148,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                           size: 28 * _fontSizeScale,
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +159,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                                   child: Text(
                                     _current.brand_name,
                                     style: TextStyle(
-                                      fontSize: 24 * _fontSizeScale,
+                                      fontSize: 20 * _fontSizeScale,
                                       fontWeight: FontWeight.w700,
                                       color: _theme.textPrimary,
                                       letterSpacing: -0.5,
@@ -217,15 +217,18 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                       if (_current.price != null && _themeCtrl.showPriceInList.value)
                         Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 18 * _fontSizeScale,
-                              vertical: 10 * _fontSizeScale),
+                              horizontal: 5 * _fontSizeScale,
+                              vertical: 2 * _fontSizeScale),
                           decoration: BoxDecoration(
                             color: AppTheme.accentGreen.withOpacity(0.12),
                             borderRadius: BorderRadius.circular(12 * _fontSizeScale),
                             border: Border.all(
                                 color: AppTheme.accentGreen.withOpacity(0.4)),
                           ),
-                          child: Column(children: [
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
                             Text(
                               'MRP',
                               style: TextStyle(
@@ -235,11 +238,11 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                                 letterSpacing: 0.8,
                               ),
                             ),
-                            SizedBox(height: 2 * _fontSizeScale),
+                            SizedBox(width: 5 * _fontSizeScale),
                             Text(
                               '৳${_current.price}',
                               style: TextStyle(
-                                fontSize: 22 * _fontSizeScale,
+                                fontSize: 18 * _fontSizeScale,
                                 fontWeight: FontWeight.w700,
                                 color: AppTheme.accentGreen,
                               ),
@@ -250,7 +253,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                   ),
                   SizedBox(height: 14 * _fontSizeScale),
                   Divider(color: _theme.divider, height: 1),
-                  SizedBox(height: 10 * _fontSizeScale),
+                  SizedBox(height: 5 * _fontSizeScale),
                   Row(children: [
                     Icon(
                       Icons.business_outlined,
@@ -291,7 +294,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
 
             // Strength / Form switcher
             if (allForGeneric.length > 1) ...[
-              SizedBox(height: 14 * _fontSizeScale),
+              SizedBox(height: 5 * _fontSizeScale),
               _StrengthSwitcher(
                 allBrands: allForGeneric,
                 currentBrand: _current,
@@ -302,7 +305,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
               ),
             ],
 
-            SizedBox(height: 16 * _fontSizeScale),
+            SizedBox(height: 5 * _fontSizeScale),
 
             // Generic Information header with dropdown and other brands button
             if (generic != null) ...[
@@ -316,6 +319,7 @@ class _BrandDetailViewState extends State<BrandDetailView> {
                   const SizedBox(width: 16),
                   // Dropdown to jump to sections
                   Container(
+                    height: 30 * _fontSizeScale,
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
                       color: _theme.surface,
@@ -441,7 +445,7 @@ class _GenericFullDetail extends StatelessWidget {
         children: [
           // Generic name header
           Container(
-            padding: EdgeInsets.all(16 * fontSizeScale),
+            padding: EdgeInsets.all(6 * fontSizeScale),
             decoration: BoxDecoration(
               border: Border(bottom: BorderSide(color: theme.divider)),
             ),
@@ -488,8 +492,9 @@ class _GenericFullDetail extends StatelessWidget {
           ),
           // Details grid
           Padding(
-            padding: EdgeInsets.all(16 * fontSizeScale),
+            padding: EdgeInsets.all(6 * fontSizeScale),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (generic.indication != null)
                   _DetailSection(
@@ -662,13 +667,14 @@ class _DetailSectionState extends State<_DetailSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 8 * widget.fontSizeScale),
+      margin: EdgeInsets.only(bottom: 2 * widget.fontSizeScale),
       decoration: BoxDecoration(
         color: widget.theme.bg,
         borderRadius: BorderRadius.circular(8 * widget.fontSizeScale),
         border: Border.all(color: widget.theme.divider.withOpacity(0.6)),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
             onTap: () {
@@ -679,9 +685,12 @@ class _DetailSectionState extends State<_DetailSection> {
             child: Container(
               padding: EdgeInsets.symmetric(
                 horizontal: 12 * widget.fontSizeScale,
-                vertical: 10 * widget.fontSizeScale,
+                vertical: 3 * widget.fontSizeScale,
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Icon(
                     widget.icon,
@@ -713,7 +722,7 @@ class _DetailSectionState extends State<_DetailSection> {
               padding: EdgeInsets.only(
                 left: 12 * widget.fontSizeScale,
                 right: 12 * widget.fontSizeScale,
-                bottom: 12 * widget.fontSizeScale,
+                bottom: 6 * widget.fontSizeScale,
               ),
               child: Text(
                 widget.content,
@@ -1507,7 +1516,7 @@ class _StrengthSwitcher extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(14 * fontSizeScale),
+      padding: EdgeInsets.all(6 * fontSizeScale),
       decoration: BoxDecoration(
         color: theme.surface,
         borderRadius: BorderRadius.circular(12 * fontSizeScale),
@@ -1533,10 +1542,10 @@ class _StrengthSwitcher extends StatelessWidget {
               ),
             ),
           ]),
-          SizedBox(height: 10 * fontSizeScale),
+          SizedBox(height: 6 * fontSizeScale),
           Wrap(
             spacing: 8,
-            runSpacing: 8,
+            runSpacing: 3,
             children: allBrands.map((b) {
               final isCurrent = b.brand_id == currentBrand.brand_id;
               final parts = <String>[
@@ -1554,7 +1563,7 @@ class _StrengthSwitcher extends StatelessWidget {
                     duration: const Duration(milliseconds: 130),
                     padding: EdgeInsets.symmetric(
                       horizontal: 12 * fontSizeScale,
-                      vertical: 7 * fontSizeScale,
+                      vertical: 1 * fontSizeScale,
                     ),
                     decoration: BoxDecoration(
                       color: isCurrent
@@ -1682,3 +1691,157 @@ class _SectionTitle extends StatelessWidget {
     );
   }
 }
+
+class BrandDetailModal extends StatefulWidget {
+  final DrugBrandModel brand;
+  final ThemeDefinition theme;
+  final double fss;
+
+  const BrandDetailModal({Key? key, required this.brand, required this.theme, required this.fss}) : super(key: key);
+
+  @override
+  State<BrandDetailModal> createState() => _BrandDetailModalState();
+}
+
+class _BrandDetailModalState extends State<BrandDetailModal> {
+  bool _isZoomed = false;
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      final theme = _themeCtrl.currentTheme;
+      final fss = _themeCtrl.fontSizeScale;
+      final selectedSize = _themeCtrl.selectedFontSize.value;
+
+      return Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: _isZoomed 
+            ? EdgeInsets.zero 
+            : EdgeInsets.symmetric(horizontal: 40 * fss, vertical: 28 * fss),
+        child: Container(
+          width: _isZoomed ? double.infinity : null,
+          height: _isZoomed ? double.infinity : null,
+          constraints: _isZoomed ? null : BoxConstraints(maxWidth: 1100 * fss),
+          decoration: modalDecoration(theme, fss).copyWith(
+            borderRadius: _isZoomed ? BorderRadius.zero : null,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20 * fss, vertical: 14 * fss),
+                decoration: BoxDecoration(
+                  color: theme.surface,
+                  borderRadius: _isZoomed ? BorderRadius.zero : BorderRadius.vertical(top: Radius.circular(16 * fss)),
+                  border: Border(bottom: BorderSide(color: theme.divider)),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.local_pharmacy_rounded, size: 16 * fss, color: theme.accent),
+                    SizedBox(width: 8 * fss),
+                    Expanded(
+                      child: Text(
+                        widget.brand.brand_name,
+                        style: TextStyle(fontSize: 15 * fss, fontWeight: FontWeight.w700, color: theme.textPrimary),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+
+                    // Font Size Controls
+                    Row(
+                      children: ['Small', 'Medium', 'Large'].map((size) {
+                        final isSelected = selectedSize == size;
+                        return Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 2 * fss),
+                          child: InkWell(
+                            onTap: () => _themeCtrl.updateFontSize(size),
+                            borderRadius: BorderRadius.circular(4 * fss),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8 * fss, vertical: 4 * fss),
+                              decoration: BoxDecoration(
+                                color: isSelected ? theme.accent.withOpacity(0.15) : Colors.transparent,
+                                borderRadius: BorderRadius.circular(4 * fss),
+                                border: Border.all(
+                                  color: isSelected ? theme.accent.withOpacity(0.4) : theme.divider.withOpacity(0.5),
+                                ),
+                              ),
+                              child: Text(
+                                size[0], // S, M, L
+                                style: TextStyle(
+                                  fontSize: 10 * fss,
+                                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                                  color: isSelected ? theme.accent : theme.textSecondary,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                    SizedBox(width: 12 * fss),
+
+                    // Zoom Toggle
+                    _HeaderButton(
+                      icon: _isZoomed ? Icons.fullscreen_exit_rounded : Icons.fullscreen_rounded,
+                      onTap: () => setState(() => _isZoomed = !_isZoomed),
+                      theme: theme,
+                      fss: fss,
+                      tooltip: _isZoomed ? 'Exit Fullscreen' : 'Fullscreen',
+                    ),
+                    SizedBox(width: 8 * fss),
+
+                    // Close Button
+                    _HeaderButton(
+                      icon: Icons.close_rounded,
+                      onTap: () => Navigator.pop(context),
+                      theme: theme,
+                      fss: fss,
+                      tooltip: 'Close',
+                    ),
+                  ],
+                ),
+              ),
+              Flexible(child: BrandDetailView(brand: widget.brand, accentColor: theme.accent, fontSizeScale: fss)),
+            ],
+          ),
+        ),
+      );
+    });
+  }
+}
+
+class _HeaderButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onTap;
+  final ThemeDefinition theme;
+  final double fss;
+  final String? tooltip;
+
+  const _HeaderButton({required this.icon, required this.onTap, required this.theme, required this.fss, this.tooltip});
+
+  @override
+  Widget build(BuildContext context) {
+    return Tooltip(
+      message: tooltip ?? '',
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: onTap,
+          child: Container(
+            width: 28 * fss,
+            height: 28 * fss,
+            decoration: BoxDecoration(
+              color: theme.surfaceElevated,
+              borderRadius: BorderRadius.circular(6 * fss),
+              border: Border.all(color: theme.divider),
+            ),
+            child: Icon(icon, size: 14 * fss, color: theme.textSecondary),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+BoxDecoration modalDecoration(ThemeDefinition theme, double fss) => BoxDecoration(color: theme.surfaceElevated, borderRadius: BorderRadius.circular(16 * fss), border: Border.all(color: theme.divider), boxShadow: [BoxShadow(color: Colors.black.withOpacity(theme.isDark ? 0.5 : 0.14), blurRadius: 40, offset: const Offset(0, 12))]);

@@ -1,0 +1,258 @@
+[
+    {
+        "id": 1,
+        "name": "DHAKA"
+    },
+    {
+        "id": 2,
+        "name": "BAGERHAT"
+    },
+    {
+        "id": 3,
+        "name": "BANDARBAN"
+    },
+    {
+        "id": 4,
+        "name": "BARGUNA"
+    },
+    {
+        "id": 5,
+        "name": "BARISAL"
+    },
+    {
+        "id": 6,
+        "name": "BHOLA"
+    },
+    {
+        "id": 7,
+        "name": "BOGRA"
+    },
+    {
+        "id": 8,
+        "name": "BRAHMANRIA"
+    },
+    {
+        "id": 9,
+        "name": "CHANDPUR"
+    },
+    {
+        "id": 10,
+        "name": "CHAPAINAWABGANJ"
+    },
+    {
+        "id": 11,
+        "name": "CHITTAGONG"
+    },
+    {
+        "id": 12,
+        "name": "CHUADANGA"
+    },
+    {
+        "id": 13,
+        "name": "COMILLA"
+    },
+    {
+        "id": 14,
+        "name": "COX'S BAZAR"
+    },
+    {
+        "id": 15,
+        "name": "DINAJPUR"
+    },
+    {
+        "id": 16,
+        "name": "FARIDPUR"
+    },
+    {
+        "id": 17,
+        "name": "FENI"
+    },
+    {
+        "id": 18,
+        "name": "GAIBANDHA"
+    },
+    {
+        "id": 19,
+        "name": "GAZIPUR"
+    },
+    {
+        "id": 20,
+        "name": "GOPALGANJ "
+    },
+    {
+        "id": 21,
+        "name": "HABIGANJ "
+    },
+    {
+        "id": 22,
+        "name": "JAMALPUR"
+    },
+    {
+        "id": 23,
+        "name": "JESSORE"
+    },
+    {
+        "id": 24,
+        "name": "JHALAKATI "
+    },
+    {
+        "id": 25,
+        "name": "JHENAIDAH "
+    },
+    {
+        "id": 26,
+        "name": "JOYPURHAT "
+    },
+    {
+        "id": 27,
+        "name": "KHAGRACHHARI "
+    },
+    {
+        "id": 28,
+        "name": "KHULNA"
+    },
+    {
+        "id": 29,
+        "name": "KISHOREGANJ "
+    },
+    {
+        "id": 30,
+        "name": "KURIGRAM "
+    },
+    {
+        "id": 31,
+        "name": "KUSHTIA "
+    },
+    {
+        "id": 32,
+        "name": "LAKSHMIPUR"
+    },
+    {
+        "id": 33,
+        "name": "LALMONIRHAT "
+    },
+    {
+        "id": 34,
+        "name": "MADARIPUR "
+    },
+    {
+        "id": 35,
+        "name": "MAGURA "
+    },
+    {
+        "id": 36,
+        "name": "MANIKGANJ "
+    },
+    {
+        "id": 37,
+        "name": "MEHERPUR "
+    },
+    {
+        "id": 38,
+        "name": "MOULVIBAZAR "
+    },
+    {
+        "id": 39,
+        "name": "MUNSHIGANJ "
+    },
+    {
+        "id": 40,
+        "name": "MYMENSINGH "
+    },
+    {
+        "id": 41,
+        "name": "NAOGAON "
+    },
+    {
+        "id": 42,
+        "name": "NARAIL "
+    },
+    {
+        "id": 43,
+        "name": "NARAYANGANJ "
+    },
+    {
+        "id": 44,
+        "name": "NARSINGDI "
+    },
+    {
+        "id": 45,
+        "name": "NATORE "
+    },
+    {
+        "id": 46,
+        "name": "NETROKONA "
+    },
+    {
+        "id": 47,
+        "name": "NILPHAMARI "
+    },
+    {
+        "id": 48,
+        "name": "NOAKHALI "
+    },
+    {
+        "id": 49,
+        "name": "PABNA "
+    },
+    {
+        "id": 50,
+        "name": "PANCHAGARH "
+    },
+    {
+        "id": 51,
+        "name": "PATUAKHALI "
+    },
+    {
+        "id": 52,
+        "name": "PIROJPUR "
+    },
+    {
+        "id": 53,
+        "name": "RAJBARI "
+    },
+    {
+        "id": 54,
+        "name": "RAJSHAHI"
+    },
+    {
+        "id": 55,
+        "name": "RANGAMATI "
+    },
+    {
+        "id": 56,
+        "name": "RANGPUR "
+    },
+    {
+        "id": 57,
+        "name": "SATKHIRA "
+    },
+    {
+        "id": 58,
+        "name": "SHARIATPUR "
+    },
+    {
+        "id": 59,
+        "name": "SHERPUR "
+    },
+    {
+        "id": 60,
+        "name": "SIRAJGANJ "
+    },
+    {
+        "id": 61,
+        "name": "SUNAMGANJ "
+    },
+    {
+        "id": 62,
+        "name": "SYLHET "
+    },
+    {
+        "id": 63,
+        "name": "TANGAIL "
+    },
+    {
+        "id": 64,
+        "name": "THAKURGAON"
+    }
+]

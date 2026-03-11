@@ -1,5 +1,8 @@
 
+import 'dart:convert';
+
 import 'package:dims_desktop/models/generic/generic_details_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
@@ -85,7 +88,24 @@ class GenericCtrl extends GetxController {
   Future<void> refreshGenericList() async {
     await getAllGenericFromBox();
   }
+  Future<void>genericInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_drug_generic.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        var dataList = (jsonResponse as List)
+            .map((i) => GenericDetailsModel.fromJson(i))
+            .where((company) => !boxGeneric.values
+            .any((e) => e.generic_id == company.generic_id))
+            .toList();
 
+        boxGeneric.addAll(dataList);
+        getAllGenericFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
   /////////////////
   ///API Call
   /////////////

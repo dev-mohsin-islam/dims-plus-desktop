@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:dims_desktop/models/company/company_model.dart';
 import 'package:dims_desktop/services/get_api_call.dart';
 import 'package:dims_desktop/utilities/shared_preferences.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
@@ -63,7 +66,27 @@ class CompanyCtrl extends GetxController {
       return null;
     }
   }
+  Future<void>companyInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_company_name.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
 
+        for(var item in jsonResponse){
+          CompanyModel data = CompanyModel(
+            company_id: int.parse(item['company_id']),
+            company_name: item['company_name'],
+          );
+          if(!boxCompany.values.where((e) => e.company_id == data.company_id).isNotEmpty){
+            boxCompany.add(data);
+          }
+        }
+        getAllCompanyFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
   /////////////////
   ///API Call
   /////////////

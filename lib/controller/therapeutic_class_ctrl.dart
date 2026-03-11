@@ -1,5 +1,8 @@
 
+import 'dart:convert';
+
 import 'package:dims_desktop/models/therapeutic_class/therapeutic_class_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
 
@@ -30,7 +33,28 @@ class TherapeuticClassCtrl extends GetxController {
       _logger.e(e);
     }
   }
+  Future<void>therapeuticClassInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_therapitic.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          TherapeuticClassModel data = TherapeuticClassModel(
+            id: int.parse(item['therapitic_id']),
+            name: item['therapitic_name'],
+            systemic_class_id: int.parse(item['therapitic_systemic_class_id']),
+          );
+          if(!boxTherapeuticClass.values.where((e) => e.id == data.id).isNotEmpty){
+            boxTherapeuticClass.add(data);
+          }
+        }
 
+        getAllTherapeuticFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
 
   /////////////////
   ///API Call

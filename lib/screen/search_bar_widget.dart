@@ -26,10 +26,11 @@ class GlobalSearchBar extends StatefulWidget {
 
 class _GlobalSearchBarState extends State<GlobalSearchBar> {
   final TextEditingController _ctrl = TextEditingController();
-  final DrugBrandCtrl _brandCtrl = Get.put(DrugBrandCtrl());
-  final GenericCtrl _genericCtrl = Get.put(GenericCtrl());
-  final CompanyCtrl _companyCtrl = Get.put(CompanyCtrl());
-  final ThemeCtrl _themeCtrl = Get.put(ThemeCtrl());
+  final DrugBrandCtrl _brandCtrl = Get.find<DrugBrandCtrl>();
+  final GenericCtrl _genericCtrl = Get.find<GenericCtrl>();
+  final CompanyCtrl _companyCtrl = Get.find<CompanyCtrl>();
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+  
   final FocusNode _focusNode = FocusNode();
   List<DrugBrandModel> _results = [];
   final LayerLink _layerLink = LayerLink();
@@ -52,7 +53,7 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
 
   @override
   void dispose() {
-    _overlayEntry?.remove();
+    _hideOverlay();
     _ctrl.dispose();
     _focusNode.dispose();
     super.dispose();
@@ -60,7 +61,9 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
 
   void _search(String query) {
     if (query.trim().isEmpty) {
-      setState(() => _results = []);
+      if (_results.isNotEmpty) {
+        setState(() => _results = []);
+      }
       _hideOverlay();
       return;
     }
@@ -89,14 +92,17 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
   void _showOverlay() {
     _hideOverlay();
     _overlayEntry = _buildOverlay();
-    if (mounted && Overlay.of(context) != null) {
-      Overlay.of(context).insert(_overlayEntry!);
+    if (mounted) {
+      final overlay = Overlay.of(context);
+      overlay.insert(_overlayEntry!);
     }
   }
 
   void _hideOverlay() {
-    _overlayEntry?.remove();
-    _overlayEntry = null;
+    if (_overlayEntry != null) {
+      _overlayEntry!.remove();
+      _overlayEntry = null;
+    }
   }
 
   void _selectBrand(DrugBrandModel brand) {
@@ -121,128 +127,136 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
     final size = box.size;
 
     return OverlayEntry(
-      builder: (_) => Positioned(
-        width: size.width,
-        child: CompositedTransformFollower(
-          link: _layerLink,
-          showWhenUnlinked: false,
-          offset: Offset(0, size.height + 4),
-          child: Material(
-            color: Colors.transparent,
-            child: Container(
-              constraints: BoxConstraints(maxHeight: 420 * _fontSizeScale),
-              decoration: BoxDecoration(
-                color: _theme.surfaceElevated,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: _theme.divider),
-                boxShadow: [
-                  BoxShadow(
-                    color: _theme.isDark
-                        ? Colors.black.withOpacity(0.4)
-                        : Colors.black.withOpacity(0.1),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                    child: Row(children: [
-                      Text(
-                        '${_results.length} results',
-                        style: TextStyle(
-                          fontSize: 11 * _fontSizeScale,
-                          fontWeight: FontWeight.w600,
-                          color: _theme.textSecondary,
-                          letterSpacing: 0.8,
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        'Press Enter or click to open',
-                        style: TextStyle(
-                          fontSize: 11 * _fontSizeScale,
-                          fontWeight: FontWeight.w600,
-                          color: _theme.textMuted,
-                          letterSpacing: 0.8,
-                        ),
-                      ),
-                    ]),
-                  ),
-                  Divider(color: _theme.divider, height: 1),
-                  Flexible(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _results.length,
-                      itemBuilder: (_, i) {
-                        final b = _results[i];
-                        final generic = _genericCtrl.genericList
-                            .firstWhereOrNull(
-                                (g) => g.generic_id.toString() == b.generic_id.toString());
-                        final company = _companyCtrl.getCompanyById(b.company_id);
-                        return _SearchResultItem(
-                          brand: b,
-                          genericName: generic?.generic_name,
-                          companyName: company?.company_name,
-                          onTap: () => _selectBrand(b),
-                          theme: _theme,
-                          accentColor: _accentColor,
-                          fontSizeScale: _fontSizeScale,
-                        );
-                      },
+      builder: (_) {
+        final theme = _theme;
+        final scale = _fontSizeScale;
+        
+        return Positioned(
+          width: size.width,
+          child: CompositedTransformFollower(
+            link: _layerLink,
+            showWhenUnlinked: false,
+            offset: Offset(0, size.height + 4),
+            child: Material(
+              color: Colors.transparent,
+              child: Container(
+                constraints: BoxConstraints(maxHeight: 420 * scale),
+                decoration: BoxDecoration(
+                  color: theme.surfaceElevated,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: theme.divider),
+                  boxShadow: [
+                    BoxShadow(
+                      color: theme.isDark
+                          ? Colors.black.withOpacity(0.4)
+                          : Colors.black.withOpacity(0.1),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      child: Row(children: [
+                        Text(
+                          '${_results.length} results',
+                          style: TextStyle(
+                            fontSize: 11 * scale,
+                            fontWeight: FontWeight.w600,
+                            color: theme.textSecondary,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
+                        const Spacer(),
+                        Text(
+                          'Press Enter or click to open',
+                          style: TextStyle(
+                            fontSize: 11 * scale,
+                            fontWeight: FontWeight.w600,
+                            color: theme.textMuted,
+                            letterSpacing: 0.8,
+                          ),
+                        ),
+                      ]),
+                    ),
+                    Divider(color: theme.divider, height: 1),
+                    Flexible(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: _results.length,
+                        itemBuilder: (_, i) {
+                          final b = _results[i];
+                          final generic = _genericCtrl.genericList
+                              .firstWhereOrNull(
+                                  (g) => g.generic_id.toString() == b.generic_id.toString());
+                          final company = _companyCtrl.getCompanyById(b.company_id);
+                          return _SearchResultItem(
+                            brand: b,
+                            genericName: generic?.generic_name,
+                            companyName: company?.company_name,
+                            onTap: () => _selectBrand(b),
+                            theme: theme,
+                            accentColor: _accentColor,
+                            fontSizeScale: scale,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = _theme;
+    final scale = _fontSizeScale;
+    
     return CompositedTransformTarget(
       link: _layerLink,
       child: Container(
-        height: 42 * _fontSizeScale,
+        height: 42 * scale,
         decoration: BoxDecoration(
-          color: _theme.surface,
+          color: theme.surface,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: _focusNode.hasFocus
                 ? _accentColor.withOpacity(0.5)
-                : _theme.divider,
+                : theme.divider,
           ),
         ),
         child: Row(
           children: [
-            SizedBox(width: 12 * _fontSizeScale),
+            SizedBox(width: 12 * scale),
             Icon(
               Icons.search_rounded,
-              size: 18 * _fontSizeScale,
-              color: _theme.textMuted,
+              size: 18 * scale,
+              color: theme.textMuted,
             ),
-            SizedBox(width: 10 * _fontSizeScale),
+            SizedBox(width: 10 * scale),
             Expanded(
               child: TextField(
                 controller: _ctrl,
                 focusNode: _focusNode,
                 style: TextStyle(
-                  fontSize: 13 * _fontSizeScale,
+                  fontSize: 13 * scale,
                   fontWeight: FontWeight.w400,
-                  color: _theme.textPrimary,
+                  color: theme.textPrimary,
                 ),
                 decoration: InputDecoration(
                   hintText: 'Search by brand name or generic name...',
                   hintStyle: TextStyle(
-                    color: _theme.textMuted,
-                    fontSize: 13 * _fontSizeScale,
+                    color: theme.textMuted,
+                    fontSize: 13 * scale,
                   ),
                   border: InputBorder.none,
                   isDense: true,
@@ -261,29 +275,29 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
                   setState(() => _results = []);
                 },
                 child: Padding(
-                  padding: EdgeInsets.only(right: 10 * _fontSizeScale),
+                  padding: EdgeInsets.only(right: 10 * scale),
                   child: Icon(
                     Icons.close_rounded,
-                    size: 16 * _fontSizeScale,
-                    color: _theme.textMuted,
+                    size: 16 * scale,
+                    color: theme.textMuted,
                   ),
                 ),
               ),
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 8 * _fontSizeScale,
-                vertical: 4 * _fontSizeScale,
+                horizontal: 8 * scale,
+                vertical: 4 * scale,
               ),
-              margin: EdgeInsets.only(right: 8 * _fontSizeScale),
+              margin: EdgeInsets.only(right: 8 * scale),
               decoration: BoxDecoration(
-                color: _theme.surfaceHighlight,
+                color: theme.surfaceHighlight,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: Text(
                 '⌘K',
                 style: TextStyle(
-                  fontSize: 10 * _fontSizeScale,
-                  color: _theme.textMuted,
+                  fontSize: 10 * scale,
+                  color: theme.textMuted,
                   fontFamily: 'monospace',
                 ),
               ),
@@ -295,7 +309,6 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
   }
 }
 
-// ─── Search result item ───────────────────────────────────────────────────────
 class _SearchResultItem extends StatefulWidget {
   final DrugBrandModel brand;
   final String? genericName;
@@ -321,100 +334,102 @@ class _SearchResultItem extends StatefulWidget {
 
 class _SearchResultItemState extends State<_SearchResultItem> {
   bool _hover = false;
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
 
   @override
   Widget build(BuildContext context) {
-    final themeCtrl = Get.put(ThemeCtrl());
-    final showStrength = themeCtrl.showStrengthInSearch.value;
-
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hover = true),
-      onExit: (_) => setState(() => _hover = false),
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 100),
-          color: _hover ? widget.theme.surfaceHighlight : Colors.transparent,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Row(
-            children: [
-              Container(
-                width: 34 * widget.fontSizeScale,
-                height: 34 * widget.fontSizeScale,
-                decoration: BoxDecoration(
-                  color: widget.accentColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(8),
+    return Obx(() {
+      final showStrength = _themeCtrl.showStrengthInSearch.value;
+      
+      return MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _hover = true),
+        onExit: (_) => setState(() => _hover = false),
+        child: GestureDetector(
+          onTap: widget.onTap,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 100),
+            color: _hover ? widget.theme.surfaceHighlight : Colors.transparent,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Row(
+              children: [
+                Container(
+                  width: 34 * widget.fontSizeScale,
+                  height: 34 * widget.fontSizeScale,
+                  decoration: BoxDecoration(
+                    color: widget.accentColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Icon(
+                    Icons.local_pharmacy_outlined,
+                    size: 16 * widget.fontSizeScale,
+                    color: widget.accentColor,
+                  ),
                 ),
-                child: Icon(
-                  Icons.local_pharmacy_outlined,
-                  size: 16 * widget.fontSizeScale,
-                  color: widget.accentColor,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.brand.brand_name,
-                      style: TextStyle(
-                        fontSize: 13 * widget.fontSizeScale,
-                        fontWeight: FontWeight.w600,
-                        color: widget.theme.textPrimary,
-                      ),
-                    ),
-                    if (widget.genericName != null)
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
-                        widget.genericName!,
+                        widget.brand.brand_name,
                         style: TextStyle(
-                          fontSize: 11 * widget.fontSizeScale,
+                          fontSize: 13 * widget.fontSizeScale,
+                          fontWeight: FontWeight.w600,
+                          color: widget.theme.textPrimary,
+                        ),
+                      ),
+                      if (widget.genericName != null)
+                        Text(
+                          widget.genericName!,
+                          style: TextStyle(
+                            fontSize: 11 * widget.fontSizeScale,
+                            color: widget.theme.textSecondary,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    if (showStrength) ...[
+                      Row(children: [
+                        if (widget.brand.strength != null) ...[
+                          _Chip(
+                            widget.brand.strength!,
+                            widget.accentColor,
+                            widget.fontSizeScale,
+                            widget.theme,
+                          ),
+                          const SizedBox(width: 4),
+                        ],
+                        if (widget.brand.form != null)
+                          _Chip(
+                            widget.brand.form!,
+                            AppTheme.accentGreen,
+                            widget.fontSizeScale,
+                            widget.theme,
+                          ),
+                      ]),
+                    ],
+                    if (widget.companyName != null)
+                      Text(
+                        widget.companyName!,
+                        style: TextStyle(
+                          fontSize: 10 * widget.fontSizeScale,
                           color: widget.theme.textSecondary,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                   ],
                 ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  if (showStrength) ...[
-                    Row(children: [
-                      if (widget.brand.strength != null) ...[
-                        _Chip(
-                          widget.brand.strength!,
-                          widget.accentColor,
-                          widget.fontSizeScale,
-                          widget.theme,
-                        ),
-                        const SizedBox(width: 4),
-                      ],
-                      if (widget.brand.form != null)
-                        _Chip(
-                          widget.brand.form!,
-                          AppTheme.accentGreen,
-                          widget.fontSizeScale,
-                          widget.theme,
-                        ),
-                    ]),
-                  ],
-                  if (widget.companyName != null)
-                    Text(
-                      widget.companyName!,
-                      style: TextStyle(
-                        fontSize: 10 * widget.fontSizeScale,
-                        color: widget.theme.textSecondary,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

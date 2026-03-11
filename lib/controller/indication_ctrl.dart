@@ -1,5 +1,8 @@
 
+import 'dart:convert';
+
 import 'package:dims_desktop/models/indication/indication_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
@@ -69,6 +72,27 @@ class IndicationCtrl extends GetxController {
   // Refresh indication list from box
   Future<void> refreshIndicationList() async {
     await getAllIndicationFromBox();
+  }
+
+  Future<void>indicationInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_indication.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          IndicationModel data = IndicationModel(
+            id: int.parse(item['indication_id']),
+            name: item['indication_name'],
+          );
+          if(!boxIndication.values.where((e) => e.id == data.id).isNotEmpty){
+            boxIndication.add(data);
+          }
+        }
+        getAllIndicationFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
   }
 
   /////////////////

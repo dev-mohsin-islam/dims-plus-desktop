@@ -5,6 +5,8 @@ import 'package:dims_desktop/models/generic/generic_details_model.dart';
 import 'package:dims_desktop/models/indication/indication_model.dart';
 import 'package:dims_desktop/models/indication_generic_index/indication_generic_model.dart';
 import 'package:dims_desktop/models/pregnancy_category/pregnancy_category_model.dart';
+import 'package:dims_desktop/models/registration/occupation_model.dart';
+import 'package:dims_desktop/models/registration/speciality_model.dart';
 import 'package:dims_desktop/models/systemic_class/systemic_class_model.dart';
 import 'package:dims_desktop/models/therapeutic__generic_index/therapeutic_class_generic_index_model.dart';
 import 'package:dims_desktop/models/therapeutic_class/therapeutic_class_model.dart';
@@ -21,5 +23,7 @@ abstract class HiveBoxGet{
   static Box<TherapeuticClassModel> getTherapeuticClass() => Hive.box<TherapeuticClassModel>(BoxName.TherapeuticClass);
   static Box<TherapeuticClassGenericIndexModel> getTherapeuticGenericIndex() => Hive.box<TherapeuticClassGenericIndexModel>(BoxName.TherapeuticClassGenericIndex);
   static Box<SystemicClassModel> getSystemicClass() => Hive.box<SystemicClassModel>(BoxName.SystemicClass);
+  static Box<OccupationModel> getOccupation() => Hive.box<OccupationModel>(BoxName.Occupation);
+  static Box<SpecialityModel> getSpeciality() => Hive.box<SpecialityModel>(BoxName.Speciality);
 
 }

@@ -1,0 +1,150 @@
+[
+    {
+        "id": 1,
+        "specialty": "Anesthesia & ICU Specialists"
+    },
+    {
+        "id": 2,
+        "specialty": "Respiratory Medicine Specialists"
+    },
+    {
+        "id": 3,
+        "specialty": "Hematologists"
+    },
+    {
+        "id": 4,
+        "specialty": "General & Laparoscopic Surgeons"
+    },
+    {
+        "id": 5,
+        "specialty": "Cardio-Vascular Surgeons"
+    },
+    {
+        "id": 6,
+        "specialty": "Cardiologists"
+    },
+    {
+        "id": 8,
+        "specialty": "Colorectal Surgeons"
+    },
+    {
+        "id": 9,
+        "specialty": "Dentists"
+    },
+    {
+        "id": 10,
+        "specialty": "Dermatologists"
+    },
+    {
+        "id": 11,
+        "specialty": "Endocrinologists"
+    },
+    {
+        "id": 12,
+        "specialty": "ENT Specialists"
+    },
+    {
+        "id": 13,
+        "specialty": "Ophthalmologists"
+    },
+    {
+        "id": 14,
+        "specialty": "Gastroenterologists"
+    },
+    {
+        "id": 16,
+        "specialty": "General Physicians"
+    },
+    {
+        "id": 17,
+        "specialty": "Gynecologists & Obstetricians"
+    },
+    {
+        "id": 18,
+        "specialty": "Hepatobiliary Surgeons"
+    },
+    {
+        "id": 19,
+        "specialty": "Infertility Specialists"
+    },
+    {
+        "id": 20,
+        "specialty": "Internal Medicine Specialists"
+    },
+    {
+        "id": 21,
+        "specialty": "Orofacial & Maxillary Surgeons"
+    },
+    {
+        "id": 22,
+        "specialty": "Rheumatology Specialists"
+    },
+    {
+        "id": 23,
+        "specialty": "Nephrologists"
+    },
+    {
+        "id": 24,
+        "specialty": "Neurologists"
+    },
+    {
+        "id": 25,
+        "specialty": "Neurosurgeons"
+    },
+    {
+        "id": 26,
+        "specialty": "Cancer Surgeons"
+    },
+    {
+        "id": 27,
+        "specialty": "Oncologists"
+    },
+    {
+        "id": 28,
+        "specialty": "Orthopaedic Surgeons"
+    },
+    {
+        "id": 30,
+        "specialty": "Pediatricians"
+    },
+    {
+        "id": 31,
+        "specialty": "Pediatric Surgeons"
+    },
+    {
+        "id": 32,
+        "specialty": "Physical Medicine Specialists"
+    },
+    {
+        "id": 33,
+        "specialty": "Plastic Surgeons"
+    },
+    {
+        "id": 34,
+        "specialty": "Psychiatrists"
+    },
+    {
+        "id": 36,
+        "specialty": "Urologist"
+    },
+    {
+        "id": 37,
+        "specialty": "Other"
+    },
+    {
+        "id": 38,
+        "specialty": "Critical Care Medicine Specialists"
+    },
+    {
+        "id": 39,
+        "specialty": "Diabetologists"
+    },
+    {
+        "id": 40,
+        "specialty": "Hepatologists"
+    },
+    {
+        "id": 41,
+        "specialty": "Thoracic Surgeons"
+    }
+]

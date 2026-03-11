@@ -1,5 +1,8 @@
 
+import 'dart:convert';
+
 import 'package:dims_desktop/models/indication_generic_index/indication_generic_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:hive/hive.dart';
 import 'package:get/get.dart';
@@ -79,14 +82,32 @@ class IndicationGenIndCtrl extends GetxController {
     await getAllIndicationGenIndFromBox();
   }
 
+  Future<void>indicationGenIndInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_indication_generic_index.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          IndicationGenericModel data = IndicationGenericModel(
+            generic_id: int.parse(item['generic_id']),
+            indication_id: item['indication_id'],
+          );
+
+          if(!boxIndGenIndex.values.where((e) => e.generic_id == data.generic_id && e.indication_id == data.indication_id).isNotEmpty){
+            boxIndGenIndex.add(data);
+          }
+        }
+        getAllIndicationGenIndFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
   /////////////////
   ///API Call
   /////////////
   Future<void> getIndicationGenIndexApi() async {
     try {
-      SharedPreferences pref = await SharedPreferences.getInstance();
-      await pref.clear();
-
       final String baseUrl = "${EngPoint.BASEURL}${EngPoint.IndicationGenericIndex}";
       String token = sharedPref.pToken;
       String lastSyncDate = await sharedPref.getLastSyncDate(sharedPref.indicationGenIndPref);

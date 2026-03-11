@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logger/logger.dart';
@@ -73,6 +76,27 @@ class TherapeuticGenIndCtrl extends GetxController {
     await getAllTherapeuticGenIndFromBox();
   }
 
+  Future<void>therapeuticClassGenIndInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_therapitic_generic.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          TherapeuticClassGenericIndexModel data = TherapeuticClassGenericIndexModel(
+              generic_id: int.parse(item['generic_id']),
+              therapitic_id: int.parse(item['therapitic_id'])
+          );
+          if(!boxTherapeuticGenInd.values.where((e) => e.generic_id == data.generic_id && e.therapitic_id == data.therapitic_id).isNotEmpty){
+            boxTherapeuticGenInd.add(data);
+          }
+        }
+
+        getAllTherapeuticGenIndFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
   /////////////////
   ///API Call
   /////////////

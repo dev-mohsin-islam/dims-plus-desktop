@@ -21,7 +21,10 @@ class IndicationScreen extends StatefulWidget {
 
 class _IndicationScreenState extends State<IndicationScreen> {
   final IndicationCtrl _indCtrl = Get.find<IndicationCtrl>();
-  final ThemeCtrl _themeCtrl = Get.put(ThemeCtrl());
+  final ThemeCtrl _themeCtrl = Get.find<ThemeCtrl>();
+  final IndicationGenIndCtrl _indGenCtrl = Get.find<IndicationGenIndCtrl>();
+  final GenericCtrl _genericCtrl = Get.find<GenericCtrl>();
+  
   final TextEditingController _searchCtrl = TextEditingController();
 
   IndicationModel? _selectedIndication;
@@ -39,137 +42,145 @@ class _IndicationScreenState extends State<IndicationScreen> {
     super.dispose();
   }
 
+  void _openBrandDetail(DrugBrandModel brand, ThemeDefinition theme, double fss) {
+    showDialog(
+      context: context,
+      builder: (_) => BrandDetailModal(brand: brand, theme: theme, fss: fss),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      final theme = _themeCtrl.currentTheme;
-      final fontSizeScale = _themeCtrl.fontSizeScale;
+    final theme = _themeCtrl.currentTheme;
+    final fontSizeScale = _themeCtrl.fontSizeScale;
 
-      return Row(
-        children: [
-          // ── Left: Indication list ──────────────────────────────────────────
+    return Row(
+      children: [
+        // ── Left: Indication list ──────────────────────────────────────────
+        Container(
+          width: 280,
+          decoration: BoxDecoration(
+            color: theme.surface,
+            border: Border(right: BorderSide(color: theme.divider)),
+          ),
+          child: Column(
+            children: [
+              _PanelHeader(
+                title: 'Indications',
+                icon: Icons.health_and_safety_outlined,
+                theme: theme,
+                fontSizeScale: fontSizeScale,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: SearchInput(
+                  controller: _searchCtrl,
+                  hint: 'Search indications...',
+                  onChanged: (q) {
+                    _indCtrl.searchIndications(q);
+                  },
+                  fontSizeScale: fontSizeScale,
+                  accentColor: theme.accent,
+                ),
+              ),
+              Obx(() {
+                final list = _indCtrl.filteredIndicationList;
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '${list.length} indications',
+                      style: TextStyle(
+                        fontSize: 11 * fontSizeScale,
+                        fontWeight: FontWeight.w600,
+                        color: theme.textSecondary,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                  ),
+                );
+              }),
+              Expanded(
+                child: Obx(() {
+                  final list = _indCtrl.filteredIndicationList;
+                  if (list.isEmpty) {
+                    return Center(
+                      child: Text(
+                        'No indications found',
+                        style: TextStyle(
+                          fontSize: 12 * fontSizeScale,
+                          color: theme.textMuted,
+                        ),
+                      ),
+                    );
+                  }
+                  return ListView.builder(
+                    itemCount: list.length,
+                    itemBuilder: (_, i) {
+                      final ind = list[i];
+                      return _IndicationItem(
+                        indication: ind,
+                        isSelected: _selectedIndication?.id == ind.id,
+                        onTap: () => setState(() {
+                          _selectedIndication = ind;
+                          _selectedGeneric = null;
+                        }),
+                        theme: theme,
+                        fontSizeScale: fontSizeScale,
+                      );
+                    },
+                  );
+                }),
+              ),
+            ],
+          ),
+        ),
+
+        // ── Middle: Generics for selected indication ───────────────────────
+        if (_selectedIndication != null)
           Container(
-            width: 280,
+            width: 320,
             decoration: BoxDecoration(
               color: theme.surface,
               border: Border(right: BorderSide(color: theme.divider)),
             ),
-            child: Column(
-              children: [
-                _PanelHeader(
-                  title: 'Indications',
-                  icon: Icons.health_and_safety_outlined,
-                  theme: theme,
-                  fontSizeScale: fontSizeScale,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: SearchInput(
-                    controller: _searchCtrl,
-                    hint: 'Search indications...',
-                    onChanged: (q) {
-                      _indCtrl.searchIndications(q);
-                    },
-                    fontSizeScale: fontSizeScale,
-                    accentColor: theme.accent,
-                  ),
-                ),
-                Obx(() {
-                  final list = _indCtrl.filteredIndicationList;
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        '${list.length} indications',
-                        style: TextStyle(
-                          fontSize: 11 * fontSizeScale,
-                          fontWeight: FontWeight.w600,
-                          color: theme.textSecondary,
-                          letterSpacing: 0.8,
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-                Expanded(
-                  child: Obx(() {
-                    final list = _indCtrl.filteredIndicationList;
-                    if (list.isEmpty) {
-                      return Center(
-                        child: Text(
-                          'No indications found',
-                          style: TextStyle(
-                            fontSize: 12 * fontSizeScale,
-                            color: theme.textMuted,
-                          ),
-                        ),
-                      );
-                    }
-                    return ListView.builder(
-                      itemCount: list.length,
-                      itemBuilder: (_, i) {
-                        final ind = list[i];
-                        return _IndicationItem(
-                          indication: ind,
-                          isSelected: _selectedIndication?.id == ind.id,
-                          onTap: () => setState(() {
-                            _selectedIndication = ind;
-                            _selectedGeneric = null;
-                          }),
-                          theme: theme,
-                          fontSizeScale: fontSizeScale,
-                        );
-                      },
-                    );
-                  }),
-                ),
-              ],
+            child: _GenericsForIndication(
+              indication: _selectedIndication!,
+              onGenericTap: (g) => setState(() => _selectedGeneric = g),
+              selectedGenericId: _selectedGeneric?.generic_id,
+              theme: theme,
+              fontSizeScale: fontSizeScale,
+              indGenCtrl: _indGenCtrl,
+              genericCtrl: _genericCtrl,
             ),
           ),
 
-          // ── Middle: Generics for selected indication ───────────────────────
-          if (_selectedIndication != null)
-            Container(
-              width: 280,
-              decoration: BoxDecoration(
-                color: theme.surface,
-                border: Border(right: BorderSide(color: theme.divider)),
-              ),
-              child: _GenericsForIndication(
-                indication: _selectedIndication!,
-                onGenericTap: (g) => setState(() => _selectedGeneric = g),
-                selectedGenericId: _selectedGeneric?.generic_id,
-                theme: theme,
-                fontSizeScale: fontSizeScale,
-              ),
-            ),
-
-          // ── Right: Brands + detail ─────────────────────────────────────────
-          Expanded(
-            child: _selectedGeneric != null
-                ? _BrandsAndDetailPanel(
-              generic: _selectedGeneric!,
-              theme: theme,
-              fontSizeScale: fontSizeScale,
-            )
-                : _selectedIndication != null
-                ? _EmptyHint(
-              icon: Icons.science_outlined,
-              message: 'Select a generic to view brands',
-              theme: theme,
-              fontSizeScale: fontSizeScale,
-            )
-                : _EmptyHint(
-              icon: Icons.health_and_safety_outlined,
-              message: 'Select an indication from the list',
-              theme: theme,
-              fontSizeScale: fontSizeScale,
-            ),
+        // ── Right: Brands ──────────────────────────────────────────────────
+        Expanded(
+          child: _selectedGeneric != null
+              ? _BrandsPanel(
+            generic: _selectedGeneric!,
+            theme: theme,
+            fontSizeScale: fontSizeScale,
+            onBrandTap: (b) => _openBrandDetail(b, theme, fontSizeScale),
+          )
+              : _selectedIndication != null
+              ? _EmptyHint(
+            icon: Icons.science_outlined,
+            message: 'Select a generic to view brands',
+            theme: theme,
+            fontSizeScale: fontSizeScale,
+          )
+              : _EmptyHint(
+            icon: Icons.health_and_safety_outlined,
+            message: 'Select an indication from the list',
+            theme: theme,
+            fontSizeScale: fontSizeScale,
           ),
-        ],
-      );
-    });
+        ),
+      ],
+    );
   }
 }
 
@@ -242,6 +253,8 @@ class _GenericsForIndication extends StatelessWidget {
   final int? selectedGenericId;
   final ThemeDefinition theme;
   final double fontSizeScale;
+  final IndicationGenIndCtrl indGenCtrl;
+  final GenericCtrl genericCtrl;
 
   const _GenericsForIndication({
     required this.indication,
@@ -249,91 +262,93 @@ class _GenericsForIndication extends StatelessWidget {
     this.selectedGenericId,
     required this.theme,
     required this.fontSizeScale,
+    required this.indGenCtrl,
+    required this.genericCtrl,
   });
 
   @override
   Widget build(BuildContext context) {
-    final indGenCtrl = Get.find<IndicationGenIndCtrl>();
-    final genericCtrl = Get.put(GenericCtrl());
+    return Obx(() {
+      final rawIds = indGenCtrl.getGenericIdsByIndication(indication.id);
+      final genericIds = rawIds.map((e) => e.toString()).toSet();
+      
+      final generics = genericCtrl.genericList
+          .where((g) => genericIds.contains(g.generic_id.toString()))
+          .toList();
 
-    final rawIds = indGenCtrl.getGenericIdsByIndication(indication.id);
-    final genericIds = rawIds.map((e) => e.toString()).toSet().toList();
-    final generics = genericCtrl.genericList
-        .where((g) => genericIds.contains(g.generic_id.toString()))
-        .toList();
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: theme.divider)),
-          ),
-          child: Row(
-            children: [
-              Icon(
-                Icons.health_and_safety_outlined,
-                size: 14 * fontSizeScale,
-                color: AppTheme.accentAmber,
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  indication.name,
-                  style: TextStyle(
-                    fontSize: 14 * fontSizeScale,
-                    fontWeight: FontWeight.w600,
-                    color: theme.textPrimary,
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: theme.divider)),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.health_and_safety_outlined,
+                  size: 14 * fontSizeScale,
+                  color: AppTheme.accentAmber,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    indication.name,
+                    style: TextStyle(
+                      fontSize: 14 * fontSizeScale,
+                      fontWeight: FontWeight.w600,
+                      color: theme.textPrimary,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Text(
-            '${generics.length} generics',
-            style: TextStyle(
-              fontSize: 11 * fontSizeScale,
-              fontWeight: FontWeight.w600,
-              color: theme.textSecondary,
-              letterSpacing: 0.8,
+              ],
             ),
           ),
-        ),
-        if (generics.isEmpty)
-          Expanded(
-            child: Center(
-              child: Text(
-                'No generics linked to this indication',
-                style: TextStyle(
-                  fontSize: 12 * fontSizeScale,
-                  color: theme.textMuted,
-                ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Text(
+              '${generics.length} generics',
+              style: TextStyle(
+                fontSize: 11 * fontSizeScale,
+                fontWeight: FontWeight.w600,
+                color: theme.textSecondary,
+                letterSpacing: 0.8,
               ),
             ),
-          )
-        else
-          Expanded(
-            child: ListView.builder(
-              itemCount: generics.length,
-              itemBuilder: (_, i) {
-                final g = generics[i];
-                return _GenericRowItem(
-                  generic: g,
-                  isSelected: selectedGenericId == g.generic_id,
-                  onTap: () => onGenericTap(g),
-                  theme: theme,
-                  fontSizeScale: fontSizeScale,
-                );
-              },
-            ),
           ),
-      ],
-    );
+          if (generics.isEmpty)
+            Expanded(
+              child: Center(
+                child: Text(
+                  'No generics linked to this indication',
+                  style: TextStyle(
+                    fontSize: 12 * fontSizeScale,
+                    color: theme.textMuted,
+                  ),
+                ),
+              ),
+            )
+          else
+            Expanded(
+              child: ListView.builder(
+                itemCount: generics.length,
+                itemBuilder: (_, i) {
+                  final g = generics[i];
+                  return _GenericRowItem(
+                    generic: g,
+                    isSelected: selectedGenericId?.toString() == g.generic_id.toString(),
+                    onTap: () => onGenericTap(g),
+                    theme: theme,
+                    fontSizeScale: fontSizeScale,
+                  );
+                },
+              ),
+            ),
+        ],
+      );
+    });
   }
 }
 
@@ -402,34 +417,34 @@ class _GenericRowItemState extends State<_GenericRowItem> {
   }
 }
 
-// ─── Brands + detail panel ────────────────────────────────────────────────────
+// ─── Brands panel ─────────────────────────────────────────────────────────────
 
-class _BrandsAndDetailPanel extends StatefulWidget {
+class _BrandsPanel extends StatefulWidget {
   final GenericDetailsModel generic;
   final ThemeDefinition theme;
   final double fontSizeScale;
+  final Function(DrugBrandModel) onBrandTap;
 
-  const _BrandsAndDetailPanel({
+  const _BrandsPanel({
     required this.generic,
     required this.theme,
     required this.fontSizeScale,
+    required this.onBrandTap,
   });
 
   @override
-  State<_BrandsAndDetailPanel> createState() => _BrandsAndDetailPanelState();
+  State<_BrandsPanel> createState() => _BrandsPanelState();
 }
 
-class _BrandsAndDetailPanelState extends State<_BrandsAndDetailPanel> {
-  DrugBrandModel? _selectedBrand;
+class _BrandsPanelState extends State<_BrandsPanel> {
   final TextEditingController _searchCtrl = TextEditingController();
   String _searchQuery = '';
   String? _filterCompanyId;
 
   @override
-  void didUpdateWidget(_BrandsAndDetailPanel old) {
+  void didUpdateWidget(_BrandsPanel old) {
     super.didUpdateWidget(old);
     if (old.generic.generic_id != widget.generic.generic_id) {
-      _selectedBrand = null;
       _filterCompanyId = null;
       _searchQuery = '';
       _searchCtrl.clear();
@@ -446,9 +461,9 @@ class _BrandsAndDetailPanelState extends State<_BrandsAndDetailPanel> {
     var result = all;
     if (_searchQuery.isNotEmpty) {
       result = result.where((b) =>
-      b.brand_name.toLowerCase().contains(_searchQuery) ||
-          (b.strength?.toLowerCase().contains(_searchQuery) ?? false) ||
-          (b.form?.toLowerCase().contains(_searchQuery) ?? false)
+      (b.brand_name.toLowerCase().contains(_searchQuery)) ||
+          (b.strength != null && b.strength!.toLowerCase().contains(_searchQuery)) ||
+          (b.form != null && b.form!.toLowerCase().contains(_searchQuery))
       ).toList();
     }
     if (_filterCompanyId != null) {
@@ -459,135 +474,299 @@ class _BrandsAndDetailPanelState extends State<_BrandsAndDetailPanel> {
 
   @override
   Widget build(BuildContext context) {
-    final brandCtrl = Get.put(DrugBrandCtrl());
-    final companyCtrl = Get.put(CompanyCtrl());
-    final themeCtrl = Get.put(ThemeCtrl());
+    final brandCtrl = Get.find<DrugBrandCtrl>();
+    final themeCtrl = Get.find<ThemeCtrl>();
 
-    final allBrands = brandCtrl.drugBrandList
-        .where((b) => b.generic_id.toString() == widget.generic.generic_id.toString())
-        .toList();
+    return Obx(() {
+      final allBrands = brandCtrl.drugBrandList
+          .where((b) => b.generic_id.toString() == widget.generic.generic_id.toString())
+          .toList();
 
-    final displayed = _getFilteredBrands(allBrands);
-    final companyIds = allBrands
-        .map((b) => b.company_id.toString())
-        .toSet()
-        .toList()
-      ..sort();
+      final displayed = _getFilteredBrands(allBrands);
+      final companyIds = allBrands
+          .map((b) => b.company_id.toString())
+          .toSet()
+          .toList()
+        ..sort();
 
-    if (_filterCompanyId != null && !companyIds.contains(_filterCompanyId)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) setState(() => _filterCompanyId = null);
-      });
-    }
-
-    return Row(
-      children: [
-        // Brand list panel
-        Container(
-          width: 260,
-          decoration: BoxDecoration(
-            color: widget.theme.surface,
-            border: Border(right: BorderSide(color: widget.theme.divider)),
+      return Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            decoration: BoxDecoration(
+              color: widget.theme.surface,
+              border: Border(bottom: BorderSide(color: widget.theme.divider)),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: widget.theme.accent.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    Icons.science_outlined,
+                    color: widget.theme.accent,
+                    size: 20 * widget.fontSizeScale,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.generic.generic_name,
+                        style: TextStyle(
+                          fontSize: 16 * widget.fontSizeScale,
+                          fontWeight: FontWeight.w700,
+                          color: widget.theme.textPrimary,
+                        ),
+                      ),
+                      Text(
+                        '${allBrands.length} brands available',
+                        style: TextStyle(
+                          fontSize: 12 * widget.fontSizeScale,
+                          color: widget.theme.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          child: Column(
+          Padding(
+            padding: const EdgeInsets.fromLTRB(24, 16, 24, 8),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: SearchInput(
+                    controller: _searchCtrl,
+                    hint: 'Search brands...',
+                    onChanged: (q) => setState(() => _searchQuery = q.toLowerCase().trim()),
+                    fontSizeScale: widget.fontSizeScale,
+                    accentColor: widget.theme.accent,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: _SafeCompanyDropdown(
+                    companyIds: companyIds,
+                    selectedId: _filterCompanyId,
+                    onChanged: (id) => setState(() => _filterCompanyId = id),
+                    theme: widget.theme,
+                    fontSizeScale: widget.fontSizeScale,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+            child: Row(
+              children: [
+                Text(
+                  '${displayed.length} brands shown',
+                  style: TextStyle(
+                    fontSize: 11 * widget.fontSizeScale,
+                    fontWeight: FontWeight.w600,
+                    color: widget.theme.textSecondary,
+                    letterSpacing: 0.8,
+                  ),
+                ),
+                const Spacer(),
+                if (_searchQuery.isNotEmpty || _filterCompanyId != null)
+                  TextButton.icon(
+                    onPressed: () => setState(() {
+                      _searchQuery = '';
+                      _filterCompanyId = null;
+                      _searchCtrl.clear();
+                    }),
+                    icon: const Icon(Icons.clear_all_rounded, size: 14),
+                    label: const Text('Clear Filters', style: TextStyle(fontSize: 11)),
+                    style: TextButton.styleFrom(foregroundColor: widget.theme.accent),
+                  ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: displayed.isEmpty
+                ? _EmptyHint(
+              icon: Icons.local_pharmacy_outlined,
+              message: 'No brands match your search',
+              theme: widget.theme,
+              fontSizeScale: widget.fontSizeScale,
+            )
+                : ListView.builder(
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+              itemCount: displayed.length,
+              itemBuilder: (_, i) {
+                final b = displayed[i];
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: _BrandListItem(
+                    brand: b,
+                    onTap: () => widget.onBrandTap(b),
+                    theme: widget.theme,
+                    fontSizeScale: widget.fontSizeScale,
+                    showPrice: themeCtrl.showPriceInList.value,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      );
+    });
+  }
+}
+
+class _BrandListItem extends StatefulWidget {
+  final DrugBrandModel brand;
+  final VoidCallback onTap;
+  final ThemeDefinition theme;
+  final double fontSizeScale;
+  final bool showPrice;
+
+  const _BrandListItem({
+    required this.brand,
+    required this.onTap,
+    required this.theme,
+    required this.fontSizeScale,
+    required this.showPrice,
+  });
+
+  @override
+  State<_BrandListItem> createState() => _BrandListItemState();
+}
+
+class _BrandListItemState extends State<_BrandListItem> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final companyCtrl = Get.find<CompanyCtrl>();
+    final company = companyCtrl.getCompanyById(widget.brand.company_id);
+
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _hover = true),
+      onExit: (_) => setState(() => _hover = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 150),
+          decoration: BoxDecoration(
+            color: _hover ? widget.theme.accent.withOpacity(0.08) : widget.theme.surface,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: _hover ? widget.theme.accent.withOpacity(0.3) : widget.theme.divider,
+              width: 1,
+            ),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          child: Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                width: 38 * widget.fontSizeScale,
+                height: 38 * widget.fontSizeScale,
                 decoration: BoxDecoration(
-                  border: Border(bottom: BorderSide(color: widget.theme.divider)),
+                  color: widget.theme.accent.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(
-                  widget.generic.generic_name,
-                  style: TextStyle(
-                    fontSize: 14 * widget.fontSizeScale,
-                    fontWeight: FontWeight.w600,
-                    color: widget.theme.textPrimary,
-                  ),
-                  overflow: TextOverflow.ellipsis,
+                child: Icon(
+                  Icons.local_pharmacy_outlined,
+                  size: 18 * widget.fontSizeScale,
+                  color: widget.theme.accent,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10),
+              const SizedBox(width: 16),
+              Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SearchInput(
-                      controller: _searchCtrl,
-                      hint: 'Search brands...',
-                      onChanged: (q) => setState(() => _searchQuery = q.toLowerCase().trim()),
-                      fontSizeScale: widget.fontSizeScale,
-                      accentColor: widget.theme.accent,
+                    Text(
+                      widget.brand.brand_name,
+                      style: TextStyle(
+                        fontSize: 14 * widget.fontSizeScale,
+                        fontWeight: FontWeight.w600,
+                        color: _hover ? widget.theme.accent : widget.theme.textPrimary,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(height: 6),
-                    _SafeCompanyDropdown(
-                      companyIds: companyIds,
-                      selectedId: _filterCompanyId,
-                      onChanged: (id) => setState(() => _filterCompanyId = id),
-                      theme: widget.theme,
-                      fontSizeScale: widget.fontSizeScale,
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        if (widget.brand.strength != null)
+                          Text(
+                            widget.brand.strength!,
+                            style: TextStyle(
+                              fontSize: 11 * widget.fontSizeScale,
+                              color: widget.theme.textSecondary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        if (widget.brand.strength != null && widget.brand.form != null)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 6),
+                            child: Text('•', style: TextStyle(color: widget.theme.textMuted)),
+                          ),
+                        if (widget.brand.form != null)
+                          Text(
+                            widget.brand.form!,
+                            style: TextStyle(
+                              fontSize: 11 * widget.fontSizeScale,
+                              color: widget.theme.textSecondary,
+                            ),
+                          ),
+                      ],
                     ),
+                    if (company != null) ...[
+                      const SizedBox(height: 2),
+                      Text(
+                        company.company_name,
+                        style: TextStyle(
+                          fontSize: 10 * widget.fontSizeScale,
+                          color: widget.theme.textMuted,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '${displayed.length} brands',
-                    style: TextStyle(
-                      fontSize: 11 * widget.fontSizeScale,
-                      fontWeight: FontWeight.w600,
-                      color: widget.theme.textSecondary,
-                      letterSpacing: 0.8,
-                    ),
+              if (widget.brand.price != null && widget.showPrice)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: AppTheme.accentGreen.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: AppTheme.accentGreen.withOpacity(0.2)),
                   ),
-                ),
-              ),
-              Expanded(
-                child: displayed.isEmpty
-                    ? Center(
                   child: Text(
-                    'No brands found',
+                    '৳${widget.brand.price}',
                     style: TextStyle(
                       fontSize: 12 * widget.fontSizeScale,
-                      color: widget.theme.textMuted,
+                      fontWeight: FontWeight.w700,
+                      color: AppTheme.accentGreen,
                     ),
                   ),
-                )
-                    : ListView.builder(
-                  itemCount: displayed.length,
-                  itemBuilder: (_, i) {
-                    final b = displayed[i];
-                    return _BrandItem(
-                      brand: b,
-                      isSelected: _selectedBrand?.brand_id == b.brand_id,
-                      onTap: () => setState(() => _selectedBrand = b),
-                      theme: widget.theme,
-                      fontSizeScale: widget.fontSizeScale,
-                      showPrice: themeCtrl.showPriceInList.value,
-                    );
-                  },
                 ),
+              const SizedBox(width: 8),
+              Icon(
+                Icons.chevron_right_rounded,
+                size: 20 * widget.fontSizeScale,
+                color: _hover ? widget.theme.accent : widget.theme.textMuted,
               ),
             ],
           ),
         ),
-        // Detail panel
-        Expanded(
-          child: _selectedBrand != null
-              ? BrandDetailView(
-            brand: _selectedBrand!,
-            accentColor: widget.theme.accent,
-            fontSizeScale: widget.fontSizeScale,
-          )
-              : _EmptyHint(
-            icon: Icons.local_pharmacy_outlined,
-            message: 'Select a brand to view details',
-            theme: widget.theme,
-            fontSizeScale: widget.fontSizeScale,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
@@ -611,12 +790,12 @@ class _SafeCompanyDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final companyCtrl = Get.put(CompanyCtrl());
+    final companyCtrl = Get.find<CompanyCtrl>();
     final safeSelected = (selectedId != null && companyIds.contains(selectedId)) ? selectedId : null;
 
     return Container(
-      height: 34 * fontSizeScale,
-      padding: EdgeInsets.symmetric(horizontal: 10 * fontSizeScale),
+      height: 38 * fontSizeScale,
+      padding: EdgeInsets.symmetric(horizontal: 12 * fontSizeScale),
       decoration: BoxDecoration(
         color: theme.bg,
         borderRadius: BorderRadius.circular(8 * fontSizeScale),
@@ -626,7 +805,7 @@ class _SafeCompanyDropdown extends StatelessWidget {
         child: DropdownButton<String?>(
           value: safeSelected,
           hint: Text(
-            'Company',
+            'Filter by company',
             style: TextStyle(
               fontSize: 12 * fontSizeScale,
               color: theme.textSecondary,
@@ -644,9 +823,15 @@ class _SafeCompanyDropdown extends StatelessWidget {
             color: theme.textPrimary,
           ),
           items: [
-            const DropdownMenuItem<String?>(
+            DropdownMenuItem<String?>(
               value: null,
-              child: Text('All Companies'),
+              child: Text(
+                'All Companies',
+                style: TextStyle(
+                  fontSize: 12 * fontSizeScale,
+                  color: theme.textPrimary,
+                ),
+              ),
             ),
             ...companyIds.map((id) {
               final c = companyCtrl.getCompanyById(int.parse(id));
@@ -654,149 +839,16 @@ class _SafeCompanyDropdown extends StatelessWidget {
                 value: id,
                 child: Text(
                   c?.company_name ?? 'Company $id',
+                  style: TextStyle(
+                    fontSize: 12 * fontSizeScale,
+                    color: theme.textPrimary,
+                  ),
                   overflow: TextOverflow.ellipsis,
                 ),
               );
             }).toList(),
           ],
           onChanged: onChanged,
-        ),
-      ),
-    );
-  }
-}
-
-// ─── Brand list item ──────────────────────────────────────────────────────────
-
-class _BrandItem extends StatefulWidget {
-  final DrugBrandModel brand;
-  final bool isSelected;
-  final VoidCallback onTap;
-  final ThemeDefinition theme;
-  final double fontSizeScale;
-  final bool showPrice;
-
-  const _BrandItem({
-    required this.brand,
-    required this.isSelected,
-    required this.onTap,
-    required this.theme,
-    required this.fontSizeScale,
-    required this.showPrice,
-  });
-
-  @override
-  State<_BrandItem> createState() => _BrandItemState();
-}
-
-class _BrandItemState extends State<_BrandItem> {
-  bool _hover = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final b = widget.brand;
-
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hover = true),
-      onExit: (_) => setState(() => _hover = false),
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 120),
-          decoration: BoxDecoration(
-            color: widget.isSelected
-                ? widget.theme.accent.withOpacity(0.12)
-                : _hover ? widget.theme.surfaceHighlight : Colors.transparent,
-            border: Border(
-              bottom: BorderSide(color: widget.theme.divider.withOpacity(0.4)),
-              left: BorderSide(
-                color: widget.isSelected ? widget.theme.accent : Colors.transparent,
-                width: 3,
-              ),
-            ),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      b.brand_name,
-                      style: TextStyle(
-                        fontSize: 13 * widget.fontSizeScale,
-                        fontWeight: FontWeight.w600,
-                        color: widget.theme.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    Wrap(spacing: 5, runSpacing: 4, children: [
-                      if (b.strength != null)
-                        _Mini(
-                          b.strength!,
-                          widget.theme.accent,
-                          widget.fontSizeScale,
-                        ),
-                      if (b.form != null)
-                        _Mini(
-                          b.form!,
-                          AppTheme.accentGreen,
-                          widget.fontSizeScale,
-                        ),
-                    ]),
-                  ],
-                ),
-              ),
-              if (b.price != null && widget.showPrice)
-                Container(
-                  margin: const EdgeInsets.only(left: 8),
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: AppTheme.accentGreen.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: AppTheme.accentGreen.withOpacity(0.3)),
-                  ),
-                  child: Text(
-                    '৳${b.price}',
-                    style: TextStyle(
-                      fontSize: 12 * widget.fontSizeScale,
-                      fontWeight: FontWeight.w700,
-                      color: AppTheme.accentGreen,
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _Mini extends StatelessWidget {
-  final String label;
-  final Color color;
-  final double fontSizeScale;
-
-  const _Mini(this.label, this.color, this.fontSizeScale);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 9 * fontSizeScale,
-          fontWeight: FontWeight.w500,
-          color: color,
         ),
       ),
     );

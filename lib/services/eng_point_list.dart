@@ -13,4 +13,7 @@ abstract class EngPoint{
   static const String Getkey = 'getkey';
   static const String Registration = 'registration';
   static const String Login = 'registration/skip';
+  static const String Specialities = 'specialty';
+  static const String Occupations = 'soccupation';
+  static const String ProfileUpdate = 'profile';
 }

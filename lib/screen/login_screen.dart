@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/auth_ctrl.dart';
+import '../controller/occupation_ctrl.dart';
+import '../controller/speciality_ctrl.dart';
 import '../controller/theme_ctrl.dart';
 import 'app_theme.dart';
+import 'registration_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,7 +15,10 @@ class LoginScreen extends StatelessWidget {
     final themeCtrl = Get.find<ThemeCtrl>();
     final authCtrl = Get.put(AuthCtrl());
     final theme = themeCtrl.currentTheme;
-
+    final _ctrlOccupation = Get.put(OccupationCtrl());
+    final _ctrlSpeciality = Get.put(SpecialityCtrl());
+    _ctrlOccupation.getOccupationApi();
+    _ctrlSpeciality.getSpecialityApi();
     return Scaffold(
       backgroundColor: theme.bg,
       body: Center(

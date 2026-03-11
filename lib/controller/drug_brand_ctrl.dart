@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logger/logger.dart';
@@ -28,7 +31,6 @@ class DrugBrandCtrl extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getAllDrugBrandFromBox();
   }
   // Clear all filters
   void clearFilters() {
@@ -131,6 +133,34 @@ class DrugBrandCtrl extends GetxController {
     await getAllDrugBrandFromBox();
   }
 
+  Future<void>druBrandInsertJson()async{
+    try{
+      String jsonString = await rootBundle.loadString('assets/db/t_drug_brand.json');
+      final jsonResponse = await json.decode(jsonString);
+      if(jsonResponse != null && jsonResponse.isNotEmpty){
+        for(var item in jsonResponse){
+          DrugBrandModel data = DrugBrandModel(
+            brand_id: int.parse(item['brand_id']),
+            brand_name: item['brand_name'],
+            generic_id: int.parse(item['generic_id']),
+            company_id: int.parse(item['company_id']),
+            form: item['form'],
+            strength: item['strength'],
+            packsize: item['packsize'],
+            price:  item['price'],
+          );
+          if(!boxDrugBrand.values.where((e) => e.brand_id == data.brand_id).isNotEmpty){
+            boxDrugBrand.add(data);
+          }
+        }
+
+        getAllDrugBrandFromBox();
+      }
+    }catch(e){
+      _logger.e(e);
+    }
+  }
+
   /////////////////
   ///API Call
   /////////////
@@ -139,11 +169,11 @@ class DrugBrandCtrl extends GetxController {
       isLoading.value = true;
 
       final String baseUrl = "${EngPoint.BASEURL}${EngPoint.Brand}";
-      String token = sharedPref.pToken;
+
       String lastSyncDate = await sharedPref.getLastSyncDate(sharedPref.brandPref);
       int currentPage = await sharedPref.getLastSyncPage("page${sharedPref.brandPref}");
       int limit = 165;
-
+      String token = sharedPref.pToken;
       // Get API key with try-catch
       var getKey;
       try {
