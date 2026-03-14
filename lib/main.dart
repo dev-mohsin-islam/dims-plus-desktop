@@ -23,7 +23,8 @@ void main() async {
     
     final sharedPref = SharedPref();
     initialLoginStatus = await sharedPref.getLoginStatus();
-
+    print("initialLoginStatus");
+    print(initialLoginStatus);
     // According to requirement: If user is already logged in, do not copy.
     if (!initialLoginStatus) {
       await HiveBoxCopy().copyHiveBoxes();

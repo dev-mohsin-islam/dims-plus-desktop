@@ -55,7 +55,6 @@ class HiveBoxCopy {
       if (!await appDocDir.exists()) {
         await appDocDir.create(recursive: true);
       }
-      print("hello");
 
       for (String boxName in _boxes) {
         final String fileName = "$boxName.hive";

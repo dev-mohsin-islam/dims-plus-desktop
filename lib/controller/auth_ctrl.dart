@@ -282,6 +282,7 @@ class AuthCtrl extends GetxController {
   Future<void> logout() async {
     isLoggedIn.value = false;
     await _sharedPref.setLoginStatus(false);
+
     phoneController.clear();
     Get.offAll(() => const LoginScreen());
   }

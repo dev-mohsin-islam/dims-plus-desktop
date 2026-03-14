@@ -104,7 +104,7 @@ msix_config:
   display_name: DIMS Plus
   publisher_display_name: ITmedicus
   identity_name: ITmedicus.DIMSPlus
-  msix_version: 1.0.0.0
+  msix_version: 1.0.1.0
   logo_path: ./assets/images/dims_plus_logo.png
   certificate_path: ./assets/certs\dimsPlus.pfx
   publisher: "CN=DE46CFD4-5F86-484A-A4D4-0A7C261D1501"
