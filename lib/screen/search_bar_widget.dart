@@ -74,13 +74,22 @@ class _GlobalSearchBarState extends State<GlobalSearchBar> {
         .map((g) => g.generic_id.toString())
         .toSet();
 
-    final results = _brandCtrl.drugBrandList.where((b) {
-      return b.brand_name.toLowerCase().contains(term) ||
-          matchingGenericIds.contains(b.generic_id.toString()) ||
-          (b.strength?.toLowerCase().contains(term) ?? false) ||
-          (b.form?.toLowerCase().contains(term) ?? false);
+    final resultsBrandsStartWith = _brandCtrl.drugBrandList.where((b) {
+      return b.brand_name.toLowerCase().startsWith(term);
     }).take(25).toList();
 
+    final resultsBrandsContain = resultsBrandsStartWith.isEmpty ? _brandCtrl.drugBrandList.where((b) {
+      return b.brand_name.toLowerCase().contains(term);
+    }).take(25).toList() : <DrugBrandModel>[];
+
+    final resultsGenerics = resultsBrandsContain.isEmpty ? _brandCtrl.drugBrandList.where((b) {
+      return matchingGenericIds.contains(b.generic_id.toString());
+    }).take(25).toList() : <DrugBrandModel>[];
+    final results = [
+      ...resultsBrandsStartWith,
+      ...resultsBrandsContain,
+      ...resultsGenerics
+    ];
     setState(() => _results = results);
     if (results.isNotEmpty) {
       _showOverlay();
@@ -371,13 +380,38 @@ class _SearchResultItemState extends State<_SearchResultItem> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.brand.brand_name,
-                        style: TextStyle(
-                          fontSize: 13 * widget.fontSizeScale,
-                          fontWeight: FontWeight.w600,
-                          color: widget.theme.textPrimary,
-                        ),
+                      Row(
+                        children: [
+                          Text(
+                            widget.brand.brand_name,
+                            style: TextStyle(
+                              fontSize: 13 * widget.fontSizeScale,
+                              fontWeight: FontWeight.w600,
+                              color: widget.theme.textPrimary,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          if (showStrength) ...[
+                            Row(children: [
+                              if (widget.brand.strength != null) ...[
+                                _Chip(
+                                  widget.brand.strength!,
+                                  widget.accentColor,
+                                  widget.fontSizeScale,
+                                  widget.theme,
+                                ),
+                                const SizedBox(width: 4),
+                              ],
+                              if (widget.brand.form != null)
+                                _Chip(
+                                  widget.brand.form!,
+                                  AppTheme.accentGreen,
+                                  widget.fontSizeScale,
+                                  widget.theme,
+                                ),
+                            ]),
+                          ],
+                        ],
                       ),
                       if (widget.genericName != null)
                         Text(
@@ -386,33 +420,16 @@ class _SearchResultItemState extends State<_SearchResultItem> {
                             fontSize: 11 * widget.fontSizeScale,
                             color: widget.theme.textSecondary,
                           ),
+
                         ),
+
                     ],
                   ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    if (showStrength) ...[
-                      Row(children: [
-                        if (widget.brand.strength != null) ...[
-                          _Chip(
-                            widget.brand.strength!,
-                            widget.accentColor,
-                            widget.fontSizeScale,
-                            widget.theme,
-                          ),
-                          const SizedBox(width: 4),
-                        ],
-                        if (widget.brand.form != null)
-                          _Chip(
-                            widget.brand.form!,
-                            AppTheme.accentGreen,
-                            widget.fontSizeScale,
-                            widget.theme,
-                          ),
-                      ]),
-                    ],
+
                     if (widget.companyName != null)
                       Text(
                         widget.companyName!,

@@ -245,19 +245,21 @@ class _BreadcrumbBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12 * fss, vertical: 8 * fss),
       decoration: BoxDecoration(color: theme.bg, border: Border(bottom: BorderSide(color: theme.divider.withOpacity(0.6)))),
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
+        child: Wrap(
           children: [
             _CrumbChip(label: 'Root', icon: Icons.home_outlined, isLast: false, onTap: () => onJump(-1), theme: theme, fss: fss),
             ...breadcrumb.asMap().entries.map((e) {
               final isLast = e.key == breadcrumb.length - 1;
-              return Row(children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4 * fss),
-                  child: Icon(Icons.chevron_right_rounded, size: 13 * fss, color: theme.textMuted),
-                ),
-                _CrumbChip(label: e.value.name, isLast: isLast, onTap: isLast ? null : () => onJump(e.key), theme: theme, fss: fss),
-              ]);
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 2.0),
+                child: Row(children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4 * fss, vertical: 2 * fss),
+                    child: Icon(Icons.chevron_right_rounded, size: 13 * fss, color: theme.textMuted),
+                  ),
+                  _CrumbChip(label: e.value.name, isLast: isLast, onTap: isLast ? null : () => onJump(e.key), theme: theme, fss: fss),
+                ]),
+              );
             }),
           ],
         ),
